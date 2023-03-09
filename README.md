@@ -12,8 +12,10 @@ Sorgente GitHub: https://github.com/LibreHardwareMonitor
 
 
 Finestra di Avvio Software
+
 ![ArduCenter2 0_Avvio](https://user-images.githubusercontent.com/76437833/224063211-2411060d-9eef-476a-abdc-ca90b421d452.png)
 
 Finestra di Connessione al Dispositivo
+
 ![ArduCenter2 0_Connessione](https://user-images.githubusercontent.com/76437833/224063541-fcd56d87-a176-4f67-8fda-28826c737e24.png)
 

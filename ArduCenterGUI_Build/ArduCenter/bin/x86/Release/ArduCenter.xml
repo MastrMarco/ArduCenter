@@ -1,0 +1,716 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ArduCenter
+</name>
+</assembly>
+<members>
+<member name="T:ArduCenter.My.Resources.Resources">
+<summary>
+  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.ResourceManager">
+<summary>
+  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Culture">
+<summary>
+  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte le
+  ricerche di risorse eseguite utilizzando questa classe di risorse fortemente tipizzata.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources._908545">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Avvio_1_011">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Avvio_1_3v">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.btn_Swich">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.btn_SwichON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnChiudi21">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnConnettiDisconnetti_2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnDisconnettiConnetti">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_CPU_OP_ON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Audio_OFF">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Audio_OFF1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Audio_ON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_CMD_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_CMD_ON_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Impostazioni_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Impostazioni_ON_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Task_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Task_ON_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_GPU_Strip">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPage_GPU_Strip_ON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnFanPageNull">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnGUI_Fan">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnGUI_Home">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnGUI_HomeAudio">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnGUI_HomeImpostazioni">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnGUI_HomeProject">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_Discontinuo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_DiscontinuoON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_Musica">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_MusicaON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_RainBow">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_RainBowON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_Spento">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_SpentoON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_Temperatura">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_TemperaturaON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_Transizione">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_TransizioneON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLuminositàMax">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLuminositàMin">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnNascondi2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnVelocitàMax">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnVelocitàMin">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_HardwareMonitor">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Home_2_3">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Impostazioni_HUB_Ventole_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Impostazioni_HUB_Ventole1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_ImpostazioniFan_1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_ImpostazioniFan_1_3">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Funzioni_Dispositivo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Funzioni_Dispositivo_Audio_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Funzioni_Dispositivo_Fan_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Funzioni_Dispositivo_Null">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Avviso">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_CMD_SerialFan">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Connessione2_0_5">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_2_3">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_2_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_2_v2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_2_v21">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_3_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_3_1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_4_v1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_HardwareMonitor_PC">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Cartella_1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Cartella_1_1_ON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB_1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB_1_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB_v1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB_v1_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB_v1_3">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_DeepCool_HSV_RGB1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_FanPO_1_2_">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_FanPO_1_2_Click">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_FanPO_1_3_">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Parametri_Fan">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Parametri_FanON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Reset_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Riavvio">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_ROM">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Arancione">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Azzurro">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Bianco">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Blu">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Effeto_RainBow">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Fucsia">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Giallo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Nero">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_2_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Rosso">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_SchedaVideo_Verde">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Arancione">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Azzurro">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Bianco">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Blu">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Fucsia">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Giallo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Nero">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Rosso">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icona_Strisca_LED_Verde">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB__Nero">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Arancio">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Azzurro">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Bianco">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Blu">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Discontinuo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Fucsia">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Giallo">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_HSV_RGB">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Musica">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Nero">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_RainBow">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Rosso">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Transizione">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaFan_RGB_Colore_Verde">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaHardware_AMD_CPU">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaHardware_AMD_GPU">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaHardware_RAM">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.IconaHubStruments">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icone_ProtezioneDispositivo_2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Icone_ProtezioneLED_1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.ImgArduCenter2_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Incona_Comandi_Fan">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Incona_Comandi_FanON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.opt">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.PanSetHardware_1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>

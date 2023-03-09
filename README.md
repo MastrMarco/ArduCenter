@@ -10,6 +10,8 @@ Sito Libreria: https://openhardwaremonitor.org/downloads/
 Sorgente GitHub: https://github.com/LibreHardwareMonitor
 ]
 
+Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
+
 
 Finestra di Avvio Software
 

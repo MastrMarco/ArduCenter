@@ -31,13 +31,13 @@ C. Mostra il nome del Creatore del Progetto.
 3. Bottone per andare nella pagina Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
 
 
-A.
+A. Mostra il Nome del Dispositivo, lo Stato e eventuali Avvisi/Problemi con delle icone o con delle sigle [e clicandoci sopre si possono avere più informazioni].
 B. Indica che il Firmware inserito dentro l'Arduino è stato progettato per quel tipo di Arduino.
-C.
+C. Clicsndo sulla Listbox possimo selezionare la Porta COM del Dispositivo e adestra di essa si trova un Bottone Vere con un immagine di una USB clicandoci sopra cisiconetterà al dispositivo.
 D. Stato di Connessione con il Dispositivo.
 E. Bottone per aprire in modo rapido la cartella sorgente in cui si trova il Software.
 F. Mostra i Dati Seriali che vengono ricevuti e inviati.
-G.
+G. Mostra la versione attuale del Firmware del Dispositivo(Arduino), mostra anche la versione Firmware di Arduino che supporta il Software [Per avere una massima Compatibbilità i nummeri devono coincidere tra loro].
 H. Il Bottone quando Attivo serve per la connesione Automatica al Dispositivo quando si avvia il Software [Per attivarlo bisognia essere connessi prima, poiché deve memorizare la porta COM del Dispositivo, si può diasttivare ricliccando sul Bottone del riquadro H o pure cliccando sun Bottone Disconnesione del riquadro C].
 I. Il Bottone quando Attivo permette di andare direttamente alla Pagina in cui avete l'elemento selezionato, questa funzione viene eseguita Solo all'avvio del Software [Si può diasttivare ricliccando sul Bottone del riquadro H].
 J. Bottone RX mostra i dati che riceviamo da Arduino nel rigqadro F, il Bottone TX mostra i dati che inviamo all'Arduino.

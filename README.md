@@ -15,8 +15,8 @@ Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit
 
 ![ArduCenter2 0_Avvio_Note](https://user-images.githubusercontent.com/76437833/226211964-0c023000-cbb8-48a2-afda-9a05b5a76a06.png)
 
-- A  Indica il tipo di rilascio [Prova = Beta, Stabile = Relise].
-- B  Mostra la Versione del Software e la Data di rilascio.
+- **A**  Indica il tipo di rilascio [Prova = Beta, Stabile = Relise].
+- **B**  Mostra la Versione del Software e la Data di rilascio.
 - C  Mostra il nome del Creatore del Progetto.
 
 

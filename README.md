@@ -25,10 +25,10 @@ Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit
 ![ArduCenter2 0_Connessione_Note](https://user-images.githubusercontent.com/76437833/226212168-6059b549-de64-47b7-a066-4598f605ec41.png)
 
 ## Seleziona Pagina
-**0**. Bottone pre andare nelle pagina Impostazioni Generali del Software [Non funzionante].
-**1**. Bottone per andare nella pagina Connesione Dispositivo [Pagina di Default all'Avvio].
-**2**. Bottone per andare nella pagina Controllo HUB Ventole PC [Ci si può accedere solo se si e connessi al dispositivo].
-**3**. Bottone per andare nella pagina Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
+0. Bottone pre andare nelle pagina Impostazioni Generali del Software [Non funzionante].
+1. Bottone per andare nella pagina Connesione Dispositivo [Pagina di Default all'Avvio].
+2. Bottone per andare nella pagina Controllo HUB Ventole PC [Ci si può accedere solo se si e connessi al dispositivo].
+3. Bottone per andare nella pagina Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
 
 ## Informazioni Pagina Connessione [F_Home]
 - **A**=> Mostra il Nome del Dispositivo, lo Stato e eventuali Avvisi/Problemi con delle icone o con delle sigle [e clicandoci sopre si possono avere più informazioni].

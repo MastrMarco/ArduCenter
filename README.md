@@ -44,3 +44,11 @@ Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit
 - **K**=> Bottone per aprire la finestra Hardware Monitor [Perogetto Droppato].
 - **L**=> Bottone Riavvio Dispositivo(Arduino).
 - **M**=> Indica il Nome della pagina in cui ci troviamo in quel momento con anche il nome in Codice.
+
+
+## Finestra HUB PC Home 
+
+![ArduCenter2 0_HubPC Home](https://user-images.githubusercontent.com/76437833/226214790-2b835f7d-31f5-41b2-a15c-4178cf5c40fe.png)
+
+## Info non **Disponibili**
+

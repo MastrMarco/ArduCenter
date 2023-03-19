@@ -20,7 +20,7 @@ Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit
 - C  Mostra il nome del Creatore del Progetto.
 
 
-## Finestra di Connessione al Dispositivo
+## Finestra di Connessione
 
 ![ArduCenter2 0_Connessione_Note](https://user-images.githubusercontent.com/76437833/226212168-6059b549-de64-47b7-a066-4598f605ec41.png)
 

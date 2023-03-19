@@ -30,7 +30,7 @@ Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit
 2. Bottone per andare nella pagina Controllo HUB Ventole PC [Ci si può accedere solo se si e connessi al dispositivo].
 3. Bottone per andare nella pagina Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
 
-## Informazioni Pagina Connesione [F_Home]
+## Informazioni Pagina Connessione [F_Home]
 - A  Mostra il Nome del Dispositivo, lo Stato e eventuali Avvisi/Problemi con delle icone o con delle sigle [e clicandoci sopre si possono avere più informazioni].
 - B  Indica che il Firmware inserito dentro l'Arduino è stato progettato per quel tipo di Arduino.
 - C  Clicsndo sulla Listbox possimo selezionare la Porta COM del Dispositivo e adestra di essa si trova un Bottone Vere con un immagine di una USB clicandoci sopra cisiconetterà al dispositivo.

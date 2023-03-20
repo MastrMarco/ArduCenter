@@ -1,9 +1,7 @@
 # ArduCenter 2.0
 Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 
-## Video Demo
-
-
+## !Attenzione!
 Quando si prova ad aprire il software chiederà i permessi di Amministratore perché la libreria esterna per acquisire i dati del PC Es:(Temperatura CPU, GPU, ecc.…) ha bisogno di tali permessi. La libreria utilizzata si chiama Open Hardware Monitor, 
 Crediti:
 [

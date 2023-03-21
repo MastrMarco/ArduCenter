@@ -9,4 +9,4 @@ ArduHubFan 3.0 Versione Firmuware di Arduino B2.02V Versione Software PC AreduCe
 ArduHubFan 4.0 Versione Firmuware di Arduino B1.02V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
 
 ## Scheda Tecnica ArduHubFan PC
-![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226736053-96b70072-105a-43e3-a5b4-cf44d304341b.png)
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226737407-9d30d4f6-7207-4f55-8824-64b31325b2ff.png)

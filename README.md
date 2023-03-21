@@ -13,7 +13,7 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 
 ## - Scheda Tecnica ArduCenter ArduHubFan PC
-![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226697847-eefe49f7-85af-441d-aa14-abd6c4de4049.png)
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226700898-4932fcf6-af08-4e49-a659-aab88de2dbbe.png)
 
 
 ## - Finestra di Avvio Software
@@ -51,7 +51,7 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 - **M**=> Indica il Nome della pagina in cui ci troviamo in quel momento con anche il nome in Codice.
 
 
-## Finestra HUB PC Home 
+## - Finestra HUB PC Home 
 
 ![ArduCenter2 0_HubPC Home](https://user-images.githubusercontent.com/76437833/226214790-2b835f7d-31f5-41b2-a15c-4178cf5c40fe.png)
 

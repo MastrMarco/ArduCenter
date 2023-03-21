@@ -13,7 +13,7 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 
 ## - Scheda Tecnica  ArduHubFan PC
-![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226718185-8d4918ae-d49a-4cf9-ae0b-74cc83c8687c.png)
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226737330-24a8fa7b-3bab-4a28-abef-f9f00b6fa533.png)
 
 
 ## - Finestra di Avvio Software

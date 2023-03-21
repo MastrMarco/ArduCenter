@@ -12,8 +12,8 @@ Sorgente GitHub: https://github.com/LibreHardwareMonitor
 Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
 
 
-## - Scheda Tecnica ArduCenter ArduHubFan PC
-![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226700898-4932fcf6-af08-4e49-a659-aab88de2dbbe.png)
+## - Scheda Tecnica  ArduHubFan PC
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226718185-8d4918ae-d49a-4cf9-ae0b-74cc83c8687c.png)
 
 
 ## - Finestra di Avvio Software

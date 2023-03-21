@@ -1,31 +1,12 @@
-//*****************************************************************************************************************************//
-//--------------          By  MastrMarco  AreduCenter  Versione B2.0.6 t29      ISCRIVITI AL CANALE YOUTUBE       -------------//
-//
-//                                 Per Arduino Nano ATMega 328P NEW / OLD Boot loader
-//
-//                                       Dispositivi commpoatibbili  con il Software
-//                                                 ArduHubFanAudio 2.0
-//                                                   ArduHubFan 3.0
-//                                                   ArduHubFan 4.0
-//													 
-//													 
-//                                                  Canale Telegram
-//                                             https://t.me/MastrMarco_YT
-//
-//                                                    Canale GitHub
-//                                                        ????
-//
-//                                                  Canale Youtube
-//                               https://www.youtube.com/channel/UCpQb1Iz6M229ylkyXpdJPlw
-//*****************************************************************************************************************************//
-
 [00] -> Dispositivi Aggiornati  08/03/23  
 
--Software
+## Software
 AreduCenter  Versione B2.0.6 t29 [Ottimizazione + New GUI + Risolti vari BUG]   
 
--Dispositivi                               
+## Dispositivi                               
 ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.02V Versione Software PC AreduCenter2.0 2.0.6v [Ottimizazione + Risolti vari BUG]
 ArduHubFan 3.0 Versione Firmuware di Arduino B2.02V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
 ArduHubFan 4.0 Versione Firmuware di Arduino B1.02V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
 
+## Scheda Tecnica ArduHubFan PC
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226736053-96b70072-105a-43e3-a5b4-cf44d304341b.png)

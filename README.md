@@ -55,8 +55,17 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ![ArduCenter2 0_HubPC Home_Note](https://user-images.githubusercontent.com/76437833/227233106-f7de08e1-75a1-453f-b552-78f4ea8b370f.png)
 
-## Info non Disponibili
+## Seleziona Pagina
+0. Bottone per aprire la finestra Hardware Monitor [Progetto Droppato].
+1. Bottone per aprire la finestra Impostazioni Generali del Controller [Beta].
 
+## Informazioni Pagina Connessione [F_Home]
+- **A**=> Bottone per aprire la pagina Controllo Ventole [Manuale].
+- **B**=> Bottone per aprire la pagina Controllo Dissipatore [Manuale].
+- **C**=> Bottone per aprire la pagina Controllo Scheda Video [Clicando una volta si selezione l'elemento, cliccando una seconda volta si và nella pagina apposita].
+- **D**=> Menù settaggi [Colore, Animazioni RGB, Luminosità e Velocità di rotazione Ventole].
+- **E**=> Bottone per impostare la modalita sincronizata [Imposta il colore globale e anche un velocità di roazione ventole globale].
+- **F**=> Bottone per aprire la pagina Controllo Strisca LED [Clicando una volta si selezione l'elemento, cliccando una seconda volta si và nella pagina apposita].
 
 ## - Menù settaggi
 

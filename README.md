@@ -62,10 +62,10 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 ## Informazioni Finestra Controllo Hub PC Home [F_Hub_PC_Home]
 - **A**=> Bottone per aprire la pagina Controllo Ventole [Manuale].
 - **B**=> Bottone per aprire la pagina Controllo Dissipatore [Manuale].
-- **C**=> Bottone per aprire la pagina Controllo Scheda Video [Clicando una volta si selezione l'elemento, cliccando una seconda volta si và nella pagina apposita].
+- **C**=> Bottone per aprire la pagina Controllo Scheda Video [Cliccando una volta si seleziona l'elemento, cliccando una seconda volta si va nella pagina apposita].
 - **D**=> Menù settaggi [Colore, Animazioni RGB, Luminosità e Velocità di rotazione Ventole].
-- **E**=> Bottone per impostare la modalita sincronizata [Imposta il colore globale e anche un velocità di roazione ventole globale].
-- **F**=> Bottone per aprire la pagina Controllo Strisca LED [Clicando una volta si selezione l'elemento, cliccando una seconda volta si và nella pagina apposita].
+- **E**=> Bottone per impostare la modalità sincronizzata [Imposta il colore globale e anche una velocità di rotazione ventole globale].
+- **F**=> Bottone per aprire la pagina Controllo Striscia LED [Cliccando una volta si seleziona l'elemento, cliccando una seconda volta si va nella pagina apposita].
 
 ## - Menù settaggi
 

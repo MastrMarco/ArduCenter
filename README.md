@@ -69,6 +69,29 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## - Menù settaggi
 
-![ArduCenter2 0_HubPC Menù settaggi](https://user-images.githubusercontent.com/76437833/227234502-bf8e24dd-0bac-4bdc-9d9f-d1fed661f362.png)
+![ArduCenter2 0_HubPC Menù settaggi Note](https://user-images.githubusercontent.com/76437833/227326044-621606c8-b82a-44c1-b5f2-e4c41f578a80.png)
 
-## Info non Disponibili
+## Informazioni Menù settaggi
+
+- **A**=>
+- **B**=>
+- **C**=>
+
+## Informazioni Animazioni RGB
+
+0. 
+1. 
+2. 
+3. 
+4. 
+5.
+
+
+## - Finestra Impostazioni HUB PC  
+
+![ArduCenter2 0_HubPC Impostazioni](https://user-images.githubusercontent.com/76437833/227327662-7b6a677a-fa00-4650-9cf5-56d63f066bc6.png)
+
+
+## - Finestra Hardware Monitor PC 
+
+![ArduCenter2 0_HardwareMonitor](https://user-images.githubusercontent.com/76437833/227327772-a839ccd7-8cfe-44bf-b496-0e29cda1630d.png)

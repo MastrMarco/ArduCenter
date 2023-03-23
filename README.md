@@ -55,5 +55,11 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ![ArduCenter2 0_HubPC Home_Note](https://user-images.githubusercontent.com/76437833/227233106-f7de08e1-75a1-453f-b552-78f4ea8b370f.png)
 
-## Info non **Disponibili**
+## Info non Disponibili
 
+
+## - Menù settaggi
+
+![ArduCenter2 0_HubPC Menù settaggi](https://user-images.githubusercontent.com/76437833/227234502-bf8e24dd-0bac-4bdc-9d9f-d1fed661f362.png)
+
+## Info non Disponibili

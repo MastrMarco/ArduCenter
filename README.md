@@ -29,13 +29,13 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ![ArduCenter2 0_Connessione_Note](https://user-images.githubusercontent.com/76437833/226212168-6059b549-de64-47b7-a066-4598f605ec41.png)
 
-## Seleziona Pagina
-0. Bottone per andare nella pagina Impostazioni Generali del Software [Non funzionante].
-1. Bottone per andare nella pagina Connessione Dispositivo [Pagina di Default all'Avvio].
-2. Bottone per andare nella pagina Controllo HUB Ventole PC [Ci si può accedere solo se si e connessi al dispositivo].
-3. Bottone per andare nella pagina Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
+## Seleziona Finestra
+0. Bottone per andare nella finestra Impostazioni Generali del Software [Non funzionante].
+1. Bottone per andare nella finestra Connessione Dispositivo [Pagina di Default all'Avvio].
+2. Bottone per andare nella finestra Controllo HUB Ventole PC [Ci si può accedere solo se si e connessi al dispositivo].
+3. Bottone per andare nella finestra Strumenti Debug [Ci si può accedere solo se si e connessi al dispositivo].
 
-## Informazioni Pagina Connessione [F_Home]
+## Informazioni Finestra Connessione [F_Home]
 - **A**=> Mostra il Nome del Dispositivo e anche lo Stato di eventuali Avvisi o Problemi con delle icone o con delle sigle [Cliccandoci sopra di essi si possono avere più informazioni].
 - **B**=> Indica che il Firmware inserito dentro l'Arduino è stato progettato per quel tipo di Arduino.
 - **C**=> Cliccando sulla Listbox possiamo selezionare la Porta COM del Dispositivo, è a destra di essa si trova un Bottone verde con un’immagine di una USB e cliccandoci sopra ci si può connettere o disconnettere al dispositivo.
@@ -55,11 +55,11 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ![ArduCenter2 0_HubPC Home_Note](https://user-images.githubusercontent.com/76437833/227233106-f7de08e1-75a1-453f-b552-78f4ea8b370f.png)
 
-## Seleziona Pagina
+## Mostra Finestra
 0. Bottone per aprire la finestra Hardware Monitor [Progetto Droppato].
 1. Bottone per aprire la finestra Impostazioni Generali del Controller [Beta].
 
-## Informazioni Pagina Connessione [F_Home]
+## Informazioni Finestra Controllo Hub PC Home [F_Hub_PC_Home]
 - **A**=> Bottone per aprire la pagina Controllo Ventole [Manuale].
 - **B**=> Bottone per aprire la pagina Controllo Dissipatore [Manuale].
 - **C**=> Bottone per aprire la pagina Controllo Scheda Video [Clicando una volta si selezione l'elemento, cliccando una seconda volta si và nella pagina apposita].

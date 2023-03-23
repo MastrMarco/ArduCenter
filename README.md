@@ -53,7 +53,7 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## - Finestra HUB PC Home 
 
-![ArduCenter2 0_HubPC Home](https://user-images.githubusercontent.com/76437833/226214790-2b835f7d-31f5-41b2-a15c-4178cf5c40fe.png)
+![ArduCenter2 0_HubPC Home_Note](https://user-images.githubusercontent.com/76437833/227233106-f7de08e1-75a1-453f-b552-78f4ea8b370f.png)
 
 ## Info non **Disponibili**
 

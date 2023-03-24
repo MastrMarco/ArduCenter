@@ -73,9 +73,9 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## Informazioni Menù settaggi
 
-- **A**=>
-- **B**=>
-- **C**=>
+- **A**=> Cliccando su un Bottone colorato puoi impostare il colore di esso, (Bianco, Rosso, Verde, Blu, Arancione, Fucsia, Giallo, Celeste) [Non si possono inserire colori custom].
+- **B**=> Cliccando sopra la barra di scorrimento si può regolare la velocità della rotazione della/e ventola/e, le due icone poste agli estremi sono delle scorciatoie per impostare la minima o la massima velocità [Essa Funziona solo se si è in modalità Controllo Manuale].
+- **C**=> Cliccando sopra la barra di scorrimento si può regolare la Luminosità dei LED, le due icone poste agli estremi sono delle scorciatoie per impostare la minima o la massima Luminosità [La minima Luminosità non equivale allo spegnimento totale dei LED].
 
 ## Informazioni Animazioni RGB
 

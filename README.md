@@ -79,12 +79,12 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## Informazioni Animazioni RGB
 
-0. 
-1. 
-2. 
-3. 
-4. 
-5.
+0. Bottone per Spegnere i LED
+1. Bottone per Impostare l'animazione RGB Transizione [Questa Animazione si può solo impostare all'elemento SyncMode].
+2. Bottone per Impostare l'animazione RGB RainBow [Questa Animazione si può solo impostare all'elemento SyncMode].
+3. Bottone per Impostare l'animazione RGB Temperatura [Questa Animazione si può solo impostare all'elemento SyncMode].
+4. Bottone per Impostare l'animazione RGB Musica [Questa Animazione si può solo impostare all'elemento SyncMode].
+5. Bottone per Impostare l'animazione RGB Discontinuo [Questa Animazione si può solo impostare all'elemento SyncMode].
 
 
 ## - Finestra Impostazioni HUB PC  

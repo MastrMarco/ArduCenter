@@ -15,6 +15,9 @@ Public Class F_Hub_PC
     Public Animazione_RGB_Musica As Integer = 603
     Public Animazione_RGB_Discontinuo As Integer = 600
 
+    Public Luminosità_MIN As Integer = 13
+    Public Luminosità_MAX As Integer = 255
+
 
     Public FanMenù As String = "Hub PC Home"
     Private Sub F_Fan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -140,11 +143,11 @@ Public Class F_Hub_PC
     End Sub
     Private Sub BtnL_min_Click(sender As Object, e As EventArgs) Handles BtnL_min.Click
         TrackBarLuminosità.Value = 5
-        F_Avvio.Data2 = 13
+        F_Avvio.Data2 = Luminosità_MIN
     End Sub
     Private Sub BtnL_max_Click(sender As Object, e As EventArgs) Handles BtnL_max.Click
         TrackBarLuminosità.Value = 100
-        F_Avvio.Data2 = 255
+        F_Avvio.Data2 = Luminosità_MAX
     End Sub
 
     'Rosso
@@ -198,11 +201,14 @@ Public Class F_Hub_PC
     'Nero / Spento
     Private Sub Btn_Spento_Click(sender As Object, e As EventArgs) Handles Btn_Spento.Click
         F_Avvio.Data2 = 0
+        F_Avvio.Data3 = Colore_Arancione_HSV
         TrackBarLuminosità.Value = 5
 
         If F_Avvio.DatiRX_6(0) = 0 Then
             F_Avvio.Data4 = 255
         End If
+
+        TX_Btn_Colore()
     End Sub
 
     'Animazione RGB Trasiszione

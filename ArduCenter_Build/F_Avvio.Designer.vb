@@ -99,7 +99,7 @@ Partial Class F_Avvio
         '
         'TimerBoot_Reset
         '
-        Me.TimerBoot_Reset.Interval = 200
+        Me.TimerBoot_Reset.Interval = 500
         '
         'BackgroundWorkerSerialPort
         '

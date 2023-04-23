@@ -472,7 +472,7 @@ Clicca OK per continuare
                 LabelTextError.Text = "
 Verranno reimpostati tutti 
 i valori di fabbrica.
-
+Il Software verrà Riavviato.
 Clicca OK per continuare
 "
             ElseIf My.Settings.Lingua = ENG Then
@@ -507,10 +507,11 @@ Clicca OK per continuare
 
         If F_Avvio.ErrorMod = 102 Then
 
+            'F_Avvio.Rirpristino_Dati()
             F_Avvio.Data10 = 2
             'F_Avvio.DelayReset = 1
-            'F_Avvio.RipristinoArduino = 1
-            'F_Avvio.TimerBoot_Reset.Start()
+            F_Avvio.RipristinoArduino = 1
+            F_Avvio.TimerBoot_Reset.Start()
 
 
             'F_Avvio.Aggiorna = 1

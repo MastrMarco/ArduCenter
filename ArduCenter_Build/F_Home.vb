@@ -65,6 +65,7 @@ Public Class F_Home
         'F_Setting_RGB_Animation_Fan_Temp.Close()
         'Me.Close()
         'F_Avvio.Close()
+        My.Settings.Save()
         Application.Exit()
 
         'For Each Form In My.Application.OpenForms

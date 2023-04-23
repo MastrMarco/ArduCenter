@@ -6,16 +6,19 @@
             PreCaricamentroCOM_Port()
             BtnAutoConnessione.BackgroundImage = My.Resources.btn_Swich
             LabelConnessioneAuto.Text = "Disattivo"
-        ElseIf My.Settings.AutoConnesione = "Si" Then
+        ElseIf My.Settings.AutoConnesione = "Si" Or My.Settings.AutoConnesione = "SiRes" Then
             PreCaricamentroCOM_Port()
             ConnessioneAutomatica()
-            BtnAutoConnessione.BackgroundImage = My.Resources.btn_SwichON
-            LabelConnessioneAuto.Text = "Attivo"
+            S_COM.Text = My.Settings.SerialCOM
+            If My.Settings.AutoConnesione = "Si" Then
+                BtnAutoConnessione.BackgroundImage = My.Resources.btn_SwichON
+                LabelConnessioneAuto.Text = "Attivo"
+            End If
         End If
 
 
 
-        If My.Settings.AutoForm_Pan = "No" Then
+            If My.Settings.AutoForm_Pan = "No" Then
             BtnAuto_Form.BackgroundImage = My.Resources.btn_Swich
             LabelAutoForm.Text = "Disattivo"
         ElseIf My.Settings.AutoForm_Pan = "Si" Then
@@ -47,7 +50,7 @@
         End Try
     End Sub
 
-    Private Sub BtnConnettiDisconnetti_Click(sender As Object, e As EventArgs) Handles BtnConnettiDisconnetti.Click
+    Public Sub BtnConnettiDisconnetti_Click(sender As Object, e As EventArgs) Handles BtnConnettiDisconnetti.Click
         Try
             If F_Avvio.SerialPortArduino.IsOpen = False Then
                 ConnessioneAutomatica()
@@ -62,7 +65,7 @@
 
     Private Sub ConnessioneAutomatica()
         Try
-            If My.Settings.AutoConnesione = "Si" Then
+            If My.Settings.AutoConnesione = "Si" Or My.Settings.AutoConnesione = "SiRes" Then
                 F_Avvio.SerialPortArduino.PortName = My.Settings.SerialCOM
             ElseIf My.Settings.AutoConnesione = "No" Then
                 F_Avvio.SerialPortArduino.PortName = S_COM.Text
@@ -112,7 +115,9 @@
         F_Avvio.DTX = 1
         F_Avvio.CaricaDati_Boot = 0
 
-        My.Settings.AutoConnesione = "No"
+        If F_Avvio.RipristinoArduino = 0 Then
+            My.Settings.AutoConnesione = "No"
+        End If
         BtnAutoConnessione.BackgroundImage = My.Resources.btn_Swich
         'PictureFunzioni.BackgroundImage = My.Resources.Funzioni_Dispositivo_Null
 

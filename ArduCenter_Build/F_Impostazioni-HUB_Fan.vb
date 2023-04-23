@@ -223,10 +223,10 @@
 
 
     Private Sub BtnRipristino_Click(sender As Object, e As EventArgs) Handles BtnRipristino.Click
-        'F_Avvio.ErrorMod = 102
-        'F_Avvisi.LabelID_Error.Text = "Error Code " & F_Avvio.ErrorMod
-        'F_Avvisi.AvvisoErrore()
-        F_Avvio.FunzioneNull()
+        F_Avvio.ErrorMod = 102
+        F_Avvisi.LabelID_Error.Text = "Error Code " & F_Avvio.ErrorMod
+        F_Avvisi.AvvisoErrore()
+        'F_Avvio.FunzioneNull()
     End Sub
 
     Public Sub InStato_Click(sender As Object, e As EventArgs) Handles InStato.Click

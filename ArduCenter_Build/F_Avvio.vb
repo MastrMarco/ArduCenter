@@ -7,12 +7,12 @@ Public Class F_Avvio
     'Nummero Versione Arduino
     Public ReadOnly InfoSoft_HOME As String = "By 
 MastrMarco
-Beta 29"
+Beta 33"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
     Public ReadOnly Versione As String = "v 2.0.6"
-    Public DataRilascio As String = "08-03-23"
+    Public DataRilascio As String = "23/04/2023"
 
 
     'Old
@@ -25,17 +25,17 @@ Beta 29"
 
     'Hub 2.0
     Public DataRilascio_GUI_Fan_Audio As String = "08/03/2023"
-    Public Versione_GUI_Fan_Audio As String = "4.02"
+    Public Versione_GUI_Fan_Audio As String = "4.03"
 
     'Hub 3.0
-    Public DataRilascio_GUI_Fan_3 As String = "08/03/2023"
+    Public DataRilascio_GUI_Fan_3 As String = "23/04/2023"
     Public Old_Versione_GUI_Fan_3 As String = "2.02"
-    Public Versione_GUI_Fan_3 As String = "2.02"
+    Public Versione_GUI_Fan_3 As String = "2.03"
 
     'Hub 4.0
-    Public DataRilascio_GUI_Fan_4 As String = "08/03/2023"
+    Public DataRilascio_GUI_Fan_4 As String = "23/04/2023"
     Public Old_Versione_GUI_Fan_4 As String = "1.02"
-    Public Versione_GUI_Fan_4 As String = "1.02"
+    Public Versione_GUI_Fan_4 As String = "1.03"
 
 
     Public DatiRicevuti As String = ""
@@ -805,9 +805,15 @@ Beta 29"
             TimerBoot_Reset.Start()
         End If
 
-        If RipristinoArduino = 1 Then
-            'RipristinoArduino = 0
-            'TimerBoot_Reset.Stop()
+        'If RipristinoArduino = 1 Then
+        '    RipristinoArduino = 0
+        '    'TimerBoot_Reset.Stop()
+        'End If
+
+        If My.Settings.AutoConnesione = "SiRes" Then
+            My.Settings.AutoConnesione = "No"
+            F_Connessione.BtnAutoConnessione.BackgroundImage = My.Resources.btn_Swich
+            F_Connessione.LabelConnessioneAuto.Text = "Disattivo"
         End If
     End Sub
 
@@ -818,36 +824,28 @@ Beta 29"
             DelayReset_Boot += 1
         End If
 
-        If DelayReset_Boot >= 3 Then
+        If DelayReset_Boot >= 3 And RipristinoArduino = 0 Then
             Data0 = 200
             DTX = 0
             TimerBoot_Reset.Stop()
         End If
 
 
-        'PostRirpestino
-        If RipristinoArduino = 1 And Data10 = 2 Then
-            'TimerBoot_Reset.Stop()
+        'Inizio Ripristino
+        If RipristinoArduino = 1 And DatiRX_2(0) = 2 Then
             SerialPortArduino.DtrEnable = True
             SerialPortArduino.DtrEnable = False
+            My.Settings.SerialCOM = SerialPortArduino.PortName
+            If My.Settings.AutoConnesione = "Si" Then
+                My.Settings.AutoConnesione = "Si"
+            ElseIf My.Settings.AutoConnesione = "No" Then
+                My.Settings.AutoConnesione = "SiRes"
+            End If
+            My.Settings.Save()
+            F_Connessione.BtnConnettiDisconnetti_Click(sender, e)
+            Application.Restart()
+            TimerBoot_Reset.Stop()
         End If
-
-        'Ripristino
-        'If (RipristinoArduino = 1 And (DelayReset_Boot <> 0 And DelayReset_Boot <= 5)) Then
-
-        '    Data3 = 1
-        '    DelayReset_Boot += 1
-
-        'End If
-
-        ''F_Fan_Menù.Label11.Text = DelayReset.ToString
-
-        'If DelayReset_Boot >= 5 Or DelayReset_Boot = 0 And DTX = 1 Then
-        '    DTX = 1
-        '    Data3 = 0
-        '    CaricamentoDatiAggiornamento()
-        'End If
-
 
     End Sub
 

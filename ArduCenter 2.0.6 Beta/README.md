@@ -1,21 +1,12 @@
-# ArduCenter2.0
-Software di controllo Ventole di un PC e di conrollo LED A-RGB 5V.
+[00] -> Dispositivi Aggiornati  08/03/23  
 
-Quando si prova ad aprire il software chiederà i premessi di Amministratore perché la libreria esterna per acquisire i dati del PC Es:(Temperatura CPU, GPU, ecc.…) ha bisogno di tali permessi. La libreria utilizzata si chiama Open Hardware Monitor, 
-Crediti:
-[
-Sito Libreria: https://openhardwaremonitor.org/downloads/
-Sorgente GitHub: https://github.com/LibreHardwareMonitor
-]
+## Software
+AreduCenter  Versione B2.0.6 t29 [Ottimizazione + New GUI + Risolti vari BUG]   
 
-Crediti Librerie Esterne Utilizate pre comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
+## Dispositivi                               
+ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.02V Versione Software PC AreduCenter2.0 2.0.6v [Ottimizazione + Risolti vari BUG]
+ArduHubFan 3.0 Versione Firmuware di Arduino B2.02V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
+ArduHubFan 4.0 Versione Firmuware di Arduino B1.02V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
 
-
-Finestra di Avvio Software
-
-![ArduCenter2 0_Avvio](https://user-images.githubusercontent.com/76437833/224063211-2411060d-9eef-476a-abdc-ca90b421d452.png)
-
-Finestra di Connessione al Dispositivo
-
-![ArduCenter2 0_Connessione](https://user-images.githubusercontent.com/76437833/224063541-fcd56d87-a176-4f67-8fda-28826c737e24.png)
-
+## Scheda Tecnica ArduHubFan PC
+![Scheda Tecnica ArduCenter ArduHubFan PC](https://user-images.githubusercontent.com/76437833/226737407-9d30d4f6-7207-4f55-8824-64b31325b2ff.png)

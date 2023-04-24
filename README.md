@@ -92,8 +92,15 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## - Finestra Impostazioni HUB PC  
 
-![ArduCenter2 0_HubPC Impostazioni](https://user-images.githubusercontent.com/76437833/227327662-7b6a677a-fa00-4650-9cf5-56d63f066bc6.png)
+![ArduCenter2 0_HubPC_Impostazioni_Note](https://user-images.githubusercontent.com/76437833/234077988-856c5af3-4a2a-4596-80ac-464bfe2634b3.png)
 
+## Informazioni Finestra Impostazioni Hub PC [F_Impostazioni-HUB_Fan]
+- **A**=> Bottone per Attivare/Disattivare la memorizzazione dei settaggi impostati dall'utente.
+- **B**=> 
+- **C**=> 
+- **D**=> 
+- **E**=> 
+- **F**=> 
 
 ## - Finestra Hardware Monitor PC 
 

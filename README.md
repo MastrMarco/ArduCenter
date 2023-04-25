@@ -96,7 +96,7 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## Informazioni Finestra Impostazioni Hub PC [F_Impostazioni-HUB_Fan]
 - **A**=> Bottone per Attivare/Disattivare la memorizzazione dei settaggi impostati dall'utente.
-- **B**=> 
+- **B**=> Bottone per Attivare/Disattivare la protezione dell’alimentazione: 12v, 5v [Quando si attiverà, la scritta "Protezione Dispositivo" si colora di rosso e toglierà carico all' alimentazione che ha una anomalia; ES: azzeramento della velocità delle ventole o spegnimento totale dei LED, per ripristinare il funzionamento normale bisogna disattivare la protezione o riavviare il dispositivo dall'apposito bottone nella "Finestra di Connessione" Riquadro (L)].
 - **C**=> 
 - **D**=> 
 - **E**=> 

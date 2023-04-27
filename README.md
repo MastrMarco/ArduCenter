@@ -96,9 +96,9 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## Informazioni Finestra Impostazioni Hub PC [F_Impostazioni-HUB_Fan]
 - **A**=> Bottone per Attivare/Disattivare la memorizzazione dei settaggi impostati dall'utente.
-- **B**=> Bottone per Attivare/Disattivare la protezione dell’alimentazione: 12v, 5v [Quando si attiverà, la scritta "Protezione Dispositivo" si colora di rosso e toglierà carico all' alimentazione che ha una anomalia; ES: azzeramento della velocità delle ventole o spegnimento totale dei LED, per ripristinare il funzionamento normale bisogna disattivare la protezione o riavviare il dispositivo dall'apposito bottone nella "Finestra di Connessione" Riquadro (L)].
+- **B**=> Bottone per Attivare/Disattivare la protezione dell’alimentazione: 12v, 5v [Quando si attiverà, la scritta "Protezione Dispositivo" si colora di rosso è toglierà carico all' alimentazione che ha una anomalia; ES: azzeramento della velocità delle ventole o spegnimento totale dei LED, per ripristinare il funzionamento normale bisogna disattivare la protezione o riavviare il dispositivo dall'apposito bottone nella "Finestra di Connessione" Riquadro (L)].
 - **C**=> Indicatore dello stato del dispositivo [Cliccando sulla scritta Es: "Buono", si avranno maggiori informazioni sul significato; la scritta cambierà colore in base alla gravità dell'errore. queste sigle si possono vedere anche nella "Finestra di Connessione" Riquadro (A)].
-- **D**=> 
+- **D**=> Bottone per Attivare/Disattivare la protezione LED [Quando si attiverà, la scritta "Protezione LED e Luminosità" si colorano di rosso è abbasserà la luminosità dei LED fino ad un livello che non abbia più l'anomalia; ES: se la tensione dei LED (+5V) non è stabile, o ha una anomalia in difetto del valore di tensione esso abbasserà la luminosità fino a quando non rileverà una tensione di tolleranza. Per ripristinare il funzionamento normale bisogna abbassare la luminosità di poco e dopo si può provare a impostare una luminosità più alta, o anche disattivando la protezione LED].
 - **E**=> 
 - **F**=> 
 

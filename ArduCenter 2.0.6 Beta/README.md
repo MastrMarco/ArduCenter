@@ -1,7 +1,7 @@
 [00] -> Dispositivi Aggiornati  23/04/23  
 
 ## Software
-AreduCenter  Versione B2.0.6 t33 [Ottimizazione + Risolti vari BUG + Attivata la funzione Ripristino]  
+AreduCenter  Versione B2.0.6 t33 [Ottimizazione + Risolti vari BUG + Attivata la funzione Ripristino Dati HUB]  
 
 ## Dispositivi                               
 ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.03V Versione Software PC AreduCenter2.0 2.0.6v [Ottimizazione + Risolti vari BUG]

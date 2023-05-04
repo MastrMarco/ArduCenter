@@ -2,8 +2,8 @@
 Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 ## Video
 - **Come Averlo** => https://www.youtube.com/watch?v=eZ7t1F8797c&t=1143s
-- **Spiegazione GUI P1** => https://www.youtube.com/watch?v=uE96V2uZVlI
-- **Spiegazione GUI P2** =>https://youtu.be/O1FbnbFxPTY
+- **Spiegazione GUI P1** => https://youtu.be/uE96V2uZVlI
+- **Spiegazione GUI P2** => https://youtu.be/O1FbnbFxPTY
 
 ## !Attenzione!
 Quando si prova ad aprire il software chiederà i permessi di Amministratore perché la libreria esterna per acquisire i dati del PC Es:(Temperatura CPU, GPU, ecc.…) ha bisogno di tali permessi. La libreria utilizzata si chiama Open Hardware Monitor, 

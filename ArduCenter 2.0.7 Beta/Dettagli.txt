@@ -1,0 +1,31 @@
+//*****************************************************************************************************************************//
+//--------------          By  MastrMarco  AreduCenter  Versione B2.0.6 t33      ISCRIVITI AL CANALE YOUTUBE       -------------//
+//
+//                                 Per Arduino Nano ATMega 328P NEW / OLD Boot loader
+//
+//                                       Dispositivi commpoatibbili  con il Software
+//                                                 ArduHubFanAudio 2.0
+//                                                   ArduHubFan 3.0
+//                                                   ArduHubFan 4.0
+//													 
+//													 
+//                                                  Canale Telegram
+//                                             https://t.me/MastrMarco_YT
+//
+//                                                    Canale GitHub
+//                                       https://github.com/MastrMarco/ArduCenter
+//
+//                                                  Canale Youtube
+//                                         https://www.youtube.com/@mastrmarco
+//*****************************************************************************************************************************//
+
+[00] -> Dispositivi Aggiornati  23/04/2023  
+
+-Software
+AreduCenter  Versione B2.0.6 t33 [Ottimizazione + Risolti vari BUG + Attivata la funzione Ripristino]   
+
+-Dispositivi                               
+ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.03V Versione Software PC AreduCenter2.0 2.0.6v [Ottimizazione + Risolti vari BUG]
+    ArduHubFan 3.0 Versione Firmuware di Arduino B2.03V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
+    ArduHubFan 4.0 Versione Firmuware di Arduino B1.03V Versione Software PC AreduCenter2.0 B2.0.6v [Ottimizazione + Risolti vari BUG]
+

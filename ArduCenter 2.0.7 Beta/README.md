@@ -1,12 +1,12 @@
 [00] -> Dispositivi Aggiornati  10/05/23  
 
 ## Software
-AreduCenter  Versione B2.0.7 t07 [Ottimizazione + Risolti vari BUG + Attivata la funzione Ripristino]  
+AreduCenter  Versione B2.0.7 t07 [Ottimizazione + Risolti vari BUG]  
 
 ## Dispositivi                               
 ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.04V Versione Software PC AreduCenter2.0 2.0.7v [Ottimizazione + Risolti vari BUG]
-ArduHubFan 3.0 Versione Firmuware di Arduino B2.04V Versione Software PC AreduCenter2.0 B2.0.7v [Ottimizazione + Risolti vari BUG]
-ArduHubFan 4.0 Versione Firmuware di Arduino B1.04V Versione Software PC AreduCenter2.0 B2.0.7v [Ottimizazione + Risolti vari BUG]
+     ArduHubFan 3.0 Versione Firmuware di Arduino B2.04V Versione Software PC AreduCenter2.0 2.0.7v [Ottimizazione + Risolti vari BUG]
+     ArduHubFan 4.0 Versione Firmuware di Arduino B1.04V Versione Software PC AreduCenter2.0 2.0.7v [Ottimizazione + Risolti vari BUG]
 
 ## Info Aggiornamenti
 Ver: 2.0.7 t07 Beta

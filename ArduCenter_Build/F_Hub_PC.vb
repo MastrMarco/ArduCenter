@@ -31,7 +31,6 @@ Public Class F_Hub_PC
         ElseIf F_Avvio.DatiRX_7(0) > 0 And F_Avvio.DatiRX_7(0) < 5 Then
             SwitchPannelHUB(F_HubPC_Ventole)
             FanMenù = "Hub PC Ventole"
-            BtnFan_GUI.BackgroundImage = My.Resources.BtnFanPage_GPU_Strip_ON
             BtnFan_GUI.Visible = True
 
             'Modalità Controllo Scheda Video o Strisca LED
@@ -44,7 +43,6 @@ Public Class F_Hub_PC
         ElseIf F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
             SwitchPannelHUB(F_HubPC_Dissipatore240)
             FanMenù = "Hub PC Dissipatore 240"
-            BtnFan_GUI.BackgroundImage = My.Resources.BtnFanPage_Fan
             BtnFan_GUI.Visible = True
 
             'Modalità Controllo Casse Audio o Strica LED Esterna
@@ -136,10 +134,6 @@ Public Class F_Hub_PC
     'Luminosità
     Private Sub TrackBarLuminosità_Scroll(sender As Object, e As EventArgs) Handles TrackBarLuminosità.Scroll
         F_Avvio.Data2 = TrackBarLuminosità.Value * 2.55
-    End Sub
-    Private Sub TrackBarLuminosità_MouseUp(sender As Object, e As MouseEventArgs) Handles TrackBarLuminosità.MouseUp
-        Dim L As Integer = F_Avvio.DatiRX_4(0) / 2.55
-        If TrackBarLuminosità.Value <> L And L >= TrackBarLuminosità.Minimum And L <= TrackBarLuminosità.Maximum Then TrackBarLuminosità.Value = L
     End Sub
     Private Sub BtnL_min_Click(sender As Object, e As EventArgs) Handles BtnL_min.Click
         TrackBarLuminosità.Value = 5
@@ -430,7 +424,20 @@ Public Class F_Hub_PC
     '  n += 1
     '        F_Home.LabelFinestraID.Text = n
     'Funzione loop
+
     Public Sub RX_TX()
+
+
+        'PowerLimitLED
+        'If (F_Avvio.DatiRX_1(4) = 1 And F_Avvio.Data2 > F_Avvio.DatiRX_4(0)) Then
+        '    Dim L As Integer = F_Avvio.DatiRX_4(0) / 2.55
+        '    If ((L >= TrackBarLuminosità.Minimum) And (L <= TrackBarLuminosità.Maximum)) Then
+        '        TrackBarLuminosità.Value = L
+        '        F_Avvio.Data2 = F_Avvio.DatiRX_4(0)
+        '    End If
+        'End If
+
+
         'Imposta La barra di regolazione Luminosità / Velocita Venrtole
         If F_Avvio.DatiRX_7(0) <> VerificaRX_Data_LED_Select And F_Avvio.DatiRX_4(0) >= 13 Then
 
@@ -446,12 +453,17 @@ Public Class F_Hub_PC
             If F_Avvio.DatiRX_5(0) < Hue_Max Then
                 H = F_Avvio.DatiRX_5(0)
                 S = F_Avvio.DatiRX_6(0)
-                V = F_Avvio.DatiRX_4(0)
+                If F_Avvio.DatiRX_4(0) > 0 Then
+                    Dim MapLum As Integer = map(F_Avvio.DatiRX_4(0), 0, 255, 80, 255)
+                    V = MapLum
+                Else
+                    V = F_Avvio.DatiRX_4(0)
+                End If
                 HSV_to_RGB()
-            End If
+                End If
 
 
-            If F_Avvio.DatiRX_7(0) > 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) > 0 And F_Avvio.DatiRX_7(0) <= 4 Then
                 F_HubPC_Ventole.IconaFanScolor.BackColor = Color.FromArgb(R, G, B)
 
             ElseIf F_Avvio.DatiRX_7(0) = 0 Then
@@ -488,17 +500,17 @@ Public Class F_Hub_PC
             If F_Avvio.DatiRX_4(0) <> "0" Then
                 TrackBarLuminosità.Enabled = True
                 'Luminosità Max
-                If F_Avvio.DatiRX_4(0) = 255 Then
+                If ((F_Avvio.DatiRX_4(0) = 255)) Then
                     BtnL_min.Enabled = True
                     BtnL_max.Enabled = False
                 End If
                 'Luminosità Min
-                If F_Avvio.DatiRX_4(0) = 13 Then
+                If ((F_Avvio.DatiRX_4(0) = 13)) Then
                     BtnL_min.Enabled = False
                     BtnL_max.Enabled = True
                 End If
                 'Luminosità Max / Min
-                If F_Avvio.DatiRX_4(0) >= 14 And F_Avvio.DatiRX_4(0) <= 254 Then
+                If ((F_Avvio.DatiRX_4(0) >= 14) And (F_Avvio.DatiRX_4(0) <= 254)) Then
                     BtnL_min.Enabled = True
                     BtnL_max.Enabled = True
                 End If
@@ -1271,7 +1283,10 @@ Public Class F_Hub_PC
 
 
 
-
+    'Funzione map dati
+    Public Function map(ByVal x As Long, ByVal in_min As Long, ByVal in_max As Long, ByVal out_min As Long, ByVal out_max As Long) As Long
+        Return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+    End Function
 
 
     'Converte i dati ricevuti in formato HSV in RGB vine utilizato per tutte le icone selezionate
@@ -1680,6 +1695,9 @@ Public Class F_Hub_PC
 
 
     'Cambia colore del testo che indica il dispositivo selezionato
+
+    Public Mod_Color_Sync As String = "Colore attuale [Mod Sync]"
+    Public Mod_Color_Manual As String = "Colore attuale [Mod Man...]"
     Public Sub HubControlManual()
         SelectDispositivoDefault()
         Select Case F_Avvio.DatiRX_7(0)
@@ -1688,13 +1706,13 @@ Public Class F_Hub_PC
             'Imposta l'interfaccia In Sync Mode Controllo uniforme
             Case = 0
                 'IconaFanAll.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Sync]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Sync
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Sync]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Sync
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Sync]"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Sync
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
-                F_HubPC_Ventole.TitoloFan.Text = "Tutte le ventole"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Sync
 
                 'F_HubPC_Ventole.LaFAN_All.ForeColor = Color.White
                 F_HubPC_Home.La_SyncMode.ForeColor = Color.White
@@ -1703,11 +1721,11 @@ Public Class F_Hub_PC
                  'Imposta l'interfaccia In Manual Mode Controllo della Ventola 1
             Case = 1
                 'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 1"
 
@@ -1718,11 +1736,11 @@ Public Class F_Hub_PC
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 2
             Case = 2
                 'IconaFan2.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 2"
 
@@ -1733,11 +1751,11 @@ Public Class F_Hub_PC
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 3
             Case = 3
                 'IconaFan3.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 3"
 
@@ -1748,11 +1766,11 @@ Public Class F_Hub_PC
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 4
             Case = 4
                 'IconaFan4.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 4"
 
@@ -1764,12 +1782,12 @@ Public Class F_Hub_PC
             Case = 5
                 'F_Fan_Menù_3.Btn_FanCPU_LED01.BackgroundImage = My.Resources.Icona_FanPO_1_2_Click
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_FanPO_1_3_
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man... Fan CPU 1]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Fan CPU 1"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
 
                 F_HubPC_Dissipatore240.Btn_FanCPU_1.ForeColor = Color.White
@@ -1780,12 +1798,12 @@ Public Class F_Hub_PC
             Case = 6
                 'F_Fan_Menù_3.Btn_FanCPU_LED02.BackgroundImage = My.Resources.Icona_FanPO_1_2_Click
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_FanPO_1_3_
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man... Fan CPU 2]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Fan CPU 2"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
 
                 F_HubPC_Dissipatore240.Btn_FanCPU_2.ForeColor = Color.White
@@ -1796,12 +1814,12 @@ Public Class F_Hub_PC
             Case = 7
                 'IconaFan4.BackgroundImage = IconaFanScolor.BackgroundImage
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_HSV_RGB_v1_3
-                F_HubPC_Dissipatore240.LaSelezione.Text = "Colore attuale [Mod Man... Pompa CPU]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Pompa CPU"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
 
                 F_HubPC_Dissipatore240.Btn_PompCPU.ForeColor = Color.White
@@ -1813,11 +1831,11 @@ Public Class F_Hub_PC
                 'IconaFanAll.BackgroundImage = IconaFanScolor.BackgroundImage
                 F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man... Scheda Video]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual + " Scheda Video"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
 
                 F_HubPC_GPU_SLED.BtnGPU_LED.ForeColor = Color.White
@@ -1829,11 +1847,11 @@ Public Class F_Hub_PC
                 'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
                 F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man... Strisca LED]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man...]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual + " Strisca LED"
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
 
                 F_HubPC_GPU_SLED.BtnStrip_LED.ForeColor = Color.White
@@ -1845,11 +1863,11 @@ Public Class F_Hub_PC
                 'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
                 'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man... Cassa Audio Sinistra]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Cassa Audio Sinistra"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
 
                 F_HubPC_CasseAudio.LaCassaAudio_S.ForeColor = Color.White
@@ -1861,11 +1879,11 @@ Public Class F_Hub_PC
                 'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
                 'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man... Cassa Audio Destra]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Cassa Audio Destra"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
 
                 F_HubPC_CasseAudio.LaCassaAudio_D.ForeColor = Color.White
@@ -1877,11 +1895,11 @@ Public Class F_Hub_PC
                 'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
                 'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
                 F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = "Manuale"
+                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = "Colore attuale [Mod Man...]"
-                F_HubPC_CasseAudio.LaSelezione.Text = "Colore attuale [Mod Man... Strisca a LED esterna]"
+                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
+                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Strisca a LED esterna"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
 
                 F_HubPC_CasseAudio.LaStriscaLED.ForeColor = Color.White
@@ -1923,6 +1941,5 @@ Public Class F_Hub_PC
         BtnAN_Discontinuo.Visible = False
         BtnAN_Tepmeratura.Visible = False
     End Sub
-
 
 End Class

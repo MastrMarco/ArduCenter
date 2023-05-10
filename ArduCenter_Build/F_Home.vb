@@ -56,7 +56,7 @@ Public Class F_Home
     End Sub
 
     '//ChiudiNascondi Btn
-    Private Sub BtnChiudi_Click(sender As Object, e As EventArgs) Handles BtnChiudi.Click
+    Public Sub BtnChiudi_Click(sender As Object, e As EventArgs) Handles BtnChiudi.Click
         'F_Avvisi.Close()
         'F_HardwareMonitor.Close()
         'F_SerialCommand_Fan.Close()
@@ -71,6 +71,10 @@ Public Class F_Home
         'For Each Form In My.Application.OpenForms
         '    Form.Close()
         'Next
+    End Sub
+    Private Sub F_Home_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        'F_Avvio.Close()
+        BtnChiudi_Click(sender, e)
     End Sub
 
     Private Sub BtnNascondi_Click(sender As Object, e As EventArgs) Handles BtnNascondi.Click
@@ -212,4 +216,6 @@ Public Class F_Home
 
         End Try
     End Sub
+
+
 End Class

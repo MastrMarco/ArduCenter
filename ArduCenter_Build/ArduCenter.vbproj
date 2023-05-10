@@ -109,9 +109,6 @@
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.2, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>packages\Guna.UI2.WinForms.2.0.4.2\lib\net48\Guna.UI2.dll</HintPath>
-    </Reference>
     <Reference Include="NAudio">
       <HintPath>..\..\NAudio.dll</HintPath>
     </Reference>

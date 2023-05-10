@@ -16,7 +16,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyCopyright("Copyright ©  2021 - 2023")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Se il progetto viene esposto a COM, il GUID seguente verrà usato come ID del typelib
 <Assembly: Guid("4c01db23-4df9-426a-97dd-0fcc28999db1")>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' usando l'asterisco '*' come illustrato di seguito:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.0.6")>
-<Assembly: AssemblyFileVersion("2.0.6")>
+<Assembly: AssemblyVersion("2.0.7")>
+<Assembly: AssemblyFileVersion("2.0.7")>
 <Assembly: NeutralResourcesLanguage("it-IT")>

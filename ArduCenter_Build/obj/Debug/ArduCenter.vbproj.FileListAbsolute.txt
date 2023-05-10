@@ -66,7 +66,6 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\ArduCen
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\ArduCenter.pdb
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\ArduCenter.xml
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\CircularProgressBar.dll
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Guna.UI2.dll
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\OpenHardwareMonitorLib.dll
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\WinFormAnimation.dll
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\CircularProgressBar.xml

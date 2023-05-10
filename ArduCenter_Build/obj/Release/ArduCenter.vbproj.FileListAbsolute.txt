@@ -73,4 +73,3 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduC
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_HubPC_Ventole.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_HubPC_GPU_SLED.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Hub_PC.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Release\Guna.UI2.dll

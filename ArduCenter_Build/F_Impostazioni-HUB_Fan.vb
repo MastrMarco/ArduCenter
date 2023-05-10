@@ -92,17 +92,17 @@
             StatoTempSens = 0
         End If
 
-        If F_Avvio.DatiRX_1(1) >= "4.5" And F_Avvio.DatiRX_1(1) <= "5.25" And F_Avvio.DatiRX_1(2) >= "11.5" And F_Avvio.DatiRX_1(2) <= "12.5" Then
+        If ((F_Avvio.DatiRX_1(1) >= "4.75" And F_Avvio.DatiRX_1(1) <= "5.25") And (F_Avvio.DatiRX_1(2) >= "11.40" And F_Avvio.DatiRX_1(2) <= "12.60")) Then
             StatoTensione = 1
         Else
             StatoTensione = 0
         End If
 
 
-        If F_Avvio.DatiRX_1(4) = 1 Then
-            StatoPowerLimit = 0
-        Else
+        If F_Avvio.DatiRX_1(4) = 0 Then
             StatoPowerLimit = 1
+        Else
+            StatoPowerLimit = 0
         End If
 
         If F_Avvio.DatiRX_2(0) = 1 Then
@@ -247,7 +247,7 @@
             F_Avvio.ErrorMod = 35
             F_Avvisi.AvvisoErrore()
         ElseIf InStato.Text = "ErV-Power" Then
-            F_Avvio.ErrorMod = 36
+            F_Avvio.ErrorMod = 33
             F_Avvisi.AvvisoErrore()
         ElseIf InStato.Text = "ErT-Power" Then
             F_Avvio.ErrorMod = 37

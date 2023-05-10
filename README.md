@@ -1,8 +1,9 @@
 # ArduCenter 2.0
 Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 ## Video
-- **Come Averlo** => https://www.youtube.com/watch?v=eZ7t1F8797c&t=1143s
-- **Spiegazione GUI** => https://www.youtube.com/watch?v=uE96V2uZVlI
+- **Come Averlo** => https://youtu.be/eZ7t1F8797c
+- **Spiegazione GUI P1** => https://youtu.be/uE96V2uZVlI
+- **Spiegazione GUI P2** => https://youtu.be/O1FbnbFxPTY
 
 ## !Attenzione!
 Quando si prova ad aprire il software chiederà i permessi di Amministratore perché la libreria esterna per acquisire i dati del PC Es:(Temperatura CPU, GPU, ecc.…) ha bisogno di tali permessi. La libreria utilizzata si chiama Open Hardware Monitor, 
@@ -96,11 +97,11 @@ Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafrui
 
 ## Informazioni Finestra Impostazioni Hub PC [F_Impostazioni-HUB_Fan]
 - **A**=> Bottone per Attivare/Disattivare la memorizzazione dei settaggi impostati dall'utente.
-- **B**=> Bottone per Attivare/Disattivare la protezione dell’alimentazione: 12v, 5v [Quando si attiverà, la scritta "Protezione Dispositivo" si colora di rosso e toglierà carico all' alimentazione che ha una anomalia; ES: azzeramento della velocità delle ventole o spegnimento totale dei LED, per ripristinare il funzionamento normale bisogna disattivare la protezione o riavviare il dispositivo dall'apposito bottone nella "Finestra di Connessione" Riquadro (L)].
+- **B**=> Bottone per Attivare/Disattivare la protezione dell’alimentazione: 12v, 5v [Quando si attiverà, la scritta "Protezione Dispositivo" si colora di rosso è toglierà carico all' alimentazione che ha una anomalia; ES: azzeramento della velocità delle ventole o spegnimento totale dei LED, per ripristinare il funzionamento normale bisogna disattivare la protezione o riavviare il dispositivo dall'apposito bottone nella "Finestra di Connessione" Riquadro (L)].
 - **C**=> Indicatore dello stato del dispositivo [Cliccando sulla scritta Es: "Buono", si avranno maggiori informazioni sul significato; la scritta cambierà colore in base alla gravità dell'errore. queste sigle si possono vedere anche nella "Finestra di Connessione" Riquadro (A)].
-- **D**=> 
-- **E**=> 
-- **F**=> 
+- **D**=> Bottone per Attivare/Disattivare la protezione LED [Quando si attiverà, la scritta "Protezione LED e Luminosità" si colorano di rosso è abbasserà la luminosità dei LED fino ad un livello che non abbia più l'anomalia; ES: se la tensione dei LED (+5V) non è stabile, o ha una anomalia in difetto del valore di tensione esso abbasserà la luminosità fino a quando non rileverà una tensione di tolleranza. Per ripristinare il funzionamento normale bisogna abbassare la luminosità di poco e dopo si può provare a impostare una luminosità più alta, o anche disattivando la protezione LED].
+- **E**=> Non Funzionante.
+- **F**=> Bottone per resettare l'HUB [Si consiglia di resettare l'HUB alla prima installazione del Firmware].
 
 ## - Finestra Hardware Monitor PC 
 

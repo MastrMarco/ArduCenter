@@ -1,4 +1,4 @@
-[00] -> Dispositivi Aggiornati  23/04/23  
+[00] -> Dispositivi Aggiornati  10/05/23  
 
 ## Software
 AreduCenter  Versione B2.0.7 t07 [Ottimizazione + Risolti vari BUG + Attivata la funzione Ripristino]  

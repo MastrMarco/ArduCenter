@@ -72,6 +72,9 @@ Public Class F_Home
         '    Form.Close()
         'Next
     End Sub
+    Private Sub BtnChiudi_MouseHover(sender As Object, e As EventArgs) Handles BtnChiudi.MouseHover
+        ToolTip1.SetToolTip(BtnChiudi, "Chiudi")
+    End Sub
     Private Sub F_Home_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         'F_Avvio.Close()
         BtnChiudi_Click(sender, e)
@@ -80,16 +83,22 @@ Public Class F_Home
     Private Sub BtnNascondi_Click(sender As Object, e As EventArgs) Handles BtnNascondi.Click
         WindowState = FormWindowState.Minimized
     End Sub
+    Private Sub BtnNascondi_MouseHover(sender As Object, e As EventArgs) Handles BtnNascondi.MouseHover
+        ToolTip1.SetToolTip(BtnNascondi, "Nascondi")
+    End Sub
 
     '//Button Form Impostazioni
     Private Sub BtnImpostazioni_Click(sender As Object, e As EventArgs) Handles BtnImpostazioni.Click
         If InForm.Location <> New Point(0, 84) Then
             InForm.Visible = True
+            SwitchPannelHome(F_Impostazioni)
+
+            InForm.Visible = True
             InForm.BackColor = Color.Gold
             InForm.Location = New Point(0, 84)
-            LabelFinestraID.Text = "Finestra Impostazioni [F_Set]"
+            LabelFinestraID.Text = "Finestra Impostazioni [F_Impostazioni]"
         End If
-        F_Avvio.FunzioneNull()
+        'F_Avvio.FunzioneNull()
     End Sub
     Private Sub BtnImpostazioni_MouseLeave(sender As Object, e As EventArgs) Handles BtnImpostazioni.MouseLeave
         If InForm.Location <> New Point(0, 84) Then
@@ -101,6 +110,9 @@ Public Class F_Home
             InFormHover.Visible = True
             InFormHover.Location = New Point(0, 84)
         End If
+    End Sub
+    Private Sub BtnImpostazioni_MouseHover(sender As Object, e As EventArgs) Handles BtnImpostazioni.MouseHover
+        ToolTip1.SetToolTip(BtnImpostazioni, "Finestra Impostazioni")
     End Sub
 
 
@@ -126,6 +138,9 @@ Public Class F_Home
             InFormHover.Visible = True
             InFormHover.Location = New Point(0, 166)
         End If
+    End Sub
+    Private Sub BtnConnessione_MouseHover(sender As Object, e As EventArgs) Handles BtnConnessione.MouseHover
+        ToolTip1.SetToolTip(BtnConnessione, "Finestra Connessione")
     End Sub
 
 
@@ -171,12 +186,16 @@ Public Class F_Home
         If InForm.Location <> New Point(0, 251) Then
             InFormHover.Visible = False
         End If
+        'MausePopUP.Hide()
     End Sub
     Private Sub BtnVentole_MouseMove(sender As Object, e As MouseEventArgs) Handles BtnVentole.MouseMove
         If InForm.Location <> New Point(0, 251) Then
             InFormHover.Visible = True
             InFormHover.Location = New Point(0, 251)
         End If
+    End Sub
+    Private Sub BtnVentole_MouseHover(sender As Object, e As EventArgs) Handles BtnVentole.MouseHover
+        ToolTip1.SetToolTip(BtnVentole, "Finestra Controllo HUB Fun")
     End Sub
 
 
@@ -202,6 +221,9 @@ Public Class F_Home
             InFormHover.Visible = True
             InFormHover.Location = New Point(0, 422)
         End If
+    End Sub
+    Private Sub BtnProjectArduino_MouseHover(sender As Object, e As EventArgs) Handles BtnProjectArduino.MouseHover
+        ToolTip1.SetToolTip(BtnProjectArduino, "Finestra Debug")
     End Sub
 
 

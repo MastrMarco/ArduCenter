@@ -215,7 +215,8 @@ Clicca OK per continuare
         ElseIf F_Avvio.ErrorMod = 10 Then
             If My.Settings.Lingua = ITA Then
                 LabelTextError.Text = "
-Il dispositivo verrà riavviato
+Il dispositivo verrà Riavviato
+è anche il Software verrà Riavviato.
 !!! Attenzione funzione Beta !!!
 
 Clicca OK per continuare
@@ -499,26 +500,17 @@ Clicca OK per continuare
             End If
         End If
 
+        'Riavvio
         If F_Avvio.ErrorMod = 10 Then
-            'F_Avvio.SerialPortArduino.RtsEnable = True
-            F_Avvio.SerialPortArduino.DtrEnable = True
-            F_Avvio.SerialPortArduino.DtrEnable = False
+            F_Avvio.RiavvioArduino = 1
+            F_Avvio.TimerBoot_Reset.Start()
         End If
 
+        'Ripristino
         If F_Avvio.ErrorMod = 102 Then
-
-            'F_Avvio.Rirpristino_Dati()
             F_Avvio.Data10 = 2
-            'F_Avvio.DelayReset = 1
             F_Avvio.RipristinoArduino = 1
             F_Avvio.TimerBoot_Reset.Start()
-
-
-            'F_Avvio.Aggiorna = 1
-            'F_Avvio.VerificaSeriale = 1
-            'F_Avvio.DTX = 1
-            'F_Avvio.CaricaDati_Boot = 0
-            'F_Avvio.DatiRicevuti = 0
         End If
 
         F_Home.Enabled = True

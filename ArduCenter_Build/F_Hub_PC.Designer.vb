@@ -117,6 +117,7 @@ Partial Class F_Hub_PC
         Me.LabelLuminosità.Size = New System.Drawing.Size(102, 18)
         Me.LabelLuminosità.TabIndex = 27
         Me.LabelLuminosità.Text = "Luminosità"
+        Me.LabelLuminosità.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelRGBAnimazioni
         '

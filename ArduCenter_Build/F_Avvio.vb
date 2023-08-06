@@ -7,12 +7,12 @@ Public Class F_Avvio
     'Nummero Versione Arduino
     Public ReadOnly InfoSoft_HOME As String = "By 
 MastrMarco
-Beta 07"
+Beta 08"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
-    Public ReadOnly Versione As String = "v 2.0.7"
-    Public DataRilascio As String = "10-05-23"
+    Public ReadOnly Versione As String = "v 2.0.8"
+    Public DataRilascio As String = "06-08-23"
 
 
     'Old
@@ -84,6 +84,7 @@ Beta 07"
     Dim Riavvio_Arduino As String = 1
     Private ReadOnly DelayCOM As Integer = 1100
     Public RipristinoArduino As Integer = 0
+    Public RiavvioArduino As Integer = 0
 
     Private Sub F_Avvio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '//Smussa Angoli della Finestra Principale
@@ -326,7 +327,7 @@ Beta 07"
 
                 If DTX = 0 Then
                     'Aggorna Dati invio TX
-                    DatiTX = (Data0 + ";" + Data1.ToString + ";" + Data2.ToString + ";" + Data3.ToString + ";" + Data4.ToString + ";" + Data5.ToString + ";" + Data6 + ";" + Data7 + ";" + Data8 + ";" + Data9 + ";" + Data10 + ";" + Data11 + ";" + Data12 + ";" + Data13 + ";" + Data14 + ";" + Data15 + ";" + Data16 + ";")
+                    DatiTX = (Data0 + ";" + Data1.ToString() + ";" + Data2.ToString() + ";" + Data3.ToString() + ";" + Data4.ToString() + ";" + Data5.ToString() + ";" + Data6 + ";" + Data7 + ";" + Data8 + ";" + Data9 + ";" + Data10 + ";" + Data11 + ";" + Data12 + ";" + Data13 + ";" + Data14 + ";" + Data15 + ";" + Data16 + ";")
                 Else
                     If CaricaDati_Boot = 0 Then
                         CaricamentoDatiAggiornamento()
@@ -843,11 +844,11 @@ Beta 07"
     Public DelayReset_Boot As Integer = 1
     Private Sub TimerBoot_Reset_Tick(sender As Object, e As EventArgs) Handles TimerBoot_Reset.Tick
         'Boot_Arduino
-        If (CaricaDati_Boot = 1 And (DelayReset_Boot <> 0 And DelayReset_Boot <= 3) And RipristinoArduino = 0) Then
+        If (CaricaDati_Boot = 1 And (DelayReset_Boot <> 0 And DelayReset_Boot <= 3) And (RipristinoArduino = 0 Or RiavvioArduino = 0)) Then
             DelayReset_Boot += 1
         End If
 
-        If DelayReset_Boot >= 3 And RipristinoArduino = 0 Then
+        If DelayReset_Boot >= 3 And (RipristinoArduino = 0 Or RiavvioArduino = 0) Then
             Data0 = 200
             DTX = 0
             TimerBoot_Reset.Stop()
@@ -855,7 +856,7 @@ Beta 07"
 
 
         'Inizio Ripristino
-        If RipristinoArduino = 1 And DatiRX_2(0) = 2 Then
+        If ((RipristinoArduino = 1 And DatiRX_2(0) = 2) Or (RiavvioArduino = 1)) Then
             SerialPortArduino.DtrEnable = True
             SerialPortArduino.DtrEnable = False
             My.Settings.SerialCOM = SerialPortArduino.PortName

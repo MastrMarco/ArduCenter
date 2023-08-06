@@ -115,6 +115,8 @@
     <Reference Include="OpenHardwareMonitorLib">
       <HintPath>..\OpenHardwareMonitor\OpenHardwareMonitorLib.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -123,11 +125,13 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
     </Reference>
@@ -191,6 +195,12 @@
     <Compile Include="F_HubPC_CasseAudio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="F_HubPC_Home_v2.Designer.vb">
+      <DependentUpon>F_HubPC_Home_v2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F_HubPC_Home_v2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="F_HubPC_Ventole.Designer.vb">
       <DependentUpon>F_HubPC_Ventole.vb</DependentUpon>
     </Compile>
@@ -237,6 +247,12 @@
       <DependentUpon>F_Impostazioni-HUB_Ventole.vb</DependentUpon>
     </Compile>
     <Compile Include="F_Impostazioni-HUB_Ventole.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Impostazioni.Designer.vb">
+      <DependentUpon>F_Impostazioni.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F_Impostazioni.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_MonitorHardware_HUB.Designer.vb">
@@ -318,6 +334,9 @@
     <EmbeddedResource Include="F_HubPC_Home.resx">
       <DependentUpon>F_HubPC_Home.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_HubPC_Home_v2.resx">
+      <DependentUpon>F_HubPC_Home_v2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_HubPC_Ventole.resx">
       <DependentUpon>F_HubPC_Ventole.vb</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="F_Impostazioni-HUB_Ventole.resx">
       <DependentUpon>F_Impostazioni-HUB_Ventole.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Impostazioni.resx">
+      <DependentUpon>F_Impostazioni.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_MonitorHardware_HUB.resx">
       <DependentUpon>F_MonitorHardware_HUB.vb</DependentUpon>

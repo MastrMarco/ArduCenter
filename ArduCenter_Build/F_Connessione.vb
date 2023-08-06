@@ -1,4 +1,7 @@
-﻿Public Class F_Connessione
+﻿Imports System.Windows.Controls
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class F_Connessione
     Private Sub F_Connessione_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -18,7 +21,7 @@
 
 
 
-            If My.Settings.AutoForm_Pan = "No" Then
+        If My.Settings.AutoForm_Pan = "No" Then
             BtnAuto_Form.BackgroundImage = My.Resources.btn_Swich
             LabelAutoForm.Text = "Disattivo"
         ElseIf My.Settings.AutoForm_Pan = "Si" Then
@@ -60,6 +63,13 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+    Private Sub BtnConnettiDisconnetti_MouseHover(sender As Object, e As EventArgs) Handles BtnConnettiDisconnetti.MouseHover
+        If F_Avvio.SerialPortArduino.IsOpen = False Then
+            F_Home.ToolTip1.SetToolTip(BtnConnettiDisconnetti, "Connetti")
+        Else
+            F_Home.ToolTip1.SetToolTip(BtnConnettiDisconnetti, "Disconnetti")
+        End If
     End Sub
 
 
@@ -115,7 +125,7 @@
         F_Avvio.DTX = 1
         F_Avvio.CaricaDati_Boot = 0
 
-        If F_Avvio.RipristinoArduino = 0 Then
+        If F_Avvio.RipristinoArduino = 0 And F_Avvio.RiavvioArduino = 0 Then
             My.Settings.AutoConnesione = "No"
         End If
         BtnAutoConnessione.BackgroundImage = My.Resources.btn_Swich
@@ -207,6 +217,9 @@
     Private Sub BtnHardwareMonitor_Click(sender As Object, e As EventArgs) Handles BtnHardwareMonitor.Click
         F_Hub_PC.BtnTaskHardware_GUI_Click(sender, e)
     End Sub
+    Private Sub BtnHardwareMonitor_MouseHover(sender As Object, e As EventArgs) Handles BtnHardwareMonitor.MouseHover
+        F_Home.ToolTip1.SetToolTip(BtnHardwareMonitor, "Hardware Monitor Old Version")
+    End Sub
 
     Private Sub BtnDataArduino_Click(sender As Object, e As EventArgs) Handles BtnDataArduino.Click
         If F_Avvio.SerialPortArduino.IsOpen = True Then
@@ -245,6 +258,9 @@
 
     Private Sub BtnFile_Click(sender As Object, e As EventArgs) Handles BtnFile.Click
         Process.Start("explorer.exe", Application.StartupPath())
+    End Sub
+    Private Sub BtnFile_MouseHover(sender As Object, e As EventArgs) Handles BtnFile.MouseHover
+        F_Home.ToolTip1.SetToolTip(BtnFile, "Apre la cartella sorgente")
     End Sub
 
     Private Sub BtnFile_MouseLeave(sender As Object, e As EventArgs) Handles BtnFile.MouseLeave

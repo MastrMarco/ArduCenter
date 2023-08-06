@@ -22,6 +22,7 @@ Partial Class F_Home
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Home))
         Me.PanBarraTop = New System.Windows.Forms.Panel()
         Me.BtnChiudi = New System.Windows.Forms.PictureBox()
@@ -39,6 +40,7 @@ Partial Class F_Home
         Me.InForm = New System.Windows.Forms.PictureBox()
         Me.LaInfoSoft = New System.Windows.Forms.Label()
         Me.La_Caricamentro = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PanBarraTop.SuspendLayout()
         CType(Me.BtnChiudi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnNascondi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -136,7 +138,6 @@ Partial Class F_Home
         Me.BtnImpostazioni.BackColor = System.Drawing.Color.Transparent
         Me.BtnImpostazioni.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnGUI_HomeImpostazioni
         Me.BtnImpostazioni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.BtnImpostazioni.Enabled = False
         Me.BtnImpostazioni.Location = New System.Drawing.Point(13, 69)
         Me.BtnImpostazioni.Name = "BtnImpostazioni"
         Me.BtnImpostazioni.Size = New System.Drawing.Size(65, 65)
@@ -236,6 +237,11 @@ Partial Class F_Home
         Me.La_Caricamentro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.La_Caricamentro.Visible = False
         '
+        'ToolTip1
+        '
+        Me.ToolTip1.BackColor = System.Drawing.Color.White
+        Me.ToolTip1.ForeColor = System.Drawing.Color.Black
+        '
         'F_Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,4 +302,5 @@ Partial Class F_Home
     Public WithEvents InForm As PictureBox
     Public WithEvents PanForm As Panel
     Friend WithEvents La_Caricamentro As Label
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

@@ -343,7 +343,7 @@ Public Class F_HubPC_Ventole
 
         If F_Avvio.DatiRX_9(0) = "0" And F_Avvio.DatiRX_7(0) = 0 Then
             'BtnAutoVelocità.ForeColor = Color.Gold
-            F_Hub_PC.TrackBarVelocità.Enabled = True
+            'F_Hub_PC.TrackBarVelocità.Enabled = True
 
             BtnTSens.BackgroundImage = My.Resources.btn_Swich
             BtnTCPU.BackgroundImage = My.Resources.btn_Swich

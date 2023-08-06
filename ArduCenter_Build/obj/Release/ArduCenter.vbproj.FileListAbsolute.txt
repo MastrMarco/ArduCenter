@@ -73,3 +73,5 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduC
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_HubPC_Ventole.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_HubPC_GPU_SLED.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Hub_PC.resources
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Impostazioni.resources
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_HubPC_Home_v2.resources

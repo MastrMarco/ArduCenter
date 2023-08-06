@@ -1,7 +1,7 @@
 [00] -> Dispositivi Aggiornati  06/08/23  
 
 ## Software
-AreduCenter  Versione B2.0.8 t08 [Ottimizazione + Risolti vari BUG]  
+AreduCenter  Versione B2.0.8 t08 [Risolti vari BUG]  
 
 ## Dispositivi                               
 ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.04V Versione Software PC AreduCenter2.0 2.0.8v [Ottimizazione + Risolti vari BUG]

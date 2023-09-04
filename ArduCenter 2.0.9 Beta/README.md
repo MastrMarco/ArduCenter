@@ -9,12 +9,10 @@ ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.05V Versione Software PC Ar
      ArduHubFan 4.0 Versione Firmuware di Arduino B1.05V Versione Software PC AreduCenter2.0 2.0.9v [Ottimizazione + Risolti vari BUG]
 
 ## Info Aggiornamenti
-Ver: 2.0.9 t06 Beta
-
 Software ArduCenter
 - Risolti vari problemi.
-- Risolto bug che non facevano connettere il dispositivo, dopo aver selezionato l'elemento GPU o StripLED.
-- Risolto bug che riguardava la funzione "StartFan" [Essa non funzionava durante l'animazione di Avvio hub].
+- Risolto bug che non faceva connettere al dispositivo, dopo aver selezionato l'elemento GPU o StripLED.
+- Risolto bug che riguardava la funzione "StartFan" [Essa non funzionava durante l'animazione di Avvio Hub].
 - Migliorato ed aumentato l'utilizzo del "ToolTip".
 - Migliorata la GUI [F_Connessione].
 - Richiesto l'Aggiornamento del Firmware di Arduino alla versione X.05

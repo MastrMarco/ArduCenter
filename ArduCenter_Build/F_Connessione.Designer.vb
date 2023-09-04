@@ -129,7 +129,7 @@ Partial Class F_Connessione
         '
         Me.LabelDatiSeriali.BackColor = System.Drawing.Color.Transparent
         Me.LabelDatiSeriali.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelDatiSeriali.ForeColor = System.Drawing.Color.Gold
+        Me.LabelDatiSeriali.ForeColor = System.Drawing.Color.White
         Me.LabelDatiSeriali.Location = New System.Drawing.Point(293, 283)
         Me.LabelDatiSeriali.Name = "LabelDatiSeriali"
         Me.LabelDatiSeriali.Size = New System.Drawing.Size(335, 23)
@@ -157,7 +157,7 @@ Partial Class F_Connessione
         Me.LabelSoftArduino.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.LabelSoftArduino.Location = New System.Drawing.Point(317, 388)
         Me.LabelSoftArduino.Name = "LabelSoftArduino"
-        Me.LabelSoftArduino.Size = New System.Drawing.Size(289, 16)
+        Me.LabelSoftArduino.Size = New System.Drawing.Size(288, 16)
         Me.LabelSoftArduino.TabIndex = 6
         Me.LabelSoftArduino.Text = "Versione Firmware di  Arduino :   V ----"
         '
@@ -169,7 +169,7 @@ Partial Class F_Connessione
         Me.LabelSoftArduCenter.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.LabelSoftArduCenter.Location = New System.Drawing.Point(304, 406)
         Me.LabelSoftArduCenter.Name = "LabelSoftArduCenter"
-        Me.LabelSoftArduCenter.Size = New System.Drawing.Size(313, 16)
+        Me.LabelSoftArduCenter.Size = New System.Drawing.Size(312, 16)
         Me.LabelSoftArduCenter.TabIndex = 7
         Me.LabelSoftArduCenter.Text = "Versione che supporta ArduCenter : V ----"
         '
@@ -179,7 +179,7 @@ Partial Class F_Connessione
         Me.LaFirmware.BackColor = System.Drawing.Color.Transparent
         Me.LaFirmware.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaFirmware.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LaFirmware.Location = New System.Drawing.Point(136, 377)
+        Me.LaFirmware.Location = New System.Drawing.Point(139, 377)
         Me.LaFirmware.Name = "LaFirmware"
         Me.LaFirmware.Size = New System.Drawing.Size(43, 18)
         Me.LaFirmware.TabIndex = 8
@@ -191,7 +191,7 @@ Partial Class F_Connessione
         Me.LabelFirmware.BackColor = System.Drawing.Color.Transparent
         Me.LabelFirmware.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelFirmware.ForeColor = System.Drawing.Color.White
-        Me.LabelFirmware.Location = New System.Drawing.Point(116, 356)
+        Me.LabelFirmware.Location = New System.Drawing.Point(119, 356)
         Me.LabelFirmware.Name = "LabelFirmware"
         Me.LabelFirmware.Size = New System.Drawing.Size(92, 18)
         Me.LabelFirmware.TabIndex = 9
@@ -201,21 +201,22 @@ Partial Class F_Connessione
         '
         Me.LaBoot.AutoSize = True
         Me.LaBoot.BackColor = System.Drawing.Color.Transparent
-        Me.LaBoot.Font = New System.Drawing.Font("Verdana", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaBoot.ForeColor = System.Drawing.Color.DarkOrange
-        Me.LaBoot.Location = New System.Drawing.Point(84, 321)
+        Me.LaBoot.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LaBoot.ForeColor = System.Drawing.Color.DarkCyan
+        Me.LaBoot.Location = New System.Drawing.Point(83, 330)
         Me.LaBoot.Name = "LaBoot"
-        Me.LaBoot.Size = New System.Drawing.Size(119, 20)
+        Me.LaBoot.Size = New System.Drawing.Size(123, 18)
         Me.LaBoot.TabIndex = 10
-        Me.LaBoot.Text = "     ----------"
+        Me.LaBoot.Text = "       ----------"
+        Me.LaBoot.Visible = False
         '
         'LaSoc
         '
         Me.LaSoc.AutoSize = True
         Me.LaSoc.BackColor = System.Drawing.Color.Transparent
         Me.LaSoc.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaSoc.ForeColor = System.Drawing.Color.GreenYellow
-        Me.LaSoc.Location = New System.Drawing.Point(96, 299)
+        Me.LaSoc.ForeColor = System.Drawing.Color.DarkCyan
+        Me.LaSoc.Location = New System.Drawing.Point(98, 308)
         Me.LaSoc.Name = "LaSoc"
         Me.LaSoc.Size = New System.Drawing.Size(108, 18)
         Me.LaSoc.TabIndex = 11
@@ -227,7 +228,7 @@ Partial Class F_Connessione
         Me.LabelSOC.BackColor = System.Drawing.Color.Transparent
         Me.LabelSOC.Font = New System.Drawing.Font("Verdana", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSOC.ForeColor = System.Drawing.Color.White
-        Me.LabelSOC.Location = New System.Drawing.Point(136, 275)
+        Me.LabelSOC.Location = New System.Drawing.Point(138, 284)
         Me.LabelSOC.Name = "LabelSOC"
         Me.LabelSOC.Size = New System.Drawing.Size(45, 20)
         Me.LabelSOC.TabIndex = 12
@@ -238,7 +239,7 @@ Partial Class F_Connessione
         Me.LaNomePCB.AutoSize = True
         Me.LaNomePCB.BackColor = System.Drawing.Color.Transparent
         Me.LaNomePCB.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaNomePCB.ForeColor = System.Drawing.Color.Gold
+        Me.LaNomePCB.ForeColor = System.Drawing.Color.DarkCyan
         Me.LaNomePCB.Location = New System.Drawing.Point(101, 247)
         Me.LaNomePCB.Name = "LaNomePCB"
         Me.LaNomePCB.Size = New System.Drawing.Size(103, 18)
@@ -273,7 +274,7 @@ Partial Class F_Connessione
         '
         Me.LaProgetto.BackColor = System.Drawing.Color.Transparent
         Me.LaProgetto.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaProgetto.ForeColor = System.Drawing.Color.DarkOrange
+        Me.LaProgetto.ForeColor = System.Drawing.Color.LightSeaGreen
         Me.LaProgetto.Location = New System.Drawing.Point(24, 60)
         Me.LaProgetto.Name = "LaProgetto"
         Me.LaProgetto.Size = New System.Drawing.Size(208, 18)
@@ -310,7 +311,7 @@ Partial Class F_Connessione
         Me.LabelConnessioneAuto.AutoSize = True
         Me.LabelConnessioneAuto.BackColor = System.Drawing.Color.Transparent
         Me.LabelConnessioneAuto.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelConnessioneAuto.ForeColor = System.Drawing.Color.Gold
+        Me.LabelConnessioneAuto.ForeColor = System.Drawing.Color.DarkCyan
         Me.LabelConnessioneAuto.Location = New System.Drawing.Point(690, 45)
         Me.LabelConnessioneAuto.Name = "LabelConnessioneAuto"
         Me.LabelConnessioneAuto.Size = New System.Drawing.Size(81, 18)
@@ -465,7 +466,7 @@ Partial Class F_Connessione
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Gold
+        Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(749, 383)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(136, 36)
@@ -478,7 +479,7 @@ Partial Class F_Connessione
         Me.LabelAutoForm.AutoSize = True
         Me.LabelAutoForm.BackColor = System.Drawing.Color.Transparent
         Me.LabelAutoForm.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAutoForm.ForeColor = System.Drawing.Color.Gold
+        Me.LabelAutoForm.ForeColor = System.Drawing.Color.DarkCyan
         Me.LabelAutoForm.Location = New System.Drawing.Point(690, 137)
         Me.LabelAutoForm.Name = "LabelAutoForm"
         Me.LabelAutoForm.Size = New System.Drawing.Size(81, 18)

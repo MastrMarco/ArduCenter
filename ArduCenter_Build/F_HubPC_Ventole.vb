@@ -52,7 +52,7 @@ Public Class F_HubPC_Ventole
     End Sub
 
     'Funzione Btn Seleziona Ventola 1
-    Private Sub IconaFan1_Click(sender As Object, e As EventArgs) Handles IconaFan1.Click
+    Public Sub IconaFan1_Click(sender As Object, e As EventArgs) Handles IconaFan1.Click
         F_Avvio.Data1 = 1
 
         TitoloFan.ForeColor = Color.White
@@ -69,6 +69,14 @@ Public Class F_HubPC_Ventole
 
     End Sub
 
+    Private Sub IconaFan1_MouseHover(sender As Object, e As EventArgs) Handles IconaFan1.MouseHover
+        F_Home.ToolTip1.SetToolTip(IconaFan1, "Colore " & F_Hub_PC.H_Fan1 & "
+Luminosità " & Int(F_Hub_PC.V_Fan1 / 2.55) & "%" & "
+Velocità " & Int(S_Fan_1 / 2.55) & "%")
+    End Sub
+
+
+
     'Funzione Btn Seleziona Ventola 2
     Private Sub IconaFan2_Click(sender As Object, e As EventArgs) Handles IconaFan2.Click
         F_Avvio.Data1 = 2
@@ -84,6 +92,11 @@ Public Class F_HubPC_Ventole
             F_Avvio.Data5 = S_Fan_2
         End If
 
+    End Sub
+    Private Sub IconaFan2_MouseHover(sender As Object, e As EventArgs) Handles IconaFan2.MouseHover
+        F_Home.ToolTip1.SetToolTip(IconaFan2, "Colore " & F_Hub_PC.H_Fan2 & "
+Luminosità " & Int(F_Hub_PC.V_Fan2 / 2.55) & "%" & "
+Velocità " & Int(S_Fan_2 / 2.55) & "%")
     End Sub
 
     'Funzione Btn Seleziona Ventola 3
@@ -102,6 +115,11 @@ Public Class F_HubPC_Ventole
         End If
 
     End Sub
+    Private Sub IconaFan3_MouseHover(sender As Object, e As EventArgs) Handles IconaFan3.MouseHover
+        F_Home.ToolTip1.SetToolTip(IconaFan3, "Colore " & F_Hub_PC.H_Fan3 & "
+Luminosità " & Int(F_Hub_PC.V_Fan3 / 2.55) & "%" & "
+Velocità " & Int(S_Fan_3 / 2.55) & "%")
+    End Sub
 
     'Funzione Btn Seleziona Ventola 4
     Private Sub IconaFan4_Click(sender As Object, e As EventArgs) Handles IconaFan4.Click
@@ -118,6 +136,11 @@ Public Class F_HubPC_Ventole
             F_Avvio.Data5 = S_Fan_4
         End If
 
+    End Sub
+    Private Sub IconaFan4_MouseHover(sender As Object, e As EventArgs) Handles IconaFan4.MouseHover
+        F_Home.ToolTip1.SetToolTip(IconaFan4, "Colore " & F_Hub_PC.H_Fan4 & "
+Luminosità " & Int(F_Hub_PC.V_Fan4 / 2.55) & "%" & "
+Velocità " & Int(S_Fan_4 / 2.55) & "%")
     End Sub
 
     'Richiama la Funzione Btn Tutto Sincoronizato
@@ -628,6 +651,11 @@ Public Class F_HubPC_Ventole
             Case = 4
                 IconaFan4.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
         End Select
+    End Sub
+
+
+    Private Sub F_HubPC_Ventole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 
 End Class

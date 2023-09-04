@@ -1,8 +1,14 @@
 ﻿Imports System.Threading
 
 Public Class F_HubPC_Home
+
+    Dim ToolTip_SyncMode As String = "Colore Bianco
+Luminosità 100%
+Velocità 50%"
+
     Private Sub F_HubPC_Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'F_Home.ToolTip1.SetToolTip(Btn_Hub_SyncMode, "Colore " & F_Avvio.Data3)
     End Sub
 
     Public Sub GUI_home_HUB()
@@ -78,6 +84,13 @@ Public Class F_HubPC_Home
     End Sub
 
 
+    Private Sub Btn_Hub_SyncMode_MouseHover(sender As Object, e As EventArgs) Handles Btn_Hub_SyncMode.MouseHover
+        F_Home.ToolTip1.SetToolTip(Btn_Hub_SyncMode, "Colore " & F_Hub_PC.H_SyncMode & "
+Luminosità " & Int(F_Hub_PC.V_SyncMode / 2.55) & "%" & "
+Velocità " & Int(F_HubPC_Ventole.S_Fan_All / 2.55) & "%")
+    End Sub
+
+
 
 
 
@@ -101,6 +114,9 @@ Public Class F_HubPC_Home
         '    F_Hub_PC.SwitchPannelHUB(F_HubPC_Ventole)
         'End If
 
+        If F_Avvio.Data1 = 0 Or F_Avvio.Data1 > 4 Then
+            F_HubPC_Ventole.IconaFan1_Click(sender, e)
+        End If
     End Sub
 
 
@@ -146,6 +162,13 @@ Public Class F_HubPC_Home
             F_Hub_PC.BtnFan_GUI.Visible = True
         End If
     End Sub
+    Private Sub Btn_F_HubPC_GPU_MouseHover(sender As Object, e As EventArgs) Handles Btn_F_HubPC_GPU.MouseHover
+        F_Home.ToolTip1.SetToolTip(Btn_F_HubPC_GPU, "Colore " & F_Hub_PC.H_GPU & "
+Luminosità " & Int(F_Hub_PC.V_GPU / 2.55) & "%" & "
+Velocità Null")
+    End Sub
+
+
 
     Private Sub Btn_F_HubPC_SLED_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_SLED.Click
         F_Avvio.Data1 = 9
@@ -162,6 +185,12 @@ Public Class F_HubPC_Home
             F_Hub_PC.BtnFan_GUI.Visible = True
         End If
     End Sub
+    Private Sub Btn_F_HubPC_SLED_MouseHover(sender As Object, e As EventArgs) Handles Btn_F_HubPC_SLED.MouseHover
+        F_Home.ToolTip1.SetToolTip(Btn_F_HubPC_SLED, "Colore " & F_Hub_PC.H_SLED & "
+Luminosità " & Int(F_Hub_PC.V_SLED / 2.55) & "%")
+    End Sub
+
+
 
     Private Sub Btn_F_HubPC_Dissipatore_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_Dissipatore.Click
         'F_Avvio.Data1 = 7
@@ -179,6 +208,11 @@ Public Class F_HubPC_Home
         F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
         F_Hub_PC.BtnFan_GUI.Visible = True
         'End If
+
+
+        If F_Avvio.Data1 < 5 Or F_Avvio.Data1 > 7 Then
+            F_HubPC_Dissipatore240.Btn_CPU_LED_Click(sender, e)
+        End If
     End Sub
 
     Private Sub Btn_F_HubPC_CasseAudio_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_CasseAudio.Click
@@ -187,6 +221,10 @@ Public Class F_HubPC_Home
         'Info Schermata
         F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
         F_Hub_PC.BtnFan_GUI.Visible = True
+
+        If F_Avvio.Data1 < 10 Or F_Avvio.Data1 > 12 Then
+            F_HubPC_CasseAudio.Btn_CassaAudio_D_Click(sender, e)
+        End If
     End Sub
 
 

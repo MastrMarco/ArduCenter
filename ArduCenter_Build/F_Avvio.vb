@@ -7,12 +7,12 @@ Public Class F_Avvio
     'Nummero Versione Arduino
     Public ReadOnly InfoSoft_HOME As String = "By 
 MastrMarco
-Beta 08"
+Beta 06"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
-    Public ReadOnly Versione As String = "v 2.0.8"
-    Public DataRilascio As String = "06-08-23"
+    Public ReadOnly Versione As String = "v 2.0.9"
+    Public DataRilascio As String = "05-09-23"
 
 
     'Old
@@ -24,18 +24,18 @@ Beta 08"
     Public Versione_GUI_Audio As String = "3.00"
 
     'Hub 2.0
-    Public DataRilascio_GUI_Fan_Audio As String = "10/05/2023"
-    Public Versione_GUI_Fan_Audio As String = "4.04"
+    Public DataRilascio_GUI_Fan_Audio As String = "05/09/2023"
+    Public Versione_GUI_Fan_Audio As String = "4.05"
 
     'Hub 3.0
-    Public DataRilascio_GUI_Fan_3 As String = "10/05/2023"
+    Public DataRilascio_GUI_Fan_3 As String = "05/09/2023"
     Public Old_Versione_GUI_Fan_3 As String = "2.03"
-    Public Versione_GUI_Fan_3 As String = "2.04"
+    Public Versione_GUI_Fan_3 As String = "2.05"
 
     'Hub 4.0
-    Public DataRilascio_GUI_Fan_4 As String = "10/05/2023"
+    Public DataRilascio_GUI_Fan_4 As String = "05/09/2023"
     Public Old_Versione_GUI_Fan_4 As String = "1.03"
-    Public Versione_GUI_Fan_4 As String = "1.04"
+    Public Versione_GUI_Fan_4 As String = "1.05"
 
 
     Public DatiRicevuti As String = ""
@@ -782,15 +782,24 @@ Beta 08"
                     F_Hub_PC.Btn_Color_MOD() 'Carica i dati nella GUI Fan ColoreMod
                     F_HubPC_Ventole.UI_Ventole() 'Carica i dati nella GUI Fan Velocità Luminosità
 
-                    'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
+                'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
 
-                    'Barra Luminosità
-                    If DatiRX_4(DatiRX_7(0)) >= 13 Then
-                        F_Hub_PC.TrackBarLuminosità.Value = DatiRX_4(DatiRX_7(0)) / 2.55
-                    End If
-                    'Barra Velocità
-                    F_Hub_PC.TrackBarVelocità.Value = DatiRX_8(DatiRX_7(1)) / 2.55
-                    F_HubPC_Ventole.S_Fan_All = DatiRX_8(0)
+                'Barra Luminosità
+                If DatiRX_4(DatiRX_7(0)) >= 13 Then
+                    F_Hub_PC.TrackBarLuminosità.Value = DatiRX_4(DatiRX_7(0)) / 2.55
+                Else
+                    F_Hub_PC.TrackBarLuminosità.Value = F_Hub_PC.TrackBarLuminosità.Minimum
+                End If
+
+                'Barra Velocità
+                ' If DatiRX_4(DatiRX_7(0)) <= 4 Then
+                If DatiRX_7(0) <= 4 Then
+                    F_Hub_PC.TrackBarVelocità.Value = DatiRX_8(DatiRX_7(0)) / 2.55
+                Else
+                    F_Hub_PC.TrackBarVelocità.Value = F_Hub_PC.TrackBarVelocità.Minimum
+                End If
+
+                F_HubPC_Ventole.S_Fan_All = DatiRX_8(0)
                     F_HubPC_Ventole.S_Fan_1 = DatiRX_8(1)
                     F_HubPC_Ventole.S_Fan_2 = DatiRX_8(2)
                     F_HubPC_Ventole.S_Fan_3 = DatiRX_8(3)
@@ -841,10 +850,17 @@ Beta 08"
         End If
     End Sub
 
+
+
+
+
+
+
     Public DelayReset_Boot As Integer = 1
     Private Sub TimerBoot_Reset_Tick(sender As Object, e As EventArgs) Handles TimerBoot_Reset.Tick
         'Boot_Arduino
-        If (CaricaDati_Boot = 1 And (DelayReset_Boot <> 0 And DelayReset_Boot <= 3) And (RipristinoArduino = 0 Or RiavvioArduino = 0)) Then
+        'If (CaricaDati_Boot = 1 And (DelayReset_Boot <> 0 And DelayReset_Boot <= 3) And (RipristinoArduino = 0 Or RiavvioArduino = 0)) Then
+        If (CaricaDati_Boot = 1 And (DelayReset_Boot <= 3 And (RipristinoArduino = 0 Or RiavvioArduino = 0))) Then
             DelayReset_Boot += 1
         End If
 

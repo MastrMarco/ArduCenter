@@ -55,6 +55,34 @@ Public Class F_Hub_PC
 
         'Info Schermata
         F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+
+
+
+        'Tool_Tip
+
+        'Colore
+        F_Home.ToolTip1.SetToolTip(BtnRosso, "Rosso")
+        F_Home.ToolTip1.SetToolTip(BtnVerde, "Verde")
+        F_Home.ToolTip1.SetToolTip(BtnBlu, "Blu")
+        F_Home.ToolTip1.SetToolTip(BtnArancio, "Rosso Arancio")
+        F_Home.ToolTip1.SetToolTip(BtnFucsia, "Fucsia")
+        F_Home.ToolTip1.SetToolTip(BtnGiallo, "Giallo")
+        F_Home.ToolTip1.SetToolTip(BtnAzzurro, "Azzurro")
+        F_Home.ToolTip1.SetToolTip(BtnBianco, "Bianco")
+        F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento / Nero")
+        'ARGB
+        F_Home.ToolTip1.SetToolTip(BtnAN_Transiszione, "Transiszione")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Rainbow, "Rainbow")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Tepmeratura, "Tepmeratura")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Musica, "Musica")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Discontinuo, "Discontinuo")
+        'Luminosità
+        F_Home.ToolTip1.SetToolTip(BtnL_min, "Imposta la luminosità minima")
+        F_Home.ToolTip1.SetToolTip(BtnL_max, "Imposta la luminosità massima")
+        'Velocità
+        F_Home.ToolTip1.SetToolTip(BtnV_min, "Imposta la velocità minima")
+        F_Home.ToolTip1.SetToolTip(BtnV_max, "Imposta la velocità massima")
+
     End Sub
 
 
@@ -150,57 +178,43 @@ Public Class F_Hub_PC
         F_Avvio.Data3 = Colore_Rosso_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnRosso_MouseHover(sender As Object, e As EventArgs) Handles BtnRosso.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnRosso, "Rosso")
-    End Sub
+
     'Verde
     Private Sub BtnVerde_Click(sender As Object, e As EventArgs) Handles BtnVerde.Click
         F_Avvio.Data3 = Colore_Verde_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnVerde_MouseHover(sender As Object, e As EventArgs) Handles BtnVerde.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnVerde, "Verde")
-    End Sub
+
     'Blu
     Private Sub BtnBlu_Click(sender As Object, e As EventArgs) Handles BtnBlu.Click
         F_Avvio.Data3 = Colore_Blu_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnBlu_MouseHover(sender As Object, e As EventArgs) Handles BtnBlu.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnBlu, "Blu")
-    End Sub
+
     'Arancione
     Private Sub BtnArancio_Click(sender As Object, e As EventArgs) Handles BtnArancio.Click
         F_Avvio.Data3 = Colore_Arancione_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnArancio_MouseHover(sender As Object, e As EventArgs) Handles BtnArancio.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnArancio, "Rosso Arancio")
-    End Sub
+
     'Fucsia
     Private Sub BtnFucsia_Click(sender As Object, e As EventArgs) Handles BtnFucsia.Click
         F_Avvio.Data3 = Colore_Fucsioa_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnFucsia_MouseHover(sender As Object, e As EventArgs) Handles BtnFucsia.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnFucsia, "Fucsia")
-    End Sub
+
     'Giallo
     Private Sub BtnGiallo_Click(sender As Object, e As EventArgs) Handles BtnGiallo.Click
         F_Avvio.Data3 = Colore_Giallo_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnGiallo_MouseHover(sender As Object, e As EventArgs) Handles BtnGiallo.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnGiallo, "Giallo")
-    End Sub
+
     'Azzurro
     Private Sub BtnAzzurro_Click(sender As Object, e As EventArgs) Handles BtnAzzurro.Click
         F_Avvio.Data3 = Colore_Celeste_HSV
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnAzzurro_MouseHover(sender As Object, e As EventArgs) Handles BtnAzzurro.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAzzurro, "Azzurro")
-    End Sub
+
     'Bianco / Saturazione 0
     Private Sub BtnBianco_Click(sender As Object, e As EventArgs) Handles BtnBianco.Click
         F_Avvio.Data4 = 0
@@ -214,9 +228,7 @@ Public Class F_Hub_PC
         TX_Btn_Saturazione()
         TX_Btn_Colore()
     End Sub
-    Private Sub BtnBianco_MouseHover(sender As Object, e As EventArgs) Handles BtnBianco.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnBianco, "Bianco")
-    End Sub
+
     'Nero / Spento
     Private Sub Btn_Spento_Click(sender As Object, e As EventArgs) Handles Btn_Spento.Click
         F_Avvio.Data2 = 0
@@ -229,9 +241,7 @@ Public Class F_Hub_PC
 
         TX_Btn_Colore()
     End Sub
-    Private Sub Btn_Spento_MouseHover(sender As Object, e As EventArgs) Handles Btn_Spento.MouseHover
-        F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento / Nero")
-    End Sub
+
 
     'Animazione RGB Trasiszione
     Private Sub BtnAN_Transiszione_Click(sender As Object, e As EventArgs) Handles BtnAN_Transiszione.Click
@@ -245,9 +255,6 @@ Public Class F_Hub_PC
         End If
 
     End Sub
-    Private Sub BtnAN_Transiszione_MouseHover(sender As Object, e As EventArgs) Handles BtnAN_Transiszione.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAN_Transiszione, "Transiszione")
-    End Sub
 
     'Animazione RGB RainBow
     Private Sub BtnAN_Rainbow_Click(sender As Object, e As EventArgs) Handles BtnAN_Rainbow.Click
@@ -259,9 +266,6 @@ Public Class F_Hub_PC
         Else
             F_Avvio.FunzioneNull()
         End If
-    End Sub
-    Private Sub BtnAN_Rainbow_MouseHover(sender As Object, e As EventArgs) Handles BtnAN_Rainbow.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAN_Rainbow, "Rainbow")
     End Sub
 
     'Animazione RGB Temperatura
@@ -275,9 +279,6 @@ Public Class F_Hub_PC
         Else
             F_Avvio.FunzioneNull()
         End If
-    End Sub
-    Private Sub BtnAN_Tepmeratura_MouseHover(sender As Object, e As EventArgs) Handles BtnAN_Tepmeratura.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAN_Tepmeratura, "Tepmeratura")
     End Sub
 
     'Animazione RGB Musica
@@ -301,9 +302,6 @@ Public Class F_Hub_PC
             F_Setting_RGB_Animation_Fan.TopMost = False
         End If
     End Sub
-    Private Sub BtnAN_Musica_MouseHover(sender As Object, e As EventArgs) Handles BtnAN_Musica.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAN_Musica, "Musica")
-    End Sub
 
     'Animazione RGB Discontinuo
     Private Sub BtnANdiscontinuo_Click(sender As Object, e As EventArgs) Handles BtnAN_Discontinuo.Click
@@ -314,9 +312,6 @@ Public Class F_Hub_PC
         Else
             F_Avvio.FunzioneNull()
         End If
-    End Sub
-    Private Sub BtnAN_Discontinuo_MouseHover(sender As Object, e As EventArgs) Handles BtnAN_Discontinuo.MouseHover
-        F_Home.ToolTip1.SetToolTip(BtnAN_Discontinuo, "Discontinuo")
     End Sub
 
 
@@ -469,7 +464,6 @@ Public Class F_Hub_PC
     'Funzione loop
 
     Public Sub RX_TX()
-
 
         'PowerLimitLED
         'If (F_Avvio.DatiRX_1(4) = 1 And F_Avvio.Data2 > F_Avvio.DatiRX_4(0)) Then

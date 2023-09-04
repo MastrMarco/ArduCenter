@@ -31,6 +31,15 @@
         'End If
 
     End Sub
+    Private Sub BtnIMG_GPU_LED_MouseHover(sender As Object, e As EventArgs) Handles BtnIMG_GPU_LED.MouseHover
+        F_Home.ToolTip1.SetToolTip(BtnIMG_GPU_LED, "Colore " & F_Hub_PC.H_GPU & "
+Luminosità " & Int(F_Hub_PC.V_GPU / 2.55) & "%" & "
+Velocità Null")
+    End Sub
+
+
+
+
 
     Private Sub BtnStrip_LED_Click(sender As Object, e As EventArgs) Handles BtnStrip_LED.Click
 
@@ -53,6 +62,16 @@
         'End If
 
     End Sub
+    Private Sub BtnIMG_Strip_LED_MouseHover(sender As Object, e As EventArgs) Handles BtnIMG_Strip_LED.MouseHover
+        F_Home.ToolTip1.SetToolTip(BtnIMG_Strip_LED, "Colore " & F_Hub_PC.H_SLED & "
+Luminosità " & Int(F_Hub_PC.V_SLED / 2.55) & "%")
+    End Sub
+
+
+
+
+
+
 
     Private Sub BtnIMG_GPU_LED_Click(sender As Object, e As EventArgs) Handles BtnIMG_GPU_LED.Click
         BtnGPU_LED_Click(sender, e)
@@ -74,5 +93,6 @@
                 BtnIMG_Strip_LED.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
         End Select
     End Sub
+
 
 End Class

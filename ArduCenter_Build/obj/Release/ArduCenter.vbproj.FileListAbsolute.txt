@@ -44,7 +44,6 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Release\OpenH
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Release\WinFormAnimation.dll
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Release\CircularProgressBar.xml
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.vbproj.AssemblyReference.cache
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.vbproj.SuggestedBindingRedirects.cache
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Audio.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Avvio.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Release\ArduCenter.F_Avvisi.resources

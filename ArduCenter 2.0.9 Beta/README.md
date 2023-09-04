@@ -9,7 +9,7 @@ ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.05V Versione Software PC Ar
      ArduHubFan 4.0 Versione Firmuware di Arduino B1.05V Versione Software PC AreduCenter2.0 2.0.9v [Ottimizazione + Risolti vari BUG]
 
 ## Info Aggiornamenti
-Ver: 2.0.9 t09 Beta
+Ver: 2.0.9 t06 Beta
 
 Software ArduCenter
 - Risolti vari problemi.

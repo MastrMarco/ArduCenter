@@ -4,9 +4,9 @@
 AreduCenter  Versione B2.0.9 t09 [Risolti vari BUG]  
 
 ## Dispositivi Aggornati                              
-ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.06V Versione Software PC AreduCenter2.0 2.0.9v
-     ArduHubFan 3.0 Versione Firmuware di Arduino B2.06V Versione Software PC AreduCenter2.0 2.0.9v
-     ArduHubFan 4.0 Versione Firmuware di Arduino B1.06V Versione Software PC AreduCenter2.0 2.0.9v
+- ArduHubFanAudio 2.0 Versione Firmuware di Arduino B4.06V Versione Software PC AreduCenter2.0 2.0.9v
+- ArduHubFan 3.0 Versione Firmuware di Arduino B2.06V Versione Software PC AreduCenter2.0 2.0.9v
+- ArduHubFan 4.0 Versione Firmuware di Arduino B1.06V Versione Software PC AreduCenter2.0 2.0.9v
 
 ## Info Aggiornamenti
 Ver: 2.0.9 t09 Beta

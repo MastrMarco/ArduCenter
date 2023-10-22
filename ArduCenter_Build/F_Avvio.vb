@@ -7,12 +7,12 @@ Public Class F_Avvio
     'Nummero Versione Arduino
     Public ReadOnly InfoSoft_HOME As String = "By 
 MastrMarco
-Beta 06"
+Beta 09"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
     Public ReadOnly Versione As String = "v 2.0.9"
-    Public DataRilascio As String = "05-09-23"
+    Public DataRilascio As String = "23-10-23"
 
 
     'Old
@@ -23,19 +23,21 @@ Beta 06"
     Public DataRilascio_GUI_Audio As String = "02/04/2021"
     Public Versione_GUI_Audio As String = "3.00"
 
+
+
     'Hub 2.0
     Public DataRilascio_GUI_Fan_Audio As String = "05/09/2023"
-    Public Versione_GUI_Fan_Audio As String = "4.05"
+    Public Versione_GUI_Fan_Audio As String = "4.06"
 
     'Hub 3.0
     Public DataRilascio_GUI_Fan_3 As String = "05/09/2023"
-    Public Old_Versione_GUI_Fan_3 As String = "2.03"
-    Public Versione_GUI_Fan_3 As String = "2.05"
+    Public Old_Versione_GUI_Fan_3 As String = "2.06"
+    Public Versione_GUI_Fan_3 As String = "2.06"
 
     'Hub 4.0
     Public DataRilascio_GUI_Fan_4 As String = "05/09/2023"
-    Public Old_Versione_GUI_Fan_4 As String = "1.03"
-    Public Versione_GUI_Fan_4 As String = "1.05"
+    Public Old_Versione_GUI_Fan_4 As String = "1.06"
+    Public Versione_GUI_Fan_4 As String = "1.06"
 
 
     Public DatiRicevuti As String = ""
@@ -777,61 +779,64 @@ Beta 06"
 
                     F_HubPC_Home.Color_Set_Home_IMG() 'GUI HUB Home
 
-                    'Caricamento / copnfigurazione GUI_Fan / F_Fan
-                    F_Hub_PC.HubControlManual() ' Imposta il dispositivo selezionato l'ultima volta
-                    F_Hub_PC.Btn_Color_MOD() 'Carica i dati nella GUI Fan ColoreMod
-                    F_HubPC_Ventole.UI_Ventole() 'Carica i dati nella GUI Fan Velocità Luminosità
+                'Caricamento / copnfigurazione GUI_Fan / F_Fan
+                F_Hub_PC.HubControlManual() ' Imposta il dispositivo selezionato l'ultima volta
 
-                'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
+                If DatiRX_7(0) = 0 And DatiRX_5(0) >= 605 Then F_Hub_PC.RGBAMenù = 1 'Visualizza altre aniamzioni RGB
 
-                'Barra Luminosità
-                If DatiRX_4(DatiRX_7(0)) >= 13 Then
-                    F_Hub_PC.TrackBarLuminosità.Value = DatiRX_4(DatiRX_7(0)) / 2.55
-                Else
-                    F_Hub_PC.TrackBarLuminosità.Value = F_Hub_PC.TrackBarLuminosità.Minimum
+                F_Hub_PC.Btn_Color_MOD() 'Carica i dati nella GUI Fan ColoreMod
+                        F_HubPC_Ventole.UI_Ventole() 'Carica i dati nella GUI Fan Velocità Luminosità
+
+                        'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
+
+                        'Barra Luminosità
+                        If DatiRX_4(DatiRX_7(0)) >= 13 Then
+                            F_Hub_PC.TrackBarLuminosità.Value = DatiRX_4(DatiRX_7(0)) / 2.55
+                        Else
+                            F_Hub_PC.TrackBarLuminosità.Value = F_Hub_PC.TrackBarLuminosità.Minimum
+                        End If
+
+                        'Barra Velocità
+                        ' If DatiRX_4(DatiRX_7(0)) <= 4 Then
+                        If DatiRX_7(0) <= 4 Then
+                            F_Hub_PC.TrackBarVelocità.Value = DatiRX_8(DatiRX_7(0)) / 2.55
+                        Else
+                            F_Hub_PC.TrackBarVelocità.Value = F_Hub_PC.TrackBarVelocità.Minimum
+                        End If
+
+                        F_HubPC_Ventole.S_Fan_All = DatiRX_8(0)
+                        F_HubPC_Ventole.S_Fan_1 = DatiRX_8(1)
+                        F_HubPC_Ventole.S_Fan_2 = DatiRX_8(2)
+                        F_HubPC_Ventole.S_Fan_3 = DatiRX_8(3)
+                        F_HubPC_Ventole.S_Fan_4 = DatiRX_8(4)
+
+
+                        'Caricamento Dati TX - RX 
+                        'Data0 = 0                        'Boot Arduino
+                        Data1 = DatiRX_7(0)               'Modalità seleziona oggetto LED
+                        Data2 = DatiRX_4(DatiRX_7(0))     'Luminosità
+                        Data3 = DatiRX_5(DatiRX_7(0))     'Colore
+                        Data4 = DatiRX_6(DatiRX_7(0))     'Saturazione
+                        Data5 = DatiRX_8(DatiRX_7(1))     'Velocità ventole
+
+                        Data6 = DatiRX_9(DatiRX_7(1))  'Curva di rotazione Ventole
+                        Data7 = 0 'Temperatura CPU
+                        Data8 = 0 'Temperatura GPU
+
+                        'Data9
+
+                        Data10 = DatiRX_2(0) 'Attiva Disattiva EEPROM "Salva dati Utente"
+                        Data11 = DatiRX_2(1) 'Attiva disattiva Protezione HUB
+                        Data12 = DatiRX_2(2) 'Attiva disattiva Protezione Luminosità LED
+
+
+                        'Data13 = 0            '//Modello di ventola
+                        'Data14 = DatiRX_1(5)  '//Audio Digitale Stato                         Aquisizione Audio
+                        'Data15 = DatiRX_10(0) '//Modalità seleziona Audio LED
+                        'Data16 = DatiRX_10(1) '//Modalità Colore Audio
+                    End If
+
                 End If
-
-                'Barra Velocità
-                ' If DatiRX_4(DatiRX_7(0)) <= 4 Then
-                If DatiRX_7(0) <= 4 Then
-                    F_Hub_PC.TrackBarVelocità.Value = DatiRX_8(DatiRX_7(0)) / 2.55
-                Else
-                    F_Hub_PC.TrackBarVelocità.Value = F_Hub_PC.TrackBarVelocità.Minimum
-                End If
-
-                F_HubPC_Ventole.S_Fan_All = DatiRX_8(0)
-                    F_HubPC_Ventole.S_Fan_1 = DatiRX_8(1)
-                    F_HubPC_Ventole.S_Fan_2 = DatiRX_8(2)
-                    F_HubPC_Ventole.S_Fan_3 = DatiRX_8(3)
-                    F_HubPC_Ventole.S_Fan_4 = DatiRX_8(4)
-
-
-                    'Caricamento Dati TX - RX 
-                    'Data0 = 0                        'Boot Arduino
-                    Data1 = DatiRX_7(0)               'Modalità seleziona oggetto LED
-                    Data2 = DatiRX_4(DatiRX_7(0))     'Luminosità
-                    Data3 = DatiRX_5(DatiRX_7(0))     'Colore
-                    Data4 = DatiRX_6(DatiRX_7(0))     'Saturazione
-                    Data5 = DatiRX_8(DatiRX_7(1))     'Velocità ventole
-
-                    Data6 = DatiRX_9(DatiRX_7(1))  'Curva di rotazione Ventole
-                    Data7 = 0 'Temperatura CPU
-                    Data8 = 0 'Temperatura GPU
-
-                    'Data9
-
-                    Data10 = DatiRX_2(0) 'Attiva Disattiva EEPROM "Salva dati Utente"
-                    Data11 = DatiRX_2(1) 'Attiva disattiva Protezione HUB
-                    Data12 = DatiRX_2(2) 'Attiva disattiva Protezione Luminosità LED
-
-
-                    'Data13 = 0            '//Modello di ventola
-                    'Data14 = DatiRX_1(5)  '//Audio Digitale Stato                         Aquisizione Audio
-                    'Data15 = DatiRX_10(0) '//Modalità seleziona Audio LED
-                    'Data16 = DatiRX_10(1) '//Modalità Colore Audio
-                End If
-
-            End If
 
         If DatiRX_0(0) <> "D" Then
             CaricaDati_Boot = 1

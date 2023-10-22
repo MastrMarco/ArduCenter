@@ -68,6 +68,8 @@ Velocità 50%"
         F_Avvio.Data1 = 0
         If F_Avvio.Data1 = 0 And F_Avvio.DatiRX_7(0) <> 0 Then
 
+            F_Hub_PC.Btn_Men_RGB_Animation.Visible = True
+
             F_Hub_PC.BtnAN_Transiszione.Visible = True
             'F_Fan.Btn_Spento.Visible = False
             F_Hub_PC.BtnAN_Rainbow.Visible = True

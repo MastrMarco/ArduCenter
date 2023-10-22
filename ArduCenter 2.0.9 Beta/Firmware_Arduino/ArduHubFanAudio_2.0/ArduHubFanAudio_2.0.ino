@@ -1,9 +1,9 @@
 //*****************************************************************************************************************************//
-//-------------------          By  MastrMarco    Versione 4.05       ISCRIVITI AL CANALE YOUTUBE       ------------------------//
+//-------------------          By  MastrMarco    Versione 4.06       ISCRIVITI AL CANALE YOUTUBE       ------------------------//
 //
 //                                 Per Arduino Nano ATMega 328P NEW / OLD Boot loader
 //
-//                                            ArduHubFanAudio 2.0 05/09/23
+//                                            ArduHubFanAudio 2.0 23/10/23
 //
 //                               https://www.youtube.com/channel/UCpQb1Iz6M229ylkyXpdJPlw
 //*****************************************************************************************************************************//
@@ -19,7 +19,7 @@ String Stato_Software = "D";  //Commpatibbilità-Debug (D)
 
 byte Arduino = 1;       // Tipo di arduino   |1 = Nano OLD / 2 = Nano NEW / 3 = UNO
 byte Progetto = 3;      // Progetto          |3 = HubFanAudio / 4 = HubFan_3.0 / 5 = HubFan_4.0
-float Versione = 4.05;  // Versione Software |
+float Versione = 4.06;  // Versione Software |
 //
 //------------------------------------- Memorizza i Dati impostati dal utente
 //EEPROM interna di Arduino 1 Kbyte
@@ -102,13 +102,14 @@ unsigned long DelayFanPower = 0;
 //Crea un delay non bloccante per regolare la velocità Animata Avvio Arduino 10
 //Crea un delay non bloccante per calcolare gli RPM delle varie ventole 11
 //Crea un delay non bloccante per l'auto reset dello stato delle protezioni 12
+//Crea un delay non bloccante per regolare la velocità Animata degli RGB Modalità 6 13 Mix_Festività
 //
 //                                0  1
 unsigned long TimerVirtuale[] = { 0, 0 };
-//                                     0  1  2  3  4  5  6  7  8  9  10 11 12
-unsigned long ResetTimerVirtuale[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-//                       0   1    2     3    4   5  6    7   8   9  10   11   12
-int DelayVirtuale[] = { 40, 40, 1000, 1000, 40, 10, 20, 200, 2, 70, 50, 1000, 40 };
+//                                     0  1  2  3  4  5  6  7  8  9  10 11 12 13
+unsigned long ResetTimerVirtuale[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+//                       0   1    2     3    4   5  6    7   8   9  10   11   12   13
+int DelayVirtuale[] = { 40, 40, 1000, 1000, 40, 10, 20, 200, 2, 70, 50, 1000, 40, 15 };
 //
 //------------------------------------- Seriale di avvio
 //

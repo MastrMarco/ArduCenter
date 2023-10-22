@@ -35,6 +35,8 @@ Public Class F_HubPC_Ventole
 
         TitoloFan.ForeColor = Color.White
 
+        F_Hub_PC.Btn_Men_RGB_Animation.Visible = True
+
         F_Hub_PC.BtnAN_Transiszione.Visible = True
         'F_Fan.Btn_Spento.Visible = False
         F_Hub_PC.BtnAN_Rainbow.Visible = True

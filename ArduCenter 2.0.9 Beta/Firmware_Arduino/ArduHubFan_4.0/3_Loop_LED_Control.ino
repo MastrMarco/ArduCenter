@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.04 Firmware data 10/05/23                                                  //
+//                                           Ver: X.06 Firmware data 23/10/23                                                  //
 //*****************************************************************************************************************************//
 
 byte H_P = 128;  // H_P = 65536 / 512 = 128
@@ -70,8 +70,12 @@ void Void_LED_Mod() {
             RGB_Musica();
             break;
           case 604:
-            RGB_Mod_Fan_All = 5;  //Modalità 4 = Effetto Temperatura*
+            RGB_Mod_Fan_All = 5;  //Modalità 5 = Effetto Temperatura*
             RGB_Temperatura();
+            break;
+          case 605:
+            RGB_Mod_Fan_All = 6;  //Modalità 6 = Effetto Festività*
+            RGB_Mix();
             break;
         }
       }

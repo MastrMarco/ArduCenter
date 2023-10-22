@@ -37,6 +37,21 @@ ArduCenter
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:ArduCenter.My.Resources.Resources.Btn_Avanti_50x50">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Btn_Indietro_">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Btn_Indietro_50x50">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ArduCenter.My.Resources.Resources.btn_Swich">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -168,6 +183,16 @@ ArduCenter
 </summary>
 </member>
 <member name="P:ArduCenter.My.Resources.Resources.BtnLED_DiscontinuoON">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_halloween_off">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.BtnLED_halloween_ON">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>

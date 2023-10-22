@@ -1,13 +1,22 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.05 Firmware data 05/09/23                                                  //
+//                                           Ver: X.06 Firmware data 23/10/23                                                  //
 //*****************************************************************************************************************************//
 
 void loop() {
   //----------------------------------------------------------------------
-  digitalWrite(SL, LOW);
-  digitalWrite(CK, LOW);
-  digitalWrite(CK, HIGH);
-  digitalWrite(SL, HIGH);
+
+  //digitalWrite(SL, LOW);
+  PORTD &= !B00000000;
+
+  //digitalWrite(CK, LOW);
+  PORTD &= !B00000000;
+
+  //digitalWrite(CK, HIGH);
+  PORTD |= B00100000;
+
+  //digitalWrite(SL, HIGH);
+  PORTD |= B10000000;
+
   Dati74166 = shiftIn(QH, CK, MSBFIRST);
 
   PinA = Dati74166 & 0B00000001;

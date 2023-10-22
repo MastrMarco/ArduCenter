@@ -409,6 +409,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icona.ico" />
+    <None Include="Resources\Btn_Avanti_50x50.png" />
+    <None Include="Resources\Btn_Indietro_50x50.png" />
+    <None Include="Resources\Btn_Indietro_.png" />
+    <None Include="Resources\BtnLED_halloween_ON.png" />
+    <None Include="Resources\BtnLED_halloween_off.png" />
     <None Include="Resources\Icona_Fan_Dissipatore_RGB_Transizione_v1.3.png" />
     <None Include="Resources\Icona_Fan_Dissipatore_RGB_RainBow_v1.3.png" />
     <None Include="Resources\Icona_Fan_Dissipatore_RGB_Musica_v1.3.png" />

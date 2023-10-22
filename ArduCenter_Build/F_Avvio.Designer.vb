@@ -36,7 +36,9 @@ Partial Class F_Avvio
         Me.TimerBoot_Reset = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorkerTaskMenager = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorkerSerialPort = New System.ComponentModel.BackgroundWorker()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.AnimazioneAvvioGIF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TimerSerialPort_TX_RX
@@ -104,6 +106,16 @@ Partial Class F_Avvio
         'BackgroundWorkerSerialPort
         '
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnLED_halloween_ON
+        Me.PictureBox1.Location = New System.Drawing.Point(341, 173)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(46, 46)
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
         'F_Avvio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -112,6 +124,7 @@ Partial Class F_Avvio
         Me.BackgroundImage = Global.ArduCenter.My.Resources.Resources.ImgArduCenter2_0
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(463, 249)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatoAPP)
         Me.Controls.Add(Me.Creatore)
         Me.Controls.Add(Me.ID_Versione)
@@ -124,6 +137,7 @@ Partial Class F_Avvio
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ArduCenter"
         CType(Me.AnimazioneAvvioGIF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -141,4 +155,5 @@ Partial Class F_Avvio
     Friend WithEvents TimerBoot_Reset As Timer
     Friend WithEvents BackgroundWorkerTaskMenager As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorkerSerialPort As System.ComponentModel.BackgroundWorker
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

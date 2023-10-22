@@ -52,6 +52,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Discontinuo = New System.Windows.Forms.Button()
         Me.BtnTaskHardware_GUI = New System.Windows.Forms.PictureBox()
         Me.PanelMenùHUB = New System.Windows.Forms.Panel()
+        Me.Btn_Men_RGB_Animation = New System.Windows.Forms.PictureBox()
         CType(Me.TrackBarLuminosità, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBarVelocità, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnBianco, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +67,7 @@ Partial Class F_Hub_PC
         CType(Me.BtnMenùEX, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnImpostazioniFan, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnTaskHardware_GUI, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Btn_Men_RGB_Animation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TrackBarLuminosità
@@ -331,7 +333,7 @@ Partial Class F_Hub_PC
         'Btn_Spento
         '
         Me.Btn_Spento.BackColor = System.Drawing.Color.Transparent
-        Me.Btn_Spento.BackgroundImage = CType(resources.GetObject("Btn_Spento.BackgroundImage"), System.Drawing.Image)
+        Me.Btn_Spento.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnLED_Spento
         Me.Btn_Spento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.Btn_Spento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btn_Spento.FlatAppearance.BorderSize = 0
@@ -446,6 +448,17 @@ Partial Class F_Hub_PC
         Me.PanelMenùHUB.Size = New System.Drawing.Size(618, 381)
         Me.PanelMenùHUB.TabIndex = 87
         '
+        'Btn_Men_RGB_Animation
+        '
+        Me.Btn_Men_RGB_Animation.BackColor = System.Drawing.Color.Transparent
+        Me.Btn_Men_RGB_Animation.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Btn_Avanti_50x50
+        Me.Btn_Men_RGB_Animation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Btn_Men_RGB_Animation.Location = New System.Drawing.Point(834, 291)
+        Me.Btn_Men_RGB_Animation.Name = "Btn_Men_RGB_Animation"
+        Me.Btn_Men_RGB_Animation.Size = New System.Drawing.Size(25, 25)
+        Me.Btn_Men_RGB_Animation.TabIndex = 88
+        Me.Btn_Men_RGB_Animation.TabStop = False
+        '
         'F_Hub_PC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -454,6 +467,7 @@ Partial Class F_Hub_PC
         Me.BackgroundImage = Global.ArduCenter.My.Resources.Resources.GUI_F_Hub_PC_0_1_1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(900, 450)
+        Me.Controls.Add(Me.Btn_Men_RGB_Animation)
         Me.Controls.Add(Me.PanelMenùHUB)
         Me.Controls.Add(Me.BtnAN_Discontinuo)
         Me.Controls.Add(Me.BtnAN_Musica)
@@ -503,6 +517,7 @@ Partial Class F_Hub_PC
         CType(Me.BtnMenùEX, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnImpostazioniFan, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnTaskHardware_GUI, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Btn_Men_RGB_Animation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -536,4 +551,5 @@ Partial Class F_Hub_PC
     Friend WithEvents BtnAN_Discontinuo As Button
     Friend WithEvents BtnTaskHardware_GUI As PictureBox
     Friend WithEvents PanelMenùHUB As Panel
+    Friend WithEvents Btn_Men_RGB_Animation As PictureBox
 End Class

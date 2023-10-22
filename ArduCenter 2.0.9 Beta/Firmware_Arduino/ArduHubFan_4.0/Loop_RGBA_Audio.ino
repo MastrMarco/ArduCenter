@@ -1,6 +1,6 @@
 int audio_input;
 long RGB_MusicaA;
-int FrequenzaAggiornamento = 5;  //Frequenza di aggornamento
+int FrequenzaAggiornamento = 3;  //Frequenza di aggornamento
 
 int decay_check = 0;
 

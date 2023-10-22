@@ -1,4 +1,4 @@
-﻿'Codice Rivisto Ver.2.0.6
+﻿'Codice Rivisto Ver.2.0.9
 Public Class F_Hub_PC
     'Valori Colore - Animazioni
     Public Hue_Max As Integer = 512
@@ -14,12 +14,15 @@ Public Class F_Hub_PC
     Public Animazione_RGB_Tepmeratura As Integer = 604
     Public Animazione_RGB_Musica As Integer = 603
     Public Animazione_RGB_Discontinuo As Integer = 600
+    Public Animazione_RGB_Mix As Integer = 605
 
     Public Luminosità_MIN As Integer = 13
     Public Luminosità_MAX As Integer = 255
 
 
     Public FanMenù As String = "Hub PC Home"
+    Public RGBAMenù As Integer = 0
+
     Private Sub F_Fan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Modalità Sync Mode
         If F_Avvio.DatiRX_7(0) = 0 Then
@@ -56,10 +59,17 @@ Public Class F_Hub_PC
         'Info Schermata
         F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
 
+        'Grafica Menù Aniamzione ARGB
+        Btn_Men_RGB_Animation_Click()
+
 
 
         'Tool_Tip
 
+        'Info Menù Animazioni A-rgb
+        F_Home.ToolTip1.SetToolTip(Btn_Men_RGB_Animation, "Altre Animazioni")
+        'If RGBAMenù = 0 Then F_Home.ToolTip1.SetToolTip(Btn_Men_RGB_Animation, "Altre Animazioni")
+        'If RGBAMenù = 1 Then F_Home.ToolTip1.SetToolTip(Btn_Men_RGB_Animation, "Animazioni Precedenti")
         'Colore
         F_Home.ToolTip1.SetToolTip(BtnRosso, "Rosso")
         F_Home.ToolTip1.SetToolTip(BtnVerde, "Verde")
@@ -69,7 +79,10 @@ Public Class F_Hub_PC
         F_Home.ToolTip1.SetToolTip(BtnGiallo, "Giallo")
         F_Home.ToolTip1.SetToolTip(BtnAzzurro, "Azzurro")
         F_Home.ToolTip1.SetToolTip(BtnBianco, "Bianco")
-        F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento / Nero")
+
+        F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento/Nero - Mix Halloween")
+        'If RGBAMenù = 0 Then F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento / Nero")
+        'If RGBAMenù = 1 Then F_Home.ToolTip1.SetToolTip(Btn_Spento, "Mix Halloween")
         'ARGB
         F_Home.ToolTip1.SetToolTip(BtnAN_Transiszione, "Transiszione")
         F_Home.ToolTip1.SetToolTip(BtnAN_Rainbow, "Rainbow")
@@ -229,17 +242,74 @@ Public Class F_Hub_PC
         TX_Btn_Colore()
     End Sub
 
-    'Nero / Spento
-    Private Sub Btn_Spento_Click(sender As Object, e As EventArgs) Handles Btn_Spento.Click
-        F_Avvio.Data2 = 0
-        F_Avvio.Data3 = Colore_Arancione_HSV
-        TrackBarLuminosità.Value = 5
 
-        If F_Avvio.DatiRX_6(0) = 0 Then
-            F_Avvio.Data4 = 255
+    'Menù Btn Animazioni
+    Private Sub Btn_Men_RGB_Animation_Click() Handles Btn_Men_RGB_Animation.Click
+        If RGBAMenù = 0 Then
+            RGBAMenù = 1
+            Btn_Men_RGB_Animation.BackgroundImage = My.Resources.Btn_Indietro_50x50
+            BtnOFF_Animation()
+            Btn_Color_MOD()
+
+            If F_Avvio.Data2 > 0 And F_Avvio.Data3 = Animazione_RGB_Mix And F_Avvio.Data1 = 0 Then
+                Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_ON
+            ElseIf F_Avvio.Data2 > 0 And F_Avvio.Data3 <> Animazione_RGB_Mix And F_Avvio.Data1 = 0 Then
+                Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_off
+            End If
+
+        ElseIf RGBAMenù = 1 Then
+            RGBAMenù = 0
+            Btn_Men_RGB_Animation.BackgroundImage = My.Resources.Btn_Avanti_50x50
+            BtnAN_Transiszione.Visible = True
+            'F_Fan.Btn_Spento.Visible = False
+            BtnAN_Rainbow.Visible = True
+            BtnAN_Musica.Visible = True
+            BtnAN_Discontinuo.Visible = True
+            BtnAN_Tepmeratura.Visible = True
+            Btn_Color_MOD()
+
+
+            If F_Avvio.Data2 = 0 Then
+                Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
+            Else
+                Btn_Spento.BackgroundImage = My.Resources.BtnLED_Spento
+            End If
+        End If
+
+        'LabelRGBAnimazioni.Text = RGBAMenù 'Debug Data Menù
+    End Sub
+
+
+    'Nero / Spento - AnimazioneRGB Mix
+    Private Sub Btn_Spento_Click(sender As Object, e As EventArgs) Handles Btn_Spento.Click
+
+        'Nero / Spento
+        If RGBAMenù = 0 Then
+
+            F_Avvio.Data2 = 0
+            F_Avvio.Data3 = Colore_Arancione_HSV
+            TrackBarLuminosità.Value = 5
+
+            If F_Avvio.DatiRX_6(0) = 0 Then
+                F_Avvio.Data4 = 255
+            End If
+
+
+
+            ' AnimazioneRGB Mix
+        ElseIf RGBAMenù = 1 Then
+
+            If F_Avvio.DatiRX_7(0) = 0 Then
+                F_Avvio.Data3 = Animazione_RGB_Mix
+                Luminosità_Reset()
+            Else
+                F_Avvio.FunzioneNull()
+            End If
+
         End If
 
         TX_Btn_Colore()
+
     End Sub
 
 
@@ -260,7 +330,6 @@ Public Class F_Hub_PC
     Private Sub BtnAN_Rainbow_Click(sender As Object, e As EventArgs) Handles BtnAN_Rainbow.Click
         If F_Avvio.DatiRX_7(0) = 0 Then
             F_Avvio.Data3 = Animazione_RGB_Rainbow
-
             TX_Btn_Colore()
             Luminosità_Reset()
         Else
@@ -806,8 +875,9 @@ Public Class F_Hub_PC
                 F_HubPC_CasseAudio.LaColore.Text = "Spento"
             End If
 
-
-            Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
+            'Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
+            If RGBAMenù = 0 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
+            'If RGBAMenù = 1 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_ON
             Btn_RGB_Fan_GUI()
         End If
         'ColorBtn Bianco
@@ -1048,8 +1118,56 @@ Public Class F_Hub_PC
                 BtnAN_Tepmeratura.BackgroundImage = My.Resources.BtnLED_TemperaturaON
             End If
 
-            'ColorBtn Rosso
-            If F_Avvio.DatiRX_5(X) = Colore_Rosso_HSV Then
+
+
+            'Stato Btn GUI_Fan / BtnRGB MIX Halloween
+            If F_Avvio.DatiRX_5(X) = Animazione_RGB_Mix Then
+
+                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                    F_HubPC_Ventole.LaColore.Text = "Colore     Halloween"
+                End If
+                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
+                    F_HubPC_Dissipatore240.LaColore.Text = "Halloween"
+                End If
+                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
+                    F_HubPC_GPU_SLED.LaColore.Text = "Halloween"
+                End If
+                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
+                    F_HubPC_CasseAudio.LaColore.Text = "Halloween"
+                End If
+
+                Icona_Fan_All_RGB_Mod()
+                RGB_Aniamtion_Img()
+
+                'RGB Ventole PC
+                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
+                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
+
+                'RGB Dissipatore Liquido 240mm
+                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Transizione
+                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Transizione_v1_3
+
+                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Transizione
+                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
+
+                'RGB Casse Audio
+                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
+                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
+                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
+                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
+
+                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
+                ' F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+
+
+                If RGBAMenù = 1 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_ON
+            End If
+
+                'ColorBtn Rosso
+                If F_Avvio.DatiRX_5(X) = Colore_Rosso_HSV Then
 
                 If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Red
@@ -1223,7 +1341,10 @@ Public Class F_Hub_PC
     '// Btn GUI_Fan tutti Abbilitati
     Public Sub Btn_Fan_GUI()
         BtnAN_Transiszione.BackgroundImage = My.Resources.BtnLED_Transizione
-        Btn_Spento.BackgroundImage = My.Resources.BtnLED_Spento
+
+        If RGBAMenù = 0 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_Spento
+        If RGBAMenù = 1 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_off
+
         BtnAN_Rainbow.BackgroundImage = My.Resources.BtnLED_RainBow
         BtnAN_Musica.BackgroundImage = My.Resources.BtnLED_Musica
         BtnAN_Discontinuo.BackgroundImage = My.Resources.BtnLED_Discontinuo
@@ -1977,6 +2098,11 @@ Public Class F_Hub_PC
 
     'Setta in bottoni Animazione off
     Public Sub BtnOFF_Animation()
+        If F_Avvio.Data1 <> 0 Then
+            Btn_Men_RGB_Animation.Visible = False 'Menù agguntivo Animazione LED
+            Btn_Men_RGB_Animation_Click()
+        End If
+
         BtnAN_Transiszione.Visible = False
         'F_Fan.Btn_Spento.Visible = False
         BtnAN_Rainbow.Visible = False
@@ -1984,5 +2110,6 @@ Public Class F_Hub_PC
         BtnAN_Discontinuo.Visible = False
         BtnAN_Tepmeratura.Visible = False
     End Sub
+
 
 End Class

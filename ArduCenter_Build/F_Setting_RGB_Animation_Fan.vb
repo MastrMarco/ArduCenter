@@ -45,7 +45,7 @@ Public Class F_Setting_RGB_Animation_Fan
 
                 Dim device As MMDevice = ComboBox1.SelectedItem
                 'device = ComboBox1.SelectedItem
-                AudioDEC = device.AudioMeterInformation.MasterPeakValue * RGB_Audio_Regolazione
+                AudioDEC = (Math.Round(device.AudioMeterInformation.MasterPeakValue * RGB_Audio_Regolazione))
                 Label1.Text = RGB_Audio_Regolazione
 
                 F_Avvio.Data9 = AudioDEC

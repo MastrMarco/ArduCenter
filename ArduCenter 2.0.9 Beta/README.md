@@ -10,7 +10,7 @@ AreduCenter  Versione B2.0.9 t09 [Risolti vari BUG]
 
 ## Info Aggiornamenti
 Ver: 2.0.9 t09 Beta
-- Aggiungi Nuova Animazione per i LED RGB [Mix Halloween]
+- Aggiunta Nuova Animazione per i LED RGB [Mix Halloween]
 - Aggiunto Bottone per Visualizzare le altre Animazioni per i LED
 - ![Immagine 2023-10-23 001510](https://github.com/MastrMarco/ArduCenter/assets/76437833/77e52cf3-8f4a-4bdb-8763-8be6888e7405)
 

@@ -1,5 +1,11 @@
 ﻿'Codice Rivisto Ver.2.0.9
 Public Class F_Hub_PC
+
+    Public IndirizzoTipoDispositivo As Integer = 1 'Tipo Progetto
+
+    Public IndirizzoElemento_SchedaVideo As Integer = 8 'Scheda Video
+    Public IndirizzoElemento_StriscaLED As Integer = 9  'Scheda Striscia LED Case
+
     'Valori Colore - Animazioni
     Public Hue_Max As Integer = 512
     Public Colore_Rosso_HSV As Integer = 0
@@ -26,10 +32,12 @@ Public Class F_Hub_PC
     Private Sub F_Fan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Modalità Sync Mode
         If F_Avvio.DatiRX_7(0) = 0 Then
-            'SwitchPannelHUB(F_HubPC_Home_v2)
-            SwitchPannelHUB(F_HubPC_Home)
-            FanMenù = "Hub PC Home"
-            BtnFan_GUI.Visible = False
+            SwitchPannelHUB(F_HubPC_HUB)
+            FanMenù = "Hub PC Sync Mode"
+            BtnFan_GUI.Visible = True
+            'SwitchPannelHUB(F_HubPC_Home)
+            'FanMenù = "Hub PC Home"
+            'BtnFan_GUI.Visible = False
 
             'Modalità Controllo Ventole
         ElseIf F_Avvio.DatiRX_7(0) > 0 And F_Avvio.DatiRX_7(0) < 5 Then
@@ -60,11 +68,19 @@ Public Class F_Hub_PC
         F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
 
         'Grafica Menù Aniamzione ARGB
-        Btn_Men_RGB_Animation_Click()
+        If F_Avvio.DatiRX_5(0) >= Animazione_RGB_Mix Then
+            Btn_Men_RGB_Animation_Click()
+            F_Home.LaInfoSoft.Text = "000"
+        End If
 
 
 
         'Tool_Tip
+
+        'Barra Avvio Rapido
+        F_Home.ToolTip1.SetToolTip(BtnTaskHardware_GUI, "Hardware Monitor")
+        F_Home.ToolTip1.SetToolTip(BtnImpostazioniFan, "Impostazioni HUB")
+
 
         'Info Menù Animazioni A-rgb
         F_Home.ToolTip1.SetToolTip(Btn_Men_RGB_Animation, "Altre Animazioni")
@@ -84,9 +100,9 @@ Public Class F_Hub_PC
         'If RGBAMenù = 0 Then F_Home.ToolTip1.SetToolTip(Btn_Spento, "Spento / Nero")
         'If RGBAMenù = 1 Then F_Home.ToolTip1.SetToolTip(Btn_Spento, "Mix Halloween")
         'ARGB
-        F_Home.ToolTip1.SetToolTip(BtnAN_Transiszione, "Transiszione")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Transiszione, "Transizione")
         F_Home.ToolTip1.SetToolTip(BtnAN_Rainbow, "Rainbow")
-        F_Home.ToolTip1.SetToolTip(BtnAN_Tepmeratura, "Tepmeratura")
+        F_Home.ToolTip1.SetToolTip(BtnAN_Tepmeratura, "Temperatura")
         F_Home.ToolTip1.SetToolTip(BtnAN_Musica, "Musica")
         F_Home.ToolTip1.SetToolTip(BtnAN_Discontinuo, "Discontinuo")
         'Luminosità
@@ -130,29 +146,33 @@ Public Class F_Hub_PC
 
     'Hardware Monitor PC Hub
     Public Sub BtnTaskHardware_GUI_Click(sender As Object, e As EventArgs) Handles BtnTaskHardware_GUI.Click
-        If F_HardwareMonitor.HardwareOpern = 0 Then
-            F_HardwareMonitor.Show()
-            BtnTaskHardware_GUI.BackgroundImage = My.Resources.BtnFanPage_Fan_Task_ON_1_0
-            F_Connessione.BtnHardwareMonitor.BackgroundImage = My.Resources.Icona_Parametri_FanON
-        End If
-        F_HardwareMonitor.HardwareOpern = 1
-        F_HardwareMonitor.Location = New Point(F_Home.Location.X + F_HardwareMonitor.F_HomeWidth + 5, F_Home.Location.Y - 50%)
+        'If F_HardwareMonitor.HardwareOpern = 0 Then
+        '    F_HardwareMonitor.Show()
+        '    BtnTaskHardware_GUI.BackgroundImage = My.Resources.BtnFanPage_Fan_Task_ON_1_0
+        '    F_Connessione.BtnHardwareMonitor.BackgroundImage = My.Resources.Icona_Parametri_FanON
+        'End If
+        'F_HardwareMonitor.HardwareOpern = 1
+        'F_HardwareMonitor.Location = New Point(F_Home.Location.X + F_HardwareMonitor.F_HomeWidth + 5, F_Home.Location.Y - 50%)
 
-        If F_HardwareMonitor.HardwareOpern = 1 And My.Settings.FormHrdwareTop = "Normale" Then
-            F_HardwareMonitor.TopMost = True
-            F_HardwareMonitor.TopMost = False
-        End If
+        'If F_HardwareMonitor.HardwareOpern = 1 And My.Settings.FormHrdwareTop = 0 Then
+        '    F_HardwareMonitor.TopMost = True
+        '    F_HardwareMonitor.TopMost = False
+        'End If
+
+        F_Avvio.ErrorMod = 100
+        F_Avvisi.LabelID_Error.Text = "Error Code " & F_Avvio.ErrorMod
+        F_Avvisi.AvvisoErrore()
     End Sub
 
     'Impostazioni Hub
     Private Sub BtnImpostazioniFan_Click(sender As Object, e As EventArgs) Handles BtnImpostazioniFan.Click
-        If F_Setting_HUB_Fan.Imp_Open = 0 Then
-            F_Setting_HUB_Fan.Show()
-            BtnImpostazioniFan.BackgroundImage = My.Resources.BtnFanPage_Fan_Impostazioni_ON_1_0
+        If F_Setting_HUB.Imp_Open = 0 Then
+            F_Setting_HUB.Show()
+            BtnImpostazioniFan.BackgroundImage = My.Resources.BtnGUI_HomeImpostazioni
         End If
-        F_Setting_HUB_Fan.Imp_Open = 1
-        F_Setting_HUB_Fan.TopMost = True
-        F_Setting_HUB_Fan.TopMost = False
+        F_Setting_HUB.Imp_Open = 1
+        F_Setting_HUB.TopMost = True
+        F_Setting_HUB.TopMost = False
     End Sub
     '-----------------------------------------------------------------------------------------------------------------
 
@@ -340,7 +360,7 @@ Public Class F_Hub_PC
     'Animazione RGB Temperatura
     Private Sub BtnANTepmeratura_Click(sender As Object, e As EventArgs) Handles BtnAN_Tepmeratura.Click
         If F_Avvio.DatiRX_7(0) = 0 Then
-            F_Setting_RGB_Animation_Fan_Temp.Show()
+            'F_Setting_RGB_Animation_Fan_Temp.Show()
             F_Avvio.Data3 = Animazione_RGB_Tepmeratura
 
             TX_Btn_Colore()
@@ -366,9 +386,9 @@ Public Class F_Hub_PC
         If F_Avvio.DatiRX_5(0) = Animazione_RGB_Musica Then
             'Luminosità_Reset()
             'My.Settings.AudioDigitalRGB = "Si"
-            F_Setting_RGB_Animation_Fan.Show()
-            F_Setting_RGB_Animation_Fan.TopMost = True
-            F_Setting_RGB_Animation_Fan.TopMost = False
+            F_Setting_RGB_Animation_HUB.Show()
+            F_Setting_RGB_Animation_HUB.TopMost = True
+            F_Setting_RGB_Animation_HUB.TopMost = False
         End If
     End Sub
 
@@ -405,9 +425,11 @@ Public Class F_Hub_PC
                 H_Fan_CPU_OP_02 = F_Avvio.Data3
             Case = 7
                 H_CPU_OP = F_Avvio.Data3
-            Case = 8
+
+            Case = IndirizzoElemento_SchedaVideo
                 H_GPU = F_Avvio.Data3
-            Case = 9
+
+            Case = IndirizzoElemento_StriscaLED
                 H_SLED = F_Avvio.Data3
             Case = 10
                 H_Cassa_Audio_S = F_Avvio.Data3
@@ -439,9 +461,11 @@ Public Class F_Hub_PC
                 S_Fan_CPU_OP_02 = F_Avvio.Data4
             Case = 7
                 S_CPU_OP = F_Avvio.Data4
-            Case = 8
+
+            Case = IndirizzoElemento_SchedaVideo
                 S_GPU = F_Avvio.Data4
-            Case = 9
+
+            Case = IndirizzoElemento_StriscaLED
                 S_SLED = F_Avvio.Data4
             Case = 10
                 S_Cassa_Audio_S = F_Avvio.Data4
@@ -472,9 +496,11 @@ Public Class F_Hub_PC
                 V_Fan_CPU_OP_02 = F_Avvio.Data2
             Case = 7
                 V_CPU_OP = F_Avvio.Data2
-            Case = 8
+
+            Case = IndirizzoElemento_SchedaVideo
                 V_GPU = F_Avvio.Data2
-            Case = 9
+
+            Case = IndirizzoElemento_StriscaLED
                 V_SLED = F_Avvio.Data2
             Case = 10
                 V_Cassa_Audio_S = F_Avvio.Data2
@@ -573,12 +599,13 @@ Public Class F_Hub_PC
                 F_HubPC_Ventole.IconaFanScolor.BackColor = Color.FromArgb(R, G, B)
 
             ElseIf F_Avvio.DatiRX_7(0) = 0 Then
-                F_HubPC_Ventole.IconaFanScolor.BackColor = Color.FromArgb(R, G, B)
-                F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(R, G, B)
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackColor = Color.FromArgb(R, G, B)
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackColor = Color.FromArgb(R, G, B)
-                F_HubPC_CasseAudio.Icona_StripLED.BackColor = Color.FromArgb(R, G, B)
+                F_HubPC_HUB.IconaHUB_Color.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_Ventole.IconaFanScolor.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_CasseAudio.Icona_CassaAudio_S.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_CasseAudio.Icona_CassaAudio_D.BackColor = Color.FromArgb(R, G, B)
+                'F_HubPC_CasseAudio.Icona_StripLED.BackColor = Color.FromArgb(R, G, B)
             End If
 
             '
@@ -633,7 +660,7 @@ Public Class F_Hub_PC
             Select Case F_Avvio.DatiRX_7(0)
                 Case = 0 'And F_Avvio.DatiRX_5(0) < Hue_Max
                     F_HubPC_Home.Color_Set_Home_IMG()
-                    F_HubPC_Ventole.Color_Set_Ventole_IMG()
+                    'F_HubPC_Ventole.Color_Set_Ventole_IMG()
                 Case = 1
                     F_HubPC_Home.Color_Set_Home_IMG()
                     F_HubPC_Ventole.Color_Set_Ventole_IMG()
@@ -659,14 +686,14 @@ Public Class F_Hub_PC
                     F_HubPC_Home.Color_Set_Home_IMG()
                     F_HubPC_Dissipatore240.Btn_PompCPU_LED.BackColor = Color.FromArgb(R, G, B)
                     F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
-                Case = 8
+                Case = IndirizzoElemento_SchedaVideo
                     F_HubPC_Home.Color_Set_Home_IMG()
                     F_HubPC_GPU_SLED.Color_Set_GPU_SLED_IMG()
-                    F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(R, G, B)
-                Case = 9
+                    F_HubPC_GPU_SLED.IconaStato_Menù_2.BackColor = Color.FromArgb(R, G, B)
+                Case = IndirizzoElemento_StriscaLED
                     F_HubPC_Home.Color_Set_Home_IMG()
                     F_HubPC_GPU_SLED.Color_Set_GPU_SLED_IMG()
-                    F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(R, G, B)
+                    F_HubPC_GPU_SLED.IconaStato_Menù_2.BackColor = Color.FromArgb(R, G, B)
                 Case = 10
                     F_HubPC_Home.Color_Set_Home_IMG()
                     F_HubPC_CasseAudio.Btn_CassaAudio_S.BackColor = Color.FromArgb(R, G, B)
@@ -690,11 +717,12 @@ Public Class F_Hub_PC
 
                 Select Case F_Avvio.DatiRX_7(0)
                     Case = 0
-                        F_HubPC_Ventole.LaLuminosità.Text = "Luminosità   " & PercentualeLuminosità & "%"
-                        'F_HubPC_Ventole.LodBarLimAll.Height = F_Avvio.DatiRX_4(0) / 5.66
-                        F_HubPC_GPU_SLED.LaLuminosità.Text = "Luminosità               " & L_Int & "%"
-                        F_HubPC_Dissipatore240.LaLuminosità.Text = "Luminosità  " & L_Int & "%"
-                        F_HubPC_CasseAudio.LaLuminosità.Text = "Luminosità            " & L_Int & "%"
+                        F_HubPC_HUB.LaLuminosità.Text = PercentualeLuminosità & "%"
+                        'F_HubPC_Ventole.LaLuminosità.Text = "Luminosità   " & PercentualeLuminosità & "%"
+                        ''F_HubPC_Ventole.LodBarLimAll.Height = F_Avvio.DatiRX_4(0) / 5.66
+                        'F_HubPC_GPU_SLED.LaLuminosità.Text = "Luminosità               " & L_Int & "%"
+                        'F_HubPC_Dissipatore240.LaLuminosità.Text = "Luminosità  " & L_Int & "%"
+                        'F_HubPC_CasseAudio.LaLuminosità.Text = "Luminosità            " & L_Int & "%"
 
                     Case = 1
                         F_HubPC_Ventole.LaLuminosità.Text = "Luminosità   " & PercentualeLuminosità & "%"
@@ -715,9 +743,9 @@ Public Class F_Hub_PC
                         F_HubPC_Dissipatore240.LaLuminosità.Text = "Luminosità  " & L_Int & "%"
                     Case = 7
                         F_HubPC_Dissipatore240.LaLuminosità.Text = "Luminosità  " & L_Int & "%"
-                    Case = 8
+                    Case = IndirizzoElemento_SchedaVideo
                         F_HubPC_GPU_SLED.LaLuminosità.Text = "Luminosità               " & L_Int & "%"
-                    Case = 9
+                    Case = IndirizzoElemento_StriscaLED
                         F_HubPC_GPU_SLED.LaLuminosità.Text = "Luminosità               " & L_Int & "%"
                     Case = 10
                         F_HubPC_CasseAudio.LaLuminosità.Text = "Luminosità            " & L_Int & "%"
@@ -777,7 +805,8 @@ Public Class F_Hub_PC
             F_HubPC_Ventole.LaVelocità.Text = "Velocità        " & PercentualeVelocità & "%"
             F_HubPC_Ventole.LaFanModalità.ForeColor = Color.FromArgb(0, 140, 149)
             F_HubPC_Ventole.LaFanModalità.Text = "Modalità      Manuale"
-
+            F_HubPC_HUB.LaFanModalità.Text = "Manuale"
+            F_HubPC_HUB.LaVelocità.Text = PercentualeVelocità & "%"
             F_HubPC_Ventole.TX_Btn_Velocità()
 
             Aggiorna_Speed = 0
@@ -815,26 +844,26 @@ Public Class F_Hub_PC
         '    F_Setting_RGB_Animation_Fan_Temp.Label3.ForeColor = Color.Black
         'End If
 
-        If F_Avvio.DatiRX_5(0) = 604 And F_Setting_RGB_Animation_Fan_Temp.IsHandleCreated Then
-            'F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.DarkOrange
+        'If F_Avvio.DatiRX_5(0) = 604 And F_Setting_RGB_Animation_Fan_Temp.IsHandleCreated Then
+        '    'F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.DarkOrange
 
-            If F_Avvio.DatiRX_11(0) = 2 Then
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.DarkOrange
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.Black
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.Black
-            End If
-            If F_Avvio.DatiRX_11(0) = 3 Then
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.DarkOrange
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.Black
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.Black
-            End If
-            If F_Avvio.DatiRX_11(0) = 1 Then
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.DarkOrange
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.Black
-                F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.Black
-            End If
+        '    If F_Avvio.DatiRX_11(0) = 2 Then
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.DarkOrange
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.Black
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.Black
+        '    End If
+        '    If F_Avvio.DatiRX_11(0) = 3 Then
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.DarkOrange
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.Black
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.Black
+        '    End If
+        '    If F_Avvio.DatiRX_11(0) = 1 Then
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_SenS.ForeColor = Color.DarkOrange
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_CPU.ForeColor = Color.Black
+        '        F_Setting_RGB_Animation_Fan_Temp.Btn_Temp_GPU.ForeColor = Color.Black
+        '    End If
 
-        End If
+        'End If
 
 
     End Sub
@@ -858,19 +887,24 @@ Public Class F_Hub_PC
         'Stato Btn GUI_Fan / Btn Spento ON 
         If F_Avvio.DatiRX_4(X) = "0" And F_Avvio.DatiRX_6(X) <> "0" Then
 
-            If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+            If F_Avvio.DatiRX_7(0) = 0 Then
+                F_HubPC_HUB.LaColore.Text = "Spento"
+                F_HubPC_HUB.LaColore.ForeColor = Color.White
+            End If
+            If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                 F_HubPC_Ventole.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
                 F_HubPC_Ventole.LaColore.Text = "Colore          Spento"
             End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+            If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                 F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
                 F_HubPC_Dissipatore240.LaColore.Text = "Colore Spento"
             End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                F_HubPC_GPU_SLED.LaColore.Text = "Spento"
-            End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+            'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+            If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
+                    F_HubPC_GPU_SLED.LaColore.Text = "Spento"
+                End If
+                If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
                 F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
                 F_HubPC_CasseAudio.LaColore.Text = "Spento"
             End If
@@ -878,242 +912,182 @@ Public Class F_Hub_PC
             'Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
             If RGBAMenù = 0 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_SpentoON
             'If RGBAMenù = 1 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_ON
-            Btn_RGB_Fan_GUI()
+            Btn_RGB_IMG_GUI()
         End If
         'ColorBtn Bianco
         If F_Avvio.DatiRX_6(X) = "0" And F_Avvio.DatiRX_4(X) <> "0" Then
 
-            If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+            If F_Avvio.DatiRX_7(0) = 0 Then
+                F_HubPC_HUB.LaColore.Text = "Bianco"
+                F_HubPC_HUB.LaColore.ForeColor = Color.White
+            End If
+            If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                 F_HubPC_Ventole.LaColore.ForeColor = Color.White
                 F_HubPC_Ventole.LaColore.Text = "Colore          Bianco"
             End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+            If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                 F_HubPC_Dissipatore240.LaColore.ForeColor = Color.White
                 F_HubPC_Dissipatore240.LaColore.Text = "Bianco"
             End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+            'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+            If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
                 F_HubPC_GPU_SLED.LaColore.ForeColor = Color.White
                 F_HubPC_GPU_SLED.LaColore.Text = "Bianco"
             End If
-            If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+            If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
                 F_HubPC_CasseAudio.LaColore.ForeColor = Color.White
                 F_HubPC_CasseAudio.LaColore.Text = "Bianco"
             End If
 
             BtnBianco.BorderStyle = BorderStyle.Fixed3D
-            Btn_RGB_Fan_GUI()
-        End If
+                Btn_RGB_IMG_GUI()
+            End If
 
 
-        If F_Avvio.DatiRX_4(X) <> "0" And F_Avvio.DatiRX_6(X) <> "0" Then
+            If F_Avvio.DatiRX_4(X) <> "0" And F_Avvio.DatiRX_6(X) <> "0" Then
 
-            'Stato Btn GUI_Fan / Btn RGB M1 ON 
+            'Stato Btn GUI_Fan / BtnRGB Discontinuo
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Discontinuo Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore     Discontinuo"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "Discontinuo"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "Discontinuo"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "Discontinuo"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "Discontinuo"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
 
-                'RGB Ventole PC
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'RGB HuB Home PC
                 F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
-
-                'RGB Dissipatore Liquido 240mm
-                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Discontinuo
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Discontinuo_v1_3
-
+                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Discontinuo          'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Discontinuo_v1_3
                 F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Discontinuo
-
-
+                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Discontinuo
+                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Discontinuo
                 F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Discontinuo
 
-                'RGB Casse Audio
-                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Discontinuo
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Discontinuo
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Discontinuo
-                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Discontinuo
+                'RGB HuB PC
+                F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Discontinuo
+                F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Discontinuo
+                F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Discontinuo
+                F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Discontinuo
+                F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Discontinuo
 
-                'RGB Strisca LED PC
-                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Discontinuo
-
-                'F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Discontinuo
                 Icona_Fan_All_RGB_Mod()
                 RGB_Aniamtion_Img()
 
                 BtnAN_Discontinuo.BackgroundImage = My.Resources.BtnLED_DiscontinuoON
             End If
-            'Stato Btn GUI_Fan / BtnRGB ??
+            'Stato Btn GUI_Fan / BtnRGB Transizione
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Transiszione Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore     Transizione"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "Transizione"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "Transizione"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "Transizione"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "Transizione"
-                End If
+
+                'RGB HuB Home PC
+                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
+                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Transizione
+                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Transizione
+                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
+                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
+                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
+
+                'RGB HuB PC
+                F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
+                F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
+                F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
+                F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Transizione
+                F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Transizione
+                F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
 
                 Icona_Fan_All_RGB_Mod()
                 RGB_Aniamtion_Img()
-
-                'RGB Ventole PC
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
-                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
-
-                'RGB Dissipatore Liquido 240mm
-                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Transizione
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Transizione_v1_3
-
-                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Transizione
-                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
-
-                'RGB Casse Audio
-                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
-
-                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
-                ' F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
-
 
                 BtnAN_Transiszione.BackgroundImage = My.Resources.BtnLED_TransizioneON
             End If
-            'Stato Btn GUI_Fan / BtnRGB ??
+            'Stato Btn GUI_Fan / BtnRGB RainBow
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Rainbow Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore        RainBow"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "RainBow"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "RainBow"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "RainBow"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "RainBow"
-                End If
+
+                'RGB HuB Home PC
+                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_RainBow
+                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_RainBow
+                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_RainBow
+                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_RainBow
+                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_RainBow
+                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_RainBow
+
+                'RGB HuB PC
+                F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_RainBow
+                F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_RainBow
+                F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_RainBow
+                F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_RainBow
+                F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_RainBow
+                F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_RainBow
 
                 Icona_Fan_All_RGB_Mod()
                 RGB_Aniamtion_Img()
-
-                'RGB Ventole PC
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_RainBow
-                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_RainBow
-
-                'RGB Dissipatore Liquido 240mm
-                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_RainBow
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_RainBow_v1_3
-
-                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_RainBow
-                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_RainBow
-
-                'RGB Casse Audio
-                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_RainBow
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_RainBow
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_RainBow
-                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_RainBow
-
-                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_RainBow
-                'F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_RainBow
-
 
                 BtnAN_Rainbow.BackgroundImage = My.Resources.BtnLED_RainBowON
             End If
-            'Stato Btn GUI_Fan / BtnRGB ??
+            'Stato Btn GUI_Fan / BtnRGB Musica
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Musica Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore         Musica"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "Musica"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "Musica"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "Musica"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "Musica"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
 
                 Icona_Fan_All_RGB_Mod()
                 RGB_Aniamtion_Img()
 
-                'RGB Ventole PC
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Musica_2_0
+                'RGB HuB Home PC
                 F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Musica_2_0
-
-                'RGB Dissipatore Liquido 240mm
                 F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Musica_v1_3
-
                 F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
                 F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
-
-                'RGB Casse Audio
                 F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
-                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
-
                 F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
-                'F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Musica
 
+                'RGB HuB PC
+                F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
+                F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Musica_2_0
+                F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
+                F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
+                F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
+                F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
 
                 BtnAN_Musica.BackgroundImage = My.Resources.BtnLED_MusicaON
             End If
-            'Stato Btn GUI_Fan / BtnRGB ??
+            'Stato Btn GUI_Fan / BtnRGB Temperatura
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Tepmeratura Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore  Temperatura"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "Temperatura"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "Temperatura"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "Temperatura"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "Temperatura"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
 
                 Icona_Fan_All_RGB_Mod()
                 RGB_Aniamtion_Img()
 
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
-                'F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'RGB HuB Home PC
+                'F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
+                'F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
 
+                'RGB HuB PC
+                'F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
+                'F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
+                'F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
+                'F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
+                'F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
 
                 BtnAN_Tepmeratura.BackgroundImage = My.Resources.BtnLED_TemperaturaON
             End If
@@ -1123,209 +1097,245 @@ Public Class F_Hub_PC
             'Stato Btn GUI_Fan / BtnRGB MIX Halloween
             If F_Avvio.DatiRX_5(X) = Animazione_RGB_Mix Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
-                    F_HubPC_Ventole.LaColore.Text = "Colore     Halloween"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
-                    F_HubPC_Dissipatore240.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_Dissipatore240.LaColore.Text = "Halloween"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_GPU_SLED.LaColore.Text = "Halloween"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                    F_HubPC_CasseAudio.LaColore.Text = "Halloween"
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.Text = "Halloween"
+                    F_HubPC_HUB.LaColore.ForeColor = Color.White
                 End If
 
                 Icona_Fan_All_RGB_Mod()
-                RGB_Aniamtion_Img()
+                'RGB_Aniamtion_Img()
+                Btn_RGB_IMG_GUI()
 
-                'RGB Ventole PC
-                F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
-                F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione_2_0
+                'RGB HuB Home PC
+                'F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
+                'F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
+                'F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
 
-                'RGB Dissipatore Liquido 240mm
-                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Transizione
-                F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_RGB_Transizione_v1_3
+                'RGB HuB PC
+                'F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
+                'F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
+                'F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Musica
+                'F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_Colore_Musica
+                'F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Musica
+                'F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Musica
 
-                F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_Transizione
-                F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
+                F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackColor = Color.DarkRed
+                F_HubPC_Home.Btn_F_HubPC_Ventole.BackColor = Color.DarkRed
+                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackColor = Color.DarkRed
+                F_HubPC_Home.Btn_F_HubPC_GPU.BackColor = Color.DarkRed
+                F_HubPC_Home.Btn_Hub_SyncMode.BackColor = Color.DarkRed
+                F_HubPC_Home.Btn_F_HubPC_SLED.BackColor = Color.DarkRed
 
-                'RGB Casse Audio
-                F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_Transizione
-                F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
+                F_HubPC_HUB.Btn_Fan_Info.BackColor = Color.DarkRed
+                F_HubPC_HUB.Btn_GPU_Info.BackColor = Color.DarkRed
+                F_HubPC_HUB.Btn_Dissipatore_Info.BackColor = Color.DarkRed
+                F_HubPC_HUB.Btn_Casse_Info.BackColor = Color.DarkRed
+                F_HubPC_HUB.Btn_StriscaLED_Info.BackColor = Color.DarkRed
+                F_HubPC_HUB.IconaHUB_Color.BackColor = Color.DarkRed
 
-                F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_Transizione
-                ' F_Fan_Menù.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_Transizione
 
 
                 If RGBAMenù = 1 Then Btn_Spento.BackgroundImage = My.Resources.BtnLED_halloween_ON
             End If
 
-                'ColorBtn Rosso
-                If F_Avvio.DatiRX_5(X) = Colore_Rosso_HSV Then
+            'ColorBtn Rosso
+            If F_Avvio.DatiRX_5(X) = Colore_Rosso_HSV Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Red
+                    F_HubPC_HUB.LaColore.Text = "Rosso"
+                End If
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Red
                     F_HubPC_Ventole.LaColore.Text = "Colore          Rosso"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Red
                     F_HubPC_Dissipatore240.LaColore.Text = "Rosso"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Red
-                    F_HubPC_GPU_SLED.LaColore.Text = "Rosso"
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Red
+                        F_HubPC_GPU_SLED.LaColore.Text = "Rosso"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                        F_HubPC_CasseAudio.LaColore.ForeColor = Color.Red
+                        F_HubPC_CasseAudio.LaColore.Text = "Rosso"
+                    End If
+
+                    BtnRosso.BorderStyle = BorderStyle.Fixed3D
+
+                    Btn_RGB_IMG_GUI()
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.Red
-                    F_HubPC_CasseAudio.LaColore.Text = "Rosso"
+                'ColorBtn Blu
+                If F_Avvio.DatiRX_5(X) = Colore_Blu_HSV Then
+
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Blue
+                    F_HubPC_HUB.LaColore.Text = "Blu"
                 End If
-
-                BtnRosso.BorderStyle = BorderStyle.Fixed3D
-
-                Btn_RGB_Fan_GUI()
-            End If
-            'ColorBtn Blu
-            If F_Avvio.DatiRX_5(X) = Colore_Blu_HSV Then
-
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Blue
                     F_HubPC_Ventole.LaColore.Text = "Colore            Blu"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Blue
                     F_HubPC_Dissipatore240.LaColore.Text = "Blu"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Blue
-                    F_HubPC_GPU_SLED.LaColore.Text = "Blu"
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Blue
+                        F_HubPC_GPU_SLED.LaColore.Text = "Blu"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                        F_HubPC_CasseAudio.LaColore.ForeColor = Color.Blue
+                        F_HubPC_CasseAudio.LaColore.Text = "Blu"
+                    End If
+
+                    BtnBlu.BorderStyle = BorderStyle.Fixed3D
+
+                    Btn_RGB_IMG_GUI()
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.Blue
-                    F_HubPC_CasseAudio.LaColore.Text = "Blu"
+                'ColorBtn Giallo
+                If F_Avvio.DatiRX_5(X) = Colore_Giallo_HSV Then
+
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Yellow
+                    F_HubPC_HUB.LaColore.Text = "Giallo"
                 End If
-
-                BtnBlu.BorderStyle = BorderStyle.Fixed3D
-
-                Btn_RGB_Fan_GUI()
-            End If
-            'ColorBtn Giallo
-            If F_Avvio.DatiRX_5(X) = Colore_Giallo_HSV Then
-
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Yellow
                     F_HubPC_Ventole.LaColore.Text = "Colore          Giallo"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Yellow
                     F_HubPC_Dissipatore240.LaColore.Text = "Giallo"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Yellow
-                    F_HubPC_GPU_SLED.LaColore.Text = "Giallo"
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Yellow
+                        F_HubPC_GPU_SLED.LaColore.Text = "Giallo"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                        F_HubPC_CasseAudio.LaColore.ForeColor = Color.Yellow
+                        F_HubPC_CasseAudio.LaColore.Text = "Giallo"
+                    End If
+
+                    BtnGiallo.BorderStyle = BorderStyle.Fixed3D
+
+                    Btn_RGB_IMG_GUI()
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.Yellow
-                    F_HubPC_CasseAudio.LaColore.Text = "Giallo"
+                'ColorBtn Verde
+                If F_Avvio.DatiRX_5(X) = Colore_Verde_HSV Then
+
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Lime
+                    F_HubPC_HUB.LaColore.Text = "Verde"
                 End If
-
-                BtnGiallo.BorderStyle = BorderStyle.Fixed3D
-
-                Btn_RGB_Fan_GUI()
-            End If
-            'ColorBtn Verde
-            If F_Avvio.DatiRX_5(X) = Colore_Verde_HSV Then
-
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Lime
                     F_HubPC_Ventole.LaColore.Text = "Colore          Verde"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Lime
                     F_HubPC_Dissipatore240.LaColore.Text = "Verde"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Lime
-                    F_HubPC_GPU_SLED.LaColore.Text = "Verde"
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Lime
+                        F_HubPC_GPU_SLED.LaColore.Text = "Verde"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                        F_HubPC_CasseAudio.LaColore.ForeColor = Color.Lime
+                        F_HubPC_CasseAudio.LaColore.Text = "Verde"
+                    End If
+
+                    BtnVerde.BorderStyle = BorderStyle.Fixed3D
+
+                    Btn_RGB_IMG_GUI()
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
-                    F_HubPC_CasseAudio.LaColore.ForeColor = Color.Lime
-                    F_HubPC_CasseAudio.LaColore.Text = "Verde"
+                'ColorBtn Viola
+                If F_Avvio.DatiRX_5(X) = Colore_Fucsioa_HSV Then
+
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Fuchsia
+                    F_HubPC_HUB.LaColore.Text = "Viola"
                 End If
-
-                BtnVerde.BorderStyle = BorderStyle.Fixed3D
-
-                Btn_RGB_Fan_GUI()
-            End If
-            'ColorBtn Viola
-            If F_Avvio.DatiRX_5(X) = Colore_Fucsioa_HSV Then
-
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Fuchsia
                     F_HubPC_Ventole.LaColore.Text = "Colore          Viola"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Fuchsia
                     F_HubPC_Dissipatore240.LaColore.Text = "Viola"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Fuchsia
-                    F_HubPC_GPU_SLED.LaColore.Text = "Viola"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Fuchsia
+                        F_HubPC_GPU_SLED.LaColore.Text = "Viola"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
                     F_HubPC_CasseAudio.LaColore.ForeColor = Color.Fuchsia
                     F_HubPC_CasseAudio.LaColore.Text = "Viola"
                 End If
 
                 BtnFucsia.BorderStyle = BorderStyle.Fixed3D
 
-                Btn_RGB_Fan_GUI()
+                Btn_RGB_IMG_GUI()
             End If
             'ColorBtn Arancio
             If F_Avvio.DatiRX_5(X) = Colore_Arancione_HSV Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.DarkOrange
+                    F_HubPC_HUB.LaColore.Text = "Arancione"
+                End If
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.DarkOrange
                     F_HubPC_Ventole.LaColore.Text = "Colore        Arancione"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.DarkOrange
                     F_HubPC_Dissipatore240.LaColore.Text = "Arancione"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.DarkOrange
-                    F_HubPC_GPU_SLED.LaColore.Text = "Arancione"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                ' If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.DarkOrange
+                        F_HubPC_GPU_SLED.LaColore.Text = "Arancione"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
                     F_HubPC_CasseAudio.LaColore.ForeColor = Color.DarkOrange
                     F_HubPC_CasseAudio.LaColore.Text = "Arancione"
                 End If
 
                 BtnArancio.BorderStyle = BorderStyle.Fixed3D
 
-                Btn_RGB_Fan_GUI()
+                Btn_RGB_IMG_GUI()
             End If
             'ColorBtn Azzurro
             If F_Avvio.DatiRX_5(X) = Colore_Celeste_HSV Then
 
-                If F_Avvio.DatiRX_7(0) >= 0 And F_Avvio.DatiRX_7(0) <= 4 Then
+                If F_Avvio.DatiRX_7(0) = 0 Then
+                    F_HubPC_HUB.LaColore.ForeColor = Color.Cyan
+                    F_HubPC_HUB.LaColore.Text = "Azzurro"
+                End If
+                If F_Avvio.DatiRX_7(0) >= 1 And F_Avvio.DatiRX_7(0) <= 4 Then
                     F_HubPC_Ventole.LaColore.ForeColor = Color.Cyan
                     F_HubPC_Ventole.LaColore.Text = "Colore         Azzurro"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
+                If F_Avvio.DatiRX_7(0) > 4 And F_Avvio.DatiRX_7(0) < 8 Then
                     F_HubPC_Dissipatore240.LaColore.ForeColor = Color.Cyan
                     F_HubPC_Dissipatore240.LaColore.Text = "Azzurro"
                 End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Cyan
-                    F_HubPC_GPU_SLED.LaColore.Text = "Azzurro"
-                End If
-                If F_Avvio.DatiRX_7(0) = 0 Or F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
+                'If F_Avvio.DatiRX_7(0) > (IndirizzoElemento_SchedaVideo - 1) And F_Avvio.DatiRX_7(0) < (IndirizzoElemento_StriscaLED + 1) Then
+                If F_Avvio.DatiRX_7(0) > 7 And F_Avvio.DatiRX_7(0) < 10 Then
+                        F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Cyan
+                        F_HubPC_GPU_SLED.LaColore.Text = "Azzurro"
+                    End If
+                    If F_Avvio.DatiRX_7(0) > 9 And F_Avvio.DatiRX_7(0) < 13 Then
                     F_HubPC_CasseAudio.LaColore.ForeColor = Color.Cyan
                     F_HubPC_CasseAudio.LaColore.Text = "Azzurro"
                 End If
@@ -1333,7 +1343,7 @@ Public Class F_Hub_PC
 
                 BtnAzzurro.BorderStyle = BorderStyle.Fixed3D
 
-                Btn_RGB_Fan_GUI()
+                Btn_RGB_IMG_GUI()
             End If
 
         End If
@@ -1351,26 +1361,35 @@ Public Class F_Hub_PC
         BtnAN_Tepmeratura.BackgroundImage = My.Resources.BtnLED_Temperatura
     End Sub
     '//Btn GUI_Fan RGB Menù tutti Abbilitati
-    Public Sub Btn_RGB_Fan_GUI()
+    Public Sub Btn_RGB_IMG_GUI()
         'RGB Ventole PC
-        F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0
+        ' F_HubPC_Ventole.IconaFanScolor.BackgroundImage = My.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0
         F_HubPC_Home.Btn_F_HubPC_Ventole.BackgroundImage = My.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0
 
         'RGB Dissipatore Liquido 240mm
         F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackgroundImage = My.Resources.Dissipatore240mm_HSV_v1_1
-        F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_HSV_RGB_v1_3
+        'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_HSV_RGB_v1_3
 
         F_HubPC_Home.Btn_F_HubPC_GPU.BackgroundImage = My.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_2_1
         If H_SyncMode <= Hue_Max Then F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1
 
         'RGB Casse Audio
         F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
-        F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
-        F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
-        F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
+        'F_HubPC_CasseAudio.Icona_CassaAudio_S.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
+        'F_HubPC_CasseAudio.Icona_CassaAudio_D.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
+        'F_HubPC_CasseAudio.Icona_StripLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
 
         '
         F_HubPC_Home.Btn_F_HubPC_SLED.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
+
+
+        'RGB HuB PC
+        F_HubPC_HUB.IconaHUB_Color.BackgroundImage = My.Resources.Icona_HUB_1_1
+        F_HubPC_HUB.Btn_Fan_Info.BackgroundImage = My.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0
+        F_HubPC_HUB.Btn_Casse_Info.BackgroundImage = My.Resources.IconaCasaAudio_RGB_Colore_HSV_RGB
+        F_HubPC_HUB.Btn_Dissipatore_Info.BackgroundImage = My.Resources.Dissipatore240mm_HSV_v1_1
+        F_HubPC_HUB.Btn_GPU_Info.BackgroundImage = My.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_2_1
+        F_HubPC_HUB.Btn_StriscaLED_Info.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
 
         If F_Avvio.DatiRX_7(0) = 0 Then
             'F_HubPC_Ventole.IconaFanAll.BackgroundImage = My.Resources.IconaFan_RGB_Colore_HSV_RGB_2_0
@@ -1391,13 +1410,21 @@ Public Class F_Hub_PC
     Public Sub RGB_Aniamtion_Img()
         F_HubPC_Ventole.IconaFanScolor.BackColor = Color.FromArgb(7, 4, 31)
         F_HubPC_Ventole.LaColore.BackColor = Color.FromArgb(7, 4, 31)
+
         F_HubPC_Home.Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(7, 4, 31)
         F_HubPC_Home.Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(7, 4, 31)
         F_HubPC_Home.Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(7, 4, 31)
         F_HubPC_Home.Btn_F_HubPC_GPU.BackColor = Color.FromArgb(7, 4, 31)
         F_HubPC_Home.Btn_Hub_SyncMode.BackColor = Color.FromArgb(7, 4, 31)
-
         F_HubPC_Home.Btn_F_HubPC_SLED.BackColor = Color.FromArgb(7, 4, 31)
+
+        F_HubPC_HUB.Btn_Fan_Info.BackColor = Color.FromArgb(7, 4, 31)
+        F_HubPC_HUB.Btn_GPU_Info.BackColor = Color.FromArgb(7, 4, 31)
+        F_HubPC_HUB.Btn_Dissipatore_Info.BackColor = Color.FromArgb(7, 4, 31)
+        F_HubPC_HUB.Btn_Casse_Info.BackColor = Color.FromArgb(7, 4, 31)
+        F_HubPC_HUB.Btn_StriscaLED_Info.BackColor = Color.FromArgb(7, 4, 31)
+        F_HubPC_HUB.IconaHUB_Color.BackColor = Color.FromArgb(7, 4, 31)
+
     End Sub
 
     Public Sub Luminosità_Reset()
@@ -1573,13 +1600,13 @@ Public Class F_Hub_PC
                         '        'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
 
 
-                Case = 8
+                Case = IndirizzoElemento_SchedaVideo
                     R_GPU = R
                     G_GPU = G
                     B_GPU = B
                     'Btn_F_HubPC_GPU.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                        ' F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                Case = 9
+                Case = IndirizzoElemento_StriscaLED
                     R_SLED = R
                     G_SLED = G
                     B_SLED = B
@@ -1869,203 +1896,104 @@ Public Class F_Hub_PC
 
             'Imposta l'interfaccia In Sync Mode Controllo uniforme
             Case = 0
-                'IconaFanAll.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Sync
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
-                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Sync
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Sync
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Sync
-
-                'F_HubPC_Ventole.LaFAN_All.ForeColor = Color.White
                 F_HubPC_Home.La_SyncMode.ForeColor = Color.White
 
 
                  'Imposta l'interfaccia In Manual Mode Controllo della Ventola 1
             Case = 1
-                'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 1"
-
                 F_HubPC_Ventole.LaFAN_1.ForeColor = Color.White
                 F_HubPC_Home.La_Ventole.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 2
             Case = 2
-                'IconaFan2.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 2"
-
                 F_HubPC_Ventole.LaFAN_2.ForeColor = Color.White
                 F_HubPC_Home.La_Ventole.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 3
             Case = 3
-                'IconaFan3.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 3"
-
                 F_HubPC_Ventole.LaFAN_3.ForeColor = Color.White
                 F_HubPC_Home.La_Ventole.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della Ventola 4
             Case = 4
-                'IconaFan4.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Ventole.TitoloFan.Text = "Ventola 4"
-
                 F_HubPC_Ventole.LaFAN_4.ForeColor = Color.White
                 F_HubPC_Home.La_Ventole.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo del dissipatore a liquido 240 ventola 1
             Case = 5
-                'F_Fan_Menù_3.Btn_FanCPU_LED01.BackgroundImage = My.Resources.Icona_FanPO_1_2_Click
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_FanPO_1_3_
                 F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Fan CPU 1"
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
-
                 F_HubPC_Dissipatore240.Btn_FanCPU_1.ForeColor = Color.White
                 F_HubPC_Home.La_Dissipatore.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo del dissipatore a liquido 240 ventola 2
             Case = 6
-                'F_Fan_Menù_3.Btn_FanCPU_LED02.BackgroundImage = My.Resources.Icona_FanPO_1_2_Click
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_FanPO_1_3_
                 F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Fan CPU 2"
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
-
                 F_HubPC_Dissipatore240.Btn_FanCPU_2.ForeColor = Color.White
                 F_HubPC_Home.La_Dissipatore.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo del dissipatore a liquido 240 CPU
             Case = 7
-                'IconaFan4.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
                 F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.White
                 F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackgroundImage = My.Resources.Icona_DeepCool_HSV_RGB_v1_3
                 F_HubPC_Dissipatore240.LaSelezione.Text = Mod_Color_Manual + " Pompa CPU"
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
-
                 F_HubPC_Dissipatore240.Btn_PompCPU.ForeColor = Color.White
                 F_HubPC_Home.La_Dissipatore.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della GPU
-            Case = 8
-                'IconaFanAll.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
+            Case = IndirizzoElemento_SchedaVideo
+                F_HubPC_GPU_SLED.IconaStato_Menù_2.BackgroundImage = My.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
                 F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual + " Scheda Video"
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
-
                 F_HubPC_GPU_SLED.BtnGPU_LED.ForeColor = Color.White
                 F_HubPC_Home.La_GPU.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della Strisca a LED
-            Case = 9
-                'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
+            Case = IndirizzoElemento_StriscaLED
+                F_HubPC_GPU_SLED.IconaStato_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
                 F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.White
                 F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual + " Strisca LED"
-                F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual
-                F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.Red
-
                 F_HubPC_GPU_SLED.BtnStrip_LED.ForeColor = Color.White
                 F_HubPC_Home.La_SLED.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della cassa Audio Sinistra
             Case = 10
-                'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
+
                 F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Cassa Audio Sinistra"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
-
                 F_HubPC_CasseAudio.LaCassaAudio_S.ForeColor = Color.White
                 F_HubPC_Home.La_CasseAudio.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della cassa Audio Destra
             Case = 11
-                'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Cassa Audio Destra"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
-
                 F_HubPC_CasseAudio.LaCassaAudio_D.ForeColor = Color.White
                 F_HubPC_Home.La_CasseAudio.ForeColor = Color.White
 
 
                 'Imposta l'interfaccia In Manual Mode Controllo della Strisca a LED Audio Esterna
             Case = 12
-                'IconaFan1.BackgroundImage = IconaFanScolor.BackgroundImage
-                'F_Fan_Menù_2.IconaStatoFan_Menù_2.BackgroundImage = My.Resources.Icona_Strisca__RGB_Colore_HSV_RGB_2_2_2
-                F_HubPC_Ventole.TitoloFan.ForeColor = Color.Red
-                F_HubPC_Ventole.TitoloFan.Text = Mod_Color_Manual
-                F_HubPC_Dissipatore240.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.ForeColor = Color.Red
-                F_HubPC_GPU_SLED.LaSelezione.Text = Mod_Color_Manual
                 F_HubPC_CasseAudio.LaSelezione.Text = Mod_Color_Manual + " Strisca a LED esterna"
                 F_HubPC_CasseAudio.LaSelezione.ForeColor = Color.White
-
                 F_HubPC_CasseAudio.LaStriscaLED.ForeColor = Color.White
                 F_HubPC_Home.La_CasseAudio.ForeColor = Color.White
         End Select
@@ -2078,11 +2006,14 @@ Public Class F_Hub_PC
         F_HubPC_Ventole.LaFAN_2.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_Ventole.LaFAN_3.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_Ventole.LaFAN_4.ForeColor = Color.FromArgb(0, 140, 149)
+
         F_HubPC_GPU_SLED.BtnGPU_LED.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_GPU_SLED.BtnStrip_LED.ForeColor = Color.FromArgb(0, 140, 149)
+
         F_HubPC_Dissipatore240.Btn_FanCPU_1.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_Dissipatore240.Btn_FanCPU_2.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_Dissipatore240.Btn_PompCPU.ForeColor = Color.FromArgb(0, 140, 149)
+
         F_HubPC_CasseAudio.LaCassaAudio_S.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_CasseAudio.LaCassaAudio_D.ForeColor = Color.FromArgb(0, 140, 149)
         F_HubPC_CasseAudio.LaStriscaLED.ForeColor = Color.FromArgb(0, 140, 149)

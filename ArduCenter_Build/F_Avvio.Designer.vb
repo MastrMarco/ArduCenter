@@ -27,14 +27,12 @@ Partial Class F_Avvio
         Me.SerialPortArduino = New System.IO.Ports.SerialPort(Me.components)
         Me.TimerSerialPort_TX_RX = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.TimerTaskManager = New System.Windows.Forms.Timer(Me.components)
         Me.StatoAPP = New System.Windows.Forms.Label()
         Me.Creatore = New System.Windows.Forms.Label()
         Me.ID_Versione = New System.Windows.Forms.Label()
         Me.AnimazioneAvvioGIF = New System.Windows.Forms.PictureBox()
         Me.TimerAvvioForm = New System.Windows.Forms.Timer(Me.components)
         Me.TimerBoot_Reset = New System.Windows.Forms.Timer(Me.components)
-        Me.BackgroundWorkerTaskMenager = New System.ComponentModel.BackgroundWorker()
         Me.BackgroundWorkerSerialPort = New System.ComponentModel.BackgroundWorker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.AnimazioneAvvioGIF, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -45,17 +43,12 @@ Partial Class F_Avvio
         '
         Me.TimerSerialPort_TX_RX.Interval = 30
         '
-        'TimerTaskManager
-        '
-        Me.TimerTaskManager.Enabled = True
-        Me.TimerTaskManager.Interval = 1500
-        '
         'StatoAPP
         '
         Me.StatoAPP.AutoSize = True
         Me.StatoAPP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatoAPP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.StatoAPP.Location = New System.Drawing.Point(0, 230)
+        Me.StatoAPP.Location = New System.Drawing.Point(0, 231)
         Me.StatoAPP.Name = "StatoAPP"
         Me.StatoAPP.Size = New System.Drawing.Size(35, 16)
         Me.StatoAPP.TabIndex = 5
@@ -66,7 +59,7 @@ Partial Class F_Avvio
         Me.Creatore.AutoSize = True
         Me.Creatore.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Creatore.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Creatore.Location = New System.Drawing.Point(372, 230)
+        Me.Creatore.Location = New System.Drawing.Point(372, 231)
         Me.Creatore.Name = "Creatore"
         Me.Creatore.Size = New System.Drawing.Size(43, 16)
         Me.Creatore.TabIndex = 4
@@ -97,7 +90,7 @@ Partial Class F_Avvio
         '
         'TimerAvvioForm
         '
-        Me.TimerAvvioForm.Interval = 3000
+        Me.TimerAvvioForm.Interval = 1000
         '
         'TimerBoot_Reset
         '
@@ -111,10 +104,12 @@ Partial Class F_Avvio
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnLED_halloween_ON
         Me.PictureBox1.Location = New System.Drawing.Point(341, 173)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(46, 46)
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
         '
         'F_Avvio
         '
@@ -146,14 +141,12 @@ Partial Class F_Avvio
     Friend WithEvents SerialPortArduino As IO.Ports.SerialPort
     Friend WithEvents TimerSerialPort_TX_RX As Timer
     Friend WithEvents Timer2 As Timer
-    Friend WithEvents TimerTaskManager As Timer
     Friend WithEvents StatoAPP As Label
     Friend WithEvents Creatore As Label
     Friend WithEvents ID_Versione As Label
     Friend WithEvents AnimazioneAvvioGIF As PictureBox
     Friend WithEvents TimerAvvioForm As Timer
     Friend WithEvents TimerBoot_Reset As Timer
-    Friend WithEvents BackgroundWorkerTaskMenager As System.ComponentModel.BackgroundWorker
     Friend WithEvents BackgroundWorkerSerialPort As System.ComponentModel.BackgroundWorker
     Friend WithEvents PictureBox1 As PictureBox
 End Class

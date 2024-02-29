@@ -18,13 +18,15 @@
 
 
     Public Sub Btn_CPU_LED_Click(sender As Object, e As EventArgs) Handles Btn_PompCPU_LED.Click
-        F_Avvio.Data1 = 7
-        If F_Avvio.Data1 = 7 Then
-            F_Avvio.Data3 = F_Hub_PC.H_CPU_OP
-            F_Avvio.Data4 = F_Hub_PC.S_CPU_OP
-            F_Avvio.Data2 = F_Hub_PC.V_CPU_OP
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 7
+            If F_Avvio.Data1 = 7 Then
+                F_Avvio.Data3 = F_Hub_PC.H_CPU_OP
+                F_Avvio.Data4 = F_Hub_PC.S_CPU_OP
+                F_Avvio.Data2 = F_Hub_PC.V_CPU_OP
+            End If
+            F_Hub_PC.BtnOFF_Animation()
         End If
-        F_Hub_PC.BtnOFF_Animation()
     End Sub
     Private Sub Btn_PompCPU_LED_MouseHover(sender As Object, e As EventArgs) Handles Btn_PompCPU_LED.MouseHover
         F_Home.ToolTip1.SetToolTip(Btn_PompCPU_LED, "Colore " & F_Hub_PC.H_CPU_OP & "
@@ -33,13 +35,15 @@ Velocità Null")
     End Sub
 
     Private Sub Btn_FanCPU_LED01_Click(sender As Object, e As EventArgs) Handles Btn_FanCPU_LED01.Click
-        F_Avvio.Data1 = 5
-        If F_Avvio.Data1 = 5 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan_CPU_OP_01
-            F_Avvio.Data4 = F_Hub_PC.S_Fan_CPU_OP_01
-            F_Avvio.Data2 = F_Hub_PC.V_Fan_CPU_OP_01
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 5
+            If F_Avvio.Data1 = 5 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan_CPU_OP_01
+                F_Avvio.Data4 = F_Hub_PC.S_Fan_CPU_OP_01
+                F_Avvio.Data2 = F_Hub_PC.V_Fan_CPU_OP_01
+            End If
+            F_Hub_PC.BtnOFF_Animation()
         End If
-        F_Hub_PC.BtnOFF_Animation()
     End Sub
     Private Sub Btn_FanCPU_LED01_MouseHover(sender As Object, e As EventArgs) Handles Btn_FanCPU_LED01.MouseHover
         F_Home.ToolTip1.SetToolTip(Btn_FanCPU_LED01, "Colore " & F_Hub_PC.H_Fan_CPU_OP_01 & "
@@ -48,13 +52,15 @@ Velocità Null")
     End Sub
 
     Private Sub Btn_FanCPU_LED02_Click(sender As Object, e As EventArgs) Handles Btn_FanCPU_LED02.Click
-        F_Avvio.Data1 = 6
-        If F_Avvio.Data1 = 6 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan_CPU_OP_02
-            F_Avvio.Data4 = F_Hub_PC.S_Fan_CPU_OP_02
-            F_Avvio.Data2 = F_Hub_PC.V_Fan_CPU_OP_02
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 6
+            If F_Avvio.Data1 = 6 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan_CPU_OP_02
+                F_Avvio.Data4 = F_Hub_PC.S_Fan_CPU_OP_02
+                F_Avvio.Data2 = F_Hub_PC.V_Fan_CPU_OP_02
+            End If
+            F_Hub_PC.BtnOFF_Animation()
         End If
-        F_Hub_PC.BtnOFF_Animation()
     End Sub
     Private Sub Btn_FanCPU_LED02_MouseHover(sender As Object, e As EventArgs) Handles Btn_FanCPU_LED02.MouseHover
         F_Home.ToolTip1.SetToolTip(Btn_FanCPU_LED02, "Colore " & F_Hub_PC.H_Fan_CPU_OP_02 & "

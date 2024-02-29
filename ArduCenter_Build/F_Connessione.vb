@@ -29,6 +29,16 @@ Public Class F_Connessione
             LabelAutoForm.Text = "Attivo"
         End If
 
+        'F_Home.ToolTip1.SetToolTip(BtnConnettiDisconnetti, "Connetti / Disconnetti")
+        F_Home.ToolTip1.SetToolTip(S_COM, "Porta Seriale USB")
+        'F_Home.ToolTip1.SetToolTip(BtnFile, "Cartella ArduCenter")
+
+        F_Home.ToolTip1.SetToolTip(LaProgetto, "Nome Dispositivo")
+        F_Home.ToolTip1.SetToolTip(LaErrorDispositivo, "Stato / Errori /Avvisi")
+        F_Home.ToolTip1.SetToolTip(PictureBoxER_ROM, "Avviso sul Salvataggio Dati")
+        F_Home.ToolTip1.SetToolTip(PictureBoxER_Power, "Avviso Anomalia Alimentazione")
+        F_Home.ToolTip1.SetToolTip(PictureBoxER_LED_Power, "Avviso ProtezioneLED ATTIVO")
+        F_Home.ToolTip1.SetToolTip(PictureBoxER_Temp, "Avviso Temperatura")
     End Sub
 
     '//Funzione PreCaricamento lista Poerta COM
@@ -86,7 +96,7 @@ Public Class F_Connessione
             F_Avvio.TimerSerialPort_TX_RX.Enabled = True
             F_Avvio.BackgroundWorkerSerialPort.RunWorkerAsync()
 
-            LabelTX_RX.Font = New Font("Verdana", 8, FontStyle.Bold)
+            LaSerialData.Font = New Font("Verdana", 8, FontStyle.Bold)
         Catch ex As Exception
             If My.Settings.AutoConnesione = "Si" Then
                 F_Avvio.ErrorMod = 2
@@ -107,17 +117,16 @@ Public Class F_Connessione
 
         LaStato.ForeColor = Color.FromArgb(149, 9, 0)
         LaStato.Text = "Disconnesso"
-        LaNomePCB.Text = "   ----------"
-        LaSoc.Text = "    ----------"
-        LaBoot.Text = "     ----------"
+        LaNomePCB.Text = "----------"
+        LaSoc.Text = "----------"
+        LaVerFirmware.Text = " ----"
         LaFirmware.Text = "-----"
 
-        LabelTX_RX.Location = New Point(307, 310)
-        LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        LabelTX_RX.Font = New Font("Verdana", 14, FontStyle.Bold)
-        LabelTX_RX.Text = "Nessun Dato Ricevuto"
-        LabelSoftArduino.Text = "Versione Firmware di  Arduino :   V ----"
-        LabelSoftArduCenter.Text = "Versione che supporta ArduCenter : V ----"
+        'LabelTX_RX.Location = New Point(307, 310)
+        ' LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        LaSerialData.Font = New Font("Verdana", 14, FontStyle.Bold)
+        LaSerialData.Text = "Nessun Dato Ricevuto"
+        LabelSoftArduCenter.Text = "Versione Firmware che supporta" & vbCrLf & "ArduCenter : V ----"
         LaProgetto.Text = "-------------------------"
 
         F_Avvio.Aggiorna = 1
@@ -138,7 +147,7 @@ Public Class F_Connessione
         F_Hub_PC.BtnMenùEX.Visible = False
 
         LaErrorDispositivo.ForeColor = Color.DarkCyan
-        LaErrorDispositivo.Text = "Errori HUB: -------"
+        LaErrorDispositivo.Text = "-------"
         PictureBoxER_ROM.Visible = True
         PictureBoxER_Power.Visible = True
         PictureBoxER_LED_Power.Visible = True
@@ -178,9 +187,9 @@ Public Class F_Connessione
     Private Sub LabelRX_Click(sender As Object, e As EventArgs) Handles LabelRX.Click
         If F_Avvio.SerialPortArduino.IsOpen = True And ViewSerial <> 0 Then
             ' F_Avvio.AggiornaGUI()
-            LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.TopCenter
-            LabelTX_RX.Location = New Point(307, 318)
-            LabelTX_RX.Font = New Font("Verdana", 9, FontStyle.Bold)
+            'LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+            'LabelTX_RX.Location = New Point(307, 318)
+            LaSerialData.Font = New Font("Verdana", 9, FontStyle.Bold)
 
             ViewSerial = 0
             LabelRX.ForeColor = Color.Gold
@@ -195,9 +204,9 @@ Public Class F_Connessione
     Private Sub LabelTX_Click(sender As Object, e As EventArgs) Handles LabelTX.Click
         If F_Avvio.SerialPortArduino.IsOpen = True And ViewSerial <> 1 Then
             'F_Avvio.AggiornaGUI()
-            LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.TopCenter
-            LabelTX_RX.Location = New Point(307, 318)
-            LabelTX_RX.Font = New Font("Verdana", 10, FontStyle.Bold)
+            'LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+            'LabelTX_RX.Location = New Point(307, 318)
+            LaSerialData.Font = New Font("Verdana", 10, FontStyle.Bold)
 
             ViewSerial = 1
             LabelRX.ForeColor = Color.Silver
@@ -303,7 +312,7 @@ Public Class F_Connessione
     End Sub
 
     Private Sub LaErrorDispositivo_Click(sender As Object, e As EventArgs) Handles LaErrorDispositivo.Click
-        F_Impostazioni_HUB_Fan.InStato_Click(sender, e)
+        P_Impostazioni_HUB.InStato_Click(sender, e)
     End Sub
 
     Private Sub PictureBoxER_ROM_Click(sender As Object, e As EventArgs) Handles PictureBoxER_ROM.Click
@@ -324,7 +333,7 @@ Public Class F_Connessione
         F_Avvisi.AvvisoErrore()
     End Sub
 
-    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
+    Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBoxER_Temp.Click
         F_Avvio.ErrorMod = 43
         F_Avvisi.LabelID_Error.Text = "Avviso Code " & F_Avvio.ErrorMod
         F_Avvisi.AvvisoErrore()

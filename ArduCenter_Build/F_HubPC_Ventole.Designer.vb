@@ -183,6 +183,7 @@ Partial Class F_HubPC_Ventole
         Me.TempBarCPU.Text = "100"
         Me.TempBarCPU.TextMargin = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.TempBarCPU.Value = 100
+        Me.TempBarCPU.Visible = False
         '
         'BtnTCPU
         '
@@ -196,6 +197,7 @@ Partial Class F_HubPC_Ventole
         Me.BtnTCPU.Size = New System.Drawing.Size(55, 21)
         Me.BtnTCPU.TabIndex = 113
         Me.BtnTCPU.TabStop = False
+        Me.BtnTCPU.Visible = False
         '
         'LaTempCPU
         '
@@ -209,6 +211,7 @@ Partial Class F_HubPC_Ventole
         Me.LaTempCPU.TabIndex = 119
         Me.LaTempCPU.Text = "Temperatura" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "CPU" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Curva Ventole"
         Me.LaTempCPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LaTempCPU.Visible = False
         '
         'TempBarGPU
         '
@@ -241,6 +244,7 @@ Partial Class F_HubPC_Ventole
         Me.TempBarGPU.Text = "100"
         Me.TempBarGPU.TextMargin = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.TempBarGPU.Value = 100
+        Me.TempBarGPU.Visible = False
         '
         'BtnTGPU
         '
@@ -254,6 +258,7 @@ Partial Class F_HubPC_Ventole
         Me.BtnTGPU.Size = New System.Drawing.Size(55, 21)
         Me.BtnTGPU.TabIndex = 114
         Me.BtnTGPU.TabStop = False
+        Me.BtnTGPU.Visible = False
         '
         'IconaFan4
         '
@@ -622,6 +627,7 @@ Partial Class F_HubPC_Ventole
         Me.LaTempGPU.TabIndex = 120
         Me.LaTempGPU.Text = "Temperatura" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "GPU" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Curva Ventole"
         Me.LaTempGPU.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.LaTempGPU.Visible = False
         '
         'LaRPMvnetola
         '

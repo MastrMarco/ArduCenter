@@ -4,6 +4,11 @@ Public Class F_Home
     Private Sub F_Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AngoliSmussati(Me)
 
+        'Visualizza la Pagina per una Donazione
+        If Supporto.GenRandomInt(0, 8) = 8 Then
+            Supporto.Visualizza()
+        End If
+
         PanForm.Visible = True
         SwitchPannelHome(F_Connessione)
         LabelFinestraID.Text = "Finestra di Connessione [F_Home]"
@@ -74,6 +79,7 @@ Public Class F_Home
         'F_Setting_RGB_Animation_Fan_Temp.Close()
         'Me.Close()
         'F_Avvio.Close()
+        'F_Avvio.TaskListPC.Close()
         My.Settings.Save()
         Application.Exit()
 
@@ -235,6 +241,30 @@ Public Class F_Home
 
         End Try
     End Sub
+
+    Private Sub Info_ArduCenter_Click(sender As Object, e As EventArgs) Handles Info_ArduCenter.Click
+        ' NavigateWebURL("https://github.com/MastrMarco/ArduCenter", "default")
+
+        Dim WEB = New Process()
+        WEB.StartInfo.UseShellExecute = True
+        WEB.StartInfo.FileName = "https://github.com/MastrMarco/ArduCenter"
+        WEB.Start()
+    End Sub
+
+
+
+    'Protected Overrides Sub WndProc(ByRef m As Message)
+    '    Const WM_SYSCOMMAND As Integer = &H112
+    '    Const SC_MINIMIZE As Integer = &HF020
+    '    Const SC_RESTORE As Integer = &HF120
+
+    '    If m.Msg = WM_SYSCOMMAND AndAlso (m.WParam.ToInt32() = SC_MINIMIZE OrElse m.WParam.ToInt32() = SC_RESTORE) Then
+    '        ' Quando l'utente minimizza o ripristina la finestra
+    '        Me.Visible = Not Me.Visible ' Cambia la visibilità del form
+    '    End If
+
+    '    MyBase.WndProc(m)
+    'End Sub
 
 
 End Class

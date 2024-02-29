@@ -33,8 +33,8 @@ Public Class F_SerialCommand_Fan
 
     Private Sub BtnChiudi_Click(sender As Object, e As EventArgs) Handles BtnChiudi.Click
         CMD_Open = 0
-        F_Hub_PC.BtnMenùEX.BackgroundImage = My.Resources.BtnFanPage_Fan_CMD_1_0
-        F_Connessione.BtnDataArduino.BackgroundImage = My.Resources.Incona_Comandi_Fan
+        'F_Hub_PC.BtnMenùEX.BackgroundImage = My.Resources.BtnFanPage_Fan_CMD_1_0
+        'F_Connessione.BtnDataArduino.BackgroundImage = My.Resources.Incona_Comandi_Fan
         Close()
     End Sub
 

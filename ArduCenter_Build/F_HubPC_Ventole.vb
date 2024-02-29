@@ -55,18 +55,21 @@ Public Class F_HubPC_Ventole
 
     'Funzione Btn Seleziona Ventola 1
     Public Sub IconaFan1_Click(sender As Object, e As EventArgs) Handles IconaFan1.Click
-        F_Avvio.Data1 = 1
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 1
 
-        TitoloFan.ForeColor = Color.White
+            TitoloFan.ForeColor = Color.White
 
-        F_Hub_PC.BtnOFF_Animation()
+            F_Hub_PC.BtnOFF_Animation()
 
-        'If F_Avvio.DatiRX_3(0) = 1 Then
-        If F_Avvio.Data1 = 1 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan1
-            F_Avvio.Data4 = F_Hub_PC.S_Fan1
-            F_Avvio.Data2 = F_Hub_PC.V_Fan1
-            F_Avvio.Data5 = S_Fan_1
+            'If F_Avvio.DatiRX_3(0) = 1 Then
+            If F_Avvio.Data1 = 1 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan1
+                F_Avvio.Data4 = F_Hub_PC.S_Fan1
+                F_Avvio.Data2 = F_Hub_PC.V_Fan1
+                F_Avvio.Data5 = S_Fan_1
+            End If
+
         End If
 
     End Sub
@@ -81,19 +84,20 @@ Velocità " & Int(S_Fan_1 / 2.55) & "%")
 
     'Funzione Btn Seleziona Ventola 2
     Private Sub IconaFan2_Click(sender As Object, e As EventArgs) Handles IconaFan2.Click
-        F_Avvio.Data1 = 2
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 2
 
-        TitoloFan.ForeColor = Color.White
+            TitoloFan.ForeColor = Color.White
 
-        F_Hub_PC.BtnOFF_Animation()
+            F_Hub_PC.BtnOFF_Animation()
 
-        If F_Avvio.Data1 = 2 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan2
-            F_Avvio.Data4 = F_Hub_PC.S_Fan2
-            F_Avvio.Data2 = F_Hub_PC.V_Fan2
-            F_Avvio.Data5 = S_Fan_2
+            If F_Avvio.Data1 = 2 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan2
+                F_Avvio.Data4 = F_Hub_PC.S_Fan2
+                F_Avvio.Data2 = F_Hub_PC.V_Fan2
+                F_Avvio.Data5 = S_Fan_2
+            End If
         End If
-
     End Sub
     Private Sub IconaFan2_MouseHover(sender As Object, e As EventArgs) Handles IconaFan2.MouseHover
         F_Home.ToolTip1.SetToolTip(IconaFan2, "Colore " & F_Hub_PC.H_Fan2 & "
@@ -103,19 +107,20 @@ Velocità " & Int(S_Fan_2 / 2.55) & "%")
 
     'Funzione Btn Seleziona Ventola 3
     Private Sub IconaFan3_Click(sender As Object, e As EventArgs) Handles IconaFan3.Click
-        F_Avvio.Data1 = 3
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 3
 
-        TitoloFan.ForeColor = Color.White
+            TitoloFan.ForeColor = Color.White
 
-        F_Hub_PC.BtnOFF_Animation()
+            F_Hub_PC.BtnOFF_Animation()
 
-        If F_Avvio.Data1 = 3 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan3
-            F_Avvio.Data4 = F_Hub_PC.S_Fan3
-            F_Avvio.Data2 = F_Hub_PC.V_Fan3
-            F_Avvio.Data5 = S_Fan_3
+            If F_Avvio.Data1 = 3 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan3
+                F_Avvio.Data4 = F_Hub_PC.S_Fan3
+                F_Avvio.Data2 = F_Hub_PC.V_Fan3
+                F_Avvio.Data5 = S_Fan_3
+            End If
         End If
-
     End Sub
     Private Sub IconaFan3_MouseHover(sender As Object, e As EventArgs) Handles IconaFan3.MouseHover
         F_Home.ToolTip1.SetToolTip(IconaFan3, "Colore " & F_Hub_PC.H_Fan3 & "
@@ -125,19 +130,20 @@ Velocità " & Int(S_Fan_3 / 2.55) & "%")
 
     'Funzione Btn Seleziona Ventola 4
     Private Sub IconaFan4_Click(sender As Object, e As EventArgs) Handles IconaFan4.Click
-        F_Avvio.Data1 = 4
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 4
 
-        TitoloFan.ForeColor = Color.White
+            TitoloFan.ForeColor = Color.White
 
-        F_Hub_PC.BtnOFF_Animation()
+            F_Hub_PC.BtnOFF_Animation()
 
-        If F_Avvio.Data1 = 4 Then
-            F_Avvio.Data3 = F_Hub_PC.H_Fan4
-            F_Avvio.Data4 = F_Hub_PC.S_Fan4
-            F_Avvio.Data2 = F_Hub_PC.V_Fan4
-            F_Avvio.Data5 = S_Fan_4
+            If F_Avvio.Data1 = 4 Then
+                F_Avvio.Data3 = F_Hub_PC.H_Fan4
+                F_Avvio.Data4 = F_Hub_PC.S_Fan4
+                F_Avvio.Data2 = F_Hub_PC.V_Fan4
+                F_Avvio.Data5 = S_Fan_4
+            End If
         End If
-
     End Sub
     Private Sub IconaFan4_MouseHover(sender As Object, e As EventArgs) Handles IconaFan4.MouseHover
         F_Home.ToolTip1.SetToolTip(IconaFan4, "Colore " & F_Hub_PC.H_Fan4 & "
@@ -244,19 +250,25 @@ Velocità " & Int(S_Fan_4 / 2.55) & "%")
     Public Sub GUI_Ventole()
 
         'Avvia Finzione Acquisizione Audio PC Sofware Naudio.dll
-        If F_Avvio.DatiRX_7(0) = 0 And F_Avvio.DatiRX_5(0) = F_Hub_PC.Animazione_RGB_Musica And F_Setting_RGB_Animation_Fan.ComboBox1.Text <> "" Then
+        If F_Avvio.DatiRX_7(0) = 0 And F_Avvio.DatiRX_5(0) = F_Hub_PC.Animazione_RGB_Musica And F_Setting_RGB_Animation_HUB.ComboBox1.Text <> "" Then
             Try
-                F_Setting_RGB_Animation_Fan.AniamzioneRGB_Musica()
+                F_Setting_RGB_Animation_HUB.AniamzioneRGB_Musica()
             Catch ex As Exception
 
             End Try
         End If
 
+
+
+
+
+        F_HubPC_HUB.Void_Loop()
+
         'Informazione RPM ventole
         If F_Avvio.DatiRX_0(1) = "4" Or F_Avvio.DatiRX_0(1) = "5" Then
             Select Case F_Avvio.DatiRX_7(0)
                 Case = 0
-                    LaRPMvnetola.Text = "RPM               ???"
+                   ' F_HubPC_HUB.LaRPMvnetola.Text = (F_Avvio.DatiRX_10(0) * 30)
                 Case = 1
                     LaRPMvnetola.Text = "RPM              " & (F_Avvio.DatiRX_10(0) * 30)
                 Case = 2
@@ -269,6 +281,11 @@ Velocità " & Int(S_Fan_4 / 2.55) & "%")
         Else
             LaRPMvnetola.Text = "RPM Non disponibbile"
         End If
+
+
+
+
+
 
         'Curva Ventola riferito alla temperatura della CPU
         If F_Avvio.DatiRX_9(0) = "2" And F_Avvio.DatiRX_7(0) = 0 Then
@@ -412,6 +429,8 @@ Velocità " & Int(S_Fan_4 / 2.55) & "%")
             TempBarSens.Value = F_Avvio.DatiRX_1(0)
             TempBarSens.Text = F_Avvio.DatiRX_1(0)
 
+            F_HubPC_HUB.TempSenS.Value = F_Avvio.DatiRX_1(0)
+            F_HubPC_HUB.TempSenS.Text = F_Avvio.DatiRX_1(0)
             '            LaTempSens.Text = "Temperatura
             'Min " & TempSensMin & " °C
             '" & "Max " & TempSensMax & " °C"
@@ -424,9 +443,10 @@ Velocità " & Int(S_Fan_4 / 2.55) & "%")
         If TempSensMax <= F_Avvio.DatiRX_1(0) Then
             TempSensMax = F_Avvio.DatiRX_1(0)
             TempBarSens.Maximum = TempSensMax
+            F_HubPC_HUB.TempSenS.Maximum = TempBarSens.Maximum
         End If
 
-        F_Avvio.Data7 = F_Avvio.CPU_TemperaturaL
+        F_Avvio.Data7 = F_Avvio.CPU_Temperatura
         F_Avvio.Data8 = F_Avvio.GPU_Temperatura
 
         'LaFAN_2.Text = S_All
@@ -535,108 +555,117 @@ Velocità " & Int(S_Fan_4 / 2.55) & "%")
     '    End If
     'End Sub
 
-    Public Sub UI_GPU_Strip()
 
-        'If F_Fan.LED_CFan = 1 Then
-        '    LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
-        '    LaColoreGPU.Text = "Sistema"
-        'End If
 
-        If F_Avvio.DatiRX_7(0) <> 0 Or F_Avvio.DatiRX_7(0) <> 8 Then
 
-            'F_Fan_Menù.FanMOD_Auto()
 
-            'Stato Btn GUI_Fan / Btn Spento ON 
-            If F_Avvio.DatiRX_4(8) = "0" Then
-                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
-                F_HubPC_GPU_SLED.LaColore.Text = "Spento"
-            End If
 
-            'ColorBtn Bianco
-            If F_Avvio.DatiRX_6(8) = "0" Then
-                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.White
-                F_HubPC_GPU_SLED.LaColore.Text = "Bianco"
-                'FanControlManual()
-            End If
 
-            ''Stato Btn GUI_Fan / Btn RGB M1 ON 
-            'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "10" Then
-            '    ' F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
-            '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
-            '    F_Fan_Menù_2.LaColoreGPU.Text = "Discontinuo"
-            '    'FanControlManual()
-            'End If
-            ''Stato Btn GUI_Fan / BtnRGB ??
-            'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "11" Then
-            '    ' F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
-            '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
-            '    F_Fan_Menù_2.LaColoreGPU.Text = "Transizione"
-            '    'FanControlManual()
-            'End If
-            ''Stato Btn GUI_Fan / BtnRGB ??
-            'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "12" Then
-            '    'F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_RainBow
-            '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
-            '    F_Fan_Menù_2.LaColoreGPU.Text = "Rainbow"
-            '    'FanControlManual()
-            'End If
-            ''Stato Btn GUI_Fan / BtnRGB ??
-            'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "13" Then
-            '    F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
-            '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
-            '    F_Fan_Menù_2.LaColoreGPU.Text = "Musica"
-            '    'FanControlManual()
-            'End If
 
-            If F_Avvio.DatiRX_4(8) <> "0" And F_Avvio.DatiRX_6(8) <> "0" Then
 
-                'ColorBtn Rosso
-                If F_Avvio.DatiRX_5(8) = "0" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Red
-                    F_HubPC_GPU_SLED.LaColore.Text = "Rosso"
-                    'FanControlManual()
-                End If
-                'ColorBtn Blu
-                If F_Avvio.DatiRX_5(8) = "170" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Blue
-                    F_HubPC_GPU_SLED.LaColore.Text = "Blu"
-                    'FanControlManual()
-                End If
-                'ColorBtn Giallo
-                If F_Avvio.DatiRX_5(8) = "20" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Yellow
-                    F_HubPC_GPU_SLED.LaColore.Text = "Giallo"
-                    'FanControlManual()
-                End If
-                'ColorBtn Verde
-                If F_Avvio.DatiRX_5(8) = "80" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Lime
-                    F_HubPC_GPU_SLED.LaColore.Text = "Verde"
-                    'FanControlManual()
-                End If
-                'ColorBtn Viola
-                If F_Avvio.DatiRX_5(8) = "250" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Fuchsia
-                    F_HubPC_GPU_SLED.LaColore.Text = "Fucsia"
-                    'FanControlManual()
-                End If
-                'ColorBtn Arancio
-                If F_Avvio.DatiRX_5(8) = "5" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Orange
-                    F_HubPC_GPU_SLED.LaColore.Text = "Arancione"
-                    'FanControlManual()
-                End If
-                'ColorBtn Azzurro
-                If F_Avvio.DatiRX_5(8) = "135" Then
-                    F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Cyan
-                    F_HubPC_GPU_SLED.LaColore.Text = "Azzurro"
-                    'FanControlManual()
-                End If
 
-            End If
-        End If
+    'Public Sub UI_GPU_Strip()
 
-    End Sub
+    '    'If F_Fan.LED_CFan = 1 Then
+    '    '    LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
+    '    '    LaColoreGPU.Text = "Sistema"
+    '    'End If
+
+    '    If F_Avvio.DatiRX_7(0) <> 0 Or F_Avvio.DatiRX_7(0) <> 8 Then
+
+    '        'F_Fan_Menù.FanMOD_Auto()
+
+    '        'Stato Btn GUI_Fan / Btn Spento ON 
+    '        If F_Avvio.DatiRX_4(8) = "0" Then
+    '            F_HubPC_GPU_SLED.LaColore.ForeColor = Color.FromArgb(0, 140, 149)
+    '            F_HubPC_GPU_SLED.LaColore.Text = "Spento"
+    '        End If
+
+    '        'ColorBtn Bianco
+    '        If F_Avvio.DatiRX_6(8) = "0" Then
+    '            F_HubPC_GPU_SLED.LaColore.ForeColor = Color.White
+    '            F_HubPC_GPU_SLED.LaColore.Text = "Bianco"
+    '            'FanControlManual()
+    '        End If
+
+    '        ''Stato Btn GUI_Fan / Btn RGB M1 ON 
+    '        'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "10" Then
+    '        '    ' F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
+    '        '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
+    '        '    F_Fan_Menù_2.LaColoreGPU.Text = "Discontinuo"
+    '        '    'FanControlManual()
+    '        'End If
+    '        ''Stato Btn GUI_Fan / BtnRGB ??
+    '        'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "11" Then
+    '        '    ' F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
+    '        '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
+    '        '    F_Fan_Menù_2.LaColoreGPU.Text = "Transizione"
+    '        '    'FanControlManual()
+    '        'End If
+    '        ''Stato Btn GUI_Fan / BtnRGB ??
+    '        'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "12" Then
+    '        '    'F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Effeto_RainBow
+    '        '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
+    '        '    F_Fan_Menù_2.LaColoreGPU.Text = "Rainbow"
+    '        '    'FanControlManual()
+    '        'End If
+    '        ''Stato Btn GUI_Fan / BtnRGB ??
+    '        'If F_Avvio.DatiRX_5(F_Fan.LED_CFan) = "13" Then
+    '        '    F_Fan_Menù_2.IconaStatoGPU.BackgroundImage = My.Resources.Icona_SchedaVideo_Nero
+    '        '    F_Fan_Menù_2.LaColoreGPU.ForeColor = Color.FromArgb(0, 140, 149)
+    '        '    F_Fan_Menù_2.LaColoreGPU.Text = "Musica"
+    '        '    'FanControlManual()
+    '        'End If
+
+    '        If F_Avvio.DatiRX_4(8) <> "0" And F_Avvio.DatiRX_6(8) <> "0" Then
+
+    '            'ColorBtn Rosso
+    '            If F_Avvio.DatiRX_5(8) = "0" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Red
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Rosso"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Blu
+    '            If F_Avvio.DatiRX_5(8) = "170" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Blue
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Blu"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Giallo
+    '            If F_Avvio.DatiRX_5(8) = "20" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Yellow
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Giallo"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Verde
+    '            If F_Avvio.DatiRX_5(8) = "80" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Lime
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Verde"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Viola
+    '            If F_Avvio.DatiRX_5(8) = "250" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Fuchsia
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Fucsia"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Arancio
+    '            If F_Avvio.DatiRX_5(8) = "5" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Orange
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Arancione"
+    '                'FanControlManual()
+    '            End If
+    '            'ColorBtn Azzurro
+    '            If F_Avvio.DatiRX_5(8) = "135" Then
+    '                F_HubPC_GPU_SLED.LaColore.ForeColor = Color.Cyan
+    '                F_HubPC_GPU_SLED.LaColore.Text = "Azzurro"
+    '                'FanControlManual()
+    '            End If
+
+    '        End If
+    '    End If
+
+    'End Sub
 
 
 

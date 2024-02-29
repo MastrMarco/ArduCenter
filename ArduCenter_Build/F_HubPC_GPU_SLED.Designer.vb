@@ -22,7 +22,7 @@ Partial Class F_HubPC_GPU_SLED
     'Non modificarla mediante l'editor del codice.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.IconaStatoFan_Menù_2 = New System.Windows.Forms.PictureBox()
+        Me.IconaStato_Menù_2 = New System.Windows.Forms.PictureBox()
         Me.LoadBarGPU = New CircularProgressBar.CircularProgressBar()
         Me.LoadBarCPU = New CircularProgressBar.CircularProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -37,21 +37,21 @@ Partial Class F_HubPC_GPU_SLED
         Me.LoadBarRAM = New CircularProgressBar.CircularProgressBar()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LaSelezione = New System.Windows.Forms.Label()
-        CType(Me.IconaStatoFan_Menù_2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconaStato_Menù_2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnIMG_GPU_LED, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnIMG_Strip_LED, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'IconaStatoFan_Menù_2
+        'IconaStato_Menù_2
         '
-        Me.IconaStatoFan_Menù_2.BackColor = System.Drawing.Color.Transparent
-        Me.IconaStatoFan_Menù_2.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21
-        Me.IconaStatoFan_Menù_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.IconaStatoFan_Menù_2.Location = New System.Drawing.Point(43, 16)
-        Me.IconaStatoFan_Menù_2.Name = "IconaStatoFan_Menù_2"
-        Me.IconaStatoFan_Menù_2.Size = New System.Drawing.Size(295, 160)
-        Me.IconaStatoFan_Menù_2.TabIndex = 0
-        Me.IconaStatoFan_Menù_2.TabStop = False
+        Me.IconaStato_Menù_2.BackColor = System.Drawing.Color.Transparent
+        Me.IconaStato_Menù_2.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Icona_SchedaVideo_RGB_Colore_HSV_RGB_21
+        Me.IconaStato_Menù_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.IconaStato_Menù_2.Location = New System.Drawing.Point(43, 16)
+        Me.IconaStato_Menù_2.Name = "IconaStato_Menù_2"
+        Me.IconaStato_Menù_2.Size = New System.Drawing.Size(295, 160)
+        Me.IconaStato_Menù_2.TabIndex = 0
+        Me.IconaStato_Menù_2.TabStop = False
         '
         'LoadBarGPU
         '
@@ -84,6 +84,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.LoadBarGPU.Text = "100"
         Me.LoadBarGPU.TextMargin = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.LoadBarGPU.Value = 100
+        Me.LoadBarGPU.Visible = False
         '
         'LoadBarCPU
         '
@@ -116,6 +117,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.LoadBarCPU.Text = "100"
         Me.LoadBarCPU.TextMargin = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.LoadBarCPU.Value = 100
+        Me.LoadBarCPU.Visible = False
         '
         'Label1
         '
@@ -128,6 +130,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.Label1.TabIndex = 120
         Me.Label1.Text = "Utilizzo CPU"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.Visible = False
         '
         'Label2
         '
@@ -140,6 +143,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.Label2.TabIndex = 121
         Me.Label2.Text = "Utilizzo GPU"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label2.Visible = False
         '
         'BtnGPU_LED
         '
@@ -260,6 +264,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.LoadBarRAM.Text = "100"
         Me.LoadBarRAM.TextMargin = New System.Windows.Forms.Padding(0, 1, 0, 0)
         Me.LoadBarRAM.Value = 100
+        Me.LoadBarRAM.Visible = False
         '
         'Label3
         '
@@ -272,6 +277,7 @@ Partial Class F_HubPC_GPU_SLED
         Me.Label3.TabIndex = 140
         Me.Label3.Text = "Utilizzo RAM"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label3.Visible = False
         '
         'LaSelezione
         '
@@ -306,12 +312,12 @@ Partial Class F_HubPC_GPU_SLED
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.LoadBarCPU)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.IconaStatoFan_Menù_2)
+        Me.Controls.Add(Me.IconaStato_Menù_2)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "F_HubPC_GPU_SLED"
         Me.Text = "F_HubPC_GPU_SLED"
-        CType(Me.IconaStatoFan_Menù_2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconaStato_Menù_2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnIMG_GPU_LED, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnIMG_Strip_LED, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -319,7 +325,7 @@ Partial Class F_HubPC_GPU_SLED
 
     End Sub
 
-    Friend WithEvents IconaStatoFan_Menù_2 As PictureBox
+    Friend WithEvents IconaStato_Menù_2 As PictureBox
     Friend WithEvents LoadBarGPU As CircularProgressBar.CircularProgressBar
     Friend WithEvents LoadBarCPU As CircularProgressBar.CircularProgressBar
     Friend WithEvents Label1 As Label

@@ -24,19 +24,21 @@
         S_dati_0 = "
 Dati [0]  {0 - 4}
 0) Stato Software = " & F_Connessione.LaFirmware.Text & "
-1) Tipo di Arduino = " & F_Connessione.LaNomePCB.Text & "  " & F_Connessione.LaSoc.Text & "  " & F_Connessione.LaBoot.Text & "
+1) Tipo di Arduino = " & F_Connessione.LaNomePCB.Text & "  " & F_Connessione.LaSoc.Text & "  " & F_Connessione.LaVerFirmware.Text & "
 2) Null" & "
 3) Dispositivo / Proggetto = " & F_Connessione.LaProgetto.Text & "
-4) " & F_Connessione.LabelSoftArduino.Text
+4) " & F_Connessione.LaVerFirmware.Text
         '*
 
         S_dati_1 = "
-Dati [1]  {0 - 4}
+Dati [1]  {0 - 6}
 0) Temperatura sensore = " & F_Avvio.DatiRX_1(0) & " °C
 1) Tensione della 5V = " & F_Avvio.DatiRX_1(1) & "
 2) Tensione della 12V = " & F_Avvio.DatiRX_1(2) & "
 3) Stato Protezione 12V = " & F_Avvio.DatiRX_1(3) & "
-4) Stato Protezione LED = " & F_Avvio.DatiRX_1(4) & ""
+4) Stato Protezione LED = " & F_Avvio.DatiRX_1(4) & "
+5) Stato Protezione 5V = " & F_Avvio.DatiRX_1(5) & "
+6) Tensione della AREF = " & F_Avvio.DatiRX_1(6) & ""
         '*
 
         S_dati_2 = "

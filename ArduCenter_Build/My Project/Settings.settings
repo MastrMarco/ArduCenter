@@ -9,16 +9,16 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Lingua" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ITALIANO</Value>
+      <Value Profile="(Default)">Italiano</Value>
     </Setting>
-    <Setting Name="TimerHardwareMonitor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Normale</Value>
+    <Setting Name="TimerHardwareMonitor" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="FormHrdwareTras" Type="System.String" Scope="User">
       <Value Profile="(Default)">100</Value>
     </Setting>
-    <Setting Name="FormHrdwareTop" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Normale</Value>
+    <Setting Name="FormHrdwareTop" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="AutoForm_Pan" Type="System.String" Scope="User">
       <Value Profile="(Default)">No</Value>

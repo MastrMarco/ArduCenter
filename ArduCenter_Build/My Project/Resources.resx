@@ -124,8 +124,8 @@
   <data name="Icona_Parametri_Fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Parametri_Fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_Strisca_LED_Bianco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Bianco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_Strisca__RGB_Colore_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_Strisca _RGB_Colore_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconaCasaAudio_RGB_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaCasaAudio_RGB_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,17 +142,11 @@
   <data name="BtnGUI_HomeImpostazioni" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnGUI_HomeImpostazioni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Funzioni_Dispositivo_Audio_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Funzioni_Dispositivo_Audio 1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Incona_Comandi_FanON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Incona_Comandi_FanON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnDisconnettiConnetti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnDisconnettiConnetti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImgArduCenter2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgArduCenter2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLED_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,11 +157,11 @@
   <data name="BtnGUI_Fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnGUI_Fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_CMD_ON_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_CMD_ON_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Funzioni_Dispositivo_Null" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Funzioni_Dispositivo_Null.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GUI_HardwareMonitor_PC_1.1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUI_HardwareMonitor_PC_1.1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconaFan_RGB_Colore_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,35 +172,14 @@
   <data name="Dissipatore240mm_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dissipatore240mm_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPageNull" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPageNull.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_SchedaVideo_Bianco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Bianco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Funzioni_Dispositivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Funzioni_Dispositivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_DeepCool_HSV_RGB_1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_DeepCool_HSV_RGB_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_SchedaVideo_Effeto_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_Effeto Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_SchedaVideo_Giallo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Giallo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnLuminositàMax" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnLuminositàMax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_Cartella_1_1_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Cartella_1.1_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca__RGB_Colore_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca _RGB_Colore_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconaFan_RGB_Colore_Bianco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Bianco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dissipatore240mm_Colore_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dissipatore240mm_Colore_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,20 +196,14 @@
   <data name="IconaCasaAudio_RGB_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaCasaAudio_RGB_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Funzioni_Dispositivo_Fan_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Funzioni_Dispositivo_Fan_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_Cartella_1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Cartella_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Btn_Indietro_" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Btn_Indietro_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnFanPage_Indietro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnFanPage_Indietro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_DeepCool_HSV_RGB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_DeepCool_HSV_RGB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="opt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\opt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Strisca _RGB_Colore_HSV-RGB_2.2.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,29 +214,17 @@
   <data name="Icona_SchedaVideo_RGB_Colore_HSV-RGB_2.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_RGB_Colore_HSV-RGB_2.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Audio_OFF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Audio_OFF2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnLED_MusicaON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_MusicaON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconaFan_RGB _Nero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB _Nero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_Strisca_LED_Rosso" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Rosso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_Riavvio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Riavvio2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnLED_halloween_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnLED_halloween_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="F_Impostazioni-HUB_Ventole1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\F_Impostazioni-HUB_Ventole1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_F_HubPC_Home_0.1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_F_HubPC_Home_0.1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_SchedaVideo_Effeto_RainBow_Old" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_SchedaVideo_Effeto RainBow_Old.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GUI_F_Hub_PC_0.1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_F_Hub_PC_0.1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,23 +238,11 @@
   <data name="Icona_SchedaVideo_RGB_Colore_HSV-RGB_21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_RGB_Colore_HSV-RGB_2.11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_SchedaVideo_Azzurro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Azzurro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnFanPage_Fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_DeepCool_HSV_RGB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_DeepCool_HSV_RGB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dissipatore240mm_Colore_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dissipatore240mm_Colore_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnFanPage_CPU_OP_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_CPU_OP_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_Fan-Menù_2_v2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_Fan-Menù_2_v2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_Fan-Menù_3_1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_Fan-Menù_3_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_SchedaVideo_Nero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_Nero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,26 +250,20 @@
   <data name="IconaFan_RGB_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_CMD_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_CMD_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_HUB_1_1_RGB_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_HUB 1.1_RGB_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="F_Impostazioni-HUB_Ventole_1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\F_Impostazioni-HUB_Ventole_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconaFan_RGB_Colore_Azzurro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Azzurro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_SchedaVideo_Blu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Blu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GUI_Fan-Menù_5_v1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUI_Fan-Menù_5_v1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Fan_Dissipatore_RGB_Discontinuo_v1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Fan_Dissipatore_RGB_Discontinuo_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLED_halloween_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_halloween_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="opt" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\opt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btn_SwichON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btn SwichON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -337,23 +274,11 @@
   <data name="GUI_CMD_SerialFan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_CMD_SerialFan1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Dissipatore240mm_HSV_v1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Dissipatore240mm_HSV v1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_SchedaVideo_Arancione" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Arancione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_SchedaVideo_Fucsia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Fucsia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Incona_Comandi_Fan" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Incona_Comandi_Fan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_SchedaVideo_Effeto_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_Effeto Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Fucsia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Fucsia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="GUI_Connessione2.0.5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_Connessione2.0.5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -364,14 +289,8 @@
   <data name="F_HardwareMonitor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\F_HardwareMonitor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Impostazioni_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Impostazioni_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_FanPO_1.3 " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_FanPO_1.3 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_Fan-Menù_3_1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_Fan-Menù_3_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLED_TemperaturaON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_TemperaturaON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,35 +298,23 @@
   <data name="Icona_DeepCool_HSV_RGB1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_DeepCool_HSV_RGB1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_HUB_1_1_RGB_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_HUB 1.1_RGB_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_F_Hub_PC_0.1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_F_Hub_PC_0.1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_SchedaVideo_Rosso" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Rosso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnLED_halloween_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLED_halloween_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Strisca__RGB_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca _RGB_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Audio_OFF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Audio_OFF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="BtnLED_SpentoON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_SpentoON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnLED_RainBowON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnLED_RainBowON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ImgArduCenter2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ImgArduCenter2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Strisca _RGB_Colore_HSV-RGB_2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLED_Temperatura" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_Temperatura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Blu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Blu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLED_TransizioneON" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_TransizioneON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,11 +331,11 @@
   <data name="Icona_HUB 1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_HUB 1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BtnNascondi2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnNascondi2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BtnVelocitàMax" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVelocitàMax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca__RGB_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca _RGB_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Strisca LED Nero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca LED Nero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -436,20 +343,23 @@
   <data name="BtnLED_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avvio_1.3v" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avvio_1.3v.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnLED_RainBowON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLED_RainBowON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconaFan_RGB_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnLuminositàMin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLuminositàMin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnNascondi2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnNascondi2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_DeepCool_RGB_v1_3_RainBowOld" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_DeepCool_RGB_v1.3_RainBowOld.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Task_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Task_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconaFan_RGB_Colore_Fucsia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Fucsia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_StriscaLED__RGB_Colore_RainBow_Old" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_StriscaLED _RGB_Colore_RainBow_Old.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Fan_Dissipatore_RGB_RainBow_v1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Fan_Dissipatore_RGB_RainBow_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -469,20 +379,29 @@
   <data name="BtnLED_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconaFan_RGB_Colore_Blu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Blu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_FanPO_1.2 " type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_FanPO_1.2 .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dissipatore240mm_HSV v1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dissipatore240mm_HSV v1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GUI_Impostazioni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUI_Impostazioni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icona_Sund_Nero" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_Sund_Nero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BtnLED_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnLED_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="photo_2023-11-24_17-00-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo_2023-11-24_17-00-32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GUI_HardwareMonitor_PC" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_HardwareMonitor_PC.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BtnLED_Spento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLED_Spento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnGUI_HomeProject" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnGUI_HomeProject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -493,32 +412,23 @@
   <data name="IconaFan_RGB_Colore_Nero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_Nero.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GUI_F_HubPC_Home_0.1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_F_HubPC_Home_0.1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_Fan-Menù_2_v21" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_Fan-Menù_2_v2.01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_Strisca _RGB_Colore_HSV-RGB_2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Strisca__RGB_Colore_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Strisca _RGB_Colore_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="IconaFan_RGB_Colore_HSV-RGB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IconaFan_RGB_Colore_HSV-RGB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IconaHardware_RAM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaHardware_RAM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Giallo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Giallo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_Fan_Dissipatore_RGB_Musica_v1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_Fan_Dissipatore_RGB_Musica_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_GPU_Strip" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_GPU_Strip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Arancione" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Arancione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_DeepCool_HSV_RGB_v1.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_DeepCool_HSV_RGB_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnChiudi21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnChiudi2.01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -529,11 +439,8 @@
   <data name="Btn_Indietro_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Btn_Indietro_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_Strisca _RGB_Colore_HSV-RGB_2.2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="F_ImpostazioniFan_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\F_ImpostazioniFan_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_Sund_RGB_Old" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_Sund_RGB_Old.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconaCasaAudio_RGB_Colore_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaCasaAudio_RGB_Colore_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -541,11 +448,8 @@
   <data name="Icona_SchedaVideo_Effeto_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_Effeto RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_DeepCool_HSV_RGB_v1.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_DeepCool_HSV_RGB_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconaFan_RGB_Colore_Rosso" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Rosso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_Strisca _RGB_Colore_HSV-RGB_2.2.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnVelocitàMin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnVelocitàMin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -556,29 +460,17 @@
   <data name="IconaFan_RGB_Colore_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_SchedaVideo_Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_SchedaVideo_Verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnFanPage_GPU_Strip_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_GPU_Strip_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BtnLuminositàMax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BtnLuminositàMax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_SchedaVideo_Effeto_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_SchedaVideo_Effeto Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconaFan_RGB_Colore_HSV-RGB" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_HSV-RGB.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconaFan_RGB_Colore_Giallo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Giallo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Dissipatore240mm_HSV_v1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dissipatore240mm_HSV v1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BtnConnettiDisconnetti 2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BtnConnettiDisconnetti 2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GUI_Fan-Menù_2_1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GUI_Fan-Menù_2_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IconaFan_RGB_Colore_Transizione_2_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaFan_RGB_Colore_Transizione_2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -589,8 +481,11 @@
   <data name="GUI_Fan-Menù_4_v1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_Fan-Menù_4_v1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avvio_1.3v" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avvio_1.3v.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="F_Impostazioni-HUB_Altro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F_Impostazioni-HUB_Altro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Btn_Avanti_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Btn_Avanti_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PanSetHardware_1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PanSetHardware_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -607,20 +502,11 @@
   <data name="Dissipatore240mm_Colore_RainBow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dissipatore240mm_Colore_RainBow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IconaFan_RGB_Colore_Arancio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Arancio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icona_HUB_1_1_RGB_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_HUB 1.1_RGB_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Impostazioni_ON_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Impostazioni_ON_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="IconaFan_RGB_Colore_Verde" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IconaFan_RGB_Colore_Verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BtnFanPage_Fan_Task_ON_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Task_ON_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GUI_Fan-Menù_2_v21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUI_Fan-Menù_2_v2.01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_HUB v1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_HUB v1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -628,14 +514,20 @@
   <data name="Avvio_1.011" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avvio_1.011.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="F_Impostazioni_HUB_GPU_StripLED" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F_Impostazioni_HUB_GPU_StripLED.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GUI_HardwareMonitor_PC_1.1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GUI_HardwareMonitor_PC_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icona_FanPO_1_2_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_FanPO_1.2_Click .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GUI_F_HubPC_Home_0.1.2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GUI_F_HubPC_Home_0.1.2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_HUB_1_1_RGB_Colore_Transizione" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_HUB 1.1_RGB_Colore_Transizione.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Icona_Strisca_LED_Azzurro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_Strisca LED Azzurro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icona_DeepCool_RGB_Musica_v1_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_DeepCool_RGB_Musica_v1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -643,8 +535,8 @@
   <data name="IconaHardware_AMD_GPU" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IconaHardware_AMD_GPU.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icona_FanPO_1_2_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icona_FanPO_1.2_Click .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icona_Strisca__RGB_Colore_Musica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icona_Strisca _RGB_Colore_Musica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="F_ImpostazioniFan_1.3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\F_ImpostazioniFan_1.3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,16 +544,13 @@
   <data name="Icona_HUB_1_1_RGB_Colore_Discontinuo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icona_HUB 1.1_RGB_Colore_Discontinuo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnFanPage_Fan_Audio_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnFanPage_Fan_Audio_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Icone_ProtezioneDispositivo_2.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icone_ProtezioneDispositivo_2.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BtnLED_Spento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BtnLED_Spento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icone_ProtezioneTemperatura_1.0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icone_ProtezioneTemperatura_1.0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Btn_Avanti_50x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Btn_Avanti_50x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="F_ImpostazioniFan_1_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F_ImpostazioniFan_1.1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

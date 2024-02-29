@@ -65,23 +65,32 @@ Velocità 50%"
 
     ' Btn Sync Mode Color All
     Private Sub Btn_Hub_SyncMode_Click(sender As Object, e As EventArgs) Handles Btn_Hub_SyncMode.Click
-        F_Avvio.Data1 = 0
-        If F_Avvio.Data1 = 0 And F_Avvio.DatiRX_7(0) <> 0 Then
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = 0
+            If F_Avvio.Data1 = 0 And F_Avvio.DatiRX_7(0) <> 0 Then
 
-            F_Hub_PC.Btn_Men_RGB_Animation.Visible = True
+                F_Hub_PC.Btn_Men_RGB_Animation.Visible = True
 
-            F_Hub_PC.BtnAN_Transiszione.Visible = True
-            'F_Fan.Btn_Spento.Visible = False
-            F_Hub_PC.BtnAN_Rainbow.Visible = True
-            F_Hub_PC.BtnAN_Musica.Visible = True
-            F_Hub_PC.BtnAN_Discontinuo.Visible = True
-            F_Hub_PC.BtnAN_Tepmeratura.Visible = True
-            If F_Avvio.Data1 = 0 Then
-                F_Avvio.Data3 = F_Hub_PC.H_SyncMode
-                F_Avvio.Data4 = F_Hub_PC.S_SyncMode
-                F_Avvio.Data2 = F_Hub_PC.V_SyncMode
-                F_Avvio.Data5 = F_HubPC_Ventole.S_Fan_All
+                F_Hub_PC.BtnAN_Transiszione.Visible = True
+                'F_Fan.Btn_Spento.Visible = False
+                F_Hub_PC.BtnAN_Rainbow.Visible = True
+                F_Hub_PC.BtnAN_Musica.Visible = True
+                F_Hub_PC.BtnAN_Discontinuo.Visible = True
+                F_Hub_PC.BtnAN_Tepmeratura.Visible = True
+                If F_Avvio.Data1 = 0 Then
+                    F_Avvio.Data3 = F_Hub_PC.H_SyncMode
+                    F_Avvio.Data4 = F_Hub_PC.S_SyncMode
+                    F_Avvio.Data2 = F_Hub_PC.V_SyncMode
+                    F_Avvio.Data5 = F_HubPC_Ventole.S_Fan_All
+                End If
             End If
+
+
+            F_Hub_PC.SwitchPannelHUB(F_HubPC_HUB)
+            FanMenù = "Hub PC"
+            'Info Schermata
+            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+            F_Hub_PC.BtnFan_GUI.Visible = True
         End If
     End Sub
 
@@ -99,25 +108,27 @@ Velocità " & Int(F_HubPC_Ventole.S_Fan_All / 2.55) & "%")
     Dim SettAllVentole As Boolean = False
 
     Private Sub Btn_F_HubPC_Ventole_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_Ventole.Click
-        F_Hub_PC.SwitchPannelHUB(F_HubPC_Ventole)
-        FanMenù = "Hub PC Ventole"
-        'Info Schermata
-        F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
-        F_Hub_PC.BtnFan_GUI.Visible = True
-        'SettAllVentole = True
-        'LoopAutoSetColor.Start()
-        ''F_Avvio.Data1 = 1
-        'If F_Avvio.Data1 = 1 And F_Avvio.DatiRX_7(0) <> 1 Then
-        '    F_Avvio.Data3 = F_Hub_PC.H_Fan1
-        '    F_Avvio.Data4 = F_Hub_PC.S_Fan1
-        '    F_Avvio.Data2 = F_Hub_PC.V_Fan1
-        '    '   F_Hub_PC.BtnOFF_Animation()
-        'ElseIf F_Avvio.Data1 = 1 And F_Avvio.DatiRX_7(0) = 1 Then
-        '    F_Hub_PC.SwitchPannelHUB(F_HubPC_Ventole)
-        'End If
+        If F_Avvio.Data10 <> 3 Then
+            F_Hub_PC.SwitchPannelHUB(F_HubPC_Ventole)
+            FanMenù = "Hub PC Ventole"
+            'Info Schermata
+            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+            F_Hub_PC.BtnFan_GUI.Visible = True
+            'SettAllVentole = True
+            'LoopAutoSetColor.Start()
+            ''F_Avvio.Data1 = 1
+            'If F_Avvio.Data1 = 1 And F_Avvio.DatiRX_7(0) <> 1 Then
+            '    F_Avvio.Data3 = F_Hub_PC.H_Fan1
+            '    F_Avvio.Data4 = F_Hub_PC.S_Fan1
+            '    F_Avvio.Data2 = F_Hub_PC.V_Fan1
+            '    '   F_Hub_PC.BtnOFF_Animation()
+            'ElseIf F_Avvio.Data1 = 1 And F_Avvio.DatiRX_7(0) = 1 Then
+            '    F_Hub_PC.SwitchPannelHUB(F_HubPC_Ventole)
+            'End If
 
-        If F_Avvio.Data1 = 0 Or F_Avvio.Data1 > 4 Then
-            F_HubPC_Ventole.IconaFan1_Click(sender, e)
+            If F_Avvio.Data1 = 0 Or F_Avvio.Data1 > 4 Then
+                F_HubPC_Ventole.IconaFan1_Click(sender, e)
+            End If
         End If
     End Sub
 
@@ -150,18 +161,21 @@ Velocità " & Int(F_HubPC_Ventole.S_Fan_All / 2.55) & "%")
 
 
     Private Sub Btn_F_HubPC_GPU_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_GPU.Click
-        F_Avvio.Data1 = 8
-        If F_Avvio.Data1 = 8 And F_Avvio.DatiRX_7(0) <> 8 Then
-            F_Avvio.Data3 = F_Hub_PC.H_GPU
-            F_Avvio.Data4 = F_Hub_PC.S_GPU
-            F_Avvio.Data2 = F_Hub_PC.V_GPU
-            F_Hub_PC.BtnOFF_Animation()
-        ElseIf F_Avvio.Data1 = 8 And F_Avvio.DatiRX_7(0) = 8 Then
-            F_Hub_PC.SwitchPannelHUB(F_HubPC_GPU_SLED)
-            FanMenù = "Hub PC GPU, Strisca LED"
-            'Info Schermata
-            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
-            F_Hub_PC.BtnFan_GUI.Visible = True
+
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_SchedaVideo
+            If F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_SchedaVideo And F_Avvio.DatiRX_7(0) <> F_Hub_PC.IndirizzoElemento_SchedaVideo Then
+                F_Avvio.Data3 = F_Hub_PC.H_GPU
+                F_Avvio.Data4 = F_Hub_PC.S_GPU
+                F_Avvio.Data2 = F_Hub_PC.V_GPU
+                F_Hub_PC.BtnOFF_Animation()
+            ElseIf F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_SchedaVideo And F_Avvio.DatiRX_7(0) = F_Hub_PC.IndirizzoElemento_SchedaVideo Then
+                F_Hub_PC.SwitchPannelHUB(F_HubPC_GPU_SLED)
+                FanMenù = "Hub PC GPU, Strisca LED"
+                'Info Schermata
+                F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+                F_Hub_PC.BtnFan_GUI.Visible = True
+            End If
         End If
     End Sub
     Private Sub Btn_F_HubPC_GPU_MouseHover(sender As Object, e As EventArgs) Handles Btn_F_HubPC_GPU.MouseHover
@@ -173,18 +187,20 @@ Velocità Null")
 
 
     Private Sub Btn_F_HubPC_SLED_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_SLED.Click
-        F_Avvio.Data1 = 9
-        If F_Avvio.Data1 = 9 And F_Avvio.DatiRX_7(0) <> 9 Then
-            F_Avvio.Data3 = F_Hub_PC.H_SLED
-            F_Avvio.Data4 = F_Hub_PC.S_SLED
-            F_Avvio.Data2 = F_Hub_PC.V_SLED
-            F_Hub_PC.BtnOFF_Animation()
-        ElseIf F_Avvio.Data1 = 9 And F_Avvio.DatiRX_7(0) = 9 Then
-            F_Hub_PC.SwitchPannelHUB(F_HubPC_GPU_SLED)
-            FanMenù = "Hub PC GPU, Strisca LED"
-            'Info Schermata
-            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
-            F_Hub_PC.BtnFan_GUI.Visible = True
+        If F_Avvio.Data10 <> 3 Then
+            F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_StriscaLED
+            If F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_StriscaLED And F_Avvio.DatiRX_7(0) <> F_Hub_PC.IndirizzoElemento_StriscaLED Then
+                F_Avvio.Data3 = F_Hub_PC.H_SLED
+                F_Avvio.Data4 = F_Hub_PC.S_SLED
+                F_Avvio.Data2 = F_Hub_PC.V_SLED
+                F_Hub_PC.BtnOFF_Animation()
+            ElseIf F_Avvio.Data1 = F_Hub_PC.IndirizzoElemento_StriscaLED And F_Avvio.DatiRX_7(0) = F_Hub_PC.IndirizzoElemento_StriscaLED Then
+                F_Hub_PC.SwitchPannelHUB(F_HubPC_GPU_SLED)
+                FanMenù = "Hub PC GPU, Strisca LED"
+                'Info Schermata
+                F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+                F_Hub_PC.BtnFan_GUI.Visible = True
+            End If
         End If
     End Sub
     Private Sub Btn_F_HubPC_SLED_MouseHover(sender As Object, e As EventArgs) Handles Btn_F_HubPC_SLED.MouseHover
@@ -195,37 +211,41 @@ Luminosità " & Int(F_Hub_PC.V_SLED / 2.55) & "%")
 
 
     Private Sub Btn_F_HubPC_Dissipatore_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_Dissipatore.Click
-        'F_Avvio.Data1 = 7
-        'If F_Avvio.Data1 = 7 And F_Avvio.DatiRX_7(0) <> 7 Then
-        '    If F_Avvio.Data1 = 7 Then
-        '        F_Avvio.Data3 = F_Hub_PC.H_CPU_OP
-        '        F_Avvio.Data4 = F_Hub_PC.S_CPU_OP
-        '        F_Avvio.Data2 = F_Hub_PC.V_CPU_OP
-        '        F_Hub_PC.BtnOFF_Animation()
-        '    End If
-        'ElseIf F_Avvio.Data1 = 7 And F_Avvio.DatiRX_7(0) = 7 Then
-        F_Hub_PC.SwitchPannelHUB(F_HubPC_Dissipatore240)
-        FanMenù = "Hub PC Dissipatore 240"
-        'Info Schermata
-        F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
-        F_Hub_PC.BtnFan_GUI.Visible = True
-        'End If
+        If F_Avvio.Data10 <> 3 Then
+            'F_Avvio.Data1 = 7
+            'If F_Avvio.Data1 = 7 And F_Avvio.DatiRX_7(0) <> 7 Then
+            '    If F_Avvio.Data1 = 7 Then
+            '        F_Avvio.Data3 = F_Hub_PC.H_CPU_OP
+            '        F_Avvio.Data4 = F_Hub_PC.S_CPU_OP
+            '        F_Avvio.Data2 = F_Hub_PC.V_CPU_OP
+            '        F_Hub_PC.BtnOFF_Animation()
+            '    End If
+            'ElseIf F_Avvio.Data1 = 7 And F_Avvio.DatiRX_7(0) = 7 Then
+            F_Hub_PC.SwitchPannelHUB(F_HubPC_Dissipatore240)
+            FanMenù = "Hub PC Dissipatore 240"
+            'Info Schermata
+            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+            F_Hub_PC.BtnFan_GUI.Visible = True
+            'End If
 
 
-        If F_Avvio.Data1 < 5 Or F_Avvio.Data1 > 7 Then
-            F_HubPC_Dissipatore240.Btn_CPU_LED_Click(sender, e)
+            If F_Avvio.Data1 < 5 Or F_Avvio.Data1 > 7 Then
+                F_HubPC_Dissipatore240.Btn_CPU_LED_Click(sender, e)
+            End If
         End If
     End Sub
 
     Private Sub Btn_F_HubPC_CasseAudio_Click(sender As Object, e As EventArgs) Handles Btn_F_HubPC_CasseAudio.Click
-        F_Hub_PC.SwitchPannelHUB(F_HubPC_CasseAudio)
-        FanMenù = "Hub PC Casse Audio, Strisca LED Esterna"
-        'Info Schermata
-        F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
-        F_Hub_PC.BtnFan_GUI.Visible = True
+        If F_Avvio.Data10 <> 3 Then
+            F_Hub_PC.SwitchPannelHUB(F_HubPC_CasseAudio)
+            FanMenù = "Hub PC Casse Audio, Strisca LED Esterna"
+            'Info Schermata
+            F_Home.LabelFinestraID.Text = "Finestra di controllo " & FanMenù
+            F_Hub_PC.BtnFan_GUI.Visible = True
 
-        If F_Avvio.Data1 < 10 Or F_Avvio.Data1 > 12 Then
-            F_HubPC_CasseAudio.Btn_CassaAudio_D_Click(sender, e)
+            If F_Avvio.Data1 < 10 Or F_Avvio.Data1 > 12 Then
+                F_HubPC_CasseAudio.Btn_CassaAudio_D_Click(sender, e)
+            End If
         End If
     End Sub
 
@@ -252,59 +272,68 @@ Luminosità " & Int(F_Hub_PC.V_SLED / 2.55) & "%")
             Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
             Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
 
-        ElseIf F_Avvio.DatiRX_7(0) <> 0 Then
-            Dim n As Integer
-            For n = 0 To 12 'F_Avvio.DatiRX_5.Length - 1
-                Select Case n
-                    Case = 0
+            'RGB HuB PC
+            F_HubPC_HUB.IconaHUB_Color.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+            F_HubPC_HUB.Btn_Fan_Info.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+            F_HubPC_HUB.Btn_Casse_Info.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+            F_HubPC_HUB.Btn_Dissipatore_Info.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+            F_HubPC_HUB.Btn_GPU_Info.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+            F_HubPC_HUB.Btn_StriscaLED_Info.BackColor = Color.FromArgb(Colore(0), Colore(1), Colore(2))
+        End If
 
-                    Case = 1
-                        Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                    Case = 2
+        If F_Avvio.DatiRX_7(0) <> 0 Then
+                Dim n As Integer
+                For n = 0 To 12 'F_Avvio.DatiRX_5.Length - 1
+                    Select Case n
+                        Case = 0
+
+                        Case = 1
+                            Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
+                        Case = 2
                         'Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                    Case = 3
+                        Case = 3
                         'Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                    Case = 4
+                        Case = 4
                         'Btn_F_HubPC_Ventole.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
 
 
-                    Case = 5
-                        Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
+                        Case = 5
+                            Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         '        F_HubPC_Dissipatore240.Btn_FanCPU_LED01.BackColor = Color.FromArgb(R, G, B)
                         '        'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
-                    Case = 6
+                        Case = 6
                         'Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         '        F_HubPC_Dissipatore240.Btn_FanCPU_LED02.BackColor = Color.FromArgb(R, G, B)
                         '        'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
-                    Case = 7
+                        Case = 7
                         ' Btn_F_HubPC_Dissipatore.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         '        F_HubPC_Dissipatore240.Btn_PompCPU_LED.BackColor = Color.FromArgb(R, G, B)
                         '        'F_HubPC_Dissipatore240.IconaStatoFan_Menù_3.BackColor = Color.FromArgb(R, G, B)
 
 
-                    Case = 8
+                    Case = F_Hub_PC.IndirizzoElemento_SchedaVideo
                         Btn_F_HubPC_GPU.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                        ' F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                    Case = 9
+                    Case = F_Hub_PC.IndirizzoElemento_StriscaLED
                         Btn_F_HubPC_SLED.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         'F_HubPC_GPU_SLED.IconaStatoFan_Menù_2.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
 
 
-                    Case = 10
-                        Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
+                        Case = 10
+                            Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         '        F_HubPC_CasseAudio.Btn_CassaAudio_S.BackColor = Color.FromArgb(R, G, B)
                         '       ' F_HubPC_CasseAudio.Icona_CassaAudio_S.BackColor = Color.FromArgb(R, G, B)
-                    Case = 11
+                        Case = 11
                         'Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
                         '        F_HubPC_CasseAudio.Btn_CassaAudio_D.BackColor = Color.FromArgb(R, G, B)
                         '        F_HubPC_CasseAudio.Icona_CassaAudio_D.BackColor = Color.FromArgb(R, G, B)
-                    Case = 12
-                        'Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
-                        '        F_HubPC_CasseAudio.Btn_StripLED.BackColor = Color.FromArgb(R, G, B)
-                        '        'F_HubPC_CasseAudio.Icona_StripLED.BackColor = Color.FromArgb(R, G, B)
-                End Select
-            Next n
-        End If
+                        Case = 12
+                            'Btn_F_HubPC_CasseAudio.BackColor = Color.FromArgb(Colore_Salvati_Rosso(n), Colore_Salvati_Verde(n), Colore_Salvati_Blu(n))
+                            '        F_HubPC_CasseAudio.Btn_StripLED.BackColor = Color.FromArgb(R, G, B)
+                            '        'F_HubPC_CasseAudio.Icona_StripLED.BackColor = Color.FromArgb(R, G, B)
+                    End Select
+                Next n
+            End If
 
 
     End Sub

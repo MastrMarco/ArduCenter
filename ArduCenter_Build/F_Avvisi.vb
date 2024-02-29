@@ -36,6 +36,7 @@ Public Class F_Avvisi
     <DllImport("user32.DLL", EntryPoint:="SendMessage")>
     Private Shared Sub SendMessage(ByVal hWnd As System.IntPtr, ByVal wMsg As Integer, ByVal wParam As Integer, ByVal lParam As Integer)
     End Sub
+
     Private Sub PanelTop_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelTop.MouseDown
         Try
             ReleaseCapture()
@@ -58,7 +59,7 @@ Public Class F_Avvisi
     Private Sub BtnChiudi_Click(sender As Object, e As EventArgs) Handles BtnChiudi.Click
         F_Avvio.ErrorMod = 0
         F_Home.Enabled = True
-        F_Setting_HUB_Fan.Enabled = True
+        F_Setting_HUB.Enabled = True
         Close()
 
         If F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8 Then
@@ -69,21 +70,19 @@ Public Class F_Avvisi
 
     End Sub
 
-    Dim ITA As String = "ITALIANO"
-    Dim ENG As String = "ENGLISH"
+
+    'Public Sub AvvisoErrore(Errore As Integer, InfoErrore As String)
     Public Sub AvvisoErrore()
 
-        If F_Avvio.ErrorMod = "00" Then
-            If My.Settings.Lingua = ITA Then
+        Select Case F_Avvio.ErrorMod
+
+            Case "00"
                 LabelTextError.Text = "Errore sconosciuto"
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 1 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 1
                 LabelTextError.Text = "
 Nessun dispositivo collegato,
 si prega di collegare il dispositivo.
@@ -91,29 +90,21 @@ si prega di collegare il dispositivo.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 2 Then
-            If My.Settings.Lingua = ITA Then
+            Case 2
                 LabelTextError.Text = "
 La connessione Automatica è stata disattivata,
-perché non è stato rilevato il dispositivo alla porta memorizzata.
+perché non è stato rilevato il dispositivo memorizzato.
 La connessione Manuale è stata attivata.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 3 Then
-            If My.Settings.Lingua = ITA Then
+            Case 3
                 LabelTextError.Text = "
 Il dispositivo selezionato, 
 non è compatibile con il Software.
@@ -121,14 +112,10 @@ non è compatibile con il Software.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 4 Then
-            If My.Settings.Lingua = ITA Then
+            Case 4
                 LabelTextError.Text = "
 Si è verificato un errore nel
 caricamento dei dati del dispositivo.
@@ -136,14 +123,10 @@ Si prega di riconnettere il dispositivo manualmente.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 5 Then
-            If My.Settings.Lingua = ITA Then
+            Case 5
                 LabelTextError.Text = "
 Il dispositivo si è scollegato in modo 
 anomalo.
@@ -151,14 +134,11 @@ Attivata la modalità di connessione manuale.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 6 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 6
                 LabelTextError.Text = "
 Il dispositivo selezionato ha una versione
 del Firmware non aggiornata e supportata dalla
@@ -167,14 +147,10 @@ Si prega di aggiornare il Firmware del dispositivo
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 7 Then
-            If My.Settings.Lingua = ITA Then
+            Case 7
                 LabelTextError.Text = "
 Il dispositivo selezionato ha una versione
 del Firmware più avanzata rispetto alla versione 
@@ -183,37 +159,25 @@ Si prega di aggiornare il Software alla versione compatibile.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 8 Then
-            If My.Settings.Lingua = ITA Then
+            Case 8
                 LabelTextError.Text = "
 Il dispositivo selezionato non è compatibile
 con il Software o non è più connesso al PC.
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 9 Then
-            If My.Settings.Lingua = ITA Then
-
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
+            Case 9
 
 
 
-        ElseIf F_Avvio.ErrorMod = 10 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 10
                 LabelTextError.Text = "
 Il dispositivo verrà Riavviato
 è anche il Software verrà Riavviato.
@@ -221,126 +185,81 @@ Il dispositivo verrà Riavviato
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
-
-            '/------------------------------------------------------------------------------/
 
 
-        ElseIf F_Avvio.ErrorMod = 31 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 11
+                LabelTextError.Text = "
+Il sistema per acquisire i dati
+ Hardware del PC è andato in errore.
+ Riavviare il Software per risolvere
+
+Clicca OK per continuare
+"
+
+                '/------------------------------------------------------------------------------/
+
+
+            Case 31
                 LabelTextError.Text = "I parametri dell'Hub 
 sono tutti Buoni.
 
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "Hub parameters
-they are all good.
-
-Click OK to continue."
-            End If
-
-        ElseIf F_Avvio.ErrorMod = 32 Then
-            If My.Settings.Lingua = ITA Then
+            Case 32
                 LabelTextError.Text = "!ATTENZIONE!
 Il sensore di temperatura, 
 rileva una temperatura anomala.
 
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!ATTENTION!
-The temperature sensor,
-detects an abnormal temperature.
-
-Click OK to continue."
-            End If
-
-        ElseIf F_Avvio.ErrorMod = 33 Then
-            If My.Settings.Lingua = ITA Then
+            Case 33
                 LabelTextError.Text = "!ATTENZIONE!
 L'alimentazione all'Hub, ha un'anomalia,
 si consiglia di fare Manutenzione.
 
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!ATTENTION!
-The power supply at the Hub, has an anomaly,
-Maintenance is recommended.
-Click OK to continue."
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 34 Then
-            If My.Settings.Lingua = ITA Then
+            Case 34
                 LabelTextError.Text = "!ATTENZIONE! 
 L'alimentazione dell'Hub ha un'anomalia. 
 È Stata attivata la protezione PowerLED.
 
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!ATTENTION!
-The Hub power supply has an anomaly.
-The PowerLED protection has been activated.
 
-Click OK to continue."
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 35 Then
-            If My.Settings.Lingua = ITA Then
+            Case 35
                 LabelTextError.Text = "!ATTENZIONE! 
 L'alimentazione dell'Hub ha un'anomalia, 
 Il sensore di temperatura, 
 rileva una temperatura anomala.
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!ATTENTION!
-Hub power supply has an anomaly,
-The temperature sensor,
-detects an abnormal temperature.
-Click OK to continue."
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 36 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 36
                 LabelTextError.Text = "!ATTENZIONE!  
 Il sensore di temperatura, 
 rileva una temperatura anomala.
 È Stata attivata la protezione PowerLED.
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!!ATTENTION!
-The temperature sensor,
-detects an abnormal temperature.
-The PowerLED protection has been activated.
-Click OK to continue."
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 37 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 37
                 LabelTextError.Text = "!!!ATTENZIONE!!!
 Si consiglia di disattivare l'HUB,
 per evitare eventuali danni!!!
 
 Clicca OK per continuare."
 
-            ElseIf My.Settings.Lingua = ENG Then
-                LabelTextError.Text = "!!!ATTENTION!!!
-It is recommended to deactivate the HUB,
-to avoid any damage !!!
-
-Click OK to continue."
-            End If
 
 
 
-        ElseIf F_Avvio.ErrorMod = 40 Then
-            If My.Settings.Lingua = ITA Then
+
+            Case 40
                 LabelTextError.Text = "!!!ATTENTION!!!
 Indica che le varie impostazioni dell’utente
 non verranno salvate alla prossima 
@@ -349,53 +268,41 @@ Andare nelle impostazioni per
 attivare il salvataggio dei dati
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 41 Then
-            If My.Settings.Lingua = ITA Then
+            Case 41
                 LabelTextError.Text = "!!!ATTENTION!!!
 Indica che il dispositivo non rileva una corretta 
 alimentazione dal cavo POWER, andando in modalità 
-protezione che causa lo scollegamento dalla 
+protezione che causa il distacco dalla 
 linea Power 12V 5V. Causando lo spegnimento 
 dei LED e l’arresto delle ventole
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 42 Then
-            If My.Settings.Lingua = ITA Then
+            Case 42
                 LabelTextError.Text = "!!!ATTENTION!!!
 Indica che la linea di alimentazione LED 
 non rileva una corretta alimentazione per 
 funzionare correttamente, o è stata attivata la 
 modalità 'Protezione LED' per limitare il 
-consumo di corrente impostato nel Firmware
+consumo di corrente.
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 43 Then
-            If My.Settings.Lingua = ITA Then
+            Case 43
                 LabelTextError.Text = "!!!ATTENTION!!!
 
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
-
-            '/------------------------------------------------------------------------------/
 
 
-        ElseIf F_Avvio.ErrorMod = 70 Then
-            If My.Settings.Lingua = ITA Then
+                '/------------------------------------------------------------------------------/
+
+
+            Case 70
                 LabelTextError.Text = "Le ventole verranno controllate 
 in base alla temperatura del sensore del dispositivo.
 T = Temperatura: T < 31 Fan 0%, 
@@ -404,12 +311,9 @@ T > 36 – T < 40 Fan 63%,
 T > 41 Fan 100%
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 71 Then
-            If My.Settings.Lingua = ITA Then
+            Case 71
                 LabelTextError.Text = "Le ventole verranno controllate 
 in base alla temperatura della CPU.
 T = Temperatura: T < 31 Fan 0%, 
@@ -418,12 +322,9 @@ T > 45 – T < 59 Fan 59%,
 T > 60 Fan 100%
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
 
-        ElseIf F_Avvio.ErrorMod = 72 Then
-            If My.Settings.Lingua = ITA Then
+            Case 72
                 LabelTextError.Text = "Le ventole verranno controllate 
 in base alla temperatura della GPU.
 T = Temperatura: T < 31 Fan 0%, 
@@ -432,59 +333,75 @@ T > 45 – T < 59 Fan 59%,
 T > 60 Fan 100%
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
-
-            End If
 
 
-            '/------------------------------------------------------------------------------/
 
-        ElseIf F_Avvio.ErrorMod = 100 Then
-                If My.Settings.Lingua = ITA Then
-                    LabelTextError.Text = "
+                '/------------------------------------------------------------------------------/
+
+            Case 100
+                LabelTextError.Text = "
 Al momento questa funzione non è disponibile
 
 Clicca OK per continuare
 "
-                ElseIf My.Settings.Lingua = ENG Then
-
-                End If
 
 
 
 
-            ElseIf F_Avvio.ErrorMod = 101 Then
-                If My.Settings.Lingua = ITA Then
-                    LabelTextError.Text = "
+
+            Case 101
+                LabelTextError.Text = "
 Per attivare questa funzione devi 
 essere connesso al dispositivo.
 
 Clicca OK per continuare
 "
-                ElseIf My.Settings.Lingua = ENG Then
-
-                End If
 
 
 
 
-            ElseIf F_Avvio.ErrorMod = 102 Then
-                If My.Settings.Lingua = ITA Then
+
+            Case 102
                 LabelTextError.Text = "
 Verranno reimpostati tutti 
 i valori di fabbrica.
 Il Software verrà Riavviato.
 Clicca OK per continuare
 "
-            ElseIf My.Settings.Lingua = ENG Then
 
-            End If
-        End If
+
+                '---------------------------------Informazioni-----------------------------------
+                '/------------------------------------------------------------------------------/
+
+            Case 200
+                LabelTextError.Text = "
+Il Numero Massimo di LED 
+ è di 30 e il Minimo è di 2.
+
+Clicca OK per continuare
+"
+
+
+
+
+
+            Case 201
+                LabelTextError.Text = "
+Il Numero Massimo di LED 
+ è di 30 e il Minimo è di 1.
+
+Clicca OK per continuare
+"
+
+
+
+
+        End Select
 
         Me.TopMost = True
         Show()
         F_Home.Enabled = False
-        F_Setting_HUB_Fan.Enabled = False
+        F_Setting_HUB.Enabled = False
 
     End Sub
 
@@ -514,7 +431,7 @@ Clicca OK per continuare
         End If
 
         F_Home.Enabled = True
-        F_Setting_HUB_Fan.Enabled = True
+        F_Setting_HUB.Enabled = True
         F_Avvio.ErrorMod = 0
         Close()
     End Sub

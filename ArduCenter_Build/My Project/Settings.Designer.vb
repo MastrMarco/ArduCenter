@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Public NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("ITALIANO")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Italiano")>  _
         Public Property Lingua() As String
             Get
                 Return CType(Me("Lingua"),String)
@@ -92,10 +92,10 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Normale")>  _
-        Public Property TimerHardwareMonitor() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("1")>  _
+        Public Property TimerHardwareMonitor() As Integer
             Get
-                Return CType(Me("TimerHardwareMonitor"),String)
+                Return CType(Me("TimerHardwareMonitor"),Integer)
             End Get
             Set
                 Me("TimerHardwareMonitor") = value
@@ -116,10 +116,10 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Normale")>  _
-        Public Property FormHrdwareTop() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property FormHrdwareTop() As Integer
             Get
-                Return CType(Me("FormHrdwareTop"),String)
+                Return CType(Me("FormHrdwareTop"),Integer)
             End Get
             Set
                 Me("FormHrdwareTop") = value

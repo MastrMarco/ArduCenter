@@ -74,7 +74,7 @@ Partial Class F_Hub_PC
         '
         Me.TrackBarLuminosità.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(31, Byte), Integer))
         Me.TrackBarLuminosità.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TrackBarLuminosità.Location = New System.Drawing.Point(686, 236)
+        Me.TrackBarLuminosità.Location = New System.Drawing.Point(686, 234)
         Me.TrackBarLuminosità.Maximum = 100
         Me.TrackBarLuminosità.Minimum = 5
         Me.TrackBarLuminosità.Name = "TrackBarLuminosità"
@@ -88,7 +88,7 @@ Partial Class F_Hub_PC
         '
         Me.TrackBarVelocità.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(4, Byte), Integer), CType(CType(31, Byte), Integer))
         Me.TrackBarVelocità.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TrackBarVelocità.Location = New System.Drawing.Point(686, 181)
+        Me.TrackBarVelocità.Location = New System.Drawing.Point(686, 179)
         Me.TrackBarVelocità.Maximum = 100
         Me.TrackBarVelocità.Name = "TrackBarVelocità"
         Me.TrackBarVelocità.Size = New System.Drawing.Size(149, 45)
@@ -102,7 +102,7 @@ Partial Class F_Hub_PC
         Me.LabelVelocità.BackColor = System.Drawing.Color.Transparent
         Me.LabelVelocità.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelVelocità.ForeColor = System.Drawing.Color.White
-        Me.LabelVelocità.Location = New System.Drawing.Point(667, 164)
+        Me.LabelVelocità.Location = New System.Drawing.Point(666, 164)
         Me.LabelVelocità.Name = "LabelVelocità"
         Me.LabelVelocità.Size = New System.Drawing.Size(195, 18)
         Me.LabelVelocità.TabIndex = 26
@@ -114,7 +114,7 @@ Partial Class F_Hub_PC
         Me.LabelLuminosità.BackColor = System.Drawing.Color.Transparent
         Me.LabelLuminosità.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelLuminosità.ForeColor = System.Drawing.Color.White
-        Me.LabelLuminosità.Location = New System.Drawing.Point(711, 223)
+        Me.LabelLuminosità.Location = New System.Drawing.Point(712, 223)
         Me.LabelLuminosità.Name = "LabelLuminosità"
         Me.LabelLuminosità.Size = New System.Drawing.Size(102, 18)
         Me.LabelLuminosità.TabIndex = 27
@@ -127,7 +127,7 @@ Partial Class F_Hub_PC
         Me.LabelRGBAnimazioni.BackColor = System.Drawing.Color.Transparent
         Me.LabelRGBAnimazioni.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelRGBAnimazioni.ForeColor = System.Drawing.Color.White
-        Me.LabelRGBAnimazioni.Location = New System.Drawing.Point(694, 294)
+        Me.LabelRGBAnimazioni.Location = New System.Drawing.Point(695, 294)
         Me.LabelRGBAnimazioni.Name = "LabelRGBAnimazioni"
         Me.LabelRGBAnimazioni.Size = New System.Drawing.Size(137, 18)
         Me.LabelRGBAnimazioni.TabIndex = 28
@@ -169,7 +169,7 @@ Partial Class F_Hub_PC
         '
         Me.BtnVerde.BackColor = System.Drawing.Color.Lime
         Me.BtnVerde.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnVerde.Location = New System.Drawing.Point(781, 103)
+        Me.BtnVerde.Location = New System.Drawing.Point(779, 103)
         Me.BtnVerde.Name = "BtnVerde"
         Me.BtnVerde.Size = New System.Drawing.Size(25, 12)
         Me.BtnVerde.TabIndex = 46
@@ -179,7 +179,7 @@ Partial Class F_Hub_PC
         '
         Me.BtnBlu.BackColor = System.Drawing.Color.Blue
         Me.BtnBlu.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBlu.Location = New System.Drawing.Point(830, 103)
+        Me.BtnBlu.Location = New System.Drawing.Point(828, 103)
         Me.BtnBlu.Name = "BtnBlu"
         Me.BtnBlu.Size = New System.Drawing.Size(25, 12)
         Me.BtnBlu.TabIndex = 47
@@ -199,7 +199,7 @@ Partial Class F_Hub_PC
         '
         Me.BtnFucsia.BackColor = System.Drawing.Color.Fuchsia
         Me.BtnFucsia.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnFucsia.Location = New System.Drawing.Point(726, 131)
+        Me.BtnFucsia.Location = New System.Drawing.Point(726, 130)
         Me.BtnFucsia.Name = "BtnFucsia"
         Me.BtnFucsia.Size = New System.Drawing.Size(25, 12)
         Me.BtnFucsia.TabIndex = 49
@@ -209,7 +209,7 @@ Partial Class F_Hub_PC
         '
         Me.BtnGiallo.BackColor = System.Drawing.Color.Yellow
         Me.BtnGiallo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnGiallo.Location = New System.Drawing.Point(781, 131)
+        Me.BtnGiallo.Location = New System.Drawing.Point(779, 130)
         Me.BtnGiallo.Name = "BtnGiallo"
         Me.BtnGiallo.Size = New System.Drawing.Size(25, 12)
         Me.BtnGiallo.TabIndex = 50
@@ -219,7 +219,7 @@ Partial Class F_Hub_PC
         '
         Me.BtnAzzurro.BackColor = System.Drawing.Color.Aqua
         Me.BtnAzzurro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAzzurro.Location = New System.Drawing.Point(830, 131)
+        Me.BtnAzzurro.Location = New System.Drawing.Point(828, 130)
         Me.BtnAzzurro.Name = "BtnAzzurro"
         Me.BtnAzzurro.Size = New System.Drawing.Size(25, 12)
         Me.BtnAzzurro.TabIndex = 51
@@ -240,7 +240,6 @@ Partial Class F_Hub_PC
         'BtnMenùEX
         '
         Me.BtnMenùEX.BackColor = System.Drawing.Color.Transparent
-        Me.BtnMenùEX.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Audio_OFF
         Me.BtnMenùEX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BtnMenùEX.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnMenùEX.Location = New System.Drawing.Point(284, -1)
@@ -253,12 +252,12 @@ Partial Class F_Hub_PC
         'BtnImpostazioniFan
         '
         Me.BtnImpostazioniFan.BackColor = System.Drawing.Color.Transparent
-        Me.BtnImpostazioniFan.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Impostazioni_1_0
+        Me.BtnImpostazioniFan.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnGUI_HomeImpostazioni
         Me.BtnImpostazioniFan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BtnImpostazioniFan.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnImpostazioniFan.Location = New System.Drawing.Point(681, -1)
+        Me.BtnImpostazioniFan.Location = New System.Drawing.Point(747, 3)
         Me.BtnImpostazioniFan.Name = "BtnImpostazioniFan"
-        Me.BtnImpostazioniFan.Size = New System.Drawing.Size(135, 45)
+        Me.BtnImpostazioniFan.Size = New System.Drawing.Size(35, 35)
         Me.BtnImpostazioniFan.TabIndex = 76
         Me.BtnImpostazioniFan.TabStop = False
         '
@@ -307,7 +306,7 @@ Partial Class F_Hub_PC
         Me.BtnL_max.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnL_max.ForeColor = System.Drawing.SystemColors.ControlText
         Me.BtnL_max.Image = Global.ArduCenter.My.Resources.Resources.BtnLuminositàMax
-        Me.BtnL_max.Location = New System.Drawing.Point(832, 239)
+        Me.BtnL_max.Location = New System.Drawing.Point(833, 239)
         Me.BtnL_max.Name = "BtnL_max"
         Me.BtnL_max.Size = New System.Drawing.Size(35, 35)
         Me.BtnL_max.TabIndex = 79
@@ -358,7 +357,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Transiszione.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnAN_Transiszione.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAN_Transiszione.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnAN_Transiszione.Location = New System.Drawing.Point(739, 318)
+        Me.BtnAN_Transiszione.Location = New System.Drawing.Point(739, 319)
         Me.BtnAN_Transiszione.Name = "BtnAN_Transiszione"
         Me.BtnAN_Transiszione.Size = New System.Drawing.Size(46, 46)
         Me.BtnAN_Transiszione.TabIndex = 82
@@ -374,7 +373,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Rainbow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnAN_Rainbow.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAN_Rainbow.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnAN_Rainbow.Location = New System.Drawing.Point(806, 321)
+        Me.BtnAN_Rainbow.Location = New System.Drawing.Point(806, 319)
         Me.BtnAN_Rainbow.Name = "BtnAN_Rainbow"
         Me.BtnAN_Rainbow.Size = New System.Drawing.Size(46, 46)
         Me.BtnAN_Rainbow.TabIndex = 83
@@ -390,7 +389,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Tepmeratura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnAN_Tepmeratura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAN_Tepmeratura.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnAN_Tepmeratura.Location = New System.Drawing.Point(671, 371)
+        Me.BtnAN_Tepmeratura.Location = New System.Drawing.Point(670, 371)
         Me.BtnAN_Tepmeratura.Name = "BtnAN_Tepmeratura"
         Me.BtnAN_Tepmeratura.Size = New System.Drawing.Size(46, 46)
         Me.BtnAN_Tepmeratura.TabIndex = 84
@@ -406,7 +405,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Musica.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnAN_Musica.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAN_Musica.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnAN_Musica.Location = New System.Drawing.Point(739, 370)
+        Me.BtnAN_Musica.Location = New System.Drawing.Point(739, 371)
         Me.BtnAN_Musica.Name = "BtnAN_Musica"
         Me.BtnAN_Musica.Size = New System.Drawing.Size(46, 46)
         Me.BtnAN_Musica.TabIndex = 85
@@ -422,7 +421,7 @@ Partial Class F_Hub_PC
         Me.BtnAN_Discontinuo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.BtnAN_Discontinuo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAN_Discontinuo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnAN_Discontinuo.Location = New System.Drawing.Point(806, 369)
+        Me.BtnAN_Discontinuo.Location = New System.Drawing.Point(806, 371)
         Me.BtnAN_Discontinuo.Name = "BtnAN_Discontinuo"
         Me.BtnAN_Discontinuo.Size = New System.Drawing.Size(46, 46)
         Me.BtnAN_Discontinuo.TabIndex = 86
@@ -431,12 +430,13 @@ Partial Class F_Hub_PC
         'BtnTaskHardware_GUI
         '
         Me.BtnTaskHardware_GUI.BackColor = System.Drawing.Color.Transparent
-        Me.BtnTaskHardware_GUI.BackgroundImage = Global.ArduCenter.My.Resources.Resources.BtnFanPage_Fan_Task_1_0
+        Me.BtnTaskHardware_GUI.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Icona_Parametri_Fan
         Me.BtnTaskHardware_GUI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BtnTaskHardware_GUI.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnTaskHardware_GUI.Location = New System.Drawing.Point(482, -1)
+        Me.BtnTaskHardware_GUI.Location = New System.Drawing.Point(549, 3)
+        Me.BtnTaskHardware_GUI.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnTaskHardware_GUI.Name = "BtnTaskHardware_GUI"
-        Me.BtnTaskHardware_GUI.Size = New System.Drawing.Size(135, 45)
+        Me.BtnTaskHardware_GUI.Size = New System.Drawing.Size(35, 35)
         Me.BtnTaskHardware_GUI.TabIndex = 74
         Me.BtnTaskHardware_GUI.TabStop = False
         '
@@ -453,7 +453,7 @@ Partial Class F_Hub_PC
         Me.Btn_Men_RGB_Animation.BackColor = System.Drawing.Color.Transparent
         Me.Btn_Men_RGB_Animation.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Btn_Avanti_50x50
         Me.Btn_Men_RGB_Animation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Btn_Men_RGB_Animation.Location = New System.Drawing.Point(834, 291)
+        Me.Btn_Men_RGB_Animation.Location = New System.Drawing.Point(836, 291)
         Me.Btn_Men_RGB_Animation.Name = "Btn_Men_RGB_Animation"
         Me.Btn_Men_RGB_Animation.Size = New System.Drawing.Size(25, 25)
         Me.Btn_Men_RGB_Animation.TabIndex = 88

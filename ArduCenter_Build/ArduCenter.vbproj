@@ -67,7 +67,7 @@
     <ApplicationIcon>Icona.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -109,11 +109,36 @@
     <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
-    <Reference Include="NAudio">
-      <HintPath>..\..\NAudio.dll</HintPath>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="OpenHardwareMonitorLib">
-      <HintPath>..\OpenHardwareMonitor\OpenHardwareMonitorLib.dll</HintPath>
+    <Reference Include="NAudio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.2.2.1\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Asio.2.2.1\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Core.2.2.1\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Midi.2.2.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Wasapi.2.2.1\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinForms.2.2.1\lib\net472\NAudio.WinForms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.2.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinMM.2.2.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -123,6 +148,14 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
@@ -134,6 +167,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +185,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="Funzioni_Globali_HUB.vb" />
+    <Compile Include="Finestra_HardwareMonitor\F_HardwareMonitor.Designer.vb">
+      <DependentUpon>F_HardwareMonitor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finestra_HardwareMonitor\F_HardwareMonitor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finestra_HardwareMonitor\P_HardwareMonitor_Arduino.Designer.vb">
+      <DependentUpon>P_HardwareMonitor_Arduino.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finestra_HardwareMonitor\P_HardwareMonitor_Arduino.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finestra_HardwareMonitor\P_HardwareMonitor_PC.Designer.vb">
+      <DependentUpon>P_HardwareMonitor_PC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Finestra_HardwareMonitor\P_HardwareMonitor_PC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="C_Colore_HUB_PC.vb" />
+    <Compile Include="Finestra_Impostazioni_HUB\C_Impostazioni_LED_HUB.vb" />
     <Compile Include="F_Audio.Designer.vb">
       <DependentUpon>F_Audio.vb</DependentUpon>
     </Compile>
@@ -201,6 +254,12 @@
     <Compile Include="F_HubPC_Home_v2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="F_HubPC_HUB.Designer.vb">
+      <DependentUpon>F_HubPC_HUB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="F_HubPC_HUB.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="F_HubPC_Ventole.Designer.vb">
       <DependentUpon>F_HubPC_Ventole.vb</DependentUpon>
     </Compile>
@@ -225,28 +284,22 @@
     <Compile Include="F_Home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_HardwareMonitor.Designer.vb">
-      <DependentUpon>F_HardwareMonitor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="F_HardwareMonitor.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="F_HubPC_Home.Designer.vb">
       <DependentUpon>F_HubPC_Home.vb</DependentUpon>
     </Compile>
     <Compile Include="F_HubPC_Home.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Impostazioni-HUB_Fan.Designer.vb">
-      <DependentUpon>F_Impostazioni-HUB_Fan.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB.Designer.vb">
+      <DependentUpon>P_Impostazioni-HUB.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_Impostazioni-HUB_Fan.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Impostazioni-HUB_Ventole.Designer.vb">
-      <DependentUpon>F_Impostazioni-HUB_Ventole.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB_Ventole.Designer.vb">
+      <DependentUpon>P_Impostazioni-HUB_Ventole.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_Impostazioni-HUB_Ventole.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB_Ventole.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_Impostazioni.Designer.vb">
@@ -255,34 +308,34 @@
     <Compile Include="F_Impostazioni.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_MonitorHardware_HUB.Designer.vb">
-      <DependentUpon>F_MonitorHardware_HUB.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_CassaAudio.Designer.vb">
+      <DependentUpon>P_Impostazioni_HUB_Altro_CassaAudio.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_MonitorHardware_HUB.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_CassaAudio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_MonitorHardware_PC.Designer.vb">
-      <DependentUpon>F_MonitorHardware_PC.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_Dissipatore.Designer.vb">
+      <DependentUpon>P_Impostazioni_HUB_Altro_Dissipatore.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_MonitorHardware_PC.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_Dissipatore.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Setting-HUB_Fan.Designer.vb">
-      <DependentUpon>F_Setting-HUB_Fan.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_GPU_StripLED.Designer.vb">
+      <DependentUpon>P_Impostazioni_HUB_GPU_StripLED.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_Setting-HUB_Fan.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_GPU_StripLED.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Setting_RGB_Animation_Fan.Designer.vb">
-      <DependentUpon>F_Setting_RGB_Animation_Fan.vb</DependentUpon>
+    <Compile Include="Finestra_Impostazioni_HUB\F_Setting-HUB.Designer.vb">
+      <DependentUpon>F_Setting-HUB.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_Setting_RGB_Animation_Fan.vb">
+    <Compile Include="Finestra_Impostazioni_HUB\F_Setting-HUB.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Setting_RGB_Animation_Fan_Temp.Designer.vb">
-      <DependentUpon>F_Setting_RGB_Animation_Fan_Temp.vb</DependentUpon>
+    <Compile Include="F_Setting_RGB_Animation_HUB.Designer.vb">
+      <DependentUpon>F_Setting_RGB_Animation_HUB.vb</DependentUpon>
     </Compile>
-    <Compile Include="F_Setting_RGB_Animation_Fan_Temp.vb">
+    <Compile Include="F_Setting_RGB_Animation_HUB.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -308,8 +361,23 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="Supporto.Designer.vb">
+      <DependentUpon>Supporto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Supporto.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Finestra_HardwareMonitor\F_HardwareMonitor.resx">
+      <DependentUpon>F_HardwareMonitor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finestra_HardwareMonitor\P_HardwareMonitor_Arduino.resx">
+      <DependentUpon>P_HardwareMonitor_Arduino.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finestra_HardwareMonitor\P_HardwareMonitor_PC.resx">
+      <DependentUpon>P_HardwareMonitor_PC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_Audio.resx">
       <DependentUpon>F_Audio.vb</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +405,9 @@
     <EmbeddedResource Include="F_HubPC_Home_v2.resx">
       <DependentUpon>F_HubPC_Home_v2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_HubPC_HUB.resx">
+      <DependentUpon>F_HubPC_HUB.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_HubPC_Ventole.resx">
       <DependentUpon>F_HubPC_Ventole.vb</DependentUpon>
     </EmbeddedResource>
@@ -349,32 +420,29 @@
     <EmbeddedResource Include="F_Home.resx">
       <DependentUpon>F_Home.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_HardwareMonitor.resx">
-      <DependentUpon>F_HardwareMonitor.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB.resx">
+      <DependentUpon>P_Impostazioni-HUB.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Impostazioni-HUB_Fan.resx">
-      <DependentUpon>F_Impostazioni-HUB_Fan.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="F_Impostazioni-HUB_Ventole.resx">
-      <DependentUpon>F_Impostazioni-HUB_Ventole.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\P_Impostazioni-HUB_Ventole.resx">
+      <DependentUpon>P_Impostazioni-HUB_Ventole.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Impostazioni.resx">
       <DependentUpon>F_Impostazioni.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_MonitorHardware_HUB.resx">
-      <DependentUpon>F_MonitorHardware_HUB.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_CassaAudio.resx">
+      <DependentUpon>P_Impostazioni_HUB_Altro_CassaAudio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_MonitorHardware_PC.resx">
-      <DependentUpon>F_MonitorHardware_PC.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_Altro_Dissipatore.resx">
+      <DependentUpon>P_Impostazioni_HUB_Altro_Dissipatore.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Setting-HUB_Fan.resx">
-      <DependentUpon>F_Setting-HUB_Fan.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\P_Impostazioni_HUB_GPU_StripLED.resx">
+      <DependentUpon>P_Impostazioni_HUB_GPU_StripLED.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Setting_RGB_Animation_Fan.resx">
-      <DependentUpon>F_Setting_RGB_Animation_Fan.vb</DependentUpon>
+    <EmbeddedResource Include="Finestra_Impostazioni_HUB\F_Setting-HUB.resx">
+      <DependentUpon>F_Setting-HUB.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Setting_RGB_Animation_Fan_Temp.resx">
-      <DependentUpon>F_Setting_RGB_Animation_Fan_Temp.vb</DependentUpon>
+    <EmbeddedResource Include="F_Setting_RGB_Animation_HUB.resx">
+      <DependentUpon>F_Setting_RGB_Animation_HUB.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -385,8 +453,12 @@
     <EmbeddedResource Include="F_SerialCommand_Fan.resx">
       <DependentUpon>F_SerialCommand_Fan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Supporto.resx">
+      <DependentUpon>Supporto.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.manifest" />
     <None Include="ArduCenter_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -409,9 +481,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icona.ico" />
+    <Content Include="Lingua\ENG\F_HardwareMonitor.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lingua\ENG\F_Impostazioni.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lingua\ITA\F_HardwareMonitor.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Lingua\ITA\F_Impostazioni.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Icone_ProtezioneTemperatura_1.0.png" />
+    <None Include="Resources\GUI_Impostazioni.png" />
+    <None Include="Resources\GUI_HardwareMonitor_PC_1.1.1.png" />
+    <None Include="Resources\GUI_HardwareMonitor_PC_1.1.png" />
+    <None Include="Resources\photo_2023-11-24_17-00-32.jpg" />
+    <None Include="Resources\Icona_Sund_RGB_Old.png" />
+    <None Include="Resources\Icona_Sund_Nero.png" />
+    <None Include="Resources\Icona_DeepCool_RGB_v1.3_RainBowOld.png" />
+    <None Include="Resources\F_Impostazioni-HUB_Altro.png" />
+    <None Include="Resources\Icona_StriscaLED _RGB_Colore_RainBow_Old.png" />
+    <None Include="Resources\Icona_SchedaVideo_Effeto RainBow_Old.png" />
+    <None Include="Resources\F_Impostazioni_HUB_GPU_StripLED.png" />
+    <None Include="Resources\GUI_Fan-Menù_5_v1.0.png" />
     <None Include="Resources\Btn_Avanti_50x50.png" />
     <None Include="Resources\Btn_Indietro_50x50.png" />
-    <None Include="Resources\Btn_Indietro_.png" />
     <None Include="Resources\BtnLED_halloween_ON.png" />
     <None Include="Resources\BtnLED_halloween_off.png" />
     <None Include="Resources\Icona_Fan_Dissipatore_RGB_Transizione_v1.3.png" />
@@ -451,16 +547,9 @@
     <None Include="Resources\Icona_HUB 1.1.png" />
     <None Include="Resources\Icona_HUB v1.0.png" />
     <None Include="Resources\GUI_F_HubPC_Home_0.1.2.png" />
-    <None Include="Resources\GUI_F_HubPC_Home_0.1.1.png" />
     <None Include="Resources\GUI_F_Hub_PC_0.1.1.png" />
-    <None Include="Resources\GUI_F_HubPC_Home_0.1.0.png" />
-    <None Include="Resources\GUI_F_Hub_PC_0.1.0.png" />
     <None Include="Resources\IconaCasaAudio_RGB_Colore_HSV-RGB.png" />
     <None Include="Resources\GUI_Fan-Menù_4_v1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_Audio_OFF2.png" />
-    <None Include="Resources\BtnFanPage_Fan_Audio_ON.png" />
-    <None Include="Resources\BtnFanPage_Fan_Audio_OFF1.png" />
-    <None Include="Resources\BtnFanPage_Fan_Audio_OFF.png" />
     <None Include="Resources\opt.png" />
     <None Include="Resources\Icona_FanPO_1.3 .png" />
     <None Include="Resources\Icona_DeepCool_HSV_RGB_v1.3.png" />
@@ -471,15 +560,11 @@
     <None Include="Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.1.png" />
     <None Include="Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.2.png" />
     <None Include="Resources\GUI_Fan-Menù_2_v2.01.png" />
-    <None Include="Resources\GUI_Fan-Menù_2_v2.0.png" />
     <None Include="Resources\Icona_FanPO_1.2_Click .png" />
-    <None Include="Resources\BtnFanPage_CPU_OP_ON.png" />
     <None Include="Resources\Icona_DeepCool_HSV_RGB_1.2.png" />
     <None Include="Resources\Icona_DeepCool_HSV_RGB_1.1.png" />
     <None Include="Resources\Icona_DeepCool_HSV_RGB.png" />
     <None Include="Resources\Icona_FanPO_1.2 .png" />
-    <None Include="Resources\GUI_Fan-Menù_3_1.1.png" />
-    <None Include="Resources\GUI_Fan-Menù_3_1.0.png" />
     <None Include="Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.1.png" />
     <None Include="Resources\Icona_Strisca _RGB_Colore_HSV-RGB_2.0.png" />
     <None Include="Resources\Icona_SchedaVideo_RGB_Colore_HSV-RGB_2.11.png" />
@@ -491,27 +576,8 @@
     <None Include="Resources\IconaFan_RGB_Colore_Transizione.png" />
     <None Include="Resources\IconaFan_RGB_Colore_Discontinuo.png" />
     <None Include="Resources\ImgArduCenter2.0.png" />
-    <None Include="Resources\BtnFanPage_GPU_Strip_ON.png" />
-    <None Include="Resources\BtnFanPage_GPU_Strip.png" />
-    <None Include="Resources\Icona_Strisca LED Verde.png" />
-    <None Include="Resources\Icona_Strisca LED Rosso.png" />
     <None Include="Resources\Icona_Strisca LED Nero.png" />
-    <None Include="Resources\Icona_Strisca LED Giallo.png" />
-    <None Include="Resources\Icona_Strisca LED Fucsia.png" />
-    <None Include="Resources\Icona_Strisca LED Blu.png" />
-    <None Include="Resources\Icona_Strisca LED Bianco.png" />
-    <None Include="Resources\Icona_Strisca LED Azzurro.png" />
-    <None Include="Resources\Icona_Strisca LED Arancione.png" />
-    <None Include="Resources\Icona_SchedaVideo_Verde.png" />
-    <None Include="Resources\Icona_SchedaVideo_Rosso.png" />
     <None Include="Resources\Icona_SchedaVideo_Nero.png" />
-    <None Include="Resources\Icona_SchedaVideo_Giallo.png" />
-    <None Include="Resources\Icona_SchedaVideo_Fucsia.png" />
-    <None Include="Resources\Icona_SchedaVideo_Blu.png" />
-    <None Include="Resources\Icona_SchedaVideo_Bianco.png" />
-    <None Include="Resources\Icona_SchedaVideo_Azzurro.png" />
-    <None Include="Resources\Icona_SchedaVideo_Arancione.png" />
-    <None Include="Resources\GUI_Fan-Menù_2_1.0.png" />
     <None Include="Resources\GUI_Fan-Menù.png" />
     <None Include="Resources\GUI_Fan_2.3.png" />
     <None Include="Resources\Icona_ROM.png" />
@@ -519,65 +585,31 @@
     <None Include="Resources\F_ImpostazioniFan_1.3.png" />
     <None Include="Resources\GUI_Connessione2.0.5.png" />
     <None Include="Resources\F_Impostazioni-HUB_Ventole_1.0.png" />
-    <None Include="Resources\F_Impostazioni-HUB_Ventole1.png" />
-    <None Include="Resources\F_Impostazioni-HUB_Ventole.png" />
     <None Include="Resources\IconaHubStruments.png" />
     <None Include="Resources\Icone_ProtezioneDispositivo_2.0.png" />
     <None Include="Resources\Icone_ProtezioneLED_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_Task_ON_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_Task_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_Impostazioni_ON_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_Impostazioni_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_CMD_ON_1.0.png" />
-    <None Include="Resources\BtnFanPage_Fan_CMD_1.0.png" />
     <None Include="Resources\Icona_Reset_1.0.png" />
-    <None Include="Resources\F_ImpostazioniFan_1.2.png" />
-    <None Include="Resources\F_Impostazioni_HubFan_1.01.png" />
-    <None Include="Resources\F_Impostazioni_HubFan_1.0.png" />
     <None Include="Resources\F_ImpostazioniFan_1.11.png" />
     <None Include="Resources\F_ImpostazioniFan_1.1.png" />
-    <None Include="Resources\F_ImpostazioniFan_1.0.png" />
     <None Include="Resources\Icona_Riavvio2.png" />
-    <None Include="Resources\GUI_Connessione2.0.4.png" />
-    <None Include="Resources\GUI_Connessione2.0.3.png" />
     <None Include="Resources\Icona_Riavvio1.png" />
     <None Include="Resources\Icona_Riavvio.png" />
-    <None Include="Resources\Riavvio1.png" />
-    <None Include="Resources\Riavvio.png" />
     <None Include="Resources\Icona_Cartella_1.1_ON.png" />
     <None Include="Resources\Icona_Cartella_1.1.png" />
-    <None Include="Resources\Icona_Cartella_1.0_ON.png" />
-    <None Include="Resources\Icona_Cartella_1.0.png" />
     <None Include="Resources\Icona_Parametri_FanON.png" />
     <None Include="Resources\Incona_Comandi_FanON.png" />
     <None Include="Resources\Incona_Comandi_Fan.png" />
     <None Include="Resources\Icona_Parametri_Fan.png" />
     <None Include="Resources\F_Home_2.3.png" />
-    <None Include="Resources\F_Home_2.2.png" />
-    <None Include="Resources\GUI_Connessione2.0.21.png" />
-    <None Include="Resources\GUI_Connessione2.0.2.png" />
     <None Include="Resources\PanSetHardware_1.1.png" />
-    <None Include="Resources\F_Home_2.1.png" />
-    <None Include="Resources\GUI_Fan_2.2.png" />
     <None Include="Resources\IconaFan_RGB_Colore_RainBow.png" />
-    <None Include="Resources\GUI_Connessione2.0.1.png" />
     <None Include="Resources\GUI_CMD_SerialFan1.png" />
-    <None Include="Resources\GUI_CMD_SerialFan.png" />
     <None Include="Resources\PanSetHardware.png" />
     <None Include="Resources\IconaHardware_RAM.png" />
     <None Include="Resources\IconaHardware_AMD_CPU.png" />
     <None Include="Resources\IconaHardware_AMD_GPU.png" />
     <None Include="Resources\GUI_HardwareMonitor_PC.png" />
-    <None Include="Resources\F_HardwareMonitor_PCProva.png" />
     <None Include="Resources\F_HardwareMonitor.png" />
-    <None Include="Resources\GUI_HardwareMonitorProva1.png" />
-    <None Include="Resources\GUI_HardwareMonitorProva.png" />
-    <None Include="Resources\BtnFanPage_Fan_Task_ON.png" />
-    <None Include="Resources\BtnFanPage_Fan_Impostazioni_ON.png" />
-    <None Include="Resources\BtnFanPage_Fan_CMD_ON.png" />
-    <None Include="Resources\BtnFanPage_Fan_CMD.png" />
-    <None Include="Resources\BtnFanPage_Fan_Impostazioni.png" />
-    <None Include="Resources\BtnFanPage_Fan_Task.png" />
     <None Include="Resources\BtnLED_Transizione.png" />
     <None Include="Resources\BtnLED_Discontinuo.png" />
     <None Include="Resources\BtnLED_Musica.png" />
@@ -594,20 +626,7 @@
     <None Include="Resources\BtnVelocitàMin.png" />
     <None Include="Resources\BtnLuminositàMax.png" />
     <None Include="Resources\BtnLuminositàMin.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Arancio.png" />
-    <None Include="Resources\BtnFanPageNull.png" />
-    <None Include="Resources\BtnFanPage_Fan.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Azzurro.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Bianco.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Blu.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Fucsia.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Giallo.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Rosso.png" />
-    <None Include="Resources\IconaFan_RGB_Colore_Verde.png" />
     <None Include="Resources\IconaFan_RGB_Colore_Nero.png" />
-    <None Include="Resources\Funzioni_Dispositivo_Audio 1.0.png" />
-    <None Include="Resources\Funzioni_Dispositivo_Fan_1.0.png" />
-    <None Include="Resources\GUI_Fan_2.png" />
     <None Include="Resources\Icona_RGB_RainbowOFF.png" />
     <None Include="Resources\IconaRGB_TempON.png" />
     <None Include="Resources\RGBFan.png" />
@@ -619,34 +638,18 @@
     <None Include="Resources\IconaSpeedFanMax.png" />
     <None Include="Resources\IconaSpeedFanMin.png" />
     <None Include="Resources\IconaFan_RGB _Nero.png" />
-    <None Include="Resources\GUI_FanProva1.png" />
-    <None Include="Resources\F_Fan_Controllo VentoleProva.png" />
-    <None Include="Resources\GUI_FanProva.png" />
     <None Include="Resources\GUI_Avviso1.png" />
     <None Include="Resources\Funzioni_Dispositivo_Null.png" />
-    <None Include="Resources\Funzioni_Dispositivo.png" />
-    <None Include="Resources\GUI_Avviso.png" />
     <None Include="Resources\btn SwichON.png" />
     <None Include="Resources\BtnDisconnettiConnetti.png" />
     <None Include="Resources\BtnConnettiDisconnetti 2.0.png" />
-    <None Include="Resources\GUI_Connessione2.0.png" />
     <None Include="Resources\btn Swich.png" />
-    <None Include="Resources\GUI_Connessione2.png" />
     <None Include="Resources\BtnGUI_HomeProject.png" />
-    <None Include="Resources\BtnGUI_Fan.png" />
     <None Include="Resources\BtnGUI_HomeAudio.png" />
     <None Include="Resources\BtnGUI_Home.png" />
     <None Include="Resources\BtnGUI_HomeImpostazioni.png" />
-    <None Include="Resources\F_Home_ConnessioneProva1.png" />
     <None Include="Resources\BtnNascondi2.0.png" />
     <None Include="Resources\BtnChiudi2.01.png" />
-    <None Include="Resources\BtnChiudi2.0.png" />
-    <None Include="Resources\BtnChiudi.png" />
-    <None Include="Resources\F_Home_2.0.png" />
-    <None Include="Resources\F_Home_ConnessioneProva.png" />
-    <None Include="Resources\F_Home_22.png" />
-    <None Include="Resources\F_Home_21.png" />
-    <None Include="Resources\F_Home_2.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -660,5 +663,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

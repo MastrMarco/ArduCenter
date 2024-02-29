@@ -41,6 +41,7 @@ Partial Class F_Home
         Me.LaInfoSoft = New System.Windows.Forms.Label()
         Me.La_Caricamentro = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Info_ArduCenter = New System.Windows.Forms.Button()
         Me.PanBarraTop.SuspendLayout()
         CType(Me.BtnChiudi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnNascondi, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +58,8 @@ Partial Class F_Home
         '
         Me.PanBarraTop.BackColor = System.Drawing.Color.Transparent
         Me.PanBarraTop.Controls.Add(Me.BtnChiudi)
+        Me.PanBarraTop.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PanBarraTop.ForeColor = System.Drawing.Color.White
         Me.PanBarraTop.Location = New System.Drawing.Point(0, 0)
         Me.PanBarraTop.Margin = New System.Windows.Forms.Padding(0)
         Me.PanBarraTop.Name = "PanBarraTop"
@@ -239,8 +242,26 @@ Partial Class F_Home
         '
         'ToolTip1
         '
+        Me.ToolTip1.AutoPopDelay = 5000
         Me.ToolTip1.BackColor = System.Drawing.Color.White
         Me.ToolTip1.ForeColor = System.Drawing.Color.Black
+        Me.ToolTip1.InitialDelay = 500
+        Me.ToolTip1.ReshowDelay = 100
+        '
+        'Info_ArduCenter
+        '
+        Me.Info_ArduCenter.BackColor = System.Drawing.Color.Transparent
+        Me.Info_ArduCenter.Cursor = System.Windows.Forms.Cursors.Help
+        Me.Info_ArduCenter.FlatAppearance.BorderSize = 0
+        Me.Info_ArduCenter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Info_ArduCenter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.Info_ArduCenter.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Info_ArduCenter.Location = New System.Drawing.Point(12, 11)
+        Me.Info_ArduCenter.Margin = New System.Windows.Forms.Padding(0)
+        Me.Info_ArduCenter.Name = "Info_ArduCenter"
+        Me.Info_ArduCenter.Size = New System.Drawing.Size(63, 31)
+        Me.Info_ArduCenter.TabIndex = 7
+        Me.Info_ArduCenter.UseVisualStyleBackColor = False
         '
         'F_Home
         '
@@ -249,6 +270,7 @@ Partial Class F_Home
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImage = Global.ArduCenter.My.Resources.Resources.F_Home_2_3
         Me.ClientSize = New System.Drawing.Size(1020, 550)
+        Me.Controls.Add(Me.Info_ArduCenter)
         Me.Controls.Add(Me.LaInfoSoft)
         Me.Controls.Add(Me.InForm)
         Me.Controls.Add(Me.InV)
@@ -302,5 +324,6 @@ Partial Class F_Home
     Public WithEvents InForm As PictureBox
     Public WithEvents PanForm As Panel
     Friend WithEvents La_Caricamentro As Label
-    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Info_ArduCenter As Button
+    Public WithEvents ToolTip1 As ToolTip
 End Class

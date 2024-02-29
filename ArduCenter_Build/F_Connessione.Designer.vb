@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class F_Connessione
     Inherits System.Windows.Forms.Form
 
     'Form esegue l'override del metodo Dispose per pulire l'elenco dei componenti.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class F_Connessione
     'NOTA: la procedura che segue è richiesta da Progettazione Windows Form
     'Può essere modificata in Progettazione Windows Form.  
     'Non modificarla mediante l'editor del codice.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(F_Connessione))
         Me.LabelSD = New System.Windows.Forms.Label()
@@ -28,12 +28,10 @@ Partial Class F_Connessione
         Me.LabelCollegamento = New System.Windows.Forms.Label()
         Me.LaStato = New System.Windows.Forms.Label()
         Me.LabelDatiSeriali = New System.Windows.Forms.Label()
-        Me.LabelTX_RX = New System.Windows.Forms.Label()
-        Me.LabelSoftArduino = New System.Windows.Forms.Label()
         Me.LabelSoftArduCenter = New System.Windows.Forms.Label()
         Me.LaFirmware = New System.Windows.Forms.Label()
         Me.LabelFirmware = New System.Windows.Forms.Label()
-        Me.LaBoot = New System.Windows.Forms.Label()
+        Me.LaVerFirmware = New System.Windows.Forms.Label()
         Me.LaSoc = New System.Windows.Forms.Label()
         Me.LabelSOC = New System.Windows.Forms.Label()
         Me.LaNomePCB = New System.Windows.Forms.Label()
@@ -61,7 +59,8 @@ Partial Class F_Connessione
         Me.PictureBoxER_ROM = New System.Windows.Forms.PictureBox()
         Me.PictureBoxER_LED_Power = New System.Windows.Forms.PictureBox()
         Me.PictureBoxER_Power = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBoxER_Temp = New System.Windows.Forms.PictureBox()
+        Me.LaSerialData = New System.Windows.Forms.Label()
         CType(Me.BtnConnettiDisconnetti, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnAutoConnessione, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnAuto_Form, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +71,7 @@ Partial Class F_Connessione
         CType(Me.PictureBoxER_ROM, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxER_LED_Power, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxER_Power, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxER_Temp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelSD
@@ -81,7 +80,7 @@ Partial Class F_Connessione
         Me.LabelSD.BackColor = System.Drawing.Color.Transparent
         Me.LabelSD.Font = New System.Drawing.Font("Verdana", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSD.ForeColor = System.Drawing.Color.White
-        Me.LabelSD.Location = New System.Drawing.Point(324, 26)
+        Me.LabelSD.Location = New System.Drawing.Point(322, 26)
         Me.LabelSD.Name = "LabelSD"
         Me.LabelSD.Size = New System.Drawing.Size(273, 25)
         Me.LabelSD.TabIndex = 0
@@ -130,60 +129,36 @@ Partial Class F_Connessione
         Me.LabelDatiSeriali.BackColor = System.Drawing.Color.Transparent
         Me.LabelDatiSeriali.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelDatiSeriali.ForeColor = System.Drawing.Color.White
-        Me.LabelDatiSeriali.Location = New System.Drawing.Point(293, 283)
+        Me.LabelDatiSeriali.Location = New System.Drawing.Point(291, 283)
         Me.LabelDatiSeriali.Name = "LabelDatiSeriali"
         Me.LabelDatiSeriali.Size = New System.Drawing.Size(335, 23)
         Me.LabelDatiSeriali.TabIndex = 4
         Me.LabelDatiSeriali.Text = "Dati RX in Arrivo dalla Seriale"
         Me.LabelDatiSeriali.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LabelTX_RX
-        '
-        Me.LabelTX_RX.BackColor = System.Drawing.Color.Transparent
-        Me.LabelTX_RX.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTX_RX.ForeColor = System.Drawing.Color.DarkOrange
-        Me.LabelTX_RX.Location = New System.Drawing.Point(307, 311)
-        Me.LabelTX_RX.Name = "LabelTX_RX"
-        Me.LabelTX_RX.Size = New System.Drawing.Size(321, 43)
-        Me.LabelTX_RX.TabIndex = 5
-        Me.LabelTX_RX.Text = "Nessun Dato Ricevuto"
-        Me.LabelTX_RX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LabelSoftArduino
-        '
-        Me.LabelSoftArduino.AutoSize = True
-        Me.LabelSoftArduino.BackColor = System.Drawing.Color.Transparent
-        Me.LabelSoftArduino.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSoftArduino.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.LabelSoftArduino.Location = New System.Drawing.Point(317, 388)
-        Me.LabelSoftArduino.Name = "LabelSoftArduino"
-        Me.LabelSoftArduino.Size = New System.Drawing.Size(288, 16)
-        Me.LabelSoftArduino.TabIndex = 6
-        Me.LabelSoftArduino.Text = "Versione Firmware di  Arduino :   V ----"
-        '
         'LabelSoftArduCenter
         '
-        Me.LabelSoftArduCenter.AutoSize = True
         Me.LabelSoftArduCenter.BackColor = System.Drawing.Color.Transparent
         Me.LabelSoftArduCenter.Font = New System.Drawing.Font("Verdana", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSoftArduCenter.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.LabelSoftArduCenter.Location = New System.Drawing.Point(304, 406)
+        Me.LabelSoftArduCenter.Location = New System.Drawing.Point(304, 387)
         Me.LabelSoftArduCenter.Name = "LabelSoftArduCenter"
-        Me.LabelSoftArduCenter.Size = New System.Drawing.Size(312, 16)
+        Me.LabelSoftArduCenter.Size = New System.Drawing.Size(312, 36)
         Me.LabelSoftArduCenter.TabIndex = 7
-        Me.LabelSoftArduCenter.Text = "Versione che supporta ArduCenter : V ----"
+        Me.LabelSoftArduCenter.Text = "Versione Firmware che supporta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ArduCenter : V ----"
+        Me.LabelSoftArduCenter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LaFirmware
         '
-        Me.LaFirmware.AutoSize = True
         Me.LaFirmware.BackColor = System.Drawing.Color.Transparent
         Me.LaFirmware.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaFirmware.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LaFirmware.Location = New System.Drawing.Point(139, 377)
+        Me.LaFirmware.Location = New System.Drawing.Point(119, 382)
         Me.LaFirmware.Name = "LaFirmware"
-        Me.LaFirmware.Size = New System.Drawing.Size(43, 18)
+        Me.LaFirmware.Size = New System.Drawing.Size(92, 18)
         Me.LaFirmware.TabIndex = 8
         Me.LaFirmware.Text = "-----"
+        Me.LaFirmware.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelFirmware
         '
@@ -191,36 +166,35 @@ Partial Class F_Connessione
         Me.LabelFirmware.BackColor = System.Drawing.Color.Transparent
         Me.LabelFirmware.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelFirmware.ForeColor = System.Drawing.Color.White
-        Me.LabelFirmware.Location = New System.Drawing.Point(119, 356)
+        Me.LabelFirmware.Location = New System.Drawing.Point(119, 333)
         Me.LabelFirmware.Name = "LabelFirmware"
         Me.LabelFirmware.Size = New System.Drawing.Size(92, 18)
         Me.LabelFirmware.TabIndex = 9
         Me.LabelFirmware.Text = "Firmware"
         '
-        'LaBoot
+        'LaVerFirmware
         '
-        Me.LaBoot.AutoSize = True
-        Me.LaBoot.BackColor = System.Drawing.Color.Transparent
-        Me.LaBoot.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LaBoot.ForeColor = System.Drawing.Color.DarkCyan
-        Me.LaBoot.Location = New System.Drawing.Point(83, 330)
-        Me.LaBoot.Name = "LaBoot"
-        Me.LaBoot.Size = New System.Drawing.Size(123, 18)
-        Me.LaBoot.TabIndex = 10
-        Me.LaBoot.Text = "       ----------"
-        Me.LaBoot.Visible = False
+        Me.LaVerFirmware.BackColor = System.Drawing.Color.Transparent
+        Me.LaVerFirmware.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LaVerFirmware.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.LaVerFirmware.Location = New System.Drawing.Point(121, 359)
+        Me.LaVerFirmware.Name = "LaVerFirmware"
+        Me.LaVerFirmware.Size = New System.Drawing.Size(89, 18)
+        Me.LaVerFirmware.TabIndex = 10
+        Me.LaVerFirmware.Text = "----"
+        Me.LaVerFirmware.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LaSoc
         '
-        Me.LaSoc.AutoSize = True
         Me.LaSoc.BackColor = System.Drawing.Color.Transparent
         Me.LaSoc.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaSoc.ForeColor = System.Drawing.Color.DarkCyan
-        Me.LaSoc.Location = New System.Drawing.Point(98, 308)
+        Me.LaSoc.Location = New System.Drawing.Point(105, 300)
         Me.LaSoc.Name = "LaSoc"
-        Me.LaSoc.Size = New System.Drawing.Size(108, 18)
+        Me.LaSoc.Size = New System.Drawing.Size(120, 18)
         Me.LaSoc.TabIndex = 11
-        Me.LaSoc.Text = "    ----------"
+        Me.LaSoc.Text = "----------"
+        Me.LaSoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelSOC
         '
@@ -228,7 +202,7 @@ Partial Class F_Connessione
         Me.LabelSOC.BackColor = System.Drawing.Color.Transparent
         Me.LabelSOC.Font = New System.Drawing.Font("Verdana", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelSOC.ForeColor = System.Drawing.Color.White
-        Me.LabelSOC.Location = New System.Drawing.Point(138, 284)
+        Me.LabelSOC.Location = New System.Drawing.Point(143, 276)
         Me.LabelSOC.Name = "LabelSOC"
         Me.LabelSOC.Size = New System.Drawing.Size(45, 20)
         Me.LabelSOC.TabIndex = 12
@@ -236,15 +210,15 @@ Partial Class F_Connessione
         '
         'LaNomePCB
         '
-        Me.LaNomePCB.AutoSize = True
         Me.LaNomePCB.BackColor = System.Drawing.Color.Transparent
         Me.LaNomePCB.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LaNomePCB.ForeColor = System.Drawing.Color.DarkCyan
-        Me.LaNomePCB.Location = New System.Drawing.Point(101, 247)
+        Me.LaNomePCB.Location = New System.Drawing.Point(105, 247)
         Me.LaNomePCB.Name = "LaNomePCB"
-        Me.LaNomePCB.Size = New System.Drawing.Size(103, 18)
+        Me.LaNomePCB.Size = New System.Drawing.Size(120, 18)
         Me.LaNomePCB.TabIndex = 13
-        Me.LaNomePCB.Text = "   ----------"
+        Me.LaNomePCB.Text = "----------"
+        Me.LaNomePCB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LabelNome_PCB
         '
@@ -252,7 +226,7 @@ Partial Class F_Connessione
         Me.LabelNome_PCB.BackColor = System.Drawing.Color.Transparent
         Me.LabelNome_PCB.Font = New System.Drawing.Font("Verdana", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelNome_PCB.ForeColor = System.Drawing.Color.White
-        Me.LabelNome_PCB.Location = New System.Drawing.Point(86, 224)
+        Me.LabelNome_PCB.Location = New System.Drawing.Point(87, 224)
         Me.LabelNome_PCB.Name = "LabelNome_PCB"
         Me.LabelNome_PCB.Size = New System.Drawing.Size(156, 20)
         Me.LabelNome_PCB.TabIndex = 14
@@ -288,7 +262,7 @@ Partial Class F_Connessione
         Me.Label18.BackColor = System.Drawing.Color.Transparent
         Me.Label18.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(28, 23)
+        Me.Label18.Location = New System.Drawing.Point(26, 23)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(209, 23)
         Me.Label18.TabIndex = 17
@@ -312,7 +286,7 @@ Partial Class F_Connessione
         Me.LabelConnessioneAuto.BackColor = System.Drawing.Color.Transparent
         Me.LabelConnessioneAuto.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelConnessioneAuto.ForeColor = System.Drawing.Color.DarkCyan
-        Me.LabelConnessioneAuto.Location = New System.Drawing.Point(690, 45)
+        Me.LabelConnessioneAuto.Location = New System.Drawing.Point(690, 46)
         Me.LabelConnessioneAuto.Name = "LabelConnessioneAuto"
         Me.LabelConnessioneAuto.Size = New System.Drawing.Size(81, 18)
         Me.LabelConnessioneAuto.TabIndex = 21
@@ -324,7 +298,7 @@ Partial Class F_Connessione
         Me.Label21.BackColor = System.Drawing.Color.Transparent
         Me.Label21.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(691, 196)
+        Me.Label21.Location = New System.Drawing.Point(692, 196)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(181, 18)
         Me.Label21.TabIndex = 22
@@ -360,7 +334,7 @@ Partial Class F_Connessione
         Me.BtnAutoConnessione.BackColor = System.Drawing.Color.Transparent
         Me.BtnAutoConnessione.BackgroundImage = Global.ArduCenter.My.Resources.Resources.btn_Swich
         Me.BtnAutoConnessione.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAutoConnessione.Location = New System.Drawing.Point(791, 44)
+        Me.BtnAutoConnessione.Location = New System.Drawing.Point(791, 43)
         Me.BtnAutoConnessione.Name = "BtnAutoConnessione"
         Me.BtnAutoConnessione.Size = New System.Drawing.Size(70, 25)
         Me.BtnAutoConnessione.TabIndex = 25
@@ -380,7 +354,7 @@ Partial Class F_Connessione
         Me.BtnAuto_Form.BackColor = System.Drawing.Color.Transparent
         Me.BtnAuto_Form.BackgroundImage = Global.ArduCenter.My.Resources.Resources.btn_Swich
         Me.BtnAuto_Form.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnAuto_Form.Location = New System.Drawing.Point(791, 133)
+        Me.BtnAuto_Form.Location = New System.Drawing.Point(791, 134)
         Me.BtnAuto_Form.Name = "BtnAuto_Form"
         Me.BtnAuto_Form.Size = New System.Drawing.Size(70, 25)
         Me.BtnAuto_Form.TabIndex = 29
@@ -467,7 +441,7 @@ Partial Class F_Connessione
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Verdana", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(749, 383)
+        Me.Label2.Location = New System.Drawing.Point(749, 384)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(136, 36)
         Me.Label2.TabIndex = 37
@@ -496,7 +470,7 @@ Partial Class F_Connessione
         Me.LaErrorDispositivo.Name = "LaErrorDispositivo"
         Me.LaErrorDispositivo.Size = New System.Drawing.Size(230, 23)
         Me.LaErrorDispositivo.TabIndex = 39
-        Me.LaErrorDispositivo.Text = "Errori HUB: -------"
+        Me.LaErrorDispositivo.Text = "-------"
         Me.LaErrorDispositivo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBoxER_ROM
@@ -535,16 +509,28 @@ Partial Class F_Connessione
         Me.PictureBoxER_Power.TabIndex = 42
         Me.PictureBoxER_Power.TabStop = False
         '
-        'PictureBox4
+        'PictureBoxER_Temp
         '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox4.Location = New System.Drawing.Point(194, 101)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox4.TabIndex = 43
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
+        Me.PictureBoxER_Temp.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxER_Temp.BackgroundImage = Global.ArduCenter.My.Resources.Resources.Icone_ProtezioneTemperatura_1_0
+        Me.PictureBoxER_Temp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBoxER_Temp.Location = New System.Drawing.Point(194, 101)
+        Me.PictureBoxER_Temp.Name = "PictureBoxER_Temp"
+        Me.PictureBoxER_Temp.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBoxER_Temp.TabIndex = 43
+        Me.PictureBoxER_Temp.TabStop = False
+        '
+        'LaSerialData
+        '
+        Me.LaSerialData.BackColor = System.Drawing.Color.Transparent
+        Me.LaSerialData.Font = New System.Drawing.Font("Verdana", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LaSerialData.ForeColor = System.Drawing.Color.DarkOrange
+        Me.LaSerialData.Location = New System.Drawing.Point(295, 317)
+        Me.LaSerialData.Name = "LaSerialData"
+        Me.LaSerialData.Size = New System.Drawing.Size(329, 36)
+        Me.LaSerialData.TabIndex = 45
+        Me.LaSerialData.Text = "Nessun Dato Ricevuto"
+        Me.LaSerialData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'F_Connessione
         '
@@ -553,8 +539,9 @@ Partial Class F_Connessione
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(7, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.BackgroundImage = Global.ArduCenter.My.Resources.Resources.GUI_Connessione2_0_5
         Me.ClientSize = New System.Drawing.Size(900, 450)
+        Me.Controls.Add(Me.LaSerialData)
         Me.Controls.Add(Me.LaErrorDispositivo)
-        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureBoxER_Temp)
         Me.Controls.Add(Me.PictureBoxER_Power)
         Me.Controls.Add(Me.PictureBoxER_LED_Power)
         Me.Controls.Add(Me.PictureBoxER_ROM)
@@ -581,12 +568,10 @@ Partial Class F_Connessione
         Me.Controls.Add(Me.LaNomePCB)
         Me.Controls.Add(Me.LabelSOC)
         Me.Controls.Add(Me.LaSoc)
-        Me.Controls.Add(Me.LaBoot)
+        Me.Controls.Add(Me.LaVerFirmware)
         Me.Controls.Add(Me.LabelFirmware)
         Me.Controls.Add(Me.LaFirmware)
         Me.Controls.Add(Me.LabelSoftArduCenter)
-        Me.Controls.Add(Me.LabelSoftArduino)
-        Me.Controls.Add(Me.LabelTX_RX)
         Me.Controls.Add(Me.LabelDatiSeriali)
         Me.Controls.Add(Me.LaStato)
         Me.Controls.Add(Me.LabelCollegamento)
@@ -607,7 +592,7 @@ Partial Class F_Connessione
         CType(Me.PictureBoxER_ROM, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxER_LED_Power, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxER_Power, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxER_Temp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -618,12 +603,10 @@ Partial Class F_Connessione
     Friend WithEvents LabelCollegamento As Label
     Friend WithEvents LaStato As Label
     Friend WithEvents LabelDatiSeriali As Label
-    Friend WithEvents LabelTX_RX As Label
-    Friend WithEvents LabelSoftArduino As Label
     Friend WithEvents LabelSoftArduCenter As Label
     Friend WithEvents LaFirmware As Label
     Friend WithEvents LabelFirmware As Label
-    Friend WithEvents LaBoot As Label
+    Friend WithEvents LaVerFirmware As Label
     Friend WithEvents LaSoc As Label
     Friend WithEvents LabelSOC As Label
     Friend WithEvents LaNomePCB As Label
@@ -651,5 +634,6 @@ Partial Class F_Connessione
     Friend WithEvents PictureBoxER_ROM As PictureBox
     Friend WithEvents PictureBoxER_LED_Power As PictureBox
     Friend WithEvents PictureBoxER_Power As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents PictureBoxER_Temp As PictureBox
+    Friend WithEvents LaSerialData As Label
 End Class

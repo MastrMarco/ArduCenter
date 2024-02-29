@@ -129,6 +129,7 @@ Partial Class F_HubPC_Dissipatore240
         Me.LaN_CPU.TabIndex = 130
         Me.LaN_CPU.Text = "Nome Proccessore"
         Me.LaN_CPU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LaN_CPU.Visible = False
         '
         'LaN_MaderBoard
         '
@@ -141,6 +142,7 @@ Partial Class F_HubPC_Dissipatore240
         Me.LaN_MaderBoard.TabIndex = 131
         Me.LaN_MaderBoard.Text = "Nome Scheda Madre"
         Me.LaN_MaderBoard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LaN_MaderBoard.Visible = False
         '
         'LaN_GPU
         '
@@ -153,6 +155,7 @@ Partial Class F_HubPC_Dissipatore240
         Me.LaN_GPU.TabIndex = 132
         Me.LaN_GPU.Text = "Nome Scheda Video"
         Me.LaN_GPU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LaN_GPU.Visible = False
         '
         'Btn_FanCPU_1
         '

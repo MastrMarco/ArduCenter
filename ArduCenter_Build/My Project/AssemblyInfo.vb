@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("By MastrMarco")>
 <Assembly: AssemblyProduct("ArduCenter 2.0")>
-<Assembly: AssemblyCopyright("Copyright ©  2021 - 2023")>
+<Assembly: AssemblyCopyright("Copyright ©  2021 - 2024")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(True)>
@@ -32,6 +32,6 @@ Imports System.Runtime.InteropServices
 ' usando l'asterisco '*' come illustrato di seguito:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.0.7")>
-<Assembly: AssemblyFileVersion("2.0.7")>
+<Assembly: AssemblyVersion("2.1.0.14")>
+<Assembly: AssemblyFileVersion("2.1.0")>
 <Assembly: NeutralResourcesLanguage("it-IT")>

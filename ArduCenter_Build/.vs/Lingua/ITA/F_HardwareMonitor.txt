@@ -1,0 +1,122 @@
+'Titoli Elementi ITA Data 10/02/2024
+PC
+HUB
+Imposta tempo di aggiornamento
+Imposta Trasparenza finestra
+Imposta priorita' finestra
+Salva
+
+
+
+
+
+
+
+
+
+
+
+
+
+'Titoli sotto Elementi
+-Tempo di aggiornamento
+Veloce
+Normale
+Lento
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Priorità Finestra
+Normale
+Prioritario
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'Titoli Pagina HardwareMonitor_PC ITA Data 10/02/2024
+CPU Clock
+GPU Clock
+Carico
+Temp.
+Power
+Memoria RAM
+Usati
+Totale
+
+
+
+
+
+
+
+
+
+
+
+
+

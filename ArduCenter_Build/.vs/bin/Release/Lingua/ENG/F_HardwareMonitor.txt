@@ -1,0 +1,109 @@
+'Titres Elementi ITA Date 10/02/2024
+PC
+HUB
+Set update time
+Set Window Transparency
+Set window priority
+Save
+
+
+
+
+
+
+
+
+
+
+
+
+
+'Titles under Elements
+-Update time
+Fast
+Normal
+Slow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Window Priority
+Normal
+Priority
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'Titles Page Hardware Monitor PC ITA Date 10/02/2024
+CPU Clock
+GPU Clock
+Load
+Temp.
+Power
+RAM Memory
+Used
+Total

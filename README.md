@@ -1,19 +1,17 @@
 # ArduCenter 2.0
 Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
+
 ## Video
 - **Come Averlo** => https://youtu.be/eZ7t1F8797c
 - **Spiegazione GUI P1** => https://youtu.be/uE96V2uZVlI
 - **Spiegazione GUI P2** => https://youtu.be/O1FbnbFxPTY
+- **Spiegazione GUI P3** => https://youtu.be/O1FbnbFxPTY
+- **Spiegazione GUI P4** => https://youtu.be/B9y6aODZyhU
+- **Aggiornamento 2.1.0 P5** => https://youtu.be/VCgzR0a5ROw
 
-## !Attenzione!
-Quando si prova ad aprire il software chiederà i permessi di Amministratore perché la libreria esterna per acquisire i dati del PC Es:(Temperatura CPU, GPU, ecc.…) ha bisogno di tali permessi. La libreria utilizzata si chiama Open Hardware Monitor, 
-Crediti:
-[
-Sito Libreria: https://openhardwaremonitor.org/downloads/
-Sorgente GitHub: https://github.com/LibreHardwareMonitor
-]
 
-Crediti Librerie Esterne Utilizzate per comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
+## Crediti Librerie Esterne 
+- Utilizzate per comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
 
 
 ## - Scheda Tecnica  ArduHubFan PC

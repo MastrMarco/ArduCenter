@@ -102,4 +102,4 @@ Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 
 ## - Finestra Hardware Monitor PC 
 
-![ArduCenter2 0_HardwareMonitor](https://user-images.githubusercontent.com/76437833/227327772-a839ccd7-8cfe-44bf-b496-0e29cda1630d.png)
+![Demo HardwareMonitor](https://github.com/MastrMarco/ArduCenter/assets/76437833/51eea762-467c-40ca-883f-b337e5ca265c)

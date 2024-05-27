@@ -227,6 +227,31 @@ ArduCenter
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Colore">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Colore_1_0_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Colore_1_0_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Colore_1_0_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.F_Colore_1_0_3">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:ArduCenter.My.Resources.Resources.F_HardwareMonitor">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
@@ -313,6 +338,21 @@ ArduCenter
 </summary>
 </member>
 <member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_5_v1_0">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_5_v1_1">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_5_v1_2">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.GUI_Fan_Menù_5_v1_3">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>
@@ -743,6 +783,11 @@ ArduCenter
 </summary>
 </member>
 <member name="P:ArduCenter.My.Resources.Resources.photo_2023_11_24_17_00_32">
+<summary>
+  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:ArduCenter.My.Resources.Resources.Senza_titolo_1">
 <summary>
   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
 </summary>

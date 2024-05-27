@@ -175,17 +175,19 @@ Public Class F_HardwareMonitor
     ' //-- Lingua finestra e pagine
     Public Sub CambiaLingua(lingua As String)
         ' Ottieni il percorso del file di testo per la lingua specificata
-        Dim nomeFile As String = ""
-        Select Case lingua
-            Case "ITA"
-                nomeFile = "F_HardwareMonitor.txt"
-            Case "ENG"
-                nomeFile = "F_HardwareMonitor.txt"
-            Case "Null"
-                'nomeFile = "F_Impostazioni.txt"
-        End Select
+
+        'Dim nomeFile As String = ""
+        'Select Case lingua
+        '    Case "ITA"
+        '        nomeFile = "F_HardwareMonitor.txt"
+        '    Case "ENG"
+        '        nomeFile = "F_HardwareMonitor.txt"
+        '    Case "Null"
+        '        'nomeFile = "F_Impostazioni.txt"
+        'End Select
+
         ' Combina il percorso relativo del file con il percorso della cartella dell'applicazione
-        Dim percorsoFile As String = Path.Combine(F_Impostazioni.cartellaLingue, lingua, nomeFile)
+        Dim percorsoFile As String = Path.Combine(F_Impostazioni.cartellaLingue, lingua, "F_HardwareMonitor.txt")
         ' Leggi il testo dal file per le due etichette
         Dim testo As String() = F_Impostazioni.LeggiTestoDaFile(percorsoFile)
 

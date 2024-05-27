@@ -152,7 +152,7 @@ Public Class F_SerialCommand_Fan
             InFanHUB.Text = "RGB            Val." & F_Avvio.DatiRX_6(1)
         End If
 
-        InLumninosità.Text = F_HubPC_Ventole.PercentualeLuminosità & "%          Val." & F_Avvio.DatiRX(4)
+        'InLumninosità.Text = F_HubPC_Ventole.PercentualeLuminosità & "%          Val." & F_Avvio.DatiRX(4)
 
         If F_Avvio.DatiRX_0(3) <> 3 Then
             InSplitLED.Text = "Non Supportato"
@@ -198,7 +198,7 @@ Public Class F_SerialCommand_Fan
 
 
 
-        InVelocità.Text = F_HubPC_Ventole.PercentualeVelocità & "%          Val." & F_Avvio.DatiRX_7(1)
+        'InVelocità.Text = F_HubPC_Ventole.PercentualeVelocità & "%          Val." & F_Avvio.DatiRX_7(1)
 
         If F_Avvio.DatiRX_8(1) = 1 Then
             InModFan.Text = "Manuale     Val." & F_Avvio.DatiRX_8(1)

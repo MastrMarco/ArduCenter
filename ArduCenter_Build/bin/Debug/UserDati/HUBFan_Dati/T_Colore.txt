@@ -1,0 +1,23 @@
+'Colori ITA Date 22/03/2024
+ID - Colore H - Saturazione S - Bottone Memorizato - Menu Posizione
+01 8 0 BtnColor0 0
+02 0 0 BtnRGB0 0
+03 0 255 BtnColor1 0
+04 171 255 BtnColor2 0
+05 341 255 BtnColor3 0
+06 20 255 BtnColor4 0
+07 427 255 BtnColor5 0
+08 85 255 BtnColor6 0
+09 256 255 BtnColor7 0
+10 601 255 BtnRGB1 0
+11 602 255 BtnRGB2 0
+12 604 255 BtnRGB3 0
+13 603 255 BtnRGB4 0
+14 600 255 BtnRGB5 0
+15 605 255 BtnRGB0 1
+
+
+
+
+'Custom Color
+ID - Colore H - Saturazione S - Bottone Memorizato - Nome Custom

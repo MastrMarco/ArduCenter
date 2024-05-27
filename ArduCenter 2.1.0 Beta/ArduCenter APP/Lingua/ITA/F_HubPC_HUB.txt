@@ -1,0 +1,59 @@
+'Titoli Elementi ITA Data 10/05/2024
+Hub
+Ventola 1
+Ventola 2
+Ventola 3
+Ventola 4
+Ventola 1 CPU
+Ventola 2 CPU
+Pompa CPU
+Scheda Video
+Strisca LED
+Cassa Sinistra
+Cassa Destra
+Strisca LED
+
+
+
+
+
+
+
+
+
+
+-Testo Dati
+Colore
+Luminosita'
+Grstione Rotazione
+Velocita'
+RPM
+RPM Media
+
+
+
+
+
+
+
+
+
+-Rotazione Ventole
+Manuale
+Auto
+
+
+
+
+
+
+
+
+
+-Testo Barra Inferirore Elementi
+HUB
+Ventole
+Dissipatore
+Scheda Video
+Strisca LED
+Cassa

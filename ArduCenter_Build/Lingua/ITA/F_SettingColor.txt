@@ -1,0 +1,40 @@
+'Titoli Elementi ITA Data 17/05/2024
+Nome Colore
+Colore HSV
+
+
+
+
+
+
+
+
+
+
+-Sotto Titoli
+Colore
+Saturazione
+Luminosita'
+
+
+
+
+
+
+
+
+
+-Btn
+Salva
+
+
+
+
+
+
+
+
+
+
+-Testo ToolTip
+

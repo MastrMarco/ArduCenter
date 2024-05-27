@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 04/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 //Avvio Sistema di lettura dati in arrivo dalla Seriale
@@ -29,12 +29,8 @@ void DatiRXloop(int i, String DatoRX) {
 
         case 2:
           // ---------------------------- Luminosità
-          if ((LumLED[ModLED_Fan] != DatoRX.toInt()) and ((DatoRX.toInt() >= 0) and (DatoRX.toInt() <= 255))) {
+          if (LumLED[ModLED_Fan] != DatoRX.toInt()) {
             LumLED[ModLED_Fan] = DatoRX.toInt();
-            TimerVAREF = millis();  // Ricalcola  Tensione AREF
-          }
-          if (((ColoreLED[ModLED_Fan] > 512) and (BRIGHTNESS != LumLED[ModLED_Fan])) or ((ColoreLED[ModLED_Fan] <= 512) and (BRIGHTNESS != 255))) {
-            LumLED_Set();
             TimerVAREF = millis();  // Ricalcola  Tensione AREF
           }
           break;

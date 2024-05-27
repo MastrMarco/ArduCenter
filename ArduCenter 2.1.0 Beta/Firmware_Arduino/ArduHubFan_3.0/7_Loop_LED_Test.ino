@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 25/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 byte n;
@@ -28,7 +28,7 @@ void Set_LED_Config() {
       stDef = false;
     }
 
-     if (NUM_LEDS_OUT[ModLED_Fan] != valLED) {
+    if (NUM_LEDS_OUT[ModLED_Fan] != valLED) {
       NUM_LEDS_OUT[ModLED_Fan] = valLED;
     }
 
@@ -59,23 +59,15 @@ void Set_LED_Config() {
         DelayVirtuale[14] = 300;
         switch (ModLED_Fan) {
           case 1:
-            Strip1.setPixelColor(valLED - 1, Strip1.Color(0, Lx, Lx));  // Ventola 1
-            break;
           case 2:
-            Strip1.setPixelColor(((valLED - 1) + NUM_LEDS_Fan_0_1), Strip1.Color(0, Lx, Lx));  // Ventola 2
-            break;
           case 3:
-            Strip1.setPixelColor(((valLED - 1) + NUM_LEDS_Fan_1_2), Strip1.Color(0, Lx, Lx));  // Ventola 3
-            break;
           case 4:
-            Strip1.setPixelColor(((valLED - 1) + NUM_LEDS_Fan_2_3), Strip1.Color(0, Lx, Lx));  // Ventola 4
-            break;
           case 8:
-            Strip1.setPixelColor(((valLED - 1) + NUM_LEDS_Fan_3_4), Strip1.Color(0, Lx, Lx));  // Scheda Video
+            PointLED(NUM_LEDS_ALL[ModLED_Fan - 2], 0);
             break;
 
           case 9:
-            Strip2.setPixelColor(valLED - 1, Strip2.Color(0, Lx, Lx));  // Striscia LED
+            PointLED(0, 1);
             break;
         }
         if (Lx == 0) {
@@ -95,8 +87,8 @@ void Set_LED_Config() {
 
 //Imposta La lunghezza dei LED
 void Set_LED_ROM() {
-  Strip1.updateLength(NUM_LEDS_OUT_7_8);  //Ventole *4 + GPU
-  Strip2.updateLength(NUM_LEDS_OUT[9]);
+  Strip[0].updateLength(NUM_LEDS_ALL[7]);  //Ventole *4 + GPU
+  Strip[1].updateLength(NUM_LEDS_OUT[9]);
 }
 
 //Imposta i LED con il Colore Attivo Disattivo
@@ -104,29 +96,26 @@ void Set_LED_ROM() {
 void AnimazioneSetLED(byte Lnum, byte S, byte N, byte CR, byte CV) {
   switch (ModLED_Fan) {
     case 1:  // Ventola 1
-      Strip1.setPixelColor(Lnum - N, Strip1.Color(0, 50, 50));
-      Strip1.setPixelColor(Lnum - S, Strip1.Color(CR, CV, 0));
-      break;
     case 2:  // Ventola 2
-      Strip1.setPixelColor(((Lnum - N) + NUM_LEDS_Fan_0_1), Strip1.Color(0, 50, 50));
-      Strip1.setPixelColor(((Lnum - S) + NUM_LEDS_Fan_0_1), Strip1.Color(CR, CV, 0));
-      break;
     case 3:  // Ventola 3
-      Strip1.setPixelColor(((Lnum - N) + NUM_LEDS_Fan_1_2), Strip1.Color(0, 50, 50));
-      Strip1.setPixelColor(((Lnum - S) + NUM_LEDS_Fan_1_2), Strip1.Color(CR, CV, 0));
-      break;
     case 4:  // Ventola 4
-      Strip1.setPixelColor(((Lnum - N) + NUM_LEDS_Fan_2_3), Strip1.Color(0, 50, 50));
-      Strip1.setPixelColor(((Lnum - S) + NUM_LEDS_Fan_2_3), Strip1.Color(CR, CV, 0));
-      break;
     case 8:  // Scheda Video
-      Strip1.setPixelColor(((Lnum - N) + NUM_LEDS_Fan_3_4), Strip1.Color(0, 50, 50));
-      Strip1.setPixelColor(((Lnum - S) + NUM_LEDS_Fan_3_4), Strip1.Color(CR, CV, 0));
+      Set_ON_OFF_LED(Lnum, S, N, CR, CV, NUM_LEDS_ALL[ModLED_Fan - 2], 0);
       break;
 
     case 9:  // Striscia LED
-      Strip2.setPixelColor(Lnum - N, Strip2.Color(0, 50, 50));
-      Strip2.setPixelColor(Lnum - S, Strip2.Color(CR, CV, 0));
+      Set_ON_OFF_LED(Lnum, S, N, CR, CV, 0, 1);
       break;
   }
+}
+
+
+void Set_ON_OFF_LED(byte Lnum, byte S, byte N, byte CR, byte CV, byte s, byte LED) {
+
+  Strip[LED].setPixelColor(((Lnum - N) + s), Strip[LED].Color(0, 50, 50));
+  Strip[LED].setPixelColor(((Lnum - S) + s), Strip[LED].Color(CR, CV, 0));
+}
+
+void PointLED(byte s, byte LED) {
+  Strip[LED].setPixelColor((valLED - 1 + s), Strip[LED].Color(0, Lx, Lx));
 }

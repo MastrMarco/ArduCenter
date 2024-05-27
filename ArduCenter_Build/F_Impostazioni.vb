@@ -5,16 +5,38 @@ Public Class F_Impostazioni
 
     End Sub
 
-    Private Sub SetLingua_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SetLingua.SelectedIndexChanged
+    Public Sub SetLingua_SelectedIndexChanged() Handles SetLingua.SelectedIndexChanged
         ' Esegui uno switch in base alla selezione del ComboBox per cambiare la lingua dei testi
         Select Case SetLingua.SelectedItem.ToString()
             Case "Italiano"
                 CambiaLingua("ITA")
+
                 F_HardwareMonitor.CambiaLingua("ITA")
+
+                F_Hub_PC.CambiaLingua("ITA")
+                F_Hub_PC.CambiaLinguaColore("ITA")
+                F_Avvio.ConvertiColore.BtnColore(F_Hub_PC.RGBAMenù)
+
+                P_HubPC_HUB.CambiaLingua("ITA")
+                F_SettingColor.CambiaLingua("ITA")
+
+
+
                 My.Settings.Lingua = "Italiano"
             Case "English"
                 CambiaLingua("ENG")
+
                 F_HardwareMonitor.CambiaLingua("ENG")
+
+                F_Hub_PC.CambiaLingua("ENG")
+                F_Hub_PC.CambiaLinguaColore("ENG")
+                F_Avvio.ConvertiColore.BtnColore(F_Hub_PC.RGBAMenù)
+
+                P_HubPC_HUB.CambiaLingua("ENG")
+                F_SettingColor.CambiaLingua("ENG")
+
+
+
                 My.Settings.Lingua = "English"
             Case "Null"
                 '  CambiaLingua("")
@@ -25,6 +47,7 @@ Public Class F_Impostazioni
 
     ' //--
     Public cartellaLingue As String = Path.Combine(Application.StartupPath, "Lingua")
+    Public cartellaDataUser As String = Path.Combine(Application.StartupPath, "UserDati")
     Sub CambiaLingua(lingua As String)
         ' Ottieni il percorso del file di testo per la lingua specificata
         Dim nomeFile As String = ""

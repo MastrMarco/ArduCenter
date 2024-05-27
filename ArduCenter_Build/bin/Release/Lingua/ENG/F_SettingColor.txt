@@ -1,0 +1,39 @@
+'Titles Elements ITA Date 17/05/2024
+Name Color
+HSV color
+
+
+
+
+
+
+
+
+
+
+-Subtitles
+Color
+Saturation
+Brightness
+
+
+
+
+
+
+
+
+
+-Btn
+Save
+
+
+
+
+
+
+
+
+
+
+-ToolTip text

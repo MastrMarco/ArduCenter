@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 04/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 void loop() {
@@ -10,7 +10,7 @@ void loop() {
 
   //digitalWrite(CK, LOW);
   PORTD &= !B00000000;
-  
+
   delayMicroseconds(5);
 
   //digitalWrite(CK, HIGH);
@@ -51,8 +51,9 @@ void loop() {
   //---------------------------------------------------------------------- AnimazioneAVVIO
   if (Aniamzione_Avvio == false and (V5 > 4.50 or Debug != 0)) {
 
-    for (byte x = 0; x <= NUM_LEDS_OUT_All; x++) {
-      SingleStripLED(x, (8 * 128), 255, 255);
+    for (byte x = 0; x <= NUM_LEDS_ALL[8]; x++) {
+      // SingleStripLED(x, (8 * 128), 255, 255); //RossoArancio
+      SingleStripLED(x, (171 * 128), 220, 255);  //VerdeChiaro
       Set_LED();
       delay(DelayVirtuale[10]);
     }
@@ -174,6 +175,7 @@ void loop() {
     }
 
     Boot_SetUp = 0;
+
     Set_LED();
 
     ResetTimerVirtuale[1] = millis();
@@ -203,6 +205,7 @@ void loop() {
         ElementoPRE = ModLED_Fan;
         Reset_LED();
         Set_LED();
+        //ArrayLED();
         Set_LED_ROM();
         stDef = true;
       }
@@ -216,26 +219,22 @@ void loop() {
 
 // Applica i risultati ai LED
 void Set_LED() {
-  if (Strip1.getBrightness() != (BRIGHTNESS - LumLimitLED)) {
 
-    Strip1.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip2.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip3.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip4.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip5.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip6.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip7.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip8.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip9.setBrightness(BRIGHTNESS - LumLimitLED);
+  //if (ROM_Dati != 3) {
+  //Void_LED_Mod();  //Richiama il loop dove ci sono tutte le modalità LED
+  //}
+  // if (Aniamzione_Avvio == true or Debug == 1) {
+  //   if (ROM_Dati == 3 and ModLED_Fan > 0) {
+  //     Set_LED_Config();  //Richiama il loop per la configurazione delle periferiche
+  //   } else {
+  //     Void_LED_Mod();  //Richiama il loop dove ci sono tutte le modalità LED
+  //   }
+  // }
+
+  for (byte s = 0; s <= 8; s++) {
+    if (Strip[s].getBrightness() != (BRIGHTNESS - LumLimitLED)) {
+      Strip[s].setBrightness(BRIGHTNESS - LumLimitLED);
+    }
+    Strip[s].show();
   }
-
-  Strip1.show();
-  Strip2.show();
-  Strip3.show();
-  Strip4.show();
-  Strip5.show();
-  Strip6.show();
-  Strip7.show();
-  Strip8.show();
-  Strip9.show();
 }

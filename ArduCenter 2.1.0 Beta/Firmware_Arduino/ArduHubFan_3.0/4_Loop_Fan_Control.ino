@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 12/01/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 void Void_Fan_Mod() {
@@ -50,11 +50,9 @@ void Void_Fan_Mod() {
   }
   //----------------------------Controllo Speed Fan-----------------------
 
- if (S_Pro_12V == true) {
+  if (S_Pro_12V == true) {
     SetAllVentola(0);
-  }
-
-  if (S_Pro_12V == false) {
+  } else {
 
     if ((millis() < (StartFanPower + DelayFanPower)) and (ControlloFan == true)) {
       SetAllVentola(255);

@@ -1,0 +1,59 @@
+'Titres Elementi ITA Date 10/05/2024
+Hubs
+Fan 1
+Fan 2
+Fan 3
+Fan 4
+1 CPU fan
+2 CPU fan
+CPU pump
+Video Card
+LED strip
+Left speaker
+Right speaker
+LED strip
+
+
+
+
+
+
+
+
+
+
+-Text Data
+Color
+Brightness
+Rotation Grstion
+Speed
+RPM
+Average RPM
+
+
+
+
+
+
+
+
+
+-Fan rotation
+Manual
+Auto
+
+
+
+
+
+
+
+
+
+-Bottom Bar Text Elements
+HUB
+Fans
+Heatsink
+Video Card
+LED strip
+Earnings

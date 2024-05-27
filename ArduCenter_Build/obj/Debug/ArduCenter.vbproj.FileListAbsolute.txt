@@ -41,11 +41,6 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCen
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Avvisi.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Connessione.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Debug_HubFan.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_Dissipatore240.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_CasseAudio.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_Home.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_Ventole.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_GPU_SLED.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Hub_PC.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Home.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HardwareMonitor.resources
@@ -63,9 +58,7 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Circula
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.exe
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.xml
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.pdb
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_Home_v2.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Impostazioni.resources
-C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_HubPC_HUB.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_Setting_HUB.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.Supporto.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\NAudio.dll
@@ -85,3 +78,14 @@ C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCen
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.P_Impostazioni_HUB_Altro_CassaAudio.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.P_Impostazioni_HUB_Altro_Dissipatore.resources
 C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.P_Impostazioni_HUB_GPU_StripLED.resources
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.F_SettingColor.resources
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ENG\N_ColoreHUBFan.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ITA\N_ColoreHUBFan.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\UserDati\HUBFan_Dati\T_Colore.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ENG\F_Hub_PC.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ITA\F_Hub_PC.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ENG\F_HubPC_HUB.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ITA\F_HubPC_HUB.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\obj\Debug\ArduCenter.P_HubPC_HUB.resources
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ENG\F_SettingColor.txt
+C:\Users\marco\OneDrive\Project\ArduCenterGUI_Build\ArduCenter\bin\Debug\Lingua\ITA\F_SettingColor.txt

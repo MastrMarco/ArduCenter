@@ -1,42 +1,34 @@
 ﻿'Imports System.IO
 
 Public Class F_Avvio
+
+    Public ConvertiColore As New C_HSV_RGB()
     Public Classe_Impostazioni_HUB_LED As New C_Impostazioni_LED_HUB
+
     ' Public CartellaArduCenter As String = Path.Combine(Application.StartupPath)
     Public ErrorMod = 0     '//Indica il tipo di errore Errore
 
     'Nummero Versione Arduino
-    Public ReadOnly InfoSoft_HOME As String = "By " & vbCrLf & "MastrMarco" & vbCrLf & "Beta 48"
+    Public ReadOnly InfoSoft_HOME As String = "By " & vbCrLf & "MastrMarco" & vbCrLf & "Beta 100"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
     Public ReadOnly Versione As String = "v 2.1.0"
-    Public DataRilascio As String = "01-03-24"
+    Public DataRilascio As String = "01-06-24"
 
 
-    'Old
-    'Public DataRilascio_GUI_Fan As String = "22/04/2021"
-    'Public Versione_GUI_Fan As String = "5.00"
-
-    'Old
-    'Public DataRilascio_GUI_Audio As String = "02/04/2021"
-    'Public Versione_GUI_Audio As String = "3.00"
-
-
-
+    '3 = HubFanAudio / 4 = HubFan_3.0 / 5 = HubFan_4.0
     'Hub 2.0
-    Public DataRilascio_GUI_Fan_Audio As String = "00/00/2024"
-    Public Versione_GUI_Fan_Audio As String = "4.07"
-
+    Public ID_Dispositivo_ArduHubFanAudio_2_0 As String = "3"
+    Public Versione_GUI_Fan_Audio As String = "4.08"
     'Hub 3.0
-    Public DataRilascio_GUI_Fan_3 As String = "00/00/2024"
+    Public ID_Dispositivo_ArduHubFan_3_0 As String = "4"
     Public Old_Versione_GUI_Fan_3 As String = "2.06"
-    Public Versione_GUI_Fan_3 As String = "2.07"
-
+    Public Versione_GUI_Fan_3 As String = "2.08"
     'Hub 4.0
-    Public DataRilascio_GUI_Fan_4 As String = "11/01/2024"
+    Public ID_Dispositivo_ArduHubFan_4_0 As String = "5"
     Public Old_Versione_GUI_Fan_4 As String = "1.06"
-    Public Versione_GUI_Fan_4 As String = "1.07"
+    Public Versione_GUI_Fan_4 As String = "1.08"
 
 
     Public DatiRicevuti As String = ""
@@ -110,13 +102,18 @@ Public Class F_Avvio
         'Lingua Soft
         If My.Settings.Lingua = "Italiano" Then
             F_Impostazioni.SetLingua.Text = F_Impostazioni.SetLingua.Items(0)
-            F_Impostazioni.CambiaLingua("ITA")
-            F_HardwareMonitor.CambiaLingua("ITA")
+            LaLingua.Text = "ITA"
+            'F_Impostazioni.CambiaLingua("ITA")
+            'F_HardwareMonitor.CambiaLingua("ITA")
         ElseIf My.Settings.Lingua = "English" Then
             F_Impostazioni.SetLingua.Text = F_Impostazioni.SetLingua.Items(1)
-            F_Impostazioni.CambiaLingua("ENG")
-            F_HardwareMonitor.CambiaLingua("ENG")
+            LaLingua.Text = "ENG"
+            'F_Impostazioni.CambiaLingua("ENG")
+            'F_HardwareMonitor.CambiaLingua("ENG")
         End If
+
+        'Carica Colori HUB
+        F_Hub_PC.UserData("HUBFan_Dati")
     End Sub
 
     'Private Sub BackgroundWorkerTaskMenager_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerTaskMenager.DoWork
@@ -307,7 +304,7 @@ Public Class F_Avvio
                         'GUI_Fan && GUI_Audio Project - GUI_Fan 3 - ArduFanHub 4.0
                         If DatiRX_0(1) = "3" Or DatiRX_0(1) = "4" Or DatiRX_0(1) = "5" Then
                             F_Hub_PC.RX_TX()
-                            F_HubPC_Ventole.GUI_Ventole()
+                            'F_HubPC_Ventole.GUI_Ventole()
                             P_Impostazioni_HUB.DataImpostazioni()
                         End If
 
@@ -535,22 +532,22 @@ Public Class F_Avvio
                 End If
             End If
 
-            F_HubPC_Home.GUI_home_HUB()
-            F_HubPC_HUB.GUI_Btn_HUB_Info()
+            'F_HubPC_Home.GUI_home_HUB()
+            P_HubPC_HUB.GUI_Btn_HUB_Info()
 
-            If (My.Settings.AutoForm_Pan = "Si" And AutoForm = 0) And (DatiRX_0(3) = "3" Or DatiRX_0(3) = "2" Or DatiRX_0(3) = "4" Or DatiRX_0(3) = "5") And (DatiRX_0(0) = "B" Or DatiRX_0(0) = "R") Then
+            'If (My.Settings.AutoForm_Pan = "Si" And AutoForm = 0) And (DatiRX_0(3) = "3" Or DatiRX_0(3) = "2" Or DatiRX_0(3) = "4" Or DatiRX_0(3) = "5") And (DatiRX_0(0) = "B" Or DatiRX_0(0) = "R") Then
 
-                If F_Home.InForm.Location <> New Point(0, 251) Then
-                    F_Home.PanForm.Visible = True
-                    F_Home.SwitchPannelHome(F_Hub_PC)
+            '    If F_Home.InForm.Location <> New Point(0, 251) Then
+            '        F_Home.PanForm.Visible = True
+            '        F_Home.SwitchPannelHome(F_Hub_PC)
 
-                    F_Home.InForm.Visible = True
-                    F_Home.InForm.BackColor = Color.Gold
-                    F_Home.InForm.Location = New Point(0, 251)
-                    'F_Home.LabelFinestraID.Text = "Finestra controllo Ventole [F_Fan]"
-                End If
-                AutoForm = 1
-            End If
+            '        F_Home.InForm.Visible = True
+            '        F_Home.InForm.BackColor = Color.Gold
+            '        F_Home.InForm.Location = New Point(0, 251)
+            '        'F_Home.LabelFinestraID.Text = "Finestra controllo Ventole [F_Fan]"
+            '    End If
+            '    AutoForm = 1
+            'End If
 
             If AutoForm = 0 And DatiRX_0(0) = "D" Then
                 If F_Home.InForm.Location <> New Point(0, 422) Then
@@ -589,7 +586,7 @@ Public Class F_Avvio
             If DatiRX_0(3) = "3" Or DatiRX_0(3) = "4" Or DatiRX_0(3) = "5" Then
 
                 'Oggeto selezionato
-                F_Hub_PC.LED_CFan = DatiRX_7(0)
+                'F_Hub_PC.LED_CFan = DatiRX_7(0)
 
                 'Numero LED Array
                 DatiRX_3_1 = DatiRX_3
@@ -597,208 +594,64 @@ Public Class F_Avvio
                 Classe_Impostazioni_HUB_LED.DataEEPROM_Save = DatiRX_2(0)
                 Classe_Impostazioni_HUB_LED.DataElement_Save = DatiRX_7(0)
 
-                If F_Hub_PC.LED_CFan <> 0 Then
+
+                If DatiRX_7(0) <> 0 Then
                     F_Hub_PC.BtnOFF_Animation()
                 End If
 
-                'Caricamento colore principale oggetto
-                If DatiRX_5(0) <= F_Hub_PC.Hue_Max Then
-                    F_Hub_PC.H = DatiRX_5(DatiRX_7(0))
-                ElseIf DatiRX_5(0) > F_Hub_PC.Hue_Max Then
-                    F_Hub_PC.H_SyncMode = DatiRX_5(0)
-                    F_Hub_PC.S_SyncMode = DatiRX_6(0)
-                    F_Hub_PC.V_SyncMode = DatiRX_4(0)
-                    Select Case DatiRX_5(0)
-                        Case <= F_Hub_PC.Hue_Max
-                            F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1
-                        Case = F_Hub_PC.Animazione_RGB_Transiszione
-                            F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Transizione
-                        Case = F_Hub_PC.Animazione_RGB_Rainbow
-                            F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_RainBow
-                        Case = F_Hub_PC.Animazione_RGB_Tepmeratura
-
-                        Case = F_Hub_PC.Animazione_RGB_Musica
-                            F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Musica
-                        Case = F_Hub_PC.Animazione_RGB_Discontinuo
-                            F_HubPC_Home.Btn_Hub_SyncMode.BackgroundImage = My.Resources.Icona_HUB_1_1_RGB_Colore_Discontinuo
-                    End Select
-                End If
-                F_Hub_PC.S = DatiRX_6(DatiRX_7(0))
-                If DatiRX_4(DatiRX_7(0)) > 0 Then
-                    Dim MapLum As Integer = F_Hub_PC.map(DatiRX_4(DatiRX_7(0)), 0, 255, 80, 255)
-                    F_Hub_PC.V = MapLum
-                Else
-                    F_Hub_PC.V = DatiRX_4(DatiRX_7(0))
-                End If
-                F_Hub_PC.HSV_to_RGB()
-
-
+                '//
+                'Carica Dati HUB
                 Dim C As Integer
+                Dim R As Integer, G As Integer, B As Integer
                 For C = 0 To DatiRX_5.Length - 1
+                    'Colore Elementi
+                    ConvertiColore.Elemento_H(C) = DatiRX_5(C)
+                    ConvertiColore.Elemento_S(C) = DatiRX_6(C)
+                    ConvertiColore.Elemento_V(C) = DatiRX_4(C)
 
-                    F_Hub_PC.ColorTextSet_Avvio(C)
-                    If DatiRX_5(C) <= F_Hub_PC.Hue_Max Then
-                        F_Hub_PC.H_Crica = DatiRX_5(C)
-                        F_Hub_PC.S_Crica = DatiRX_6(C)
-                        F_Hub_PC.V_Crica = DatiRX_4(C)
-                        If DatiRX_4(C) > 0 Then
-                            Dim MapLum As Integer = F_Hub_PC.map(DatiRX_4(C), 0, 255, 80, 255)
-                            F_Hub_PC.V_Crica = MapLum
-                        Else
-                            F_Hub_PC.V_Crica = DatiRX_4(C)
-                        End If
-                        F_Hub_PC.HSV_to_RGB_Carica_Avvio()
-                        Select Case C
-                            Case = 0
-                                F_Hub_PC.H_SyncMode = DatiRX_5(C)
-                                F_Hub_PC.S_SyncMode = DatiRX_6(C)
-                                F_Hub_PC.V_SyncMode = DatiRX_4(C)
-                                F_Hub_PC.R_SyncMode = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_SyncMode = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_SyncMode = F_Hub_PC.B_Crica
-                                F_HubPC_Home.Btn_Hub_SyncMode.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_SyncMode = F_Hub_PC.TextColor
-                            Case = 1
-                                F_Hub_PC.H_Fan1 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan1 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan1 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan1 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan1 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan1 = F_Hub_PC.B_Crica
-                                F_HubPC_Ventole.IconaFan1.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan1 = F_Hub_PC.TextColor
-                            Case = 2
-                                F_Hub_PC.H_Fan2 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan2 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan2 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan2 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan2 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan2 = F_Hub_PC.B_Crica
-                                F_HubPC_Ventole.IconaFan2.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan2 = F_Hub_PC.TextColor
-                            Case = 3
-                                F_Hub_PC.H_Fan3 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan3 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan3 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan3 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan3 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan3 = F_Hub_PC.B_Crica
-                                F_HubPC_Ventole.IconaFan3.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan3 = F_Hub_PC.TextColor
-                            Case = 4
-                                F_Hub_PC.H_Fan4 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan4 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan4 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan4 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan4 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan4 = F_Hub_PC.B_Crica
-                                F_HubPC_Ventole.IconaFan4.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan4 = F_Hub_PC.TextColor
-                            Case = 5
-                                F_Hub_PC.H_Fan_CPU_OP_01 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan_CPU_OP_01 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan_CPU_OP_01 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan_CPU_OP_01 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan_CPU_OP_01 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan_CPU_OP_01 = F_Hub_PC.B_Crica
-                                F_HubPC_Dissipatore240.Btn_FanCPU_LED01.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan_CPU_OP_01 = F_Hub_PC.TextColor
-                            Case = 6
-                                F_Hub_PC.H_Fan_CPU_OP_02 = DatiRX_5(C)
-                                F_Hub_PC.S_Fan_CPU_OP_02 = DatiRX_6(C)
-                                F_Hub_PC.V_Fan_CPU_OP_02 = DatiRX_4(C)
-                                F_Hub_PC.R_Fan_CPU_OP_02 = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Fan_CPU_OP_02 = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Fan_CPU_OP_02 = F_Hub_PC.B_Crica
-                                F_HubPC_Dissipatore240.Btn_FanCPU_LED02.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_Fan_CPU_OP_02 = F_Hub_PC.TextColor
-                            Case = 7
-                                F_Hub_PC.H_CPU_OP = DatiRX_5(C)
-                                F_Hub_PC.S_CPU_OP = DatiRX_6(C)
-                                F_Hub_PC.V_CPU_OP = DatiRX_4(C)
-                                F_Hub_PC.R_CPU_OP = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_CPU_OP = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_CPU_OP = F_Hub_PC.B_Crica
-                                F_HubPC_Dissipatore240.Btn_PompCPU_LED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_CPU_OP = F_Hub_PC.TextColor
+                    'Colora le Icone
+                    ' Dim R As Integer, G As Integer, B As Integer
+                    ConvertiColore.HSV_to_RGB(DatiRX_5(C), DatiRX_6(C), DatiRX_4(C), R, G, B)
+                    P_HubPC_HUB.Carica_Colore_Elementi_Icone(C, R, G, B)
 
-                            Case = F_Hub_PC.IndirizzoElemento_SchedaVideo
-                                F_Hub_PC.H_GPU = DatiRX_5(C)
-                                F_Hub_PC.S_GPU = DatiRX_6(C)
-                                F_Hub_PC.V_GPU = DatiRX_4(C)
-                                F_Hub_PC.R_GPU = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_GPU = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_GPU = F_Hub_PC.B_Crica
-                                'F_HubPC_Home.Btn_F_HubPC_GPU.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_HubPC_GPU_SLED.BtnIMG_GPU_LED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_GPU = F_Hub_PC.TextColor
-
-                            Case = F_Hub_PC.IndirizzoElemento_StriscaLED
-                                F_Hub_PC.H_SLED = DatiRX_5(C)
-                                F_Hub_PC.S_SLED = DatiRX_6(C)
-                                F_Hub_PC.V_SLED = DatiRX_4(C)
-                                F_Hub_PC.R_SLED = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_SLED = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_SLED = F_Hub_PC.B_Crica
-                                'F_HubPC_Home.Btn_F_HubPC_SLED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_HubPC_GPU_SLED.BtnIMG_Strip_LED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                F_Hub_PC.Text_Color_SLED = F_Hub_PC.TextColor
-                            Case = 10
-                                F_Hub_PC.H_Cassa_Audio_S = DatiRX_5(C)
-                                F_Hub_PC.S_Cassa_Audio_S = DatiRX_6(C)
-                                F_Hub_PC.V_Cassa_Audio_S = DatiRX_4(C)
-                                F_Hub_PC.R_Cassa_Audio_S = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Cassa_Audio_S = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Cassa_Audio_S = F_Hub_PC.B_Crica
-                                F_HubPC_CasseAudio.Btn_CassaAudio_S.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                'If DatiRX_7(0) > 0 Then
-                                F_HubPC_CasseAudio.Icona_CassaAudio_S.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-
-                                F_Hub_PC.Text_Color_Cassa_Audio_S = F_Hub_PC.TextColor
-                            Case = 11
-                                F_Hub_PC.H_Cassa_Audio_D = DatiRX_5(C)
-                                F_Hub_PC.S_Cassa_Audio_D = DatiRX_6(C)
-                                F_Hub_PC.V_Cassa_Audio_D = DatiRX_4(C)
-                                F_Hub_PC.R_Cassa_Audio_D = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Cassa_Audio_D = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Cassa_Audio_D = F_Hub_PC.B_Crica
-                                F_HubPC_CasseAudio.Btn_CassaAudio_D.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                'If DatiRX_7(0) > 0 Then
-                                F_HubPC_CasseAudio.Icona_CassaAudio_D.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-
-                                F_Hub_PC.Text_Color_Cassa_Audio_D = F_Hub_PC.TextColor
-                            Case = 12
-                                F_Hub_PC.H_Strip_LED = DatiRX_5(C)
-                                F_Hub_PC.S_Strip_LED = DatiRX_6(C)
-                                F_Hub_PC.V_Strip_LED = DatiRX_4(C)
-                                F_Hub_PC.R_Strip_LED = F_Hub_PC.R_Crica
-                                F_Hub_PC.G_Strip_LED = F_Hub_PC.G_Crica
-                                F_Hub_PC.B_Strip_LED = F_Hub_PC.B_Crica
-                                F_HubPC_CasseAudio.Btn_StripLED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-                                'If DatiRX_7(0) > 0 Then
-                                F_HubPC_CasseAudio.Icona_StripLED.BackColor = Color.FromArgb(F_Hub_PC.R_Crica, F_Hub_PC.G_Crica, F_Hub_PC.B_Crica)
-
-                                F_Hub_PC.Text_Color_Cassa_Strip_LED = F_Hub_PC.TextColor
-                        End Select
-
+                    'Icona con l'immagine Animazione A-RGB
+                    If DatiRX_5(C) > ConvertiColore.Hue_Max Then
+                        P_HubPC_HUB.Animazione_RGB_Icone(DatiRX_7(0), ConvertiColore.Nome_Colore(ConvertiColore.Elemento_H(0), ConvertiColore.Elemento_S(0)))
                     End If
                 Next
 
-                'Test Output
-                'F_Home.LabelFinestraID.Text = (" l = " & DatiRX_5.Length - 1)
-                'F_Home.LabelFinestraID.Text = (F_HubPC_Ventole.Text_Color_All & " , " & F_HubPC_Ventole.Text_Color_Fan1 & " , " & F_HubPC_Ventole.Text_Color_Fan2 & " , " & F_HubPC_Ventole.Text_Color_Fan3 & " , " & F_HubPC_Ventole.Text_Color_Fan4 & " , " & F_HubPC_Dissipatore240.Text_Color_Fan_CPU_OP_01 & " , " & F_HubPC_Dissipatore240.Text_Color_Fan_CPU_OP_02 & " , " & F_HubPC_Dissipatore240.Text_Color_CPU_OP & " , " & F_HubPC_GPU_SLED.Text_Color_GPU & " , " & F_HubPC_GPU_SLED.Text_Color_SLED)
+                'Configura i dati grafici GUI
 
-                F_HubPC_Home.Color_Set_Home_IMG() 'GUI HUB Home
+                'Colore Elemento/i Selezionato
+                P_HubPC_HUB.Elementi_Selezionato(DatiRX_7(0))
+                ConvertiColore.HSV_to_RGB(ConvertiColore.Elemento_H(DatiRX_7(0)), ConvertiColore.Elemento_S(DatiRX_7(0)), ConvertiColore.Elemento_V(DatiRX_7(0)), R, G, B)
+                P_HubPC_HUB.Carica_Colore_Elementi_Icone(DatiRX_7(0), R, G, B)
+                'Grafica dell'elemento Selezionato
+                P_HubPC_HUB.Testo_ElementoSelezionato()
+                P_HubPC_HUB.Elemento_Selezionato(DatiRX_7(0))
+                'Imposta le Immagini delle icone che supporta l'HUB
+                P_HubPC_HUB.Carica_Immagini_Elementi_Icone()
 
-                'Caricamento / copnfigurazione GUI_Fan / F_Fan
-                F_Hub_PC.HubControlManual() ' Imposta il dispositivo selezionato l'ultima volta
+                'Nome Colore Elemento Selezionato
+                P_HubPC_HUB.LaColore.Text = ConvertiColore.Nome_Colore(ConvertiColore.Elemento_H(DatiRX_7(0)), ConvertiColore.Elemento_S(DatiRX_7(0)))
 
-                If DatiRX_7(0) = 0 And DatiRX_5(0) >= 605 Then F_Hub_PC.RGBAMenù = 1 'Visualizza altre aniamzioni RGB
+                'Icona Selezionata con l'immagine Animazione A-RGB
+                If DatiRX_5(DatiRX_7(0)) > ConvertiColore.Hue_Max Then
+                    P_HubPC_HUB.Animazione_RGB_Icone(DatiRX_7(0), P_HubPC_HUB.LaColore.Text)
+                End If
 
-                F_Hub_PC.Btn_Color_MOD() 'Carica i dati nella GUI Fan ColoreMod
-                F_HubPC_Ventole.UI_Ventole() 'Carica i dati nella GUI Fan Velocità Luminosità
+                'Visualiza Icona come impostata, Colore Animazione
+                F_Hub_PC.Btn_Color_ON(ConvertiColore.Nome_Colore(ConvertiColore.Elemento_H(DatiRX_7(0)), ConvertiColore.Elemento_S(DatiRX_7(0))))
+                'Grafica Menù Aniamzione ARGB
+                Dim Menù_ARGB As Integer = Array.IndexOf(F_Hub_PC.ColorNome, P_HubPC_HUB.LaColore.Text)
+                If Menù_ARGB >= 0 Then
+                    If F_Hub_PC.BtnMenuPos(Menù_ARGB) = 1 Then
+                        F_Hub_PC.Btn_Men_RGB_Animation_Click()
+                    End If
+                End If
 
-                'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
+
+
 
                 'Barra Luminosità
                 If DatiRX_4(DatiRX_7(0)) >= 13 Then
@@ -806,6 +659,9 @@ Public Class F_Avvio
                 Else
                     F_Hub_PC.TrackBarLuminosità.Value = F_Hub_PC.TrackBarLuminosità.Minimum
                 End If
+                'Valore Luminosità
+                P_HubPC_HUB.LaLuminosità.Text = F_Hub_PC.TrackBarLuminosità.Value & " %"
+
 
                 'Barra Velocità
                 ' If DatiRX_4(DatiRX_7(0)) <= 4 Then
@@ -814,12 +670,42 @@ Public Class F_Avvio
                 Else
                     F_Hub_PC.TrackBarVelocità.Value = F_Hub_PC.TrackBarVelocità.Minimum
                 End If
+                'Valore Velocità %
+                P_HubPC_HUB.LaVelocità.Text = F_Hub_PC.TrackBarVelocità.Value & " %"
 
-                F_HubPC_Ventole.S_Fan_All = DatiRX_8(0)
-                F_HubPC_Ventole.S_Fan_1 = DatiRX_8(1)
-                F_HubPC_Ventole.S_Fan_2 = DatiRX_8(2)
-                F_HubPC_Ventole.S_Fan_3 = DatiRX_8(3)
-                F_HubPC_Ventole.S_Fan_4 = DatiRX_8(4)
+                'Memorizza i Dati Della Velocita delle Ventole impostati dall'Utente
+                For X = 0 To F_Hub_PC.ControlloVelocitaVentole.Elemento_SpeedFan.Length - 1
+                    F_Hub_PC.ControlloVelocitaVentole.Elemento_SpeedFan(X) = DatiRX_8(X)
+                Next
+
+
+
+
+
+
+
+                '//
+
+
+
+                'Test Output
+                'F_Home.LabelFinestraID.Text = (" l = " & DatiRX_5.Length - 1)
+                'F_Home.LabelFinestraID.Text = (F_HubPC_Ventole.Text_Color_All & " , " & F_HubPC_Ventole.Text_Color_Fan1 & " , " & F_HubPC_Ventole.Text_Color_Fan2 & " , " & F_HubPC_Ventole.Text_Color_Fan3 & " , " & F_HubPC_Ventole.Text_Color_Fan4 & " , " & F_HubPC_Dissipatore240.Text_Color_Fan_CPU_OP_01 & " , " & F_HubPC_Dissipatore240.Text_Color_Fan_CPU_OP_02 & " , " & F_HubPC_Dissipatore240.Text_Color_CPU_OP & " , " & F_HubPC_GPU_SLED.Text_Color_GPU & " , " & F_HubPC_GPU_SLED.Text_Color_SLED)
+
+                'F_HubPC_Home.Color_Set_Home_IMG() 'GUI HUB Home
+
+                'Caricamento / copnfigurazione GUI_Fan / F_Fan
+                'F_Hub_PC.HubControlManual() ' Imposta il dispositivo selezionato l'ultima volta
+
+                'If DatiRX_7(0) = 0 And DatiRX_5(0) >= 605 Then F_Hub_PC.RGBAMenù = 1 'Visualizza altre aniamzioni RGB
+
+                ' F_Hub_PC.Btn_Color_MOD() 'Carica i dati nella GUI Fan ColoreMod
+                'F_HubPC_Ventole.UI_Ventole() 'Carica i dati nella GUI Fan Velocità Luminosità
+
+                'F_HubPC_Ventole.UI_GPU_Strip() Inserisce il Colore Attuale quando non e In sync
+
+
+
 
 
                 'Caricamento Dati TX - RX 
@@ -847,6 +733,26 @@ Public Class F_Avvio
                 'Data16 = DatiRX_10(1) '//Modalità Colore Audio
 
                 'Classe_Impostazioni_HUB_LED.Load()
+                F_Impostazioni.SetLingua_SelectedIndexChanged()
+
+
+                'Visualizza la finestra HUB
+                If (My.Settings.AutoForm_Pan = "Si" And AutoForm = 0) And (DatiRX_0(3) = "3" Or DatiRX_0(3) = "2" Or DatiRX_0(3) = "4" Or DatiRX_0(3) = "5") And (DatiRX_0(0) = "B" Or DatiRX_0(0) = "R") Then
+
+                    If F_Home.InForm.Location <> New Point(0, 251) Then
+                        F_Home.PanForm.Visible = True
+                        F_Home.SwitchPannelHome(F_Hub_PC)
+
+                        F_Home.InForm.Visible = True
+                        F_Home.InForm.BackColor = Color.Gold
+                        F_Home.InForm.Location = New Point(0, 251)
+                        'F_Home.LabelFinestraID.Text = "Finestra controllo Ventole [F_Fan]"
+                    End If
+                    AutoForm = 1
+                End If
+
+
+
             End If
 
         End If

@@ -1,0 +1,45 @@
+'Titles Elements ITA Date 08/05/2024
+Select Color
+Manual fan speed
+Brightness
+RGB animations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-ToolTip text
+'Top bar
+Hardware Monitors
+HUB Settings
+
+
+
+
+
+'Fan Rotation Management
+Set minimum speed
+Set maximum speed
+
+
+
+
+'LED brightness management
+Set minimum brightness
+Set maximum brightness
+
+
+
+
+'RGB animations
+Other Animations

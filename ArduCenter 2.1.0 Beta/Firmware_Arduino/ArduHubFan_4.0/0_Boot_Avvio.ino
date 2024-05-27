@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 12/01/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 // Aggiorna Dati Salvati EEPROM
@@ -57,8 +57,8 @@ void setup() {
   TCCR2B = TCCR2B & B11111000 | B00000001;  // for PWM frequency of 31372.55 Hz D3 D11
   TCCR1B = TCCR1B & B11111000 | B00000001;  // for PWM frequency of 31372.55 Hz D9 D10
 
-  pinMode(PWM_Fan_1, OUTPUT);               // Modalità Pin PWM Fan1
-  pinMode(PWM_Fan_2, OUTPUT);               // Modalità Pin PWM Fan2
+  pinMode(PWM_Fan_1, OUTPUT);  // Modalità Pin PWM Fan1
+  pinMode(PWM_Fan_2, OUTPUT);  // Modalità Pin PWM Fan2
   //
   pinMode(PWM_Fan_3, OUTPUT);  // Modalità Pin PWM Fan3
   pinMode(PWM_Fan_4, OUTPUT);  // Modalità Pin PWM Fan4
@@ -72,18 +72,11 @@ void setup() {
   //
   //----------------------
   //Configurazione dei LED
-  Strip1.begin();
-  Strip2.begin();
-  Strip3.begin();
-  Strip4.begin();
-  Strip5.begin();
-  Strip6.begin();
-  Strip7.begin();
-  Strip8.begin();
-  Strip9.begin();
+  for (byte s = 0; s <= 8; s++) {
+    Strip[s].begin();
+  }
   ArrayLED();     //Loop3
   Set_LED_ROM();  //Loop_7
-
 
   // Imposta in modalità Set l'elemento Ventola selezionato prima del Riavvio
   if (ModLED_Fan < 5) ModFAN_SPEED = ModLED_Fan;

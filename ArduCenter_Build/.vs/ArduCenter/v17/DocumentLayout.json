@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\marco\\OneDrive\\Project\\ArduCenterGUI_Build\\ArduCenter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA75987F-48BC-49FA-99D9-78EE6B1CA228}|ArduCenter.vbproj|c:\\users\\marco\\onedrive\\project\\arducentergui_build\\arducenter\\f_avvio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{FA75987F-48BC-49FA-99D9-78EE6B1CA228}|ArduCenter.vbproj|C:\\Users\\marco\\OneDrive\\Project\\ArduCenterGUI_Build\\ArduCenter\\f_avvio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{FA75987F-48BC-49FA-99D9-78EE6B1CA228}|ArduCenter.vbproj|solutionrelative:f_avvio.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
@@ -32,7 +32,7 @@
               "ToolTip": "C:\\Users\\marco\\OneDrive\\Project\\ArduCenterGUI_Build\\ArduCenter\\ArduCenter.vbproj",
               "RelativeToolTip": "ArduCenter.vbproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2023-10-19T21:05:22.246Z",
+              "WhenOpened": "2024-05-17T16:36:27.47Z",
               "IsPinned": true
             },
             {
@@ -44,7 +44,7 @@
               "ToolTip": "C:\\Users\\marco\\OneDrive\\Project\\ArduCenterGUI_Build\\ArduCenter\\F_Avvio.vb [Progettazione]",
               "RelativeToolTip": "F_Avvio.vb [Progettazione]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2023-07-14T16:24:17.378Z",
+              "WhenOpened": "2024-05-17T16:36:11.731Z",
               "IsPinned": true,
               "EditorCaption": " [Progettazione]"
             },
@@ -56,9 +56,9 @@
               "RelativeDocumentMoniker": "F_Avvio.vb",
               "ToolTip": "C:\\Users\\marco\\OneDrive\\Project\\ArduCenterGUI_Build\\ArduCenter\\F_Avvio.vb",
               "RelativeToolTip": "F_Avvio.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-02-28T11:27:52.386Z",
+              "WhenOpened": "2024-05-17T16:36:34.896Z",
               "IsPinned": true,
               "EditorCaption": ""
             }

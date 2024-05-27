@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 23/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 int audio_input;
@@ -140,82 +140,108 @@ void RGB_Musica() {
   for (int A = NUM_LEDS_OUT[1] - 1; A >= 0; A--) {
     if (A < Audio_react[0]) {
       int pixelHue_1 = RGB_MusicaA + (A * 65536L / NUM_LEDS_OUT[1]);
-      Strip1.setPixelColor(A, Strip1.gamma32(Strip1.ColorHSV(pixelHue_1)));
+      Strip[0].setPixelColor(A, Strip[0].gamma32(Strip[0].ColorHSV(pixelHue_1)));
     } else {
-      Strip1.setPixelColor(A, 0, 0, 0);
+      Strip[0].setPixelColor(A, 0, 0, 0);
     }
   }
   //**/ 2
   for (int B = NUM_LEDS_OUT[2] - 1; B >= 0; B--) {
     if (B < Audio_react[1]) {
       int pixelHue_2 = RGB_MusicaA + (B * 65536L / NUM_LEDS_OUT[2]);
-      Strip2.setPixelColor(B, Strip2.gamma32(Strip2.ColorHSV(pixelHue_2)));
+      Strip[1].setPixelColor(B, Strip[1].gamma32(Strip[1].ColorHSV(pixelHue_2)));
     } else {
-      Strip2.setPixelColor(B, 0, 0, 0);
+      Strip[1].setPixelColor(B, 0, 0, 0);
     }
   }
   //**/3
   for (int C = NUM_LEDS_OUT[3] - 1; C >= 0; C--) {
     if (C < Audio_react[2]) {
       int pixelHue_3 = RGB_MusicaA + (C * 65536L / NUM_LEDS_OUT[3]);
-      Strip3.setPixelColor(C, Strip3.gamma32(Strip3.ColorHSV(pixelHue_3)));
+      Strip[2].setPixelColor(C, Strip[2].gamma32(Strip[2].ColorHSV(pixelHue_3)));
     } else {
-      Strip3.setPixelColor(C, 0, 0, 0);
+      Strip[2].setPixelColor(C, 0, 0, 0);
     }
   }
   //**/4
   for (int D = NUM_LEDS_OUT[4] - 1; D >= 0; D--) {
     if (D < Audio_react[3]) {
       int pixelHue_4 = RGB_MusicaA + (D * 65536L / NUM_LEDS_OUT[4]);
-      Strip4.setPixelColor(D, Strip4.gamma32(Strip4.ColorHSV(pixelHue_4)));
+      Strip[3].setPixelColor(D, Strip[3].gamma32(Strip[3].ColorHSV(pixelHue_4)));
     } else {
-      Strip4.setPixelColor(D, 0, 0, 0);
+      Strip[3].setPixelColor(D, 0, 0, 0);
     }
   }
   //**/5
   for (int E = NUM_LEDS_OUT[5] - 1; E >= 0; E--) {
     if (E < Audio_react[4]) {
       int pixelHue_5 = RGB_MusicaA + (E * 65536L / NUM_LEDS_OUT[5]);
-      Strip5.setPixelColor(E, Strip5.gamma32(Strip5.ColorHSV(pixelHue_5)));
+      Strip[4].setPixelColor(E, Strip[4].gamma32(Strip[4].ColorHSV(pixelHue_5)));
     } else {
-      Strip5.setPixelColor(E, 0, 0, 0);
+      Strip[4].setPixelColor(E, 0, 0, 0);
     }
   }
   //**/6
   for (int F = NUM_LEDS_OUT[6] - 1; F >= 0; F--) {
     if (F < Audio_react[5]) {
       int pixelHue_6 = RGB_MusicaA + (F * 65536L / NUM_LEDS_OUT[6]);
-      Strip6.setPixelColor(F, Strip6.gamma32(Strip6.ColorHSV(pixelHue_6)));
+      Strip[5].setPixelColor(F, Strip[5].gamma32(Strip[5].ColorHSV(pixelHue_6)));
     } else {
-      Strip6.setPixelColor(F, 0, 0, 0);
+      Strip[5].setPixelColor(F, 0, 0, 0);
     }
   }
   //**/7
   for (int G = NUM_LEDS_OUT[7] - 1; G >= 0; G--) {
     if (G < Audio_react[6]) {
       int pixelHue_7 = RGB_MusicaA + (G * 65536L / NUM_LEDS_OUT[7]);
-      Strip7.setPixelColor(G, Strip7.gamma32(Strip7.ColorHSV(pixelHue_7)));
+      Strip[6].setPixelColor(G, Strip[6].gamma32(Strip[6].ColorHSV(pixelHue_7)));
     } else {
-      Strip7.setPixelColor(G, 0, 0, 0);
+      Strip[6].setPixelColor(G, 0, 0, 0);
     }
   }
   //**/8
   for (int H = NUM_LEDS_OUT[8] - 1; H >= 0; H--) {
     if (H < Audio_react[7]) {
       int pixelHue_8 = RGB_MusicaA + (H * 65536L / NUM_LEDS_OUT[8]);
-      Strip8.setPixelColor(H, Strip8.gamma32(Strip8.ColorHSV(pixelHue_8)));
+      Strip[7].setPixelColor(H, Strip[7].gamma32(Strip[7].ColorHSV(pixelHue_8)));
     } else {
-      Strip8.setPixelColor(H, 0, 0, 0);
+      Strip[7].setPixelColor(H, 0, 0, 0);
     }
   }
   //**/9
   for (int I = NUM_LEDS_OUT[9] - 1; I >= 0; I--) {
     if (I < Audio_react[8]) {
       int pixelHue_9 = RGB_MusicaA + (I * 65536L / NUM_LEDS_OUT[9]);
-      Strip9.setPixelColor(I, Strip9.gamma32(Strip9.ColorHSV(pixelHue_9)));
+      Strip[8].setPixelColor(I, Strip[8].gamma32(Strip[8].ColorHSV(pixelHue_9)));
     } else {
-      Strip9.setPixelColor(I, 0, 0, 0);
+      Strip[8].setPixelColor(I, 0, 0, 0);
     }
   }
+
+
+
+  // for (byte s = 0; s <= 8; s++) {
+  //   // Audio_pre_react[s] = map(audio_input, media, MaxValueAudio, 0, NUM_LEDS_OUT[s + 1]);
+
+  //   // if (Audio_pre_react[s] > Audio_react[s])  //
+  //   //   Audio_react[s] = Audio_pre_react[s];
+
+  //   // if (decay_check > FrequenzaAggiornamento) {
+  //   //   decay_check = 0;
+  //   //   if (Audio_react[s] > 0)
+  //   //     Audio_react[s]--;
+  //   // }
+
+  //   for (int I = NUM_LEDS_OUT[s + 1] - 1; I >= 0; I--) {
+  //     if (I < Audio_react[s]) {
+  //       int pixelHue_s = RGB_MusicaA + (I * 65536L / NUM_LEDS_OUT[s + 1]);
+  //       Strip[s].setPixelColor(I, Strip[s].gamma32(Strip[s].ColorHSV(pixelHue_s)));
+  //     } else {
+  //       Strip[s].setPixelColor(I, 0, 0, 0);
+  //     }
+  //   }
   // }
+
+
+
 }

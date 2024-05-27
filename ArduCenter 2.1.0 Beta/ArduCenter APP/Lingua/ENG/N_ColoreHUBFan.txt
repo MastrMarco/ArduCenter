@@ -1,0 +1,17 @@
+'Colors ENG Date 22/03/2024
+ID - Name
+01 White
+02 Off
+03 Red
+04 Green
+05 Blue
+06 Orange
+07 Fuchsia
+08 Yellow
+09 LightBlue
+10 Transition
+11 Rainbow
+12 Temperature
+13 Music
+14 Discontinuous
+15 Mix

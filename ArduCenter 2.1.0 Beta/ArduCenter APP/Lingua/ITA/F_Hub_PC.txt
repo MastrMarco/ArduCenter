@@ -1,0 +1,45 @@
+'Titoli Elementi ITA Data 08/05/2024
+Seleziona Colore
+Velocita' Ventole Manuale
+Luminosita'
+Animazioni RGB
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-Testo ToolTip
+'Barra Superirore
+Hardware Monitor
+Impostazioni HUB
+
+
+
+
+
+'Gestione Rotazione Ventole
+Imposta la velocita' minima
+Imposta la velocita' massima
+
+
+
+
+'Gestione luminosità LED
+Imposta la luminosita' minima
+Imposta la luminosita' massima
+
+
+
+
+'Animazioni RGB
+Altre Animnazioni

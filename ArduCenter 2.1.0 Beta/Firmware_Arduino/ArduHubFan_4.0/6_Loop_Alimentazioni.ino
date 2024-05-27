@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 04/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 //AREF
@@ -9,7 +9,7 @@ float VoltMedia_AREF = 0;  // Valore converito in tensione Media
 //
 float V12_Limit = 0.60;       //Tolleranza massima e minima della tensione 12V
 float V5_Limit = 0.25;        //Tolleranza massima e minima della tensione 5V Def 0.25
-float LED_Limt = 4.90;        //Tensione minima dei LED Def 4.90
+float LED_Limt = 4.80;        //Tensione minima dei LED Def 4.90
 int StartLEDPowerProt = 500;  // Delay prima di riattivare la Protezione LED dopo la Modlaità di attesa
 
 
@@ -43,6 +43,8 @@ void Voltaggio() {
   if (Debug == 2) {
     V5 = 5.00;
     V12 = 12.00;
+    S_Pro_5V = false;  //0
+    S_Pro_12V = false;  //0
   } else {
 
     //---------------------- Calcolo Media Analog Reference
@@ -69,34 +71,33 @@ void Voltaggio() {
       V12 = Voltmetro(Pin_12V, R1_12V, R2_12V, ADJ_Error_12V);
       //
     }
-  }
 
-  //---
-  // if (((Aniamzione_Avvio == true) and (EN_OV == true) and (Mod_attesa == false)) or ((Aniamzione_Avvio == false) and (millis() > (ResetTimerVirtuale[2] + StartLEDPowerProt)))) {
-  if ((EN_OV == true) and (Mod_attesa == false)) {
-    //---------------------- Protezione Alimentazione 5V [+/- 5%]
-    //
-    if (((V5 < (5.00 - V5_Limit)) or (V5 > (5.00 + V5_Limit))) and (Aniamzione_Avvio == true) and (PowerLimitLED == false or LumLimitLED > 240)) {
-      S_Pro_5V = true;  //1
-    }
-    if ((V5 <= (5.00 + V5_Limit)) and (V5 >= (5.00 - V5_Limit)) and (Aniamzione_Avvio == false)) {
-      S_Pro_5V = false;  //0
-    }
-    //
-    //---------------------- Protezione Alimentazione 12V [+/- 5%]
-    //
-    if (((V12 < (12.00 - V12_Limit)) or (V12 > (12.00 + V12_Limit))) and (Aniamzione_Avvio == true)) {
-      S_Pro_12V = true;  //1
-    }
-    if ((V12 <= (12.00 + V12_Limit)) and (V12 >= (12.00 - V12_Limit)) and (Aniamzione_Avvio == false)) {
-      S_Pro_12V = false;  //0
+
+    //------------------------------------------------------
+    if ((EN_OV == true) and (Mod_attesa == false)) {
+      //---------------------- Protezione Alimentazione 5V [+/- 5%]
+      //
+      if (((V5 < (5.00 - V5_Limit)) or (V5 > (5.00 + V5_Limit))) and (Aniamzione_Avvio == true) and (PowerLimitLED == false or LumLimitLED > 240)) {
+        S_Pro_5V = true;  //1
+      }
+      if ((V5 <= (5.00 + V5_Limit)) and (V5 >= (5.00 - V5_Limit)) and (Aniamzione_Avvio == false)) {
+        S_Pro_5V = false;  //0
+      }
+      //
+      //---------------------- Protezione Alimentazione 12V [+/- 5%]
+      //
+      if (((V12 < (12.00 - V12_Limit)) or (V12 > (12.00 + V12_Limit))) and (Aniamzione_Avvio == true)) {
+        S_Pro_12V = true;  //1
+      }
+      if ((V12 <= (12.00 + V12_Limit)) and (V12 >= (12.00 - V12_Limit)) and (Aniamzione_Avvio == false)) {
+        S_Pro_12V = false;  //0
+      }
     }
   }
   //
   //----------------------PowerLimitLED
   //
   if ((PowerLimitLED == true) and (V5 < LED_Limt) and ((Mod_attesa == false and Aniamzione_Avvio == true) and (millis() > (DelayFanPower + StartLEDPowerProt)))) {
-    //  if ((PowerLimitLED == true) and (Volt_5V < LED_Limt) and (Mod_attesa == false and Aniamzione_Avvio == true)) {
     PowerLimitLED_Stato = true;
     if (millis() >= (ResetTimerVirtuale[12] + DelayVirtuale[12])) {
       ResetTimerVirtuale[12] = millis();
@@ -108,9 +109,7 @@ void Voltaggio() {
       }
     }
   }
-  // if ((PowerLimitLED == true) and (Volt_5V >= 4.80) and (Volt_5V <= 5.20) and ((LumLED[ModLED_Fan] - LumLimitLED) == 13)) {
-  //  //PowerLimitLED_Stato = false;
-  // }
+
   if (PowerLimitLED == false) {
     PowerLimitLED_Stato = false;
     LumLimitLED = 0;

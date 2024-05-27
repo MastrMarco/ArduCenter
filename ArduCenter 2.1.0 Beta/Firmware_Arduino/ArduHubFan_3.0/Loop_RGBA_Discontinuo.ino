@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 12/01/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 byte Pix;
@@ -10,8 +10,8 @@ void RGB_Discontinuo() {
     ResetTimerVirtuale[9] = millis();
 
 
-    if (Pix <= NUM_LEDS_OUT_All) Pix++;
-    if (Pix == NUM_LEDS_OUT_All) {
+    if (Pix <= NUM_LEDS_ALL[8]) Pix++;
+    if (Pix == NUM_LEDS_ALL[8]) {
       Pix = 0;
       H_Discontinuo = random(0, 255);
     }

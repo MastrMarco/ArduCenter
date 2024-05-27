@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 12/01/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 // Aggiorna Dati Salvati EEPROM
@@ -65,12 +65,23 @@ void setup() {
   pinMode(OV, OUTPUT);
   //----------------------
   //Reset dei LED e configurazione
-  Strip1.begin();
-  Strip2.begin();
-  Strip3.begin();
+  // Strip1.begin();
+  // Strip2.begin();
+  // Strip3.begin();
+  for (byte s = 0; s <= 2; s++) {
+    Strip[s].begin();
+  }
   //
   ArrayLED();     //Loop3
   Set_LED_ROM();  //Loop_7
+
+//     for (byte s = 0; s <= 11; s++) {
+//       Serial.println((String) NUM_LEDS_ALL[s] + " " + s);
+//     }
+//  ArrayLED();
+//     for (byte s = 0; s <= 11; s++) {
+//       Serial.println((String) NUM_LEDS_ALL[s] + " " + s);
+//     }
 
   //Imposta in modalità Set l'elemento Ventola selezionato prima del Riavvio
   if (ModLED_Fan < 5) ModFAN_SPEED = ModLED_Fan;

@@ -35,6 +35,7 @@ Partial Class F_Avvio
         Me.TimerBoot_Reset = New System.Windows.Forms.Timer(Me.components)
         Me.BackgroundWorkerSerialPort = New System.ComponentModel.BackgroundWorker()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LaLingua = New System.Windows.Forms.Label()
         CType(Me.AnimazioneAvvioGIF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -111,6 +112,18 @@ Partial Class F_Avvio
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
+        'LaLingua
+        '
+        Me.LaLingua.BackColor = System.Drawing.Color.Transparent
+        Me.LaLingua.Font = New System.Drawing.Font("MV Boli", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LaLingua.ForeColor = System.Drawing.Color.White
+        Me.LaLingua.Location = New System.Drawing.Point(327, 70)
+        Me.LaLingua.Name = "LaLingua"
+        Me.LaLingua.Size = New System.Drawing.Size(74, 23)
+        Me.LaLingua.TabIndex = 8
+        Me.LaLingua.Text = "ITA"
+        Me.LaLingua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'F_Avvio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -119,6 +132,7 @@ Partial Class F_Avvio
         Me.BackgroundImage = Global.ArduCenter.My.Resources.Resources.ImgArduCenter2_0
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(463, 249)
+        Me.Controls.Add(Me.LaLingua)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.StatoAPP)
         Me.Controls.Add(Me.Creatore)
@@ -149,4 +163,5 @@ Partial Class F_Avvio
     Friend WithEvents TimerBoot_Reset As Timer
     Friend WithEvents BackgroundWorkerSerialPort As System.ComponentModel.BackgroundWorker
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LaLingua As Label
 End Class

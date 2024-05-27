@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.07 Firmware data 04/02/24                                                  //
+//                                           Ver: X.08 Firmware data 01/06/24                                                  //
 //*****************************************************************************************************************************//
 
 void loop() {
@@ -28,8 +28,9 @@ void loop() {
   //---------------------------------------------------------------------- AnimazioneAVVIO
   if (Aniamzione_Avvio == false and (V5 > 4.50 or Debug != 0)) {
 
-    for (byte x = 0; x <= NUM_LEDS_OUT_All; x++) {
-      SingleStripLED(x, (8 * 128), 255, 255);
+    for (byte x = 0; x <= NUM_LEDS_ALL[11]; x++) {
+      // SingleStripLED(x, (8 * 128), 255, 255); //RossoArancio
+      SingleStripLED(x, (171 * 128), 220, 255);  //VerdeChiaro
       Set_LED();
       delay(DelayVirtuale[10]);
     }
@@ -95,7 +96,7 @@ void loop() {
                      //(0)      (1)       (2)       (3)
                      + 0 + "," + 0 + "," + 0 + "," + 0 + ";"  //10 Lettura RPM delle ventole
                      //    (0)
-                     + Animation_RGBS[ModRGB_LED] + ";");  //11 Acquisizione Animeazione LED Select
+                     + Animation_RGBS[ModRGB_LED] + " " + Animation_RGBS[5] + ";");  //11 Acquisizione Animeazione LED Select
     }
     ResetTimerVirtuale[0] = TimerVirtuale;
   }
@@ -188,13 +189,20 @@ void loop() {
 
 // Applica i risultati ai LED
 void Set_LED() {
-  if (Strip1.getBrightness() != (BRIGHTNESS - LumLimitLED)) {
-    Strip1.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip2.setBrightness(BRIGHTNESS - LumLimitLED);
-    Strip3.setBrightness(BRIGHTNESS - LumLimitLED);
-  }
+  // if (Strip1.getBrightness() != (BRIGHTNESS - LumLimitLED)) {
+  //   Strip1.setBrightness(BRIGHTNESS - LumLimitLED);
+  //   Strip2.setBrightness(BRIGHTNESS - LumLimitLED);
+  //   Strip3.setBrightness(BRIGHTNESS - LumLimitLED);
+  // }
 
-  Strip1.show();
-  Strip2.show();
-  Strip3.show();
+  // Strip1.show();
+  // Strip2.show();
+  // Strip3.show();
+
+  for (byte s = 0; s <= 2; s++) {
+    if (Strip[s].getBrightness() != (BRIGHTNESS - LumLimitLED)) {
+      Strip[s].setBrightness(BRIGHTNESS - LumLimitLED);
+    }
+    Strip[s].show();
+  }
 }

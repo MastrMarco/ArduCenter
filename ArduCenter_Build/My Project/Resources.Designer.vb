@@ -473,6 +473,56 @@ Namespace My.Resources
         '''<summary>
         '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property F_Colore() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("F_Colore", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property F_Colore_1_0_0() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("F_Colore_1.0.0", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property F_Colore_1_0_1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("F_Colore_1.0.1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property F_Colore_1_0_2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("F_Colore_1.0.2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property F_Colore_1_0_3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("F_Colore_1.0.3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property F_HardwareMonitor() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("F_HardwareMonitor", resourceCulture)
@@ -646,6 +696,36 @@ Namespace My.Resources
         Friend ReadOnly Property GUI_Fan_Menù_5_v1_0() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("GUI_Fan-Menù_5_v1.0", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property GUI_Fan_Menù_5_v1_1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GUI_Fan-Menù_5_v1.1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property GUI_Fan_Menù_5_v1_2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GUI_Fan-Menù_5_v1.2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property GUI_Fan_Menù_5_v1_3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("GUI_Fan-Menù_5_v1.3", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1506,6 +1586,16 @@ Namespace My.Resources
         Friend ReadOnly Property photo_2023_11_24_17_00_32() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("photo_2023-11-24_17-00-32", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Senza_titolo_1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Senza titolo-1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

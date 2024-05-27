@@ -1,0 +1,17 @@
+'Colori ITA Date 22/03/2024
+ID - Nome
+01 Bianco
+02 Spento
+03 Rosso
+04 Verde
+05 Blu
+06 Arancione 
+07 Fucsia
+08 Giallo
+09 Celeste
+10 Transizione
+11 Rainbow
+12 Temperatura
+13 Musica
+14 Discontinuo
+15 Mix

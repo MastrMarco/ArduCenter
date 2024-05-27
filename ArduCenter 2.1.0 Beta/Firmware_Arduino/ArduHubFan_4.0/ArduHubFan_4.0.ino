@@ -1,16 +1,16 @@
 //****************************************************************************************************************************//
-//-------------------          By  MastrMarco    Versione 1.07      ISCRIVITI AL CANALE YOUTUBE       ------------------------//
+//-------------------          By  MastrMarco    Versione 1.08      ISCRIVITI AL CANALE YOUTUBE       ------------------------//
 //
 //                                   Per Arduino Nano ATMega 328P [NEW / OLD] Boot loader
 //
-//                                                ArduHubFan 4.0 01/03/24
+//                                                ArduHubFan 4.0 01/06/24
 //
 //                                 https://www.youtube.com/channel/UCpQb1Iz6M229ylkyXpdJPlw
 //****************************************************************************************************************************//
 
 
 //-------------------------------------Informazioni di Base Software
-#define Debug 2  //false = modalità normale / 1 = modalità informazioni dati / 2 = modlaita programmazione Software
+#define Debug 0  //false = modalità normale / 1 = modalità informazioni dati / 2 = modlaita programmazione Software
 #if (Debug != 1)
 String Stato_Software = "B";  //Commpatibbilità Beta-(B) Relise-(R)
 #endif
@@ -20,7 +20,7 @@ String Stato_Software = "D";  //Commpatibbilità-Debug (D)
 
 byte Arduino = 2;             // Tipo di arduino   |1 = Nano OLD / 2 = Nano NEW / 3 = UNO
 byte Progetto = 5;            // Progetto          |4 = HubFan_3.0 / 5 = HubFan_4.0
-const float Versione = 1.07;  // Versione Software |
+const float Versione = 1.08;  // Versione Software |
 //
 //------------------------------------- Memorizza i Dati impostati dal utente
 //EEPROM interna di Arduino 1 Kbyte
@@ -160,8 +160,8 @@ bool Mod_attesa = false;  // True = PC in standby  // False = PC Attivo
 //------------------------------------- Dati Che impostano le varie colorazioni dei LED
 //
 //-------------------Colore
-//                  0  1  2  3  4  5  6  7  8  9  /0 = Fan_All / 1 = Fan_1 / 2 = Fan_2 / 3 = Fan_3 / 4 = Fan_4 / 5 = GPU / 6 = Strip / 7 = Fan_PO / 8 = Fan_PO / 9 = Pompa // Imposta il Colore
-int ColoreLED[] = { 8, 8, 8, 8, 8, 8, 8, 8, 8, 8 };
+//                   0   1   2   3   4   5   6   7   8   9  /0 = Fan_All / 1 = Fan_1 / 2 = Fan_2 / 3 = Fan_3 / 4 = Fan_4 / 5 = GPU / 6 = Strip / 7 = Fan_PO / 8 = Fan_PO / 9 = Pompa // Imposta il Colore
+int ColoreLED[] = { 20, 20, 20, 20, 20, 20, 20, 20, 20, 20 };
 //-------------------Luminosità
 //                 0    1    2    3    4    5    6    7    8    9   /0 = Fan_All / 1 = Fan_1 / 2 = Fan_2 / 3 = Fan_3 / 4 = Fan_4 / 5 = GPU / 6 = Strip / 7 = Fan_PO / 8 = Fan_PO / 9 = Pompa // Imposta la Luminosità
 byte LumLED[] = { 128, 128, 128, 128, 128, 128, 128, 128, 128, 128 };
@@ -172,7 +172,7 @@ byte LumLimitLED;       //Limitatore Luminosità
 byte Saturazione[] = { 255, 255, 255, 255, 255, 255, 255, 255, 255, 255 };
 //-------------------Animazione
 //                       0  1  2  3  4  5  6  7  8  9  /0 = Fan_All / 1 = Fan_1 / 2 = Fan_2 / 3 = Fan_3 / 4 = Fan_4 / 5 = GPU / 6 = Strip / 7 = Fan_PO / 8 = Fan_PO / 9 = Pompa // Imposta da dove acquisire i dati per le varie animazioni
-int Animation_RGBS[] = { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+int Animation_RGBS[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 //
 //------------------------------------- Dati Che impostano le varie velocià delle ventole
 //
@@ -222,29 +222,32 @@ byte NUM_LEDS_OUT[] = {
   24   //Numero led Serie Striscia a LED
 };
 
-//Gestione Animazioni Sincroizzate
-byte NUM_LEDS_Fan_0_1;  // Ventola 1
-byte NUM_LEDS_Fan_1_2;  // Ventola 2
-byte NUM_LEDS_Fan_2_3;  // Ventola 3
-byte NUM_LEDS_Fan_3_4;  // Ventola 4
-byte NUM_LEDS_OUT_4_5;  // Dissipatore 120mm
-byte NUM_LEDS_OUT_5_6;  // Dissipatore 120mm
-byte NUM_LEDS_OUT_6_7;  // Dissipatore 120mm
-byte NUM_LEDS_OUT_7_8;  // Scheda Video
-byte NUM_LEDS_OUT_8_9;  // Strisca LED
-byte NUM_LEDS_OUT_All;  // Numero Totale
+//Gestione Animazioni Sincroizzate * 24
+byte NUM_LEDS_ALL[] = {
+  0,  // Ventola 1 [0-24] 0
+  0,  // Ventola 2 [24-48] 1
+  0,  // Ventola 3 [48-72] 2
+  0,  // Ventola 4 [72-96] 3
 
-//                 Nome                       Numero LED       Pin OUT    Colore    Tipo di LED
-Adafruit_NeoPixel Strip1 = Adafruit_NeoPixel(NUM_LEDS_OUT[1], DATA_PIN_1, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip2 = Adafruit_NeoPixel(NUM_LEDS_OUT[2], DATA_PIN_2, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip3 = Adafruit_NeoPixel(NUM_LEDS_OUT[3], DATA_PIN_3, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip4 = Adafruit_NeoPixel(NUM_LEDS_OUT[4], DATA_PIN_4, NEO_GRB + NEO_KHZ800);
+  0,  // Dissipatore 120mm [96-120] 4
+  0,  // Dissipatore 120mm [120-144] 5
+  0,  // Dissipatore 120mm [144-168] 6
 
-Adafruit_NeoPixel Strip5 = Adafruit_NeoPixel(NUM_LEDS_OUT[5], DATA_PIN_5, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip6 = Adafruit_NeoPixel(NUM_LEDS_OUT[6], DATA_PIN_6, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip7 = Adafruit_NeoPixel(NUM_LEDS_OUT[7], DATA_PIN_7, NEO_GRB + NEO_KHZ800);
+  0,  // Scheda Video [168-192] 7
+  0   // Strisca LED [192-216] 8
+};
 
-Adafruit_NeoPixel Strip8 = Adafruit_NeoPixel(NUM_LEDS_OUT[8], DATA_PIN_8, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel Strip9 = Adafruit_NeoPixel(NUM_LEDS_OUT[9], DATA_PIN_9, NEO_GRB + NEO_KHZ800);
+//                 Nome                           Numero LED       Pin OUT    Colore   Tipo di LED
+Adafruit_NeoPixel Strip[9] = { Adafruit_NeoPixel(NUM_LEDS_OUT[1], DATA_PIN_1, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[2], DATA_PIN_2, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[3], DATA_PIN_3, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[4], DATA_PIN_4, NEO_GRB + NEO_KHZ800),
+
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[5], DATA_PIN_5, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[6], DATA_PIN_6, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[7], DATA_PIN_7, NEO_GRB + NEO_KHZ800),
+
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[8], DATA_PIN_8, NEO_GRB + NEO_KHZ800),
+                               Adafruit_NeoPixel(NUM_LEDS_OUT[9], DATA_PIN_9, NEO_GRB + NEO_KHZ800) };
 
 //-------------------------------------

@@ -3,7 +3,7 @@
 //
 //                                 Per Arduino Nano ATMega 328P NEW / OLD Boot loader
 //
-//                                            ArduHubFanAudio 2.0 01/06/24
+//                                            ArduHubFanAudio 2.0 28/05/24
 //
 //                               https://www.youtube.com/channel/UCpQb1Iz6M229ylkyXpdJPlw
 //*****************************************************************************************************************************//
@@ -192,45 +192,26 @@ byte NUM_LEDS_OUT[] = {
   24   //Numero led Serie Strisca LED 12
 };
 
-//Gestione Animazioni Sincroizzate
-// byte NUM_LEDS_Fan_0_1;    // Ventola 1
-// byte NUM_LEDS_Fan_1_2;    // Ventola 2
-// byte NUM_LEDS_Fan_2_3;    // Ventola 3
-// byte NUM_LEDS_Fan_3_4;    // Ventola 4
-// byte NUM_LEDS_OUT_7_8;    // Scheda Video
-// byte NUM_LEDS_OUT_8_9;    // Strisca LED
-// byte NUM_LEDS_OUT_9_10;   // Cassa Audio Sinistra
-// byte NUM_LEDS_OUT_10_11;  // Cassa Audio Destra
-// byte NUM_LEDS_OUT_11_12;  // Strisca LED
-// byte NUM_LEDS_OUT_All;    // Numero Totale
-
 //Gestione Animazioni Sincroizzate * 24 + 10
 byte NUM_LEDS_ALL[] = {
-  0,  // Ventola 1 [0-24] 0
-  0,  // Ventola 2 [24-48] 1
-  0,  // Ventola 3 [48-72] 2
-  0,  // Ventola 4 [72-96] 3
+  0,  // Mull 0
+  0,  // Ventola 1 [0-24] 1
+  0,  // Ventola 2 [24-48] 2
+  0,  // Ventola 3 [48-72] 3
+  0,  // Ventola 4 [72-96] 4
 
-  0,  // Dissipatore 120mm [96-120] 4
-  0,  // Dissipatore 120mm [120-144] 5
-  0,  // Dissipatore 120mm [144-168] 6
+  0,  // Dissipatore 120mm [96-120] 5
+  0,  // Dissipatore 120mm [120-144] 6
+  0,  // Dissipatore 120mm [144-168] 7
 
   0,  // Scheda Video [96-120] 8
-  0,  // Strisca LED [120-144] 5
+  0,  // Strisca LED [120-144] 9
 
-  0,  // Cassa Sinistra [144-154] 6 *10
-  0,  // Cassa Destra [154-164] 7 *10
-  0   // Strisca LED [164-188] 8
+  0,  // Cassa Sinistra [144-154] 10 *10
+  0,  // Cassa Destra [154-164] 11 *10
+  0   // Strisca LED [164-188] 12
 };
 
-
-
-
-
-//
-// Adafruit_NeoPixel Strip1 = Adafruit_NeoPixel(120, DATA_PIN_1, NEO_GRB + NEO_KHZ800);
-// Adafruit_NeoPixel Strip2 = Adafruit_NeoPixel(NUM_LEDS_OUT[9], DATA_PIN_2, NEO_GRB + NEO_KHZ800);
-// Adafruit_NeoPixel Strip3 = Adafruit_NeoPixel(44, DATA_PIN_3, NEO_GRB + NEO_KHZ800);
 
 //                 Nome                           Numero LED       Pin OUT    Colore   Tipo di LED
 Adafruit_NeoPixel Strip[3] = { Adafruit_NeoPixel(120, DATA_PIN_1, NEO_GRB + NEO_KHZ800),

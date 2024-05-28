@@ -3,7 +3,7 @@
 //*****************************************************************************************************************************//
 
 void TemperaturaDS() {
-   if (millis() >= (ResetTimerVirtuale[3] + DelayVirtuale[3])) {
+  if (millis() >= (ResetTimerVirtuale[3] + DelayVirtuale[3])) {
     ResetTimerVirtuale[3] = millis();
 
     if (TempData.readTemp()) {
@@ -12,6 +12,5 @@ void TemperaturaDS() {
     } else {
       TempDS = 0;
     }
-
   }
 }

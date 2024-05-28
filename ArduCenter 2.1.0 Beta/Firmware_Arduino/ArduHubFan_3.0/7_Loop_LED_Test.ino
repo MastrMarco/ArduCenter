@@ -63,7 +63,7 @@ void Set_LED_Config() {
           case 3:
           case 4:
           case 8:
-            PointLED(NUM_LEDS_ALL[ModLED_Fan - 2], 0);
+            PointLED(NUM_LEDS_ALL[ModLED_Fan - 1], 0);
             break;
 
           case 9:
@@ -87,7 +87,7 @@ void Set_LED_Config() {
 
 //Imposta La lunghezza dei LED
 void Set_LED_ROM() {
-  Strip[0].updateLength(NUM_LEDS_ALL[7]);  //Ventole *4 + GPU
+  Strip[0].updateLength(NUM_LEDS_ALL[8]);  //Ventole *4 + GPU
   Strip[1].updateLength(NUM_LEDS_OUT[9]);
 }
 
@@ -100,7 +100,7 @@ void AnimazioneSetLED(byte Lnum, byte S, byte N, byte CR, byte CV) {
     case 3:  // Ventola 3
     case 4:  // Ventola 4
     case 8:  // Scheda Video
-      Set_ON_OFF_LED(Lnum, S, N, CR, CV, NUM_LEDS_ALL[ModLED_Fan - 2], 0);
+      Set_ON_OFF_LED(Lnum, S, N, CR, CV, NUM_LEDS_ALL[ModLED_Fan - 1], 0);
       break;
 
     case 9:  // Striscia LED

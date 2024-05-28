@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 28/05/24                                                  //
 //*****************************************************************************************************************************//
 
 byte n;
@@ -64,19 +64,16 @@ void Set_LED_Config() {
           case 3:
           case 4:
           case 8:
-            PointLED(NUM_LEDS_ALL[ModLED_Fan - 2], 0);
-            // Strip[0].setPixelColor(((valLED - 1) + NUM_LEDS_ALL[ModLED_Fan - 2]), Strip[0].Color(0, Lx, Lx));
+            PointLED(NUM_LEDS_ALL[ModLED_Fan - 1], 0);
             break;
 
           case 9:
             PointLED(0, 1);
-            // Strip[1].setPixelColor((valLED - 1), Strip[1].Color(0, Lx, Lx));
 
           case 10:
           case 11:
           case 12:
-            PointLED((NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8]), 2);
-            // Strip[2].setPixelColor((valLED - 1 + (NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8])), Strip[2].Color(0, Lx, Lx));
+            PointLED((NUM_LEDS_ALL[ModLED_Fan - 1] - NUM_LEDS_ALL[9]), 2);
             break;
         }
         if (Lx == 0) {
@@ -96,7 +93,7 @@ void Set_LED_Config() {
 
 //Imposta La lunghezza dei LED
 void Set_LED_ROM() {
-  Strip[0].updateLength(NUM_LEDS_ALL[7]);  //Ventole *4 + GPU
+  Strip[0].updateLength(NUM_LEDS_ALL[8]);  //Ventole *4 + GPU
   Strip[1].updateLength(NUM_LEDS_OUT[9]);
   Strip[2].updateLength(NUM_LEDS_OUT[10] + NUM_LEDS_OUT[11] + NUM_LEDS_OUT[12]);
 }
@@ -110,24 +107,18 @@ void AnimazioneSetLED(byte Lnum, byte S, byte N, byte CR, byte CV) {
     case 3:  // Ventola 3
     case 4:  // Ventola 4
     case 8:  // Scheda Video
-      Set_ON_OFF_LED(Lnum, S, N, CR, CV, NUM_LEDS_ALL[ModLED_Fan - 2], 0);
-      //Strip[0].setPixelColor(((Lnum - N) + NUM_LEDS_ALL[ModLED_Fan - 2]), Strip[0].Color(0, 50, 50));
-      //Strip[0].setPixelColor(((Lnum - S) + NUM_LEDS_ALL[ModLED_Fan - 2]), Strip[0].Color(CR, CV, 0));
+      Set_ON_OFF_LED(Lnum, S, N, CR, CV, NUM_LEDS_ALL[ModLED_Fan - 1], 0);
       break;
 
     case 9:  // Striscia LED
 
       Set_ON_OFF_LED(Lnum, S, N, CR, CV, 0, 1);
-      //Strip[1].setPixelColor((Lnum - N), Strip[1].Color(0, 50, 50));
-      //Strip[1].setPixelColor((Lnum - S), Strip[1].Color(CR, CV, 0));
       break;
 
     case 10:  //Cassa Audio Sinistra
     case 11:  //Cassa Audio Destra
     case 12:  // Striscia LED
-      Set_ON_OFF_LED(Lnum, S, N, CR, CV, (NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8]), 2);
-      //Strip[2].setPixelColor(((Lnum - N) + (NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8])), Strip[2].Color(0, 50, 50));
-      //Strip[2].setPixelColor(((Lnum - S) + (NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8])), Strip[2].Color(CR, CV, 0));
+      Set_ON_OFF_LED(Lnum, S, N, CR, CV, (NUM_LEDS_ALL[ModLED_Fan - 1] - NUM_LEDS_ALL[9]), 2);
       break;
   }
 }
@@ -141,10 +132,4 @@ void Set_ON_OFF_LED(byte Lnum, byte S, byte N, byte CR, byte CV, byte s, byte LE
 
 void PointLED(byte s, byte LED) {
   Strip[LED].setPixelColor((valLED - 1 + s), Strip[LED].Color(0, Lx, Lx));
-
-
-
-  // Strip[0].setPixelColor(((valLED - 1) + NUM_LEDS_ALL[ModLED_Fan - 2]), Strip[0].Color(0, Lx, Lx));
-  // Strip[1].setPixelColor((valLED - 1), Strip[1].Color(0, Lx, Lx));
-  // Strip[2].setPixelColor((valLED - 1 + (NUM_LEDS_ALL[ModLED_Fan - 2] - NUM_LEDS_ALL[8])), Strip[2].Color(0, Lx, Lx));
 }

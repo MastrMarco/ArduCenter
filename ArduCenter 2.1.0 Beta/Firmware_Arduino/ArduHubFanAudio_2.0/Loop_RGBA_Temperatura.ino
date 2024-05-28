@@ -28,7 +28,7 @@ void RGB_Temperatura() {
     if ((TempDS >= 70) and (TempLED <= 0)) TempLED++;
     if ((TempDS >= 70) and (TempLED >= 0)) TempLED = TempLED - 1;
 
-     //           Colore,  Saturazione, Intensità
+    //           Colore,  Saturazione, Intensità
     ParallelStripLED(H_Temp, 255, 255);
   }
 }

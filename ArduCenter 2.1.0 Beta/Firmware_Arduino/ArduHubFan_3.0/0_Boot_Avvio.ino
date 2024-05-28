@@ -70,12 +70,16 @@ void setup() {
   //
   //----------------------
   //Reset dei LED e configurazione
-   Strip[0].begin();
-   Strip[1].begin();
+  Strip[0].begin();
+  Strip[1].begin();
 
   //
   ArrayLED();     //Loop3
   Set_LED_ROM();  //Loop_7
+
+  // for (byte s = 0; s <= 9; s++) {
+  //   Serial.println((String)NUM_LEDS_ALL[s] + " " + s);
+  // }
 
   //Imposta in modalità Set l'elemento Ventola selezionato prima del Riavvio
   if (ModLED_Fan < 5) ModFAN_SPEED = ModLED_Fan;

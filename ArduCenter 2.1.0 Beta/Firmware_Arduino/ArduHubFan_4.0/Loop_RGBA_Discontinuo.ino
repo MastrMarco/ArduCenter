@@ -10,8 +10,8 @@ void RGB_Discontinuo() {
     ResetTimerVirtuale[9] = millis();
 
 
-    if (Pix <= NUM_LEDS_ALL[8]) Pix++;
-    if (Pix == NUM_LEDS_ALL[8]) {
+    if (Pix <= NUM_LEDS_ALL[9]) Pix++;
+    if (Pix == NUM_LEDS_ALL[9]) {
       Pix = 0;
       H_Discontinuo = random(0, 255);
     }

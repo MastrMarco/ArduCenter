@@ -29,14 +29,6 @@ void DatiRXloop(int i, String DatoRX) {
 
         case 2:
           // ---------------------------- Luminosità
-          // if ((LumLED[ModLED_Fan] != DatoRX.toInt()) and ((DatoRX.toInt() >= 0) and (DatoRX.toInt() <= 255))) {
-          //   LumLED[ModLED_Fan] = DatoRX.toInt();
-          //   TimerVAREF = millis();  // Ricalcola  Tensione AREF
-          // }
-          // if (((ColoreLED[ModLED_Fan] > 512) and (BRIGHTNESS != LumLED[ModLED_Fan])) or ((ColoreLED[ModLED_Fan] <= 512) and (BRIGHTNESS != 255))) {
-          //   LumLED_Set();
-          //   TimerVAREF = millis();  // Ricalcola  Tensione AREF
-          // }
           if (LumLED[ModLED_Fan] != DatoRX.toInt()) {
             LumLED[ModLED_Fan] = DatoRX.toInt();
             TimerVAREF = millis();  // Ricalcola  Tensione AREF

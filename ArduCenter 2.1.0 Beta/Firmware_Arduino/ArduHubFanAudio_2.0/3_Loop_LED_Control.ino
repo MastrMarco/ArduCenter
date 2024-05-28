@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 28/05/24                                                  //
 //*****************************************************************************************************************************//
 
 byte H_P = 128;  // H_P = 65536 / 512 = 128
@@ -7,17 +7,7 @@ byte H_P = 128;  // H_P = 65536 / 512 = 128
 
 //Imposta la luminosità tra Mod_Colore e MOD_Animazione
 void LumLED_Set() {
-  // if (ROM_Dati < 3) {
-  //   if ((ColoreLED[ModLED_Fan] > 512) and (PowerLimitLED_Stato == false)) {
-  //     BRIGHTNESS = LumLED[ModLED_Fan];
-  //   } else if (RGB_Mod_Fan_All == 0) {
-  //     BRIGHTNESS = 255;
-  //   }
-  // } else {
-  //   BRIGHTNESS = 255;
-  // }
   if (ROM_Dati < 3) {
-    // if ((ColoreLED[ModLED_Fan] > 512) and (PowerLimitLED_Stato == false)) {
     if (ColoreLED[ModLED_Fan] > 512 and BRIGHTNESS != LumLED[ModLED_Fan]) {
       BRIGHTNESS = LumLED[ModLED_Fan];
     } else if (ColoreLED[ModLED_Fan] <= 512 and BRIGHTNESS != 255) {
@@ -31,9 +21,6 @@ void LumLED_Set() {
 
 //Spegne Tutti i LED
 void Reset_LED() {
-  // Strip1.clear();  //Modalità  OFF //LED_1
-  // Strip2.clear();  //Modalità  OFF //LED_2
-  // Strip3.clear();  //Modalità  OFF //LED_3
   for (byte s = 0; s <= 2; s++) {
     Strip[s].clear();
   }
@@ -41,28 +28,13 @@ void Reset_LED() {
 
 //Serve a creare una strisca LED Unica pre le varie Animnazioni
 void ArrayLED() {
-  // NUM_LEDS_Fan_0_1 = NUM_LEDS_OUT[1];                       // Ventola 1
-  // NUM_LEDS_Fan_1_2 = (NUM_LEDS_Fan_0_1 + NUM_LEDS_OUT[2]);  // Ventola 2
-  // NUM_LEDS_Fan_2_3 = (NUM_LEDS_Fan_1_2 + NUM_LEDS_OUT[3]);  // Ventola 3
-  // NUM_LEDS_Fan_3_4 = (NUM_LEDS_Fan_2_3 + NUM_LEDS_OUT[4]);  // Ventola 4
-  // NUM_LEDS_OUT_7_8 = (NUM_LEDS_Fan_3_4 + NUM_LEDS_OUT[8]);  // Scheda Video 8
-
-  // NUM_LEDS_OUT_8_9 = (NUM_LEDS_OUT_7_8 + NUM_LEDS_OUT[9]);  //Striscia LED 9
-
-  // NUM_LEDS_OUT_9_10 = (NUM_LEDS_OUT_8_9 + NUM_LEDS_OUT[10]);     // Cassa Audio Sinistra 10
-  // NUM_LEDS_OUT_10_11 = (NUM_LEDS_OUT_9_10 + NUM_LEDS_OUT[11]);   // Cassa Audio Destra 11
-  // NUM_LEDS_OUT_11_12 = (NUM_LEDS_OUT_10_11 + NUM_LEDS_OUT[12]);  // Striscia LED 12
-  // NUM_LEDS_OUT_All = NUM_LEDS_OUT_11_12;
-
   //Reset_Array
-  for (byte s = 0; s <= 11; s++) {
+  for (byte s = 1; s <= 12; s++) {
     NUM_LEDS_ALL[s] = 0;
   }
-
-
-  for (byte s = 0; s <= 11; s++) {
-    NUM_LEDS_ALL[s] = NUM_LEDS_ALL[s] + NUM_LEDS_OUT[s + 1];
-    if (s < 11) {
+  for (byte s = 1; s <= 12; s++) {
+    NUM_LEDS_ALL[s] = NUM_LEDS_ALL[s] + NUM_LEDS_OUT[s];
+    if (s < 12) {
       NUM_LEDS_ALL[s + 1] = NUM_LEDS_ALL[s];
     }
   }
@@ -80,10 +52,6 @@ void Void_LED_Mod() {
     LumLED_Set();
 
     if ((ModLED_Fan == 0) or (ModLED_Fan == 0 and Boot_SetUp == 0)) {
-
-      // if ((((ColoreLED[0] > 512) and (BRIGHTNESS != LumLED[ModLED_Fan])) or ((ColoreLED[ModLED_Fan] <= 512) and (BRIGHTNESS != 255))) and (Boot_SetUp == false)) {
-      //   LumLED_Set();
-      // }
 
       if ((ColoreLED[0] <= 512) and (BRIGHTNESS == 255)) {
         //Imposta la modalità dei LED
@@ -126,25 +94,11 @@ void Void_LED_Mod() {
     }
 
     if (((ModLED_Fan > 0) and (ColoreLED[ModLED_Fan] <= 512)) and (BRIGHTNESS == 255)) {
-      //                          Colore,      Saturazione,   Intensità  PixIN       PixEND
-      // Strip1.fill(Strip1.ColorHSV((ColoreLED[1] * H_P), Saturazione[1], LumLED[1]), 0, NUM_LEDS_Fan_0_1);                 //Modalità RGB HSV //Fan1
-      // Strip1.fill(Strip1.ColorHSV((ColoreLED[2] * H_P), Saturazione[2], LumLED[2]), NUM_LEDS_Fan_0_1, NUM_LEDS_Fan_1_2);  //Modalità RGB HSV //Fan2
-      // Strip1.fill(Strip1.ColorHSV((ColoreLED[3] * H_P), Saturazione[3], LumLED[3]), NUM_LEDS_Fan_1_2, NUM_LEDS_Fan_2_3);  //Modalità RGB HSV //Fan3
-      // Strip1.fill(Strip1.ColorHSV((ColoreLED[4] * H_P), Saturazione[4], LumLED[4]), NUM_LEDS_Fan_2_3, NUM_LEDS_Fan_3_4);  //Modalità RGB HSV //Fan4
-      // Strip1.fill(Strip1.ColorHSV((ColoreLED[8] * H_P), Saturazione[8], LumLED[8]), NUM_LEDS_Fan_3_4, NUM_LEDS_OUT_7_8);  //Modalità RGB HSV //GPU 8
-
-      // Strip2.fill(Strip2.ColorHSV((ColoreLED[9] * H_P), Saturazione[9], LumLED[9]));  //Modalità RGB HSV //Striscia LED 9
-
-      // Strip3.fill(Strip3.ColorHSV((ColoreLED[10] * H_P), Saturazione[10], LumLED[10]), 0, NUM_LEDS_OUT[10]);                                                                          //Modalità RGB HSV //Cassa Audio Sinistra 10
-      // Strip3.fill(Strip3.ColorHSV((ColoreLED[11] * H_P), Saturazione[11], LumLED[11]), NUM_LEDS_OUT[10], NUM_LEDS_OUT[10] + NUM_LEDS_OUT[11]);                                        //Modalità RGB HSV //Cassa Audio Destra 11
-      // Strip3.fill(Strip3.ColorHSV((ColoreLED[12] * H_P), Saturazione[12], LumLED[12]), NUM_LEDS_OUT[10] + NUM_LEDS_OUT[11], NUM_LEDS_OUT[10] + NUM_LEDS_OUT[11] + NUM_LEDS_OUT[12]);  //Modalità RGB HSV //Cassa Audio Strisca LED 12
-
-      //                                           Colore,             Saturazione,      Intensità
-      // for (byte s = 0; s <= 2; s++) {
-      for (byte e = 0; e <= 11; e++) {
-        if (e >= 0 and (e < 5 or e == 7)) SplitLED(0, (e + 1), NUM_LEDS_ALL[e - 1], NUM_LEDS_ALL[e]);
-        if (e == 8) SplitLED(1, (e + 1), 0, (NUM_LEDS_ALL[e] - NUM_LEDS_ALL[e - 1]));
-        if (e >= 9) SplitLED(2, (e + 1), (NUM_LEDS_ALL[e - 1] - NUM_LEDS_ALL[8]), (NUM_LEDS_ALL[e] - NUM_LEDS_ALL[e - 1]));
+      for (byte e = 1; e <= 12; e++) {
+        //                                        LED, Colore,  S_IN,              S_Fin
+        if (e >= 1 and (e < 5 or e == 8)) SplitLED(0, e, NUM_LEDS_ALL[e - 1], NUM_LEDS_ALL[e]);
+        if (e == 9) SplitLED(1, e, 0, (NUM_LEDS_ALL[e] - NUM_LEDS_ALL[e - 1]));
+        if (e >= 10) SplitLED(2, e, (NUM_LEDS_ALL[e - 1] - NUM_LEDS_ALL[9]), (NUM_LEDS_ALL[e] - NUM_LEDS_ALL[e - 1]));
       }
     }
   }
@@ -152,29 +106,21 @@ void Void_LED_Mod() {
 }
 
 void SplitLED(byte s, byte c, byte L0, byte L1) {
+  //   LED           LED              Colore,            Saturazione,   Intensità,  IN  FIN
   Strip[s].fill(Strip[s].ColorHSV((ColoreLED[c] * H_P), Saturazione[c], LumLED[c]), L0, L1);
 }
 
-
-byte s;
 void SingleStripLED(byte N, uint32_t H, byte S, byte L) {
-  // if (N < NUM_LEDS_OUT_7_8) Strip1.setPixelColor(N, Strip1.ColorHSV(H, S, L));
-  // if ((N >= NUM_LEDS_OUT_7_8) and (N < NUM_LEDS_OUT_8_9)) Strip2.setPixelColor((N - NUM_LEDS_OUT_7_8), Strip2.ColorHSV(H, S, L));
-  // if ((N >= NUM_LEDS_OUT_8_9) and (N < NUM_LEDS_OUT_11_12)) Strip3.setPixelColor((N - NUM_LEDS_OUT_8_9), Strip3.ColorHSV(H, S, L));
-
-  if (N <= NUM_LEDS_ALL[7]) {
+  if (N <= NUM_LEDS_ALL[8]) {
     Strip[0].setPixelColor(N, Strip[0].ColorHSV(H, S, L));
-  } else if (N <= NUM_LEDS_ALL[8]) {
-    Strip[1].setPixelColor((N - NUM_LEDS_ALL[7]), Strip[1].ColorHSV(H, S, L));
-  } else if (N <= NUM_LEDS_ALL[11]) {
-    Strip[2].setPixelColor((N - NUM_LEDS_ALL[8]), Strip[2].ColorHSV(H, S, L));
+  } else if (N <= NUM_LEDS_ALL[9]) {
+    Strip[1].setPixelColor((N - NUM_LEDS_ALL[8]), Strip[1].ColorHSV(H, S, L));
+  } else if (N <= NUM_LEDS_ALL[12]) {
+    Strip[2].setPixelColor((N - NUM_LEDS_ALL[9]), Strip[2].ColorHSV(H, S, L));
   }
 }
 
 void ParallelStripLED(uint32_t H, byte S, byte L) {
-  // Strip1.fill(Strip1.ColorHSV(H, S, L));
-  // Strip2.fill(Strip2.ColorHSV(H, S, L));
-  // Strip3.fill(Strip3.ColorHSV(H, S, L));
   for (byte s = 0; s <= 2; s++) {
     Strip[s].fill(Strip[s].ColorHSV(H, S, L));
   }

@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 27/05/24                                                  //
 //*****************************************************************************************************************************//
 
 byte Pix;
@@ -10,13 +10,13 @@ void RGB_Discontinuo() {
     ResetTimerVirtuale[9] = millis();
 
 
-    if (Pix <= NUM_LEDS_ALL[8]) Pix++;
-    if (Pix == NUM_LEDS_ALL[8]) {
+    if (Pix <= NUM_LEDS_ALL[9]) Pix++;
+    if (Pix == NUM_LEDS_ALL[9]) {
       Pix = 0;
       H_Discontinuo = random(0, 255);
     }
 
     uint32_t H = map(H_Discontinuo, 0, 255, 0, 65536);
-   SingleStripLED(Pix, H, 255, 255);
-   }
+    SingleStripLED(Pix, H, 255, 255);
+  }
 }

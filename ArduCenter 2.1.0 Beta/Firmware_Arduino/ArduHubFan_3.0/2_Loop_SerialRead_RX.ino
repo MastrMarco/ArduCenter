@@ -29,7 +29,7 @@ void DatiRXloop(int i, String DatoRX) {
 
         case 2:
           // ---------------------------- Luminosità
-         if (LumLED[ModLED_Fan] != DatoRX.toInt()) {
+          if (LumLED[ModLED_Fan] != DatoRX.toInt()) {
             LumLED[ModLED_Fan] = DatoRX.toInt();
             TimerVAREF = millis();  // Ricalcola  Tensione AREF
           }

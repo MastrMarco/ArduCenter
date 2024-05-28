@@ -3,7 +3,7 @@
 //
 //                                   Per Arduino Nano ATMega 328P [NEW / OLD] Boot loader
 //
-//                                                ArduHubFan 4.0 01/06/24
+//                                                ArduHubFan 4.0 28/05/24
 //
 //                                 https://www.youtube.com/channel/UCpQb1Iz6M229ylkyXpdJPlw
 //****************************************************************************************************************************//
@@ -224,17 +224,18 @@ byte NUM_LEDS_OUT[] = {
 
 //Gestione Animazioni Sincroizzate * 24
 byte NUM_LEDS_ALL[] = {
-  0,  // Ventola 1 [0-24] 0
-  0,  // Ventola 2 [24-48] 1
-  0,  // Ventola 3 [48-72] 2
-  0,  // Ventola 4 [72-96] 3
+  0,  // Null 0
+  0,  // Ventola 1 [0-24] 1
+  0,  // Ventola 2 [24-48] 2
+  0,  // Ventola 3 [48-72] 3
+  0,  // Ventola 4 [72-96] 4
 
-  0,  // Dissipatore 120mm [96-120] 4
-  0,  // Dissipatore 120mm [120-144] 5
-  0,  // Dissipatore 120mm [144-168] 6
+  0,  // Dissipatore 120mm [96-120] 5
+  0,  // Dissipatore 120mm [120-144] 6
+  0,  // Dissipatore 120mm [144-168] 7
 
-  0,  // Scheda Video [168-192] 7
-  0   // Strisca LED [192-216] 8
+  0,  // Scheda Video [168-192] 8
+  0   // Strisca LED [192-216] 9
 };
 
 //                 Nome                           Numero LED       Pin OUT    Colore   Tipo di LED

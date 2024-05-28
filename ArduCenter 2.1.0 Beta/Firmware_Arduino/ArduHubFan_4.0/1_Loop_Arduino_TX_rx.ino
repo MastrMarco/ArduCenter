@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 28/05/24                                                  //
 //*****************************************************************************************************************************//
 
 void loop() {
@@ -51,7 +51,7 @@ void loop() {
   //---------------------------------------------------------------------- AnimazioneAVVIO
   if (Aniamzione_Avvio == false and (V5 > 4.50 or Debug != 0)) {
 
-    for (byte x = 0; x <= NUM_LEDS_ALL[8]; x++) {
+    for (byte x = 0; x <= NUM_LEDS_ALL[9]; x++) {
       // SingleStripLED(x, (8 * 128), 255, 255); //RossoArancio
       SingleStripLED(x, (171 * 128), 220, 255);  //VerdeChiaro
       Set_LED();
@@ -205,7 +205,7 @@ void loop() {
         ElementoPRE = ModLED_Fan;
         Reset_LED();
         Set_LED();
-        //ArrayLED();
+        ArrayLED();//
         Set_LED_ROM();
         stDef = true;
       }

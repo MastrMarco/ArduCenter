@@ -18,7 +18,7 @@ void RGB_Mix() {
     if (V_Fade < V_FadeRand) V_Fade++;
     if (V_Fade > V_FadeRand) V_Fade--;
 
-     //         Colore,  Saturazione, Intensità
+    //         Colore,  Saturazione, Intensità
     ParallelStripLED(H_Mix, 255, V_Fade);
   }
 }

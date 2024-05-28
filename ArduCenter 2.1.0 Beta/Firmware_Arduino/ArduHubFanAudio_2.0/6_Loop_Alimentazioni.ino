@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 28/05/24                                                  //
 //*****************************************************************************************************************************//
 
 //AREF
@@ -40,63 +40,59 @@ float Voltmetro(int Pin, float R1, float R2, float ADJ_Error) {
 
 
 void Voltaggio() {
+  //---------------------- Calcolo Media Analog Reference
+  //VAREF
+  if (millis() < (TimerVAREF + 15000)) {
+    if (CampNum_AREF < Campionamento) {
+      CampNum_AREF++;
+      VoltMedia_AREF += ReadVref();
+    } else {
+      VAREF = VoltMedia_AREF / CampNum_AREF;
+      VoltMedia_AREF = 0;
+      CampNum_AREF = 0;
+    }
+  }
+
+  if (millis() >= (ResetTimerVirtuale[2] + DelayVirtuale[2])) {
+    ResetTimerVirtuale[2] = millis();
+    //---------------------- Converaione in Tensione 5V
+    //5V
+    V5 = Voltmetro(Pin_5V, R1_5V, R2_5V, ADJ_Error_5V);
+    //
+    //---------------------- Converaione in Tensione 12V
+    //12V
+    V12 = Voltmetro(Pin_12V, R1_12V, R2_12V, ADJ_Error_12V);
+    //
+  }
+
   if (Debug == 2) {
     V5 = 5.00;
     V12 = 12.00;
-    S_Pro_5V = false;   //0
-    S_Pro_12V = false;  //0
-  } else {
+  }
 
-    //---------------------- Calcolo Media Analog Reference
-    //VAREF
-    if (millis() < (TimerVAREF + 15000)) {
-      if (CampNum_AREF < Campionamento) {
-        CampNum_AREF++;
-        VoltMedia_AREF += ReadVref();
-      } else {
-        VAREF = VoltMedia_AREF / CampNum_AREF;
-        VoltMedia_AREF = 0;
-        CampNum_AREF = 0;
-      }
+  //---
+  if ((EN_OV == true) and (Mod_attesa == false)) {
+    //---------------------- Protezione Alimentazione 5V [+/- 5%]
+    //
+    if (((V5 < (5.00 - V5_Limit)) or (V5 > (5.00 + V5_Limit))) and (Aniamzione_Avvio == true) and (PowerLimitLED == false or LumLimitLED > 240)) {
+      S_Pro_5V = true;  //1
+      digitalWrite(OV, LOW);
     }
-
-    if (millis() >= (ResetTimerVirtuale[2] + DelayVirtuale[2])) {
-      ResetTimerVirtuale[2] = millis();
-      //---------------------- Converaione in Tensione 5V
-      //5V
-      V5 = Voltmetro(Pin_5V, R1_5V, R2_5V, ADJ_Error_5V);
-      //
-      //---------------------- Converaione in Tensione 12V
-      //12V
-      V12 = Voltmetro(Pin_12V, R1_12V, R2_12V, ADJ_Error_12V);
-      //
+    if ((V5 <= (5.00 + V5_Limit)) and (V5 >= (5.00 - V5_Limit)) and (Aniamzione_Avvio == false)) {
+      S_Pro_5V = false;  //0
+      digitalWrite(OV, HIGH);
     }
-
-
-
-    //---
-    if ((EN_OV == true) and (Mod_attesa == false)) {
-      //---------------------- Protezione Alimentazione 5V [+/- 5%]
-      //
-      if (((V5 < (5.00 - V5_Limit)) or (V5 > (5.00 + V5_Limit))) and (Aniamzione_Avvio == true) and (PowerLimitLED == false or LumLimitLED > 240)) {
-        S_Pro_5V = true;  //1
-        digitalWrite(OV, LOW);
-      }
-      if ((V5 <= (5.00 + V5_Limit)) and (V5 >= (5.00 - V5_Limit)) and (Aniamzione_Avvio == false)) {
-        S_Pro_5V = false;  //0
-        digitalWrite(OV, HIGH);
-      }
-      //
-      //---------------------- Protezione Alimentazione 12V [+/- 5%]
-      //
-      if (((V12 < (12.00 - V12_Limit)) or (V12 > (12.00 + V12_Limit))) and (Aniamzione_Avvio == true)) {
-        S_Pro_12V = true;  //1
-      }
-      if ((V12 <= (12.00 + V12_Limit)) and (V12 >= (12.00 - V12_Limit)) and (Aniamzione_Avvio == false)) {
-        S_Pro_12V = false;  //0
-      }
+    //
+    //---------------------- Protezione Alimentazione 12V [+/- 5%]
+    //
+    if (((V12 < (12.00 - V12_Limit)) or (V12 > (12.00 + V12_Limit))) and (Aniamzione_Avvio == true)) {
+      S_Pro_12V = true;  //1
+    }
+    if ((V12 <= (12.00 + V12_Limit)) and (V12 >= (12.00 - V12_Limit)) and (Aniamzione_Avvio == false)) {
+      S_Pro_12V = false;  //0
     }
   }
+  // }
   //
   //----------------------PowerLimitLED
   //

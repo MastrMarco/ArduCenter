@@ -1,5 +1,5 @@
 //*****************************************************************************************************************************//
-//                                           Ver: X.08 Firmware data 01/06/24                                                  //
+//                                           Ver: X.08 Firmware data 28/05/24                                                  //
 //*****************************************************************************************************************************//
 
 byte H_P = 128;  // H_P = 65536 / 512 = 128
@@ -28,14 +28,14 @@ void Reset_LED() {
 
 //Serve a creare una strisca LED Unica pre le varie Animnazioni
 void ArrayLED() {
-  //Reset_Array  
-  for (byte s = 0; s <= 8; s++) {
+  //Reset_Array
+  for (byte s = 1; s <= 9; s++) {
     NUM_LEDS_ALL[s] = 0;
   }
 
-  for (byte s = 0; s <= 8; s++) {
-    NUM_LEDS_ALL[s] = NUM_LEDS_ALL[s] + NUM_LEDS_OUT[s + 1];
-    if (s < 8) {
+  for (byte s = 1; s <= 9; s++) {
+    NUM_LEDS_ALL[s] = NUM_LEDS_ALL[s] + NUM_LEDS_OUT[s];
+    if (s < 9) {
       NUM_LEDS_ALL[s + 1] = NUM_LEDS_ALL[s];
     }
   }
@@ -96,8 +96,8 @@ void Void_LED_Mod() {
     if (((ModLED_Fan > 0) and (ColoreLED[ModLED_Fan] <= 512)) and (BRIGHTNESS == 255)) {
       //Colore per ogni singolo elemento
       //                                           Colore,             Saturazione,      Intensità
-      for (byte s = 0; s <= 8; s++) {
-        Strip[s].fill(Strip[s].ColorHSV((ColoreLED[s + 1] * H_P), Saturazione[s + 1], LumLED[s + 1]));  //Modalità RGB HSV
+      for (byte s = 1; s <= 9; s++) {
+        Strip[s - 1].fill(Strip[s - 1].ColorHSV((ColoreLED[s] * H_P), Saturazione[s], LumLED[s]));  //Modalità RGB HSV
       }
     }
   }
@@ -106,17 +106,45 @@ void Void_LED_Mod() {
 
 
 void SingleStripLED(byte N, uint32_t H, byte S, byte L) {
-  if (N <= NUM_LEDS_ALL[0]) Strip[0].setPixelColor(N, Strip[0].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[0] and N <= NUM_LEDS_ALL[1]) Strip[1].setPixelColor(N - (NUM_LEDS_ALL[0]), Strip[1].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[1] and N <= NUM_LEDS_ALL[2]) Strip[2].setPixelColor(N - (NUM_LEDS_ALL[1]), Strip[2].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[2] and N <= NUM_LEDS_ALL[3]) Strip[3].setPixelColor(N - (NUM_LEDS_ALL[2]), Strip[3].ColorHSV(H, S, L));
+  // if (N <= NUM_LEDS_ALL[1]) Strip[0].setPixelColor(N, Strip[0].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[1] and N <= NUM_LEDS_ALL[2]) Strip[1].setPixelColor(N - (NUM_LEDS_ALL[1]), Strip[1].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[2] and N <= NUM_LEDS_ALL[3]) Strip[2].setPixelColor(N - (NUM_LEDS_ALL[2]), Strip[2].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[3] and N <= NUM_LEDS_ALL[4]) Strip[3].setPixelColor(N - (NUM_LEDS_ALL[3]), Strip[3].ColorHSV(H, S, L));
 
-  if (N > NUM_LEDS_ALL[3] and N <= NUM_LEDS_ALL[4]) Strip[4].setPixelColor(N - (NUM_LEDS_ALL[3]), Strip[4].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[4] and N <= NUM_LEDS_ALL[5]) Strip[5].setPixelColor(N - (NUM_LEDS_ALL[4]), Strip[5].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[5] and N <= NUM_LEDS_ALL[6]) Strip[6].setPixelColor(N - (NUM_LEDS_ALL[5]), Strip[6].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[4] and N <= NUM_LEDS_ALL[5]) Strip[4].setPixelColor(N - (NUM_LEDS_ALL[4]), Strip[4].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[5] and N <= NUM_LEDS_ALL[6]) Strip[5].setPixelColor(N - (NUM_LEDS_ALL[5]), Strip[5].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[6] and N <= NUM_LEDS_ALL[7]) Strip[6].setPixelColor(N - (NUM_LEDS_ALL[6]), Strip[6].ColorHSV(H, S, L));
 
-  if (N > NUM_LEDS_ALL[6] and N <= NUM_LEDS_ALL[7]) Strip[7].setPixelColor(N - (NUM_LEDS_ALL[6]), Strip[7].ColorHSV(H, S, L));
-  if (N > NUM_LEDS_ALL[7] and N <= NUM_LEDS_ALL[8]) Strip[8].setPixelColor(N - (NUM_LEDS_ALL[7]), Strip[8].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[7] and N <= NUM_LEDS_ALL[8]) Strip[7].setPixelColor(N - (NUM_LEDS_ALL[7]), Strip[7].ColorHSV(H, S, L));
+  // if (N > NUM_LEDS_ALL[8] and N <= NUM_LEDS_ALL[9]) Strip[8].setPixelColor(N - (NUM_LEDS_ALL[8]), Strip[8].ColorHSV(H, S, L));
+
+  if (N <= NUM_LEDS_ALL[1]) {
+    Strip[0].setPixelColor(N, Strip[0].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[2]) {
+    Strip[1].setPixelColor(N - (NUM_LEDS_ALL[1]), Strip[1].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[3]) {
+    Strip[2].setPixelColor(N - (NUM_LEDS_ALL[2]), Strip[2].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[4]) {
+    Strip[3].setPixelColor(N - (NUM_LEDS_ALL[3]), Strip[3].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[5]) {
+    Strip[4].setPixelColor(N - (NUM_LEDS_ALL[4]), Strip[4].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[6]) {
+    Strip[5].setPixelColor(N - (NUM_LEDS_ALL[5]), Strip[5].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[7]) {
+    Strip[6].setPixelColor(N - (NUM_LEDS_ALL[6]), Strip[6].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[8]) {
+    Strip[7].setPixelColor(N - (NUM_LEDS_ALL[7]), Strip[7].ColorHSV(H, S, L));
+
+  } else if (N <= NUM_LEDS_ALL[9]) {
+    Strip[8].setPixelColor(N - (NUM_LEDS_ALL[8]), Strip[8].ColorHSV(H, S, L));
+  }
 
   //for (byte s = 0; s <= 8; s++) {
   //Strip[s].setPixelColor(N - (NUM_LEDS_ALL[s - 1]), Strip[s].ColorHSV(H, S, L));

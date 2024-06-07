@@ -7,7 +7,7 @@ Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 - **Spiegazione GUI P3** => https://youtu.be/O1FbnbFxPTY
 - **Spiegazione GUI P4** => https://youtu.be/B9y6aODZyhU
 - **Aggiornamento 2.1.0 P5** => https://youtu.be/VCgzR0a5ROw
-
+- **Aggiornamento 2.1.0 P6** => 
 
 ## Crediti Librerie Esterne 
 - Utilizzate per comporre il Codice per Arduino: [Adafruit NeoPixel, microDS18B20, Arduino IDE]
@@ -52,21 +52,28 @@ Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 - **M**=> Indica il Nome della pagina in cui ci troviamo in quel momento con anche il nome in Codice.
 
 
-## - Finestra HUB PC Home 
+## - Finestra HUB PC 
 
-![ArduCenter2 0_HubPC Home_Note](https://user-images.githubusercontent.com/76437833/227233106-f7de08e1-75a1-453f-b552-78f4ea8b370f.png)
+![ArduCenter2 1 0 F_HubPC](https://github.com/MastrMarco/ArduCenter/assets/76437833/73e1327f-68c1-423f-8d93-c90bf3326943)
+
 
 ## Mostra Finestra
 0. Bottone per aprire la finestra Hardware Monitor [Progetto Droppato].
 1. Bottone per aprire la finestra Impostazioni Generali del Controller [Beta].
 
-## Informazioni Finestra Controllo Hub PC Home [F_Hub_PC_Home]
-- **A**=> Bottone per aprire la pagina Controllo Ventole [Manuale].
-- **B**=> Bottone per aprire la pagina Controllo Dissipatore [Manuale].
-- **C**=> Bottone per aprire la pagina Controllo Scheda Video [Cliccando una volta si seleziona l'elemento, cliccando una seconda volta si va nella pagina apposita].
-- **D**=> Menù settaggi [Colore, Animazioni RGB, Luminosità e Velocità di rotazione Ventole].
-- **E**=> Bottone per impostare la modalità sincronizzata [Imposta il colore globale e anche una velocità di rotazione ventole globale].
+## Informazioni Finestra Controllo Hub PC [F_Hub_PC]
+- **A**=> Informazioni Elemento Selezionato
+- **B**=> Bottone per impostare la modalità sincronizzata [Imposta il colore globale e anche una velocità di rotazione ventole globale].
+- **C**=> Bottone per aprire la pagina Controllo Ventole [Manuale].
+- **D**=> Bottone per aprire la pagina Controllo Dissipatore [Manuale].
+- **E**=> Bottone per aprire la pagina Controllo Scheda Video [Cliccando una volta si seleziona l'elemento, cliccando una seconda volta si va nella pagina apposita].
 - **F**=> Bottone per aprire la pagina Controllo Striscia LED [Cliccando una volta si seleziona l'elemento, cliccando una seconda volta si va nella pagina apposita].
+
+
+# - Elementi
+![ArduCenter2 1 0 F_HubPC_elementi](https://github.com/MastrMarco/ArduCenter/assets/76437833/b39e0d63-be03-4ae4-8c90-71c861c35b50)
+
+
 
 ## - Menù settaggi
 
@@ -99,6 +106,14 @@ Software di controllo Ventole di un PC e di controllo LED A-RGB 5V.
 - **D**=> Bottone per Attivare/Disattivare la protezione LED [Quando si attiverà, la scritta "Protezione LED e Luminosità" si colorano di rosso è abbasserà la luminosità dei LED fino ad un livello che non abbia più l'anomalia; ES: se la tensione dei LED (+5V) non è stabile, o ha una anomalia in difetto del valore di tensione esso abbasserà la luminosità fino a quando non rileverà una tensione di tolleranza. Per ripristinare il funzionamento normale bisogna abbassare la luminosità di poco e dopo si può provare a impostare una luminosità più alta, o anche disattivando la protezione LED].
 - **E**=> Non Funzionante.
 - **F**=> Bottone per resettare l'HUB [Si consiglia di resettare l'HUB alla prima installazione del Firmware].
+
+
+
+## - Finestra Impostazioni HUB Elementi  
+![ArduCenter2 1 0 F_Impostazioni_Hub_NumLED](https://github.com/MastrMarco/ArduCenter/assets/76437833/6847db7f-9f02-4c38-9117-2e2af83cca43)
+
+
+
 
 ## - Finestra Hardware Monitor PC 
 

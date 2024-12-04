@@ -40,6 +40,9 @@ Partial Class F_Avvio
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'SerialPortArduino
+        '
+        '
         'TimerSerialPort_TX_RX
         '
         Me.TimerSerialPort_TX_RX.Interval = 30

@@ -94,7 +94,12 @@ Public Class F_Connessione
             F_Avvio.SerialPortArduino.BaudRate = (115200)
             F_Avvio.SerialPortArduino.Open()
             F_Avvio.TimerSerialPort_TX_RX.Enabled = True
-            F_Avvio.BackgroundWorkerSerialPort.RunWorkerAsync()
+            Try
+                F_Avvio.BackgroundWorkerSerialPort.RunWorkerAsync()
+            Catch ex As Exception
+
+            End Try
+
 
             LaSerialData.Font = New Font("Verdana", 8, FontStyle.Bold)
         Catch ex As Exception
@@ -140,7 +145,7 @@ Public Class F_Connessione
         BtnAutoConnessione.BackgroundImage = My.Resources.btn_Swich
         'PictureFunzioni.BackgroundImage = My.Resources.Funzioni_Dispositivo_Null
 
-        F_Avvio.DatiRicevuti = 0
+        F_Avvio.DatiRicevuti = ""
 
         F_Home.BtnVentole.Enabled = False
         F_Home.BtnAudio.Enabled = False

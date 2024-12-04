@@ -62,7 +62,8 @@ Public Class F_Avvisi
         F_Setting_HUB.Enabled = True
         Close()
 
-        If F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8 Then
+        If ((F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8) Or F_Avvio.ErrorMod = "00") Then
+            'If F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8 Then
             F_Connessione.Disconnessione()
             F_Connessione.PreCaricamentroCOM_Port()
             F_Home.BtnConnessione_Click(sender, e)
@@ -407,7 +408,7 @@ Clicca OK per continuare
 
     Private Sub Btn_OK_Click(sender As Object, e As EventArgs) Handles Btn_OK.Click
 
-        If F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8 Or F_Avvio.ErrorMod = "00" Then
+        If ((F_Avvio.ErrorMod >= 2 And F_Avvio.ErrorMod <= 8) Or F_Avvio.ErrorMod = "00") Then
             F_Connessione.Disconnessione()
             F_Connessione.PreCaricamentroCOM_Port()
             F_Home.BtnConnessione_Click(sender, e)

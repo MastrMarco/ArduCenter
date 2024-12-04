@@ -9,12 +9,12 @@ Public Class F_Avvio
     Public ErrorMod = 0     '//Indica il tipo di errore Errore
 
     'Nummero Versione Arduino
-    Public ReadOnly InfoSoft_HOME As String = "By " & vbCrLf & "MastrMarco" & vbCrLf & "Beta 2"
+    Public ReadOnly InfoSoft_HOME As String = "By " & vbCrLf & "MastrMarco" & vbCrLf & "Beta 99"
 
     Private ReadOnly StatoSoft As String = "Versione Prova"
     Public ReadOnly StatoSoftm As String = "Beta"
-    Public ReadOnly Versione As String = "v 2.1.1"
-    Public DataRilascio As String = "04-12-24"
+    Public ReadOnly Versione As String = "v 2.1.0"
+    Public DataRilascio As String = "01-06-24"
 
 
     '3 = HubFanAudio / 4 = HubFan_3.0 / 5 = HubFan_4.0
@@ -168,9 +168,9 @@ Public Class F_Avvio
 
 
     Private Sub BackgroundWorkerSerialPort_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerSerialPort.DoWork
-        While True
-            Try
-                If SerialPortArduino.IsOpen = True Then
+        Try
+            If SerialPortArduino.IsOpen = True Then
+                Do
 
                     DatiRicevuti = SerialPortArduino.ReadLine().ToString()
 
@@ -178,39 +178,16 @@ Public Class F_Avvio
                         SerialPortArduino.WriteLine(DatiTX)
                     End If
 
+                Loop
 
-                    Threading.Thread.Sleep(40)
+                Threading.Thread.Sleep(40)
 
-                End If
+            End If
 
-            Catch ex As Exception
-                'F_Connessione.Disconnessione()
-            End Try
-
-        End While
+        Catch ex As Exception
+            'F_Connessione.Disconnessione()
+        End Try
     End Sub
-
-
-    'Private Sub SerialPortArduino_DataReceived(sender As Object, e As IO.Ports.SerialDataReceivedEventArgs) Handles SerialPortArduino.DataReceived
-    '    Try
-    '        If SerialPortArduino.IsOpen = True Then
-    '            'Do
-
-    '            DatiRicevuti = SerialPortArduino.ReadLine().ToString()
-    '            F_Connessione.LaSerialData.Text = "DatiRicevuti"
-
-    '            If VerificaSeriale = 0 And DTX = 0 Then
-    '                SerialPortArduino.WriteLine(DatiTX)
-    '            End If
-
-    '            ' Loop
-
-    '        End If
-
-    '    Catch ex As Exception
-    '        'F_Connessione.Disconnessione()
-    '    End Try
-    'End Sub
 
 
     '//Verifica se' la comunicazione tra il PC e l'Arduino avviene Correttamente, Verifica anchè se è Compatibbile    
@@ -242,9 +219,6 @@ Public Class F_Avvio
 
         End Try
     End Sub
-
-
-
 
 
     Private Sub TimerSerialPort_TX_RX_Tick(sender As Object, e As EventArgs) Handles TimerSerialPort_TX_RX.Tick
@@ -279,43 +253,21 @@ Public Class F_Avvio
         End Try
 
 
-
         Try
-            If DatiRX_0 Is Nothing Then
-                Verifica()
-                If Riavvio_Arduino <= DelayCOM Then
-                    Riavvio_Arduino += 1
-                End If
-            Else
-
-                If VerificaSeriale = 1 Then
-                    'Verifica se la porta COM è Compatibbile
-                    'If VerificaSeriale = 1 Then
-                    If DatiRX_0(0) = "R" Or DatiRX_0(0) = "B" Or DatiRX_0(0) = "D" Then
-                        Verifica()
-                    Else
-                        'Verifica()
-                        'If Riavvio_Arduino <= DelayCOM Then
-                        '    Riavvio_Arduino += 1
-                        'End If
+            'Verifica se la porta COM è Compatibbile
+            If VerificaSeriale = 1 Then
+                If DatiRX_0(0) = "R" Or DatiRX_0(0) = "B" Or DatiRX_0(0) = "D" Then
+                    Verifica()
+                Else
+                    Verifica()
+                    If Riavvio_Arduino <= DelayCOM Then
+                        Riavvio_Arduino += 1
                     End If
                 End If
-
             End If
-
         Catch ex As Exception
 
         End Try
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -425,12 +377,7 @@ Public Class F_Avvio
                     F_Home.LabelFinestraID.Visible = False
                     F_Home.La_Caricamentro.Visible = True
                 End If
-
-                If DatiRX_0 Is Nothing Then
-                Else
-                    Verifica()
-                End If
-
+                Verifica()
             End If
         End If
     End Sub
@@ -938,6 +885,7 @@ Public Class F_Avvio
     'Dim RAM_Disponible As Integer
     Dim RAM_Usato As Decimal
     Dim RAM_Totale As Decimal
+
 
 
 End Class
